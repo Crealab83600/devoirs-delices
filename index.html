@@ -5,66 +5,121 @@
   <title>Devoirs & Délices</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: #fff8f2;
-      margin: 0;
-      padding: 0;
     }
     header {
-      background: #ffb347;
+      background: #ff9f43;
       color: white;
       padding: 20px;
       text-align: center;
     }
+    nav {
+      background: #ffbe76;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
     section {
-      padding: 20px;
+      display: none;
+      padding: 30px;
       max-width: 900px;
       margin: auto;
     }
-    h2 {
-      color: #ff8c00;
+    section.active {
+      display: block;
     }
     .card {
       background: white;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     footer {
-      background: #ffb347;
+      background: #ff9f43;
       color: white;
       text-align: center;
       padding: 10px;
+      margin-top: 40px;
+    }
+    button {
+      background: #ff9f43;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
     }
   </style>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(sec => {
+        sec.classList.remove("active");
+      });
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
 </head>
 
-<body>
+<body onload="showSection('home')">
 
 <header>
   <h1>📚🍰 Devoirs & Délices</h1>
   <p>Aide aux devoirs & pâtisseries maison</p>
 </header>
 
-<section>
+<nav>
+  <a onclick="showSection('home')">Accueil</a>
+  <a onclick="showSection('cours')">Aide aux devoirs</a>
+  <a onclick="showSection('gateaux')">Pâtisseries</a>
+  <a onclick="showSection('contact')">Contact</a>
+</nav>
+
+<section id="home" class="active">
+  <div class="card">
+    <h2>Bienvenue 👋</h2>
+    <p>Bienvenue sur <strong>Devoirs & Délices</strong> !</p>
+    <p>Un service d’aide aux devoirs pour toutes les matières, du primaire au lycée, accompagné de délicieuses pâtisseries maison 🍪</p>
+    <button onclick="showSection('cours')">Découvrir les cours</button>
+  </div>
+</section>
+
+<section id="cours">
   <div class="card">
     <h2>🎓 Aide aux devoirs</h2>
-    <p>Aide aux devoirs pour <strong>toutes les matières</strong>, du primaire au lycée.</p>
-    <p>📍 Séances de 30 minutes</p>
-    <p>💰 Prix : <strong>10€ la séance</strong></p>
+    <p>✔ Toutes les matières</p>
+    <p>✔ Primaire → Lycée</p>
+    <p>✔ Séances de 30 minutes</p>
+    <p><strong>💰 10€ la séance</strong></p>
   </div>
+</section>
 
+<section id="gateaux">
   <div class="card">
     <h2>🍪 Pâtisseries maison</h2>
-    <p>Cookies, cupcakes et autres gourmandises faites maison.</p>
-    <p>💰 Prix : <strong>1€ à 2€ selon les gâteaux</strong></p>
+    <p>Cookies, cupcakes et gourmandises faites maison.</p>
+    <p><strong>💰 1€ à 2€ selon les gâteaux</strong></p>
+    <p>Idéal après une séance de travail 😋</p>
   </div>
+</section>
 
+<section id="contact">
   <div class="card">
-    <h2>📞 Contact</h2>
+    <h2>📞 Contact & réservation</h2>
     <p>📱 Téléphone : 06 50 02 15 65</p>
     <p>📧 Email : raphaelmaury83600@gmail.com</p>
+    <p>Contacte-moi pour réserver une séance ou commander des gâteaux.</p>
   </div>
 </section>
 
@@ -74,4 +129,3 @@
 
 </body>
 </html>
-    
