@@ -63,7 +63,7 @@
 
 <section id="aide">
   <h2>Aide aux devoirs</h2>
-  <p>Besoin d'aide en maths, français ou sciences ? Nos experts sont là pour t'aider !</p>
+  <p>Besoin d'aide en maths, français ou sciences ? <strong>Notre expert</strong> sont là pour t'aider !</p>
 </section>
 
 <section id="patisseries">
@@ -105,9 +105,11 @@
 <script>
 // ================= Galerie lightbox avec miniatures =================
 const images = [
-  "https://images.unsplash.com/photo-1605475128891-0b9c479f83e5?auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1599785209707-870544c7f0c4?auto=format&fit=crop&w=500&q=60",
-  "https://images.unsplash.com/photo-1589987605165-0d8a7c1c9a14?auto=format&fit=crop&w=500&q=60"
+  "https://images.unsplash.com/photo-1551024709-8f23befc6e88?auto=format&fit=crop&w=500&q=60",
+  "https://images.unsplash.com/photo-1617196037906-2c0a2e4b5b2d?auto=format&fit=crop&w=500&q=60",
+  "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=500&q=60",
+  "https://images.unsplash.com/photo-1603079842022-dc95e2b85d09?auto=format&fit=crop&w=500&q=60",
+  "https://images.unsplash.com/photo-1620912129616-7b98cba8e7cb?auto=format&fit=crop&w=500&q=60"
 ];
 const galleryDiv = document.getElementById('gallery');
 const lightbox = document.getElementById('lightbox');
@@ -119,14 +121,19 @@ function updateLightbox(){
   lightboxImg.src=images[currentIndex];
   thumbnailsDiv.querySelectorAll('img').forEach((t,i)=>t.classList.toggle('selected',i===currentIndex));
 }
+
 images.forEach((src,i)=>{
   const img=document.createElement('img'); img.src=src;
+  img.alt=`Pâtisserie ${i+1}`;
   img.onclick=()=>{currentIndex=i; lightbox.style.display='flex'; updateLightbox();}
   galleryDiv.appendChild(img);
+
   const thumb=document.createElement('img'); thumb.src=src;
+  thumb.alt=`Miniature ${i+1}`;
   thumb.onclick=()=>{currentIndex=i; updateLightbox();}
   thumbnailsDiv.appendChild(thumb);
 });
+
 document.getElementById('prev').onclick=()=>{currentIndex=(currentIndex-1+images.length)%images.length; updateLightbox();}
 document.getElementById('next').onclick=()=>{currentIndex=(currentIndex+1)%images.length; updateLightbox();}
 function closeLightbox(){lightbox.style.display='none';}
@@ -141,7 +148,7 @@ const selectedSlotsInput=document.getElementById('selectedSlotsInput');
 const submitButton=document.querySelector('#bookingForm input[type="submit"]');
 let selectedSlots=[];
 
-// Générer 7 jours de la semaine
+// Générer 3 jours: Mercredi après-midi et Week-end
 const weekDays=['Mer','Sam','Dim'];
 function generateWeekGrid(){
   weekGrid.innerHTML='';
@@ -179,3 +186,4 @@ generateWeekGrid();
 
 </body>
 </html>
+
