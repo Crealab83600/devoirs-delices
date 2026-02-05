@@ -1,131 +1,165 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Devoirs & Délices</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff8f2;
-    }
-    header {
-      background: #ff9f43;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #ffbe76;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    section {
-      display: none;
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-    section.active {
-      display: block;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #ff9f43;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 40px;
-    }
-    button {
-      background: #ff9f43;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Devoirs & Délices : aide aux devoirs et pâtisseries maison">
+<title>Devoirs & Délices</title>
 
-  <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(sec => {
-        sec.classList.remove("active");
-      });
-      document.getElementById(id).classList.add("active");
-    }
-  </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+  body { line-height:1.6; color:#333; background:#fff; }
+
+  header { background:#f9a825; padding:20px; text-align:center; color:white; }
+  header h1 { font-size:2.5rem; }
+
+  nav { display:flex; justify-content:center; gap:20px; background:#ffca28; padding:10px 0; }
+  nav a { text-decoration:none; color:#333; font-weight:700; }
+  nav a:hover { color:#f9a825; }
+
+  section { padding:50px 20px; max-width:1000px; margin:auto; }
+  h2 { color:#f9a825; margin-bottom:20px; }
+
+  .btn { display:inline-block; padding:12px 25px; background:#f9a825; color:white; border:none; border-radius:5px; cursor:pointer; text-decoration:none; transition:0.3s; }
+  .btn:hover { background:#ffca28; color:#333; }
+
+  /* Galerie dynamique avec zoom */
+  .gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
+  .gallery img { width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+  .gallery img:hover { transform: scale(1.1); }
+
+  /* Formulaire */
+  form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:auto; }
+  input, textarea, select { padding:10px; border:1px solid #ccc; border-radius:5px; width:100%; }
+  input[type="submit"] { background:#f9a825; color:white; cursor:pointer; transition:0.3s; }
+  input[type="submit"]:hover { background:#ffca28; color:#333; }
+
+  /* Agenda interactif */
+  #calendar { max-width:500px; margin:auto; }
+  #calendar table { width:100%; border-collapse:collapse; margin-top:10px; }
+  #calendar th, #calendar td { border:1px solid #ccc; padding:10px; text-align:center; cursor:pointer; }
+  #calendar th { background:#f9a825; color:white; }
+  #calendar td.available:hover { background:#ffca28; color:white; }
+
+  @media(max-width:768px) {
+    nav { flex-direction:column; }
+    header h1 { font-size:2rem; }
+    .gallery { grid-template-columns:1fr; }
+  }
+</style>
 </head>
-
-<body onload="showSection('home')">
+<body>
 
 <header>
-  <h1>📚🍰 Devoirs & Délices</h1>
-  <p>Aide aux devoirs & pâtisseries maison</p>
+  <h1>Devoirs & Délices</h1>
+  <p>Aide aux devoirs et pâtisseries maison</p>
 </header>
 
 <nav>
-  <a onclick="showSection('home')">Accueil</a>
-  <a onclick="showSection('cours')">Aide aux devoirs</a>
-  <a onclick="showSection('gateaux')">Pâtisseries</a>
-  <a onclick="showSection('contact')">Contact</a>
+  <a href="#aide">Aide aux devoirs</a>
+  <a href="#patisseries">Pâtisseries</a>
+  <a href="#contact">Contact</a>
+  <a href="#agenda">Agenda</a>
 </nav>
 
-<section id="home" class="active">
-  <div class="card">
-    <h2>Bienvenue 👋</h2>
-    <p>Bienvenue sur <strong>Devoirs & Délices</strong> !</p>
-    <p>Un service d’aide aux devoirs pour toutes les matières, du primaire au lycée, accompagné de délicieuses pâtisseries maison 🍪</p>
-    <button onclick="showSection('cours')">Découvrir les cours</button>
-  </div>
+<section id="aide">
+  <h2>Aide aux devoirs</h2>
+  <p>Besoin d'aide en maths, français ou sciences ? Nos experts sont là pour t'aider !</p>
+  <a href="#contact" class="btn">Réserver une séance</a>
 </section>
 
-<section id="cours">
-  <div class="card">
-    <h2>🎓 Aide aux devoirs</h2>
-    <p>✔ Toutes les matières</p>
-    <p>✔ Primaire → Lycée</p>
-    <p>✔ Séances de 30 minutes</p>
-    <p><strong>💰 10€ la séance</strong></p>
-  </div>
-</section>
-
-<section id="gateaux">
-  <div class="card">
-    <h2>🍪 Pâtisseries maison</h2>
-    <p>Cookies, cupcakes et gourmandises faites maison.</p>
-    <p><strong>💰 1€ à 2€ selon les gâteaux</strong></p>
-    <p>Idéal après une séance de travail 😋</p>
-  </div>
+<section id="patisseries">
+  <h2>Pâtisseries maison</h2>
+  <p>Découvrez nos recettes gourmandes, faciles à réaliser chez soi.</p>
+  <div class="gallery" id="gallery"></div>
 </section>
 
 <section id="contact">
-  <div class="card">
-    <h2>📞 Contact & réservation</h2>
-    <p>📱 Téléphone : 06 50 02 15 65</p>
-    <p>📧 Email : raphaelmaury83600@gmail.com</p>
-    <p>Contacte-moi pour réserver une séance ou commander des gâteaux.</p>
-  </div>
+  <h2>Contact</h2>
+  <form id="contactForm" action="https://formspree.io/f/yourformid" method="POST">
+    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+    <input type="submit" value="Envoyer">
+  </form>
 </section>
 
-<footer>
-  <p>© Devoirs & Délices</p>
+<section id="agenda">
+  <h2>Réservez votre séance</h2>
+  <p>Cliquez sur un jour et choisissez un créneau :</p>
+  <div id="calendar"></div>
+  <form id="bookingForm" action="https://formspree.io/f/yourformid" method="POST">
+    <input type="hidden" name="day" id="selectedDay">
+    <input type="hidden" name="slot" id="selectedSlot">
+    <input type="submit" value="Confirmer la réservation" class="btn" style="margin-top:15px;" disabled>
+  </form>
+</section>
+
+<footer style="text-align:center; padding:20px; background:#ffca28; color:#333;">
+  &copy; 2026 Devoirs & Délices. Tous droits réservés.
 </footer>
 
+<script>
+// Galerie dynamique
+const images = [
+  {src:"https://images.unsplash.com/photo-1605475128891-0b9c479f83e5?auto=format&fit=crop&w=500&q=60", alt:"Tarte aux fruits"},
+  {src:"https://images.unsplash.com/photo-1599785209707-870544c7f0c4?auto=format&fit=crop&w=500&q=60", alt:"Cupcakes colorés"},
+  {src:"https://images.unsplash.com/photo-1589987605165-0d8a7c1c9a14?auto=format&fit=crop&w=500&q=60", alt:"Gâteau au chocolat"},
+  {src:"https://images.unsplash.com/photo-1601924570853-d37f04302c7b?auto=format&fit=crop&w=500&q=60", alt:"Macarons colorés"},
+  {src:"https://images.unsplash.com/photo-1599785209707-870544c7f0c4?auto=format&fit=crop&w=500&q=60", alt:"Éclair au chocolat"}
+];
+
+const galleryDiv = document.getElementById('gallery');
+images.forEach(img => {
+  const image = document.createElement('img');
+  image.src = img.src;
+  image.alt = img.alt;
+  galleryDiv.appendChild(image);
+});
+
+// Agenda interactif
+const calendar = document.getElementById('calendar');
+const bookingForm = document.getElementById('bookingForm');
+const selectedDayInput = document.getElementById('selectedDay');
+const selectedSlotInput = document.getElementById('selectedSlot');
+const submitButton = bookingForm.querySelector('input[type="submit"]');
+
+const days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const slots = {
+  'Lundi':['16h - 17h','17h - 18h'],
+  'Mercredi':['14h - 15h','15h - 16h','16h - 17h'],
+  'Samedi':['10h - 11h','11h - 12h']
+};
+
+function renderCalendar(){
+  let table = '<table><tr>';
+  days.forEach(day => table += `<th>${day}</th>`);
+  table += '</tr><tr>';
+  days.forEach(day => {
+    if(slots[day]){
+      table += `<td class="available" onclick="selectDay('${day}')">Voir créneaux</td>`;
+    } else table += '<td>Indisponible</td>';
+  });
+  table += '</tr></table>';
+  calendar.innerHTML = table;
+}
+
+function selectDay(day){
+  const cell = document.querySelector(`#calendar td.available[onclick*="${day}"]`);
+  cell.innerHTML = slots[day].map(s => `<button type="button" class="btn-slot" onclick="selectSlot('${day}','${s}')">${s}</button>`).join('<br>');
+}
+
+function selectSlot(day, slot){
+  selectedDayInput.value = day;
+  selectedSlotInput.value = slot;
+  submitButton.disabled = false;
+  alert(`Vous avez choisi ${day} à ${slot}. Cliquez sur "Confirmer la réservation" pour envoyer.`);
+}
+
+renderCalendar();
+</script>
 </body>
 </html>
