@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Devoirs Délices – Soutien scolaire à Fréjus</title>
-<meta name="description" content="Soutien scolaire toutes matières à Fréjus. Aide aux devoirs du primaire au lycée. En ligne ou à domicile. Tarif 10€ la séance.">
+
+<meta name="description" content="Soutien scolaire à Fréjus toutes matières. Aide aux devoirs primaire, collège, lycée. En ligne ou à domicile. 10€ la séance, paiement en espèces.">
+<meta name="keywords" content="soutien scolaire Fréjus, aide aux devoirs Fréjus, cours particuliers Fréjus, maths français Fréjus">
 
 <style>
 body {
@@ -23,7 +25,7 @@ header {
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -46,10 +48,6 @@ nav a {
     padding: 60px 20px;
 }
 
-.hero h1 {
-    margin-bottom: 10px;
-}
-
 /* Sections */
 section {
     max-width: 1000px;
@@ -65,7 +63,6 @@ section {
     margin-bottom: 25px;
 }
 
-/* Bouton */
 button {
     background: #2E7D32;
     color: white;
@@ -75,17 +72,37 @@ button {
     border-radius: 6px;
     cursor: pointer;
 }
+
 button:hover {
     background: #1B5E20;
 }
 
-/* Avis */
-.avis {
-    border-left: 4px solid #2E7D32;
-    padding: 10px;
-    margin-bottom: 10px;
+/* Créneaux */
+.slot {
     background: #F5F7F6;
+    padding: 10px;
+    border-left: 5px solid #2E7D32;
+    margin-bottom: 10px;
     border-radius: 6px;
+}
+
+/* Avis */
+.review {
+    background: #F5F7F6;
+    padding: 12px;
+    border-left: 4px solid #2E7D32;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+/* Formulaire */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 /* Footer */
@@ -101,97 +118,107 @@ footer {
 <body>
 
 <header>
-<div class="logo">📚 Devoirs Délices</div>
+<div class="logo">
+📚 Devoirs Délices<br>
+<span style="font-size:12px;">Soutien scolaire – Fréjus</span>
+</div>
 <nav>
 <a href="#services">Services</a>
-<a href="#tarifs">Tarifs</a>
+<a href="#tarif">Tarif</a>
+<a href="#agenda">Agenda</a>
 <a href="#avis">Avis</a>
-<a href="#reservation">Réserver</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
 <div class="hero">
-<h1>Soutien scolaire à Fréjus</h1>
-<p>Du primaire au lycée – Toutes matières</p>
+<h1>Soutien scolaire toutes matières à Fréjus</h1>
+<p>Primaire • Collège • Lycée</p>
 <p>En ligne ou à domicile</p>
-
-<a href="#reservation">
-<button>Réserver une séance</button>
-</a>
 </div>
 
 <section id="services">
 <div class="card">
 <h2>Nos services</h2>
-
 <ul>
 <li>✔ Aide aux devoirs toutes disciplines</li>
 <li>✔ Mathématiques, Français, Langues, Sciences, Histoire-Géo…</li>
 <li>✔ Préparation aux contrôles</li>
 <li>✔ Remise à niveau</li>
 <li>✔ Méthodologie et organisation</li>
-<li>✔ Séances personnalisées</li>
+<li>✔ Accompagnement personnalisé</li>
 </ul>
-
-<p><strong>Zone :</strong> Fréjus et alentours<br>
-<strong>Format :</strong> En ligne ou à domicile (au choix)</p>
-
 </div>
 </section>
 
-<section id="tarifs">
+<section id="tarif">
 <div class="card">
 <h2>Tarif</h2>
-
 <h3>10€ la séance</h3>
-<p>Paiement sécurisé en ligne ou sur place.</p>
+<p><strong>Paiement en espèces le jour de la séance.</strong></p>
+</div>
+</section>
 
-<!-- Paiement PayPal -->
-<form action="https://www.paypal.com/paypalme/VOTREPSEUDO/10" method="get" target="_blank">
-<button type="submit">Payer une séance (10€)</button>
-</form>
+<section id="agenda">
+<div class="card">
+<h2>Créneaux disponibles</h2>
 
+<div class="slot"><strong>Mercredi</strong> : 14h – 18h</div>
+<div class="slot"><strong>Samedi</strong> : 10h – 18h</div>
+<div class="slot"><strong>Dimanche</strong> : 14h – 18h</div>
+
+<p>Réservation via le formulaire ci-dessous.</p>
 </div>
 </section>
 
 <section id="avis">
 <div class="card">
-<h2>Avis des parents</h2>
+<h2>Avis des familles</h2>
 
-<div class="avis">
+<div class="review">
 ★★★★★  
-"Mon fils a progressé en maths en quelques semaines. Très pédagogique !" – Parent de 5ème
+"Très sérieux, mon fils a progressé en maths en quelques semaines."
 </div>
 
-<div class="avis">
+<div class="review">
 ★★★★★  
-"Personne sérieuse et à l'écoute. Je recommande." – Parent de CM2
+"Personne patiente et à l’écoute. Je recommande vivement."
 </div>
 
-<div class="avis">
+<div class="review">
 ★★★★★  
-"Ma fille a repris confiance avant ses contrôles." – Parent de 3ème
+"Ma fille a repris confiance avant ses contrôles."
 </div>
 
 </div>
 </section>
 
-<section id="reservation">
+<section id="contact">
 <div class="card">
-<h2>Réserver un créneau</h2>
+<h2>Demande de réservation</h2>
 
-<p>Choisissez un créneau disponible :</p>
+<form action="https://formspree.io/f/TON_ID" method="POST">
 
-<a href="https://calendar.google.com" target="_blank">
-<button>Voir les disponibilités</button>
-</a>
+<label>Nom</label>
+<input type="text" name="Nom" required>
 
-<p>Vous pouvez indiquer :</p>
-<ul>
-<li>Matière</li>
-<li>Niveau</li>
-<li>En ligne ou à domicile</li>
-</ul>
+<label>Email</label>
+<input type="email" name="Email" required>
+
+<label>Matière et niveau</label>
+<input type="text" name="Matiere" placeholder="Ex : Maths 5ème" required>
+
+<label>Créneau souhaité</label>
+<input type="text" name="Creneau" placeholder="Ex : Mercredi 15h">
+
+<label>Message</label>
+<textarea name="Message"></textarea>
+
+<button type="submit">Envoyer la demande</button>
+
+</form>
+
+<p>Paiement : espèces le jour de la séance.</p>
 
 </div>
 </section>
