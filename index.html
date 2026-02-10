@@ -3,27 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devoirs et Délices - Landing Interactive</title>
+<title>Devoirs et Délices – Soutien Scolaire Premium</title>
 
-<!-- Google Fonts -->
+<!-- Google Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 /* --- Global --- */
-body {font-family:'Roboto',sans-serif;margin:0;padding:0;background:#fdf6e3;color:#333;}
-header{background:linear-gradient(120deg,#ff8a65,#ffb347);color:#fff;padding:60px 20px;text-align:center;overflow:hidden;position:relative;}
-header h1{margin:0;font-size:2.8em;animation:slideDown 1s ease;}
-header p{font-size:1.3em;animation:fadeIn 2s ease;}
+body {font-family:'Roboto',sans-serif;margin:0;padding:0;background:#fafafa;color:#333;}
+header{background:linear-gradient(120deg,#ff8a65,#ffb347);color:#fff;text-align:center;padding:60px 20px;position:relative;}
+header h1{font-size:2.8em;margin-bottom:10px;}
+header p{font-size:1.2em;opacity:0.9;}
+.avatar{width:140px;height:140px;border-radius:50%;border:5px solid #fff;margin-top:20px;animation:pulse 2s infinite ease-in-out;object-fit:cover;}
 nav{background:#ff6f00;display:flex;justify-content:center;flex-wrap:wrap;padding:12px;}
 nav a{margin:5px 15px;color:#fff;text-decoration:none;font-weight:700;transition:0.3s;}
 nav a:hover{transform:scale(1.1);color:#fff;text-decoration:underline;}
 
-/* --- Sections & Animations --- */
-section{padding:60px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(50px);transition:all 1s ease;}
-section.visible{opacity:1;transform:translateY(0);}
-h2{color:#ff6f00;margin-bottom:30px;text-align:center;}
-.icon{margin-right:8px;color:#ff6f00;transition:transform 0.3s;}
+/* --- Sections & Boxes --- */
+.section{padding:50px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(50px);transition:all 1s ease;}
+.section.visible{opacity:1;transform:translateY(0);}
+h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
+.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px;box-shadow:0 6px 12px rgba(0,0,0,0.1);transition:0.3s;}
+.box:hover{transform:translateY(-6px);box-shadow:0 10px 18px rgba(0,0,0,0.15);}
+.btn-action{display:inline-block;background:#ff6f00;color:#fff;padding:14px 30px;border-radius:25px;font-weight:700;text-decoration:none;transition:all 0.3s ease;}
+.btn-action:hover{background:#ff8c42;transform:scale(1.07);}
 
 /* --- FAQ Accordéon --- */
 .faq dt{font-weight:bold;margin-top:15px;cursor:pointer;padding:18px;background:#fff3e0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;}
@@ -32,15 +36,12 @@ h2{color:#ff6f00;margin-bottom:30px;text-align:center;}
 .faq dt.active .fa-chevron-down{transform:rotate(180deg);}
 .faq dd{margin-left:0;padding:18px;display:none;background:#fff8e1;border-radius:10px;line-height:1.5;}
 
-/* --- Blog Articles --- */
+/* --- Articles --- */
 .blog-article{background:#fff8e1;border-radius:20px;padding:28px;margin-bottom:30px;box-shadow:0 10px 20px rgba(0,0,0,0.15);transition:all 0.4s;}
 .blog-article:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 14px 28px rgba(0,0,0,0.25);}
 .blog-article h3{font-size:1.4em;transition:all 0.3s;}
 .blog-article:hover h3{color:#ff8c42;}
-
-/* --- Buttons pulsants --- */
-.btn{display:inline-block;background:#ff6f00;color:#fff;padding:14px 30px;text-decoration:none;border-radius:15px;margin-top:15px;font-weight:700;transition:all 0.3s, box-shadow 0.3s;}
-.btn:hover{background:#ff8c42;transform:scale(1.1);box-shadow:0 6px 20px rgba(255,111,0,0.5);}
+.premium-msg{background:#ffe0b2;padding:15px;border-radius:12px;margin-top:10px;color:#d35400;font-weight:700;}
 
 /* --- Carousel Témoignages --- */
 .carousel{position:relative;overflow:hidden;max-width:1000px;margin:auto;margin-bottom:50px;}
@@ -51,59 +52,77 @@ h2{color:#ff6f00;margin-bottom:30px;text-align:center;}
 .carousel-btn:hover{background:rgba(255,111,0,1);transform:scale(1.1);}
 
 /* --- Animations keyframes --- */
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes slideDown{from{transform:translateY(-50px);opacity:0;}to{transform:translateY(0);opacity:1;}}
-
-/* --- Responsive --- */
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,111,0,0.7);}70%{box-shadow:0 0 0 18px rgba(255,111,0,0);}100%{box-shadow:0 0 0 0 rgba(255,111,0,0);}}
 @media(max-width:768px){header h1{font-size:2em;}nav{flex-direction:column;}nav a{margin:8px 0;}}
 </style>
 </head>
 <body>
 
 <header>
-<h1><i class="fa-solid fa-book-open-reader icon"></i>Devoirs et Délices</h1>
-<p>Plateforme gérée seul pour réussir tes devoirs ⭐⭐⭐⭐⭐</p>
+<h1>Devoirs et Délices</h1>
+<p>Accompagnement scolaire premium — Géré seul ⭐⭐⭐⭐⭐</p>
+<img src="avatar.jpg" alt="Avatar" class="avatar">
+<a href="#contact" class="btn-action">Contacte‑moi / Abonne‑toi</a>
 </header>
 
 <nav>
-<a href="#faq"><i class="fa-solid fa-question icon"></i>FAQ</a>
-<a href="#blog"><i class="fa-solid fa-newspaper icon"></i>Blog</a>
-<a href="#temoignages"><i class="fa-solid fa-comments icon"></i>Témoignages</a>
-<a href="#avis"><i class="fa-solid fa-star icon"></i>Avis</a>
+<a href="#about">À propos</a>
+<a href="#why">Pourquoi moi ?</a>
+<a href="#faq">FAQ</a>
+<a href="#blog">Articles</a>
+<a href="#testimonials">Avis</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- FAQ -->
-<section id="faq">
-<h2><i class="fa-solid fa-question icon"></i>FAQ interactive</h2>
+<section id="about" class="section">
+<h2>À propos de moi</h2>
+<div class="box">
+<p>Bienvenue sur Devoirs et Délices ! Je suis le créateur et tuteur, disponible pour t’aider à comprendre tes cours et progresser en maths, français et plus.</p>
+<p>Pour accéder à toutes les méthodes et astuces complètes, abonne‑toi à mon Instagram <strong>@devoirs_et_delices</strong> et réserve un cours avec moi 👍</p>
+</div>
+</section>
+
+<section id="why" class="section">
+<h2>Pourquoi me choisir ?</h2>
+<div class="box">
+<ul>
+<li>✔ Méthodes pédagogiques claires</li>
+<li>✔ Accompagnement adapté à ton rythme</li>
+<li>✔ Suivi personnalisé</li>
+<li>✔ Contenu exclusif réservé aux abonnés</li>
+</ul>
+</div>
+</section>
+
+<section id="faq" class="section">
+<h2>FAQ Premium</h2>
 <dl class="faq">
 <script>
 for(let i=1;i<=50;i++){
-  document.write(`<dt>Question FAQ n°${i} <i class="fa-solid fa-chevron-down"></i></dt>`);
-  document.write(`<dd>Réponse détaillée à la question FAQ n°${i}. Contenu explicatif et méthodologie pour réussir.</dd>`);
+  document.write(`<dt>FAQ n°${i} <i class="fa-solid fa-chevron-down"></i></dt>`);
+  document.write(`<dd><span class="premium-msg">🔒 Ce contenu est premium. Abonne‑toi sur Instagram (@devoirs_et_delices) et réserve un cours pour voir la réponse complète.</span></dd>`);
 }
 </script>
 </dl>
 </section>
 
-<!-- Blog -->
-<section id="blog">
-<h2><i class="fa-solid fa-newspaper icon"></i>Blog interactif</h2>
+<section id="blog" class="section">
+<h2>Articles Premium</h2>
 <script>
 for(let i=1;i<=50;i++){
-  document.write(`<div class="blog-article"><h3><i class="fa-solid fa-book icon"></i>Article n°${i}</h3><p>Contenu détaillé de l'article n°${i}, conseils, astuces et exercices pour progresser.</p><a href="#avis" class="btn"><i class="fa-solid fa-star icon"></i>Laisser un avis</a></div>`);
+  document.write(`<div class="blog-article"><h3>Article n°${i}</h3><p><span class="premium-msg">🔒 Contenu premium. Abonne‑toi sur Instagram (@devoirs_et_delices) et réserve un cours pour lire l’article complet.</span></p></div>`);
 }
 </script>
 </section>
 
-<!-- Témoignages -->
-<section id="temoignages">
-<h2><i class="fa-solid fa-comments icon"></i>Témoignages</h2>
+<section id="testimonials" class="section">
+<h2>Témoignages</h2>
 <div class="carousel">
 <button id="prev" class="carousel-btn"><i class="fa-solid fa-chevron-left"></i></button>
 <div class="carousel-track">
 <script>
 for(let i=1;i<=20;i++){
-  document.write(`<div class="testimonial"><strong>Utilisateur n°${i}</strong><p>“Témoignage n°${i} sur la plateforme. Plateforme gérée seul par moi.”</p><a href="#avis" class="btn"><i class="fa-solid fa-star icon"></i>Laisser un avis</a></div>`);
+  document.write(`<div class="testimonial"><strong>Élève n°${i}</strong><p>“Grâce à @devoirs_et_delices, j’ai compris mes cours, j’ai progressé et je recommande vraiment ⭐⭐⭐⭐⭐ !”</p></div>`);
 }
 </script>
 </div>
@@ -111,45 +130,37 @@ for(let i=1;i<=20;i++){
 </div>
 </section>
 
-<!-- Avis -->
-<section id="avis">
-<h2><i class="fa-solid fa-star icon"></i>Laissez votre avis ⭐⭐⭐⭐⭐</h2>
-<p>Votre retour m’aide à améliorer mes services et atteindre mon objectif de 30 avis ⭐⭐⭐⭐⭐.</p>
-<a href="https://crealab83600.github.io/devoirs-delices/#agenda" class="btn"><i class="fa-solid fa-star icon"></i>Laisser un avis</a>
+<section id="contact" class="section">
+<h2>Contact & Premium</h2>
+<p>Pour accéder au contenu complet :</p>
+<a href="https://www.instagram.com/devoirs_et_delices/" target="_blank" class="btn-action">M’abonner à @devoirs_et_delices</a>
+<a href="https://crealab83600.github.io/devoirs-delices/#agenda" class="btn-action">Réserver un cours ⭐⭐⭐⭐⭐</a>
 </section>
 
-<footer>
-<p>&copy; 2026 Devoirs et Délices | Géré seul | Tous droits réservés</p>
+<footer style="text-align:center;padding:20px;background:#ffebcd;color:#333;">
+&copy; 2026 Devoirs et Délices — Géré seul — Tous droits réservés
 </footer>
 
 <script>
-// FAQ Accordéon avec rotation icône
+// FAQ accordéon
 document.querySelectorAll('.faq dt').forEach(dt=>{
   dt.addEventListener('click',()=>{
-    dt.classList.toggle('active'); 
-    const dd = dt.nextElementSibling; 
+    dt.classList.toggle('active');
+    const dd = dt.nextElementSibling;
     dd.style.display = dd.style.display==='block'?'none':'block';
   });
 });
 
 // Carousel Témoignages
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-let index = 0;
-function updateCarousel(){ track.style.transform = `translateX(-${index*100}%)`; }
-prevBtn.addEventListener('click',()=>{ index = index===0?slides.length-1:index-1; updateCarousel(); });
-nextBtn.addEventListener('click',()=>{ index = index===slides.length-1?0:index+1; updateCarousel(); });
-setInterval(()=>{ index = index===slides.length-1?0:index+1; updateCarousel(); },5000);
+const track=document.querySelector('.carousel-track');
+const slides=Array.from(track.children);
+let index=0;
+document.getElementById('prev').addEventListener('click',()=>{index=index===0?slides.length-1:index-1;track.style.transform=`translateX(-${index*100}%)`;});
+document.getElementById('next').addEventListener('click',()=>{index=(index+1)%slides.length;track.style.transform=`translateX(-${index*100}%)`;});
 
-// Scroll Animations
-const sections=document.querySelectorAll('section');
-window.addEventListener('scroll',()=>{
-  sections.forEach(section=>{
-    if(section.getBoundingClientRect().top < window.innerHeight - 100){ section.classList.add('visible'); }
-  });
-});
+// Scroll animations
+const sections=document.querySelectorAll('.section');
+window.addEventListener('scroll',()=>{sections.forEach(sec=>{if(sec.getBoundingClientRect().top<window.innerHeight-100){sec.classList.add('visible');}});});
 </script>
 
 </body>
