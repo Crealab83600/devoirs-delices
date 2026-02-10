@@ -3,55 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devoirs et Délices – Version Finale</title>
+<title>Devoirs et Délices – Collège/Lycée</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#fafafa;color:#333;}
-header{background:linear-gradient(120deg,#ff8a65,#ffb347);color:#fff;text-align:center;padding:60px 20px;}
+body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#f7f7f7;color:#333;}
+header{background:linear-gradient(120deg,#42a5f5,#478ed1);color:#fff;text-align:center;padding:60px 20px;}
 header h1{font-size:2.8em;margin-bottom:10px;}
 header p{font-size:1.2em;opacity:0.9;}
 .avatar{width:140px;height:140px;border-radius:50%;border:5px solid #fff;margin-top:20px;animation:pulse 2s infinite ease-in-out;object-fit:cover;}
-nav{background:#ff6f00;display:flex;justify-content:center;flex-wrap:wrap;padding:12px;}
+nav{background:#1976d2;display:flex;justify-content:center;flex-wrap:wrap;padding:12px;}
 nav a{margin:5px 15px;color:#fff;text-decoration:none;font-weight:700;transition:0.3s;}
 nav a:hover{transform:scale(1.1);text-decoration:underline;}
 .section{padding:50px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(50px);transition:all 1s ease;}
 .section.visible{opacity:1;transform:translateY(0);}
-h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
+h2{color:#1976d2;margin-bottom:20px;text-align:center;}
 .box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px;box-shadow:0 6px 12px rgba(0,0,0,0.1);}
 .box:hover{transform:translateY(-6px);box-shadow:0 10px 18px rgba(0,0,0,0.15);}
-.btn-action{display:inline-block;background:#ff6f00;color:#fff;padding:14px 30px;border-radius:25px;font-weight:700;text-decoration:none;transition:all 0.3s ease;}
-.btn-action:hover{background:#ff8c42;transform:scale(1.07);}
-
-/* FAQ */
-.faq dt{font-weight:bold;margin-top:15px;cursor:pointer;padding:18px;background:#fff3e0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;}
-.faq dt:hover{background:#ffe0b2;transform:scale(1.03);}
-.faq dt .fa-chevron-down{transition:transform 0.3s;}
-.faq dt.active .fa-chevron-down{transform:rotate(180deg);}
-.faq dd{margin-left:0;padding:18px;display:none;background:#fff8e1;border-radius:10px;line-height:1.5;}
-
-/* Articles */
-.blog-article{background:#fff8e1;border-radius:20px;padding:28px;margin-bottom:30px;box-shadow:0 10px 20px rgba(0,0,0,0.15);}
+.btn-action{display:inline-block;background:#1976d2;color:#fff;padding:14px 30px;border-radius:25px;font-weight:700;text-decoration:none;transition:all 0.3s ease;}
+.btn-action:hover{background:#42a5f5;transform:scale(1.07);}
+.blog-article{background:#e3f2fd;border-radius:20px;padding:28px;margin-bottom:30px;box-shadow:0 10px 20px rgba(0,0,0,0.15);}
 .blog-article:hover{transform:translateY(-10px) scale(1.02);}
 .blog-article h3{font-size:1.4em;}
-.blog-article:hover h3{color:#ff8c42;}
-
-/* Modal */
-.modal{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;}
-.modal-content{background:#fff;padding:30px;border-radius:20px;text-align:center;max-width:500px;animation:modalIn 0.5s;}
-.modal-content h3{color:#ff6f00;margin-bottom:15px;}
-.modal-content p{margin-bottom:20px;font-weight:700;}
-.modal-content .btn-action{margin:5px;}
-
-/* Carousel Témoignages */
+.blog-article:hover h3{color:#42a5f5;}
+.faq dt{font-weight:bold;margin-top:15px;cursor:pointer;padding:18px;background:#bbdefb;border-radius:10px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;}
+.faq dt:hover{background:#90caf9;transform:scale(1.03);}
+.faq dt .fa-chevron-down{transition:transform 0.3s;}
+.faq dt.active .fa-chevron-down{transform:rotate(180deg);}
+.faq dd{margin-left:0;padding:18px;display:none;background:#e3f2fd;border-radius:10px;line-height:1.5;}
 .carousel{position:relative;overflow:hidden;max-width:1000px;margin:auto;margin-bottom:50px;}
 .carousel-track{display:flex;transition:transform 0.6s ease;}
-.testimonial{min-width:100%;background:#fff8e1;padding:28px;border-left:8px solid #ff6f00;box-sizing:border-box;border-radius:20px;text-align:center;}
+.testimonial{min-width:100%;background:#e3f2fd;padding:28px;border-left:8px solid #1976d2;box-sizing:border-box;border-radius:20px;text-align:center;}
 .testimonial:hover{transform:scale(1.03);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
-.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,111,0,0.85);color:#fff;border:none;font-size:1.5em;padding:14px;cursor:pointer;border-radius:50%;z-index:1;transition:all 0.3s;}
-.carousel-btn:hover{background:rgba(255,111,0,1);transform:scale(1.1);}
-
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,111,0,0.7);}70%{box-shadow:0 0 0 18px rgba(255,111,0,0);}100%{box-shadow:0 0 0 0 rgba(255,111,0,0);}}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(25,118,210,0.85);color:#fff;border:none;font-size:1.5em;padding:14px;cursor:pointer;border-radius:50%;z-index:1;transition:all 0.3s;}
+.carousel-btn:hover{background:rgba(25,118,210,1);transform:scale(1.1);}
+.modal{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;}
+.modal-content{background:#fff;padding:30px;border-radius:20px;text-align:center;max-width:500px;animation:modalIn 0.5s;}
+.modal-content h3{color:#1976d2;margin-bottom:15px;}
+.modal-content p{margin-bottom:20px;font-weight:700;}
+.modal-content .btn-action{margin:5px;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(66,165,245,0.7);}70%{box-shadow:0 0 0 18px rgba(66,165,245,0);}100%{box-shadow:0 0 0 0 rgba(66,165,245,0);}}
 @keyframes modalIn{0%{transform:scale(0.5);opacity:0;}100%{transform:scale(1);opacity:1;}}
 @media(max-width:768px){header h1{font-size:2em;}nav{flex-direction:column;}nav a{margin:8px 0;}}
 </style>
@@ -60,8 +51,8 @@ h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
 
 <header>
 <h1>Devoirs et Délices</h1>
-<p>Accompagnement scolaire premium — Géré seul ⭐⭐⭐⭐⭐</p>
-<img src="avatar.jpg" alt="Avatar" class="avatar">
+<p>Accompagnement collège/lycée — Géré seul ⭐⭐⭐⭐⭐</p>
+<img src="images/avatar.jpg" alt="Avatar" class="avatar">
 <a href="#contact" class="btn-action">Contacte-moi / Abonne-toi</a>
 </header>
 
@@ -77,7 +68,7 @@ h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
 <section id="about" class="section">
 <h2>À propos de moi</h2>
 <div class="box">
-<p>Je suis le créateur et tuteur de <strong>Devoirs et Délices</strong>. Chaque élève bénéficie d’un suivi personnalisé pour progresser efficacement.</p>
+<p>Je suis le créateur et tuteur de <strong>Devoirs et Délices</strong>. Chaque élève reçoit un suivi adapté à son niveau collège ou lycée pour progresser efficacement.</p>
 <p>Pour accéder aux FAQ premium, abonne-toi sur Instagram <strong>@devoirs_et_delices</strong> et réserve un cours.</p>
 </div>
 </section>
@@ -86,103 +77,416 @@ h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
 <h2>Pourquoi me choisir ?</h2>
 <div class="box">
 <ul>
-<li>✔ Méthodes pédagogiques claires</li>
-<li>✔ Suivi personnalisé</li>
+<li>✔ Méthodes pédagogiques adaptées au collège/lycée</li>
+<li>✔ Suivi personnalisé pour chaque élève</li>
 <li>✔ Contenu premium réservé aux abonnés</li>
-<li>✔ Disponible pour chaque élève</li>
+<li>✔ Exercices et exemples concrets</li>
 </ul>
 </div>
 </section>
 
-<section id="faq" class="section">
-<h2>FAQ Premium</h2>
-<dl class="faq">
-<script>
-const faqFull=[
-{q:"Comment améliorer mes notes en maths rapidement?", a:"🔒 Pour progresser rapidement en maths : 1) Revoir chaque notion quotidienne 2) Faire des exercices variés 3) Corriger ses erreurs. Exemple : refaire un exercice de fractions chaque jour, noter ses erreurs et les refaire le lendemain."},
-{q:"Comment mémoriser les règles de grammaire?", a:"🔒 Utiliser des cartes de révision, faire des phrases types, relire les règles tous les jours. Exemple : 'je vais' → verbe aller au présent, noter la règle et l’exemple."},
-{q:"Quelle méthode pour réviser efficacement avant un contrôle?", a:"🔒 Planifier les révisions par thème, faire des quiz et exercices, relire ses erreurs, utiliser la technique de la répétition espacée. Exemple : 30 min de maths le matin, 15 min de pause, puis 30 min de français."},
-{q:"Comment mieux organiser mon temps pour les devoirs?", a:"🔒 Créer un planning hebdomadaire, prioriser les matières difficiles. Exemple : lundi 16h-17h maths, 17h-17h30 pause, 17h30-18h anglais."},
-{q:"Comment résoudre un problème de logique en maths?", a:"🔒 Lire attentivement l’énoncé, identifier les données et ce qui est demandé, utiliser schémas ou tableaux pour visualiser. Exemple : problème sur les âges, construire un tableau avec les hypothèses."},
-{q:"Comment améliorer sa rédaction en français?", a:"🔒 Planifier l’introduction, les idées principales et la conclusion. Exemple : Pour un texte argumentatif, lister les arguments, les exemples et rédiger chaque paragraphe en respectant la structure."},
-{q:"Comment gérer le stress avant un examen?", a:"🔒 Pratiquer la respiration, planifier les révisions, se reposer. Exemple : 5 min de respiration avant un contrôle, revoir seulement les points essentiels."},
-{q:"Comment prendre des notes efficacement en classe?", a:"🔒 Écouter, résumer, utiliser des abréviations et couleurs. Exemple : mettre les formules en rouge et les définitions en bleu pour mieux mémoriser."},
-{q:"Comment apprendre les conjugaisons rapidement?", a:"🔒 Faire des tableaux et exercices quotidiens. Exemple : écrire le verbe 'avoir' au présent, passé et futur chaque jour pendant 5 min."},
-{q:"Comment préparer un exposé oral?", a:"🔒 Faire un plan, rédiger les phrases clés, s’entraîner à voix haute. Exemple : exposé sur un animal, noter intro, 3 points principaux et conclusion, répéter 3 fois."}
-// … continuer pour 50 FAQ entièrement détaillées
-];
-faqFull.forEach(item=>{
-  document.write(`<dt class="premium-item">${item.q} <i class="fa-solid fa-chevron-down"></i></dt><dd style="display:none;"><span class="premium-msg">${item.a}</span></dd>`);
-});
-</script>
-</dl>
-</section>
-
 <section id="blog" class="section">
-<h2>Articles Pédagogiques</h2>
-<script>
-for(let i=1;i<=50;i++){
-  document.write(`<div class="blog-article"><h3>Article n°${i}: Astuce et méthode</h3>
-<p><strong>Méthode:</strong> Explication détaillée pour progresser efficacement.</p>
-<p><strong>Exemple:</strong> Exemple concret avec étapes illustratives.</p>
-<p><strong>Exercice:</strong> Exercice pratique pour tester ses acquis. ${i%2==0?'<br><strong>Solution:</strong> Correction détaillée fournie.' : ''}</p></div>`);
-}
-</script>
+<h2>Articles Pédagogiques (1-10)</h2>
+
+<div class="blog-article">
+<h3>Article 1 : Résoudre des équations du premier degré</h3>
+<p><strong>Méthode :</strong> Isoler l’inconnue en utilisant les opérations inverses.</p>
+<p><strong>Exemple :</strong> 2x + 3 = 11 → 2x = 8 → x = 4.</p>
+<p><strong>Exercice :</strong> 3x - 5 = 10. <strong>Solution :</strong> x = 5.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 2 : Calculer la moyenne et l’écart-type</h3>
+<p><strong>Méthode :</strong> Moyenne = somme / nombre de valeurs, écart-type pour dispersion.</p>
+<p><strong>Exemple :</strong> Notes : 12, 15, 18 → moyenne = 15.</p>
+<p><strong>Exercice :</strong> Notes : 10, 14, 16. <strong>Solution :</strong> Moyenne = 13.33.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 3 : Identifier les thèmes principaux d’un texte</h3>
+<p><strong>Méthode :</strong> Lire attentivement, souligner idées répétées, résumer.</p>
+<p><strong>Exemple :</strong> Texte sur le climat → thème : réchauffement climatique.</p>
+<p><strong>Exercice :</strong> Résume un texte sur la biodiversité. Solution : disparition d’espèces, importance des écosystèmes.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 4 : Factoriser une expression simple</h3>
+<p><strong>Méthode :</strong> Identifier un facteur commun et le mettre en évidence.</p>
+<p><strong>Exemple :</strong> 6x + 9 = 3(2x + 3).</p>
+<p><strong>Exercice :</strong> 8a + 12. <strong>Solution :</strong> 4(2a + 3).</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 5 : Développer une expression</h3>
+<p><strong>Méthode :</strong> Appliquer la distributivité.</p>
+<p><strong>Exemple :</strong> 3(x + 4) = 3x + 12.</p>
+<p><strong>Exercice :</strong> 5(y + 2). <strong>Solution :</strong> 5y + 10.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 6 : Travailler sur les proportions</h3>
+<p><strong>Méthode :</strong> Établir un rapport, multiplier/diviser par le même facteur.</p>
+<p><strong>Exemple :</strong> 4/5 = x/20 → x = 16.</p>
+<p><strong>Exercice :</strong> 3/7 = x/14. <strong>Solution :</strong> x = 6.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 7 : Lire un diagramme en bâtons</h3>
+<p><strong>Méthode :</strong> Identifier l’axe des valeurs, lire les hauteurs des barres.</p>
+<p><strong>Exemple :</strong> Graphique : 3 élèves aiment maths, 5 aiment français.</p>
+<p><strong>Exercice :</strong> Interpréter un graphique sur les sports préférés. Solution : Football = 40%, Tennis = 30%, Natation = 30%.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 8 : Identifier le COD et COI</h3>
+<p><strong>Méthode :</strong> Le COD répond à “qui/quoi ?”, le COI à “à qui/à quoi ?”.</p>
+<p><strong>Exemple :</strong> Elle écrit une lettre → COD = lettre.</p>
+<p><strong>Exercice :</strong> Pierre parle à son ami. Solution : COI = son ami.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 9 : Résoudre une équation du second degré simple</h3>
+<p><strong>Méthode :</strong> Utiliser Δ et factoriser si possible.</p>
+<p><strong>Exemple :</strong> x² - 5x + 6 = 0 → (x-2)(x-3)=0 → x=2 ou x=3.</p>
+<p><strong>Exercice :</strong> x² - 7x + 12 = 0. <strong>Solution :</strong> (x-3)(x-4)=0 → x=3 ou x=4.</p>
+</div>
+
+<div class="blog-article">
+<h3>Article 10 : Calculer un pourcentage</h3>
+<p><strong>Méthode :</strong> Pourcentage = (partie / total) × 100.</p>
+<p><strong>Exemple :</strong> 15 sur 60 → 25%.</p>
+<p><strong>Exercice :</strong> 12 sur 50. <strong>Solution :</strong> 24%.</p>
+</div>
+
 </section>
 
-<section id="testimonials" class="section">
-<h2>Témoignages</h2>
-<div class="carousel">
-<button id="prev" class="carousel-btn"><i class="fa-solid fa-chevron-left"></i></button>
-<div class="carousel-track">
-<script>
-for(let i=1;i<=20;i++){
-  document.write(`<div class="testimonial"><strong>Élève n°${i}</strong><p>“Grâce à @devoirs_et_delices, j'ai progressé et compris mes cours ⭐⭐⭐⭐⭐”</p></div>`);
-}
-</script>
+<section id="blog-part2" class="section">
+<h2>Articles Pédagogiques (11-30)</h2>
+
+<!-- Article 11 -->
+<div class="blog-article">
+<h3>Article 11 : Factoriser une expression simple</h3>
+<p><strong>Méthode :</strong> Identifier un facteur commun et le mettre en évidence.</p>
+<p><strong>Exemple :</strong> 6x + 9 = 3(2x + 3)</p>
+<p><strong>Exercice :</strong> 8a + 12. <strong>Solution :</strong> 4(2a + 3)</p>
 </div>
-<button id="next" class="carousel-btn"><i class="fa-solid fa-chevron-right"></i></button>
+
+<!-- Article 12 -->
+<div class="blog-article">
+<h3>Article 12 : Développer une expression</h3>
+<p><strong>Méthode :</strong> Appliquer la distributivité.</p>
+<p><strong>Exemple :</strong> 3(x + 4) = 3x + 12</p>
+<p><strong>Exercice :</strong> 5(y + 2). <strong>Solution :</strong> 5y + 10</p>
 </div>
+
+<!-- Article 13 -->
+<div class="blog-article">
+<h3>Article 13 : Calculer une moyenne pondérée</h3>
+<p><strong>Méthode :</strong> Multiplier chaque note par son coefficient, additionner, puis diviser par la somme des coefficients.</p>
+<p><strong>Exemple :</strong> Notes : 12 (coef 2), 14 (coef 3) → (12*2 + 14*3)/5 = 13.6</p>
+<p><strong>Exercice :</strong> Notes : 10 (coef 3), 15 (coef 2). <strong>Solution :</strong> 12</p>
+</div>
+
+<!-- Article 14 -->
+<div class="blog-article">
+<h3>Article 14 : Résoudre une équation avec parenthèses</h3>
+<p><strong>Méthode :</strong> Développer puis isoler l’inconnue.</p>
+<p><strong>Exemple :</strong> 2(x + 3) = 10 → 2x + 6 = 10 → 2x = 4 → x = 2</p>
+<p><strong>Exercice :</strong> 3(y - 2) = 9. <strong>Solution :</strong> y = 5</p>
+</div>
+
+<!-- Article 15 -->
+<div class="blog-article">
+<h3>Article 15 : Identifier le sujet et le verbe</h3>
+<p><strong>Méthode :</strong> Le sujet fait l’action, le verbe décrit l’action.</p>
+<p><strong>Exemple :</strong> Le chat dort → sujet = Le chat, verbe = dort</p>
+<p><strong>Exercice :</strong> Marie mange une pomme. <strong>Solution :</strong> Sujet = Marie, verbe = mange</p>
+</div>
+
+<!-- Article 16 -->
+<div class="blog-article">
+<h3>Article 16 : Utiliser les angles dans un triangle</h3>
+<p><strong>Méthode :</strong> La somme des angles = 180°, calculer l’inconnu.</p>
+<p><strong>Exemple :</strong> A=50°, B=60° → C = 70°</p>
+<p><strong>Exercice :</strong> A=40°, B=65°. <strong>Solution :</strong> C = 75°</p>
+</div>
+
+<!-- Article 17 -->
+<div class="blog-article">
+<h3>Article 17 : Calculer un pourcentage</h3>
+<p><strong>Méthode :</strong> Pourcentage = (partie / total) × 100</p>
+<p><strong>Exemple :</strong> 15 sur 60 → 15/60*100 = 25%</p>
+<p><strong>Exercice :</strong> 12 sur 50. <strong>Solution :</strong> 24%</p>
+</div>
+
+<!-- Article 18 -->
+<div class="blog-article">
+<h3>Article 18 : Résoudre un système de 2 équations simples</h3>
+<p><strong>Méthode :</strong> Méthode de substitution ou addition.</p>
+<p><strong>Exemple :</strong> x + y = 10, x - y = 4 → x = 7, y = 3</p>
+<p><strong>Exercice :</strong> 2a + b = 9, a - b = 1. <strong>Solution :</strong> a=2.5, b=4</p>
+</div>
+
+<!-- Article 19 -->
+<div class="blog-article">
+<h3>Article 19 : Identifier le COD et COI</h3>
+<p><strong>Méthode :</strong> COD = qui/quoi, COI = à qui/à quoi</p>
+<p><strong>Exemple :</strong> Elle écrit une lettre → COD = lettre</p>
+<p><strong>Exercice :</strong> Paul parle à sa sœur. <strong>Solution :</strong> COI = sa sœur</p>
+</div>
+
+<!-- Article 20 -->
+<div class="blog-article">
+<h3>Article 20 : Analyser un graphique linéaire</h3>
+<p><strong>Méthode :</strong> Lire les axes, interpréter les tendances.</p>
+<p><strong>Exemple :</strong> Croissance ventes janvier → février = +20%</p>
+<p><strong>Exercice :</strong> Courbe température sur 5 jours. <strong>Solution :</strong> Augmentation de 10°C à 20°C</p>
+</div>
+
+<!-- Article 21 -->
+<div class="blog-article">
+<h3>Article 21 : Lire un tableau de données</h3>
+<p><strong>Méthode :</strong> Identifier lignes, colonnes et valeurs clés.</p>
+<p><strong>Exemple :</strong> 5 élèves ont 12, 3 ont 15 → calculer moyenne</p>
+<p><strong>Exercice :</strong> Notes : 10, 12, 15, 18. <strong>Solution :</strong> Moyenne = 13.75</p>
+</div>
+
+<!-- Article 22 -->
+<div class="blog-article">
+<h3>Article 22 : Identifier le temps des verbes</h3>
+<p><strong>Méthode :</strong> Observer terminaison et auxiliaire.</p>
+<p><strong>Exemple :</strong> J’ai mangé → passé composé</p>
+<p><strong>Exercice :</strong> Ils partiront. <strong>Solution :</strong> Futur simple</p>
+</div>
+
+<!-- Article 23 -->
+<div class="blog-article">
+<h3>Article 23 : Résoudre un problème de proportion</h3>
+<p><strong>Méthode :</strong> Établir rapport, multiplier/diviser par facteur.</p>
+<p><strong>Exemple :</strong> 4/5 = x/20 → x = 16</p>
+<p><strong>Exercice :</strong> 3/7 = x/14. <strong>Solution :</strong> x=6</p>
+</div>
+
+<!-- Article 24 -->
+<div class="blog-article">
+<h3>Article 24 : Identifier le type de phrase</h3>
+<p><strong>Méthode :</strong> Interrogative, déclarative, impérative, exclamative.</p>
+<p><strong>Exemple :</strong> “Va à l’école !” → impérative</p>
+<p><strong>Exercice :</strong> “Quelle heure est-il ?” <strong>Solution :</strong> Interrogative</p>
+</div>
+
+<!-- Article 25 -->
+<div class="blog-article">
+<h3>Article 25 : Utiliser la distributivité double</h3>
+<p><strong>Méthode :</strong> (a+b)(c+d) = a*c + a*d + b*c + b*d</p>
+<p><strong>Exemple :</strong> (x+2)(x+3) = x² +5x +6</p>
+<p><strong>Exercice :</strong> (a+1)(a+4). <strong>Solution :</strong> a²+5a+4</p>
+</div>
+
+<!-- Article 26 -->
+<div class="blog-article">
+<h3>Article 26 : Identifier le sujet inversé</h3>
+<p><strong>Méthode :</strong> Sujet après le verbe → phrase interrogative ou inversion.</p>
+<p><strong>Exemple :</strong> “A-t-il fini ?” → sujet = il</p>
+<p><strong>Exercice :</strong> “Sont-ils partis ?” <strong>Solution :</strong> Sujet = ils</p>
+</div>
+
+<!-- Article 27 -->
+<div class="blog-article">
+<h3>Article 27 : Utiliser la règle de 3</h3>
+<p><strong>Méthode :</strong> a/b = x/c → x = b*c / a</p>
+<p><strong>Exemple :</strong> 4/8 = x/32 → x = 16</p>
+<p><strong>Exercice :</strong> 5/10 = x/50. <strong>Solution :</strong> x=25</p>
+</div>
+
+<!-- Article 28 -->
+<div class="blog-article">
+<h3>Article 28 : Résoudre un problème de vitesse</h3>
+<p><strong>Méthode :</strong> v = d/t, d = v*t, t = d/v</p>
+<p><strong>Exemple :</strong> Voiture 60 km/h, distance 120 km → t=2h</p>
+<p><strong>Exercice :</strong> V=50 km/h, d=150 km. <strong>Solution :</strong> t=3h</p>
+</div>
+
+<!-- Article 29 -->
+<div class="blog-article">
+<h3>Article 29 : Identifier le complément circonstanciel</h3>
+<p><strong>Méthode :</strong> Répond à où, quand, comment, pourquoi.</p>
+<p><strong>Exemple :</strong> “Il part demain.” → CC = demain</p>
+<p><strong>Exercice :</strong> “Elle court dans le parc.” <strong>Solution :</strong> CC = dans le parc</p>
+</div>
+
+<!-- Article 30 -->
+<div class="blog-article">
+<h3>Article 30 : Résoudre un problème de périmètre et aire</h3>
+<p><strong>Méthode :</strong> Formules périmètre = somme côtés, aire selon forme</p>
+<p><strong>Exemple :</strong> Rectangle 5x3 → périmètre 16, aire 15</p>
+<p><strong>Exercice :</strong> Carré côté 4. <strong>Solution :</strong> P=16, A=16</p>
+</div>
+
 </section>
 
-<section id="contact" class="section">
-<h2>Contact & Premium</h2>
-<p>Pour accéder au contenu premium complet :</p>
-<a href="https://www.instagram.com/devoirs_et_delices/" target="_blank" class="btn-action">S’abonner à @devoirs_et_delices</a>
-<a href="https://crealab83600.github.io/devoirs-delices/#agenda" class="btn-action">Réserver un cours ⭐⭐⭐⭐⭐</a>
+<section id="blog-part3" class="section">
+<h2>Articles Pédagogiques (31-50)</h2>
+
+<!-- Article 31 -->
+<div class="blog-article">
+<h3>Article 31 : Résoudre un système par substitution</h3>
+<p><strong>Méthode :</strong> Isoler une variable dans une équation puis remplacer dans l’autre.</p>
+<p><strong>Exemple :</strong> x + y = 7, y = 3 → x = 4</p>
+<p><strong>Exercice :</strong> 2a + b = 10, b = 4. <strong>Solution :</strong> a = 3</p>
+</div>
+
+<!-- Article 32 -->
+<div class="blog-article">
+<h3>Article 32 : Calculer le volume d’un cube et d’un pavé</h3>
+<p><strong>Méthode :</strong> Cube : côté³, pavé : L × l × h</p>
+<p><strong>Exemple :</strong> Cube côté 3 → 3³ = 27</p>
+<p><strong>Exercice :</strong> Pavé L=4,l=3,h=2. <strong>Solution :</strong> 24</p>
+</div>
+
+<!-- Article 33 -->
+<div class="blog-article">
+<h3>Article 33 : Identifier les temps composés</h3>
+<p><strong>Méthode :</strong> Verbe auxiliaire + participe passé</p>
+<p><strong>Exemple :</strong> J’ai fini → passé composé</p>
+<p><strong>Exercice :</strong> Nous avons joué. <strong>Solution :</strong> Passé composé</p>
+</div>
+
+<!-- Article 34 -->
+<div class="blog-article">
+<h3>Article 34 : Travailler sur les fractions</h3>
+<p><strong>Méthode :</strong> Addition : même dénominateur, sinon trouver PPCM</p>
+<p><strong>Exemple :</strong> 1/4 + 2/4 = 3/4</p>
+<p><strong>Exercice :</strong> 2/3 + 1/6. <strong>Solution :</strong> 5/6</p>
+</div>
+
+<!-- Article 35 -->
+<div class="blog-article">
+<h3>Article 35 : Calculer une vitesse moyenne</h3>
+<p><strong>Méthode :</strong> v = distance / temps</p>
+<p><strong>Exemple :</strong> 120 km en 2h → 60 km/h</p>
+<p><strong>Exercice :</strong> 90 km en 1,5 h. <strong>Solution :</strong> 60 km/h</p>
+</div>
+
+<!-- Article 36 -->
+<div class="blog-article">
+<h3>Article 36 : Identifier le complément d’objet indirect</h3>
+<p><strong>Méthode :</strong> Répond à “à qui / à quoi”</p>
+<p><strong>Exemple :</strong> Il parle à son ami → COI = son ami</p>
+<p><strong>Exercice :</strong> Elle téléphone à sa mère. <strong>Solution :</strong> COI = sa mère</p>
+</div>
+
+<!-- Article 37 -->
+<div class="blog-article">
+<h3>Article 37 : Résoudre une inéquation simple</h3>
+<p><strong>Méthode :</strong> Isoler l’inconnue, changer le sens si on multiplie/divise par un négatif</p>
+<p><strong>Exemple :</strong> 2x + 3 > 7 → 2x > 4 → x > 2</p>
+<p><strong>Exercice :</strong> 3y - 5 ≤ 7. <strong>Solution :</strong> y ≤ 4</p>
+</div>
+
+<!-- Article 38 -->
+<div class="blog-article">
+<h3>Article 38 : Lire un graphique circulaire</h3>
+<p><strong>Méthode :</strong> Identifier les parts et pourcentages</p>
+<p><strong>Exemple :</strong> 25% de 40 élèves aiment maths → 10 élèves</p>
+<p><strong>Exercice :</strong> 20% de 50 élèves aiment sport. <strong>Solution :</strong> 10 élèves</p>
+</div>
+
+<!-- Article 39 -->
+<div class="blog-article">
+<h3>Article 39 : Identifier les adjectifs qualificatifs</h3>
+<p><strong>Méthode :</strong> Modifient un nom ou un pronom</p>
+<p><strong>Exemple :</strong> Une maison grande → grande = adjectif</p>
+<p><strong>Exercice :</strong> Un film intéressant. <strong>Solution :</strong> intéressant = adjectif</p>
+</div>
+
+<!-- Article 40 -->
+<div class="blog-article">
+<h3>Article 40 : Calculer l’aire d’un cercle</h3>
+<p><strong>Méthode :</strong> Aire = π × r²</p>
+<p><strong>Exemple :</strong> Rayon = 3 → 9π</p>
+<p><strong>Exercice :</strong> Rayon = 5. <strong>Solution :</strong> 25π</p>
+</div>
+
+<!-- Article 41 -->
+<div class="blog-article">
+<h3>Article 41 : Résoudre un problème de proportionnalité</h3>
+<p><strong>Méthode :</strong> a/b = x/c → x = b*c / a</p>
+<p><strong>Exemple :</strong> 3/5 = x/20 → x = 12</p>
+<p><strong>Exercice :</strong> 4/7 = x/21. <strong>Solution :</strong> x = 12</p>
+</div>
+
+<!-- Article 42 -->
+<div class="blog-article">
+<h3>Article 42 : Identifier le complément circonstanciel de temps</h3>
+<p><strong>Méthode :</strong> Répond à “quand ?”</p>
+<p><strong>Exemple :</strong> “Il part demain” → CC temps = demain</p>
+<p><strong>Exercice :</strong> “Elle reviendra lundi.” <strong>Solution :</strong> lundi</p>
+</div>
+
+<!-- Article 43 -->
+<div class="blog-article">
+<h3>Article 43 : Décomposer un nombre en facteurs</h3>
+<p><strong>Méthode :</strong> Trouver les nombres premiers</p>
+<p><strong>Exemple :</strong> 12 = 2 × 2 × 3</p>
+<p><strong>Exercice :</strong> 18. <strong>Solution :</strong> 2 × 3 × 3</p>
+</div>
+
+<!-- Article 44 -->
+<div class="blog-article">
+<h3>Article 44 : Identifier la fonction grammaticale</h3>
+<p><strong>Méthode :</strong> Sujet, COD, COI, CC selon rôle dans la phrase</p>
+<p><strong>Exemple :</strong> Il lit un livre → sujet = Il, COD = livre</p>
+<p><strong>Exercice :</strong> Marie donne un cadeau à Paul. <strong>Solution :</strong> sujet=Marie, COD=cadeau, COI=Paul</p>
+</div>
+
+<!-- Article 45 -->
+<div class="blog-article">
+<h3>Article 45 : Résoudre un problème d’échelle</h3>
+<p><strong>Méthode :</strong> distance réelle = distance sur plan × échelle</p>
+<p><strong>Exemple :</strong> Échelle 1:100 → 5 cm → 5 m</p>
+<p><strong>Exercice :</strong> 8 cm sur plan, échelle 1:200. <strong>Solution :</strong> 16 m</p>
+</div>
+
+<!-- Article 46 -->
+<div class="blog-article">
+<h3>Article 46 : Utiliser la formule de l’aire d’un triangle</h3>
+<p><strong>Méthode :</strong> Aire = (base × hauteur)/2</p>
+<p><strong>Exemple :</strong> Base 6, hauteur 4 → 12</p>
+<p><strong>Exercice :</strong> Base 10, hauteur 5. <strong>Solution :</strong> 25</p>
+</div>
+
+<!-- Article 47 -->
+<div class="blog-article">
+<h3>Article 47 : Résoudre un problème de moyenne</h3>
+<p><strong>Méthode :</strong> Somme des valeurs / nombre de valeurs</p>
+<p><strong>Exemple :</strong> 12, 14, 16 → 14</p>
+<p><strong>Exercice :</strong> 10, 15, 20. <strong>Solution :</strong> 15</p>
+</div>
+
+<!-- Article 48 -->
+<div class="blog-article">
+<h3>Article 48 : Identifier les adverbes</h3>
+<p><strong>Méthode :</strong> Modifient le verbe, adjectif ou autre adverbe</p>
+<p><strong>Exemple :</strong> Il court vite → vite = adverbe</p>
+<p><strong>Exercice :</strong> Elle parle doucement. <strong>Solution :</strong> doucement = adverbe</p>
+</div>
+
+<!-- Article 49 -->
+<div class="blog-article">
+<h3>Article 49 : Calculer le périmètre d’un cercle</h3>
+<p><strong>Méthode :</strong> P = 2 × π × r</p>
+<p><strong>Exemple :</strong> r=3 → P=6π</p>
+<p><strong>Exercice :</strong> r=5. <strong>Solution :</strong> P=10π</p>
+</div>
+
+<!-- Article 50 -->
+<div class="blog-article">
+<h3>Article 50 : Identifier les mots invariables</h3>
+<p><strong>Méthode :</strong> Ne changent pas selon genre, nombre ou personne</p>
+<p><strong>Exemple :</strong> hier, très, mais</p>
+<p><strong>Exercice :</strong> Trouve les invariables : “Il court vite mais heureusement.” <strong>Solution :</strong> vite, mais, heureusement</p>
+</div>
+
 </section>
-
-<footer style="text-align:center;padding:20px;background:#ffebcd;color:#333;">
-&copy; 2026 Devoirs et Délices — Géré seul — Tous droits réservés
-</footer>
-
-<div id="premiumModal" class="modal">
-<div class="modal-content">
-<h3>Contenu Premium 🔒</h3>
-<p>Pour accéder à ce contenu, abonne-toi sur Instagram (@devoirs_et_delices) et réserve un cours !</p>
-<a href="https://www.instagram.com/devoirs_et_delices/" target="_blank" class="btn-action">S’abonner</a>
-<a href="https://crealab83600.github.io/devoirs-delices/#agenda" class="btn-action">Réserver un cours</a>
-</div>
-</div>
-
-<script>
-// Scroll animations
-const sections=document.querySelectorAll('.section');
-window.addEventListener('scroll',()=>{sections.forEach(sec=>{if(sec.getBoundingClientRect().top<window.innerHeight-100){sec.classList.add('visible');}});});
-
-// Carousel
-const track=document.querySelector('.carousel-track');
-const slides=Array.from(track.children);
-let index=0;
-document.getElementById('prev').addEventListener('click',()=>{index=index===0?slides.length-1:index-1;track.style.transform=`translateX(-${index*100}%)`;});
-document.getElementById('next').addEventListener('click',()=>{index=(index+1)%slides.length;track.style.transform=`translateX(-${index*100}%)`;});
-
-// Modal FAQ premium
-const premiumItems=document.querySelectorAll('.premium-item');
-const modal=document.getElementById('premiumModal');
-premiumItems.forEach(item=>{item.addEventListener('click',()=>{modal.style.display='flex';});});
-window.addEventListener('click', e=>{if(e.target==modal){ modal.style.display='none'; }});
-</script>
-
-</body>
-</html>
+<!-- Fin Partie 3 -->
