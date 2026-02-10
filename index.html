@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devoirs et Délices – Premium</title>
-
+<title>Devoirs et Délices – Soutien Scolaire</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* --- Styles globaux similaires à la version précédente --- */
 body{font-family:'Roboto',sans-serif;margin:0;padding:0;background:#fafafa;color:#333;}
 header{background:linear-gradient(120deg,#ff8a65,#ffb347);color:#fff;text-align:center;padding:60px 20px;}
 header h1{font-size:2.8em;margin-bottom:10px;}
@@ -17,44 +17,33 @@ header p{font-size:1.2em;opacity:0.9;}
 nav{background:#ff6f00;display:flex;justify-content:center;flex-wrap:wrap;padding:12px;}
 nav a{margin:5px 15px;color:#fff;text-decoration:none;font-weight:700;transition:0.3s;}
 nav a:hover{transform:scale(1.1);color:#fff;text-decoration:underline;}
-
 .section{padding:50px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(50px);transition:all 1s ease;}
 .section.visible{opacity:1;transform:translateY(0);}
 h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
-.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px;box-shadow:0 6px 12px rgba(0,0,0,0.1);transition:0.3s;}
+.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px;box-shadow:0 6px 12px rgba(0,0,0,0.1);}
 .box:hover{transform:translateY(-6px);box-shadow:0 10px 18px rgba(0,0,0,0.15);}
 .btn-action{display:inline-block;background:#ff6f00;color:#fff;padding:14px 30px;border-radius:25px;font-weight:700;text-decoration:none;transition:all 0.3s ease;}
 .btn-action:hover{background:#ff8c42;transform:scale(1.07);}
-
-/* FAQ */
 .faq dt{font-weight:bold;margin-top:15px;cursor:pointer;padding:18px;background:#fff3e0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;}
 .faq dt:hover{background:#ffe0b2;transform:scale(1.03);}
 .faq dt .fa-chevron-down{transition:transform 0.3s;}
 .faq dt.active .fa-chevron-down{transform:rotate(180deg);}
 .faq dd{margin-left:0;padding:18px;display:none;background:#fff8e1;border-radius:10px;line-height:1.5;}
-
-/* Articles */
-.blog-article{background:#fff8e1;border-radius:20px;padding:28px;margin-bottom:30px;box-shadow:0 10px 20px rgba(0,0,0,0.15);transition:all 0.4s;}
+.blog-article{background:#fff8e1;border-radius:20px;padding:28px;margin-bottom:30px;box-shadow:0 10px 20px rgba(0,0,0,0.15);}
 .blog-article:hover{transform:translateY(-10px) scale(1.02);}
-.blog-article h3{font-size:1.4em;transition:all 0.3s;}
+.blog-article h3{font-size:1.4em;}
 .blog-article:hover h3{color:#ff8c42;}
-
-/* Modal */
 .modal{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;}
 .modal-content{background:#fff;padding:30px;border-radius:20px;text-align:center;max-width:500px;animation:modalIn 0.5s;}
 .modal-content h3{color:#ff6f00;margin-bottom:15px;}
 .modal-content p{margin-bottom:20px;font-weight:700;}
 .modal-content .btn-action{margin:5px;}
-
-/* Carousel Témoignages */
 .carousel{position:relative;overflow:hidden;max-width:1000px;margin:auto;margin-bottom:50px;}
 .carousel-track{display:flex;transition:transform 0.6s ease;}
-.testimonial{min-width:100%;background:#fff8e1;padding:28px;border-left:8px solid #ff6f00;box-sizing:border-box;border-radius:20px;text-align:center;transition:all 0.3s;}
+.testimonial{min-width:100%;background:#fff8e1;padding:28px;border-left:8px solid #ff6f00;box-sizing:border-box;border-radius:20px;text-align:center;}
 .testimonial:hover{transform:scale(1.03);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,111,0,0.85);color:#fff;border:none;font-size:1.5em;padding:14px;cursor:pointer;border-radius:50%;z-index:1;transition:all 0.3s;}
 .carousel-btn:hover{background:rgba(255,111,0,1);transform:scale(1.1);}
-
-/* Animations */
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,111,0,0.7);}70%{box-shadow:0 0 0 18px rgba(255,111,0,0);}100%{box-shadow:0 0 0 0 rgba(255,111,0,0);}}
 @keyframes modalIn{0%{transform:scale(0.5);opacity:0;}100%{transform:scale(1);opacity:1;}}
 @media(max-width:768px){header h1{font-size:2em;}nav{flex-direction:column;}nav a{margin:8px 0;}}
@@ -81,8 +70,8 @@ h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
 <section id="about" class="section">
 <h2>À propos de moi</h2>
 <div class="box">
-<p>Je suis le créateur et tuteur de <strong>Devoirs et Délices</strong>. Chaque élève est suivi personnellement pour progresser efficacement.</p>
-<p>Pour accéder au contenu premium, abonne-toi sur Instagram <strong>@devoirs_et_delices</strong> et réserve un cours.</p>
+<p>Je suis le créateur et tuteur de <strong>Devoirs et Délices</strong>. Chaque élève bénéficie d’un suivi personnalisé pour progresser efficacement.</p>
+<p>Pour accéder aux FAQ premium, abonne-toi sur Instagram <strong>@devoirs_et_delices</strong> et réserve un cours.</p>
 </div>
 </section>
 
@@ -102,18 +91,70 @@ h2{color:#ff6f00;margin-bottom:20px;text-align:center;}
 <h2>FAQ Premium</h2>
 <dl class="faq">
 <script>
-for(let i=1;i<=50;i++){
-  document.write(`<dt class="premium-item">FAQ n°${i} <i class="fa-solid fa-chevron-down"></i></dt><dd style="display:none;"><span class="premium-msg">🔒 Contenu premium : clique pour voir le message</span></dd>`);
-}
+const faqQuestions=[
+"Comment améliorer mes notes en maths rapidement?",
+"Comment mémoriser les règles de grammaire?",
+"Quelle méthode pour réviser efficacement avant un contrôle?",
+"Comment mieux organiser mon temps pour les devoirs?",
+"Comment résoudre un problème de logique en maths?",
+"Comment améliorer sa rédaction en français?",
+"Comment gérer le stress avant un examen?",
+"Comment prendre des notes efficacement en classe?",
+"Comment apprendre les conjugaisons rapidement?",
+"Comment préparer un exposé oral?",
+"Comment améliorer son calcul mental?",
+"Comment mieux comprendre les fractions et décimaux?",
+"Comment rédiger un paragraphe structuré?",
+"Comment réviser le vocabulaire anglais efficacement?",
+"Comment résoudre des problèmes de géométrie?",
+"Comment réussir les dictées?",
+"Comment réviser plusieurs matières en même temps?",
+"Comment organiser ses cours et fiches de révision?",
+"Comment résoudre un problème en physique-chimie?",
+"Comment améliorer son orthographe?",
+"Comment apprendre ses leçons rapidement?",
+"Comment s'entraîner pour un contrôle de maths?",
+"Comment comprendre un texte littéraire?",
+"Comment structurer une rédaction argumentée?",
+"Comment améliorer sa concentration en cours?",
+"Comment réussir un examen de sciences?",
+"Comment utiliser des cartes mentales pour réviser?",
+"Comment résoudre un problème complexe étape par étape?",
+"Comment apprendre l'anglais en autonomie?",
+"Comment améliorer sa lecture rapide?",
+"Comment mémoriser des dates et événements historiques?",
+"Comment réviser efficacement le vocabulaire en français?",
+"Comment comprendre les énoncés de maths?",
+"Comment rédiger une introduction efficace en rédaction?",
+"Comment se préparer à un oral de français?",
+"Comment organiser ses devoirs chaque semaine?",
+"Comment utiliser des schémas pour mieux comprendre?",
+"Comment faire un plan détaillé pour un devoir?",
+"Comment améliorer sa méthodologie en sciences?",
+"Comment apprendre les tables de multiplication rapidement?",
+"Comment gérer le stress et la fatigue scolaire?",
+"Comment mieux comprendre les textes en lecture?",
+"Comment résoudre un problème avec plusieurs étapes?",
+"Comment améliorer ses compétences en logique?",
+"Comment réussir ses exercices de grammaire?",
+"Comment mémoriser facilement les formules de maths?",
+"Comment s'organiser pour rendre tous les devoirs à temps?",
+"Comment améliorer sa compréhension orale en anglais?",
+"Comment rédiger une conclusion efficace?",
+"Comment réviser pour un examen de maths?"
+];
+faqQuestions.forEach(q=>{
+  document.write(`<dt class="premium-item">${q} <i class="fa-solid fa-chevron-down"></i></dt><dd style="display:none;"><span class="premium-msg">🔒 Contenu premium : abonne-toi sur Instagram (@devoirs_et_delices) et réserve un cours pour voir la réponse complète.</span></dd>`);
+});
 </script>
 </dl>
 </section>
 
 <section id="blog" class="section">
-<h2>Articles</h2>
+<h2>Articles Pédagogiques</h2>
 <script>
 for(let i=1;i<=50;i++){
-  document.write(`<div class="blog-article"><h3>Article n°${i}</h3><p>Contenu pédagogique visible par tous. Exemples, astuces et méthodes pour progresser en maths, français et plus.</p></div>`);
+  document.write(`<div class="blog-article"><h3>Article n°${i}</h3><p>Exemple pédagogique et méthode pour progresser en maths, français ou sciences. Cette section est visible par tous. Elle inclut conseils, astuces et exemples pratiques pour apprendre efficacement.</p></div>`);
 }
 </script>
 </section>
@@ -135,7 +176,7 @@ for(let i=1;i<=20;i++){
 
 <section id="contact" class="section">
 <h2>Contact & Premium</h2>
-<p>Pour accéder au contenu complet :</p>
+<p>Pour accéder au contenu premium complet :</p>
 <a href="https://www.instagram.com/devoirs_et_delices/" target="_blank" class="btn-action">S’abonner à @devoirs_et_delices</a>
 <a href="https://crealab83600.github.io/devoirs-delices/#agenda" class="btn-action">Réserver un cours ⭐⭐⭐⭐⭐</a>
 </section>
@@ -144,7 +185,6 @@ for(let i=1;i<=20;i++){
 &copy; 2026 Devoirs et Délices — Géré seul — Tous droits réservés
 </footer>
 
-<!-- Modal Premium -->
 <div id="premiumModal" class="modal">
 <div class="modal-content">
 <h3>Contenu Premium 🔒</h3>
@@ -159,7 +199,7 @@ for(let i=1;i<=20;i++){
 const sections=document.querySelectorAll('.section');
 window.addEventListener('scroll',()=>{sections.forEach(sec=>{if(sec.getBoundingClientRect().top<window.innerHeight-100){sec.classList.add('visible');}});});
 
-// Carousel Témoignages
+// Carousel
 const track=document.querySelector('.carousel-track');
 const slides=Array.from(track.children);
 let index=0;
@@ -170,13 +210,9 @@ document.getElementById('next').addEventListener('click',()=>{index=(index+1)%sl
 const premiumItems=document.querySelectorAll('.premium-item');
 const modal=document.getElementById('premiumModal');
 premiumItems.forEach(item=>{
-  item.addEventListener('click',()=>{
-    modal.style.display='flex';
-  });
+  item.addEventListener('click',()=>{modal.style.display='flex';});
 });
-window.addEventListener('click', e=>{
-  if(e.target==modal){ modal.style.display='none'; }
-});
+window.addEventListener('click', e=>{if(e.target==modal){ modal.style.display='none'; }});
 </script>
 
 </body>
