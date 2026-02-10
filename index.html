@@ -4,67 +4,188 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Réussite Fréjus | Soutien scolaire toutes matières</title>
+<title>Soutien scolaire Fréjus | Cours particuliers toutes matières</title>
 
-<meta name="description" content="Soutien scolaire à Fréjus toutes matières. Primaire, collège, lycée. Réservation en ligne. Tarif 10€.">
+<meta name="description" content="Soutien scolaire à Fréjus toutes matières. Maths, français, anglais, aide aux devoirs. Réservation en ligne et paiement sécurisé.">
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+/* =========================
+DESIGN ULTRA MODERNE
+========================= */
+
+body{
+margin:0;
+font-family: 'Segoe UI', Arial;
+background:#f8fafc;
+color:#111827;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+header{
+background:white;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.header-flex{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+font-size:22px;
+font-weight:bold;
+color:#2563eb;
+}
+
+.logo-box{
+width:40px;
+height:40px;
+background:#2563eb;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:8px;
+margin-right:10px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#111827;
+font-weight:600;
+}
+
+.hero{
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+color:white;
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.btn{
+background:white;
+color:#2563eb;
+padding:14px 26px;
+border-radius:8px;
+font-weight:bold;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
+cursor:pointer;
+}
+
+.section{
+padding:70px 20px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* CALENDRIER PLANITY */
+
+.day{
+display:inline-block;
+padding:12px;
+margin:6px;
+border-radius:8px;
+background:#e5e7eb;
+cursor:pointer;
+}
+
+.day.available{
+background:#2563eb;
+color:white;
+}
+
+.slot{
+display:inline-block;
+padding:10px;
+margin:5px;
+background:#10b981;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+form input{
+width:80%;
+padding:12px;
+margin:6px;
+}
+
+footer{
+background:#111827;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
 <div class="container header-flex">
-
 <div class="logo">
 <div class="logo-box">RF</div>
-<div>
-<strong>Réussite Fréjus</strong><br>
-<span>Soutien scolaire</span>
-</div>
+Réussite Fréjus
 </div>
 
 <nav>
-<a href="#accueil">Accueil</a>
 <a href="#services">Matières</a>
-<a href="#methode">Méthode</a>
 <a href="#avis">Avis</a>
 <a href="#agenda">Agenda</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="accueil">
+<section class="hero">
 <div class="container">
 <h1>Soutien scolaire à Fréjus</h1>
 <p>Toutes matières – Primaire au lycée</p>
-<p class="price">10€ la séance – paiement en espèces</p>
+<p>Réservation en ligne • Paiement sécurisé</p>
 <a href="#agenda" class="btn">Réserver maintenant</a>
 </div>
 </section>
 
-<!-- POURQUOI -->
-<section class="section">
-<div class="container">
-<h2>Pourquoi choisir Réussite Fréjus ?</h2>
-
-<div class="grid">
-<div class="card">✔ Toutes les matières</div>
-<div class="card">✔ Tarif accessible</div>
-<div class="card">✔ Progression rapide</div>
-<div class="card">✔ Réservation simple</div>
-</div>
-
-</div>
-</section>
-
-<!-- MATIERES -->
 <section class="section" id="services">
 <div class="container">
-<h2>Matières</h2>
+<h2>Toutes les matières</h2>
 
 <div class="grid">
 <div class="card">Mathématiques</div>
@@ -78,75 +199,109 @@
 </div>
 </section>
 
-<!-- METHODE -->
-<section class="section" id="methode">
-<div class="container">
-<h2>Ma méthode</h2>
-
-<p>
-Chaque élève bénéficie d’un accompagnement personnalisé : explications simples, exercices ciblés et préparation aux contrôles.
-Objectif : améliorer les notes et la confiance.
-</p>
-
-</div>
-</section>
-
-<!-- AVIS -->
 <section class="section" id="avis">
 <div class="container">
 <h2>Avis des parents</h2>
 
 <div class="grid">
-<div class="card">⭐️⭐️⭐️⭐️⭐️ Mon fils a gagné 4 points en maths.</div>
-<div class="card">⭐️⭐️⭐️⭐️⭐️ Très pédagogue et patient.</div>
-<div class="card">⭐️⭐️⭐️⭐️⭐️ Excellent rapport qualité/prix.</div>
+<div class="card">⭐️⭐️⭐️⭐️⭐️ Progression rapide</div>
+<div class="card">⭐️⭐️⭐️⭐️⭐️ Très professionnel</div>
+<div class="card">⭐️⭐️⭐️⭐️⭐️ Excellent tarif</div>
 </div>
 
 </div>
 </section>
 
-<!-- BLOG SEO -->
-<section class="section">
-<div class="container">
-<h2>Conseils pour réussir</h2>
-
-<div class="grid">
-<div class="card">Comment réviser efficacement</div>
-<div class="card">Améliorer ses notes en maths</div>
-<div class="card">Préparer un contrôle</div>
-</div>
-
-</div>
-</section>
-
-<!-- AGENDA GOOGLE -->
+<!-- PLANITY -->
 <section class="section" id="agenda">
 <div class="container">
-<h2>Réserver un créneau</h2>
 
-<iframe 
-src="https://calendar.google.com/calendar/embed?src=TON_LIEN_ICI"
-style="border:0"
-width="100%"
-height="600">
-</iframe>
+<h2>Choisir un créneau</h2>
 
-</div>
-</section>
+<div id="calendar"></div>
+<div id="slots"></div>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-<div class="container">
-<h2>Contact</h2>
-<p>Fréjus</p>
-<p>Toutes matières</p>
-<p>Tarif : 10€ en espèces</p>
+<form id="form" style="display:none;">
+<input type="text" placeholder="Nom" required>
+<input type="tel" placeholder="Téléphone" required>
+
+<button class="btn" onclick="payer()">Payer et confirmer (10€)</button>
+</form>
+
+<p id="info"></p>
+
 </div>
 </section>
 
 <footer>
-<p>© 2026 Réussite Fréjus</p>
+<p>© Réussite Fréjus – Soutien scolaire à Fréjus</p>
 </footer>
+
+<script>
+
+// Jours disponibles
+function dispo(d){
+let day=d.getDay();
+return day===3 || day===6 || day===0;
+}
+
+let cal=document.getElementById("calendar");
+let today=new Date();
+
+for(let i=0;i<30;i++){
+let d=new Date();
+d.setDate(today.getDate()+i);
+
+let div=document.createElement("div");
+div.className="day";
+div.innerText=d.toLocaleDateString();
+
+if(dispo(d)){
+div.classList.add("available");
+div.onclick=()=>slots(d);
+}
+
+cal.appendChild(div);
+}
+
+function slots(date){
+let s=document.getElementById("slots");
+s.innerHTML="<h3>Créneaux :</h3>";
+
+let start=14;
+let end=18;
+
+if(date.getDay()===6){
+start=10;
+end=18;
+}
+
+for(let h=start;h<end;h++){
+create(h,"00");
+create(h,"30");
+}
+}
+
+function create(h,m){
+let s=document.createElement("div");
+s.className="slot";
+s.innerText=h+":"+m;
+
+s.onclick=()=>{
+document.getElementById("form").style.display="block";
+document.getElementById("info").innerHTML="Créneau : "+h+":"+m;
+};
+
+document.getElementById("slots").appendChild(s);
+}
+
+// Paiement Stripe (lien)
+function payer(){
+window.location.href="https://buy.stripe.com/test_XXXXXXXX";
+}
+
+</script>
 
 </body>
 </html>
+
