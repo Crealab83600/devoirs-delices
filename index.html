@@ -3,305 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devoirs et Délices - Landing Interactive</title>
 
-<title>Soutien scolaire Fréjus | Cours particuliers toutes matières</title>
-
-<meta name="description" content="Soutien scolaire à Fréjus toutes matières. Maths, français, anglais, aide aux devoirs. Réservation en ligne et paiement sécurisé.">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* --- Global --- */
+body {font-family:'Roboto',sans-serif;margin:0;padding:0;background:#fdf6e3;color:#333;}
+header{background:linear-gradient(120deg,#ff8a65,#ffb347);color:#fff;padding:60px 20px;text-align:center;overflow:hidden;position:relative;}
+header h1{margin:0;font-size:2.8em;animation:slideDown 1s ease;}
+header p{font-size:1.3em;animation:fadeIn 2s ease;}
+nav{background:#ff6f00;display:flex;justify-content:center;flex-wrap:wrap;padding:12px;}
+nav a{margin:5px 15px;color:#fff;text-decoration:none;font-weight:700;transition:0.3s;}
+nav a:hover{transform:scale(1.1);color:#fff;text-decoration:underline;}
 
-/* =========================
-DESIGN ULTRA MODERNE
-========================= */
+/* --- Sections & Animations --- */
+section{padding:60px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(50px);transition:all 1s ease;}
+section.visible{opacity:1;transform:translateY(0);}
+h2{color:#ff6f00;margin-bottom:30px;text-align:center;}
+.icon{margin-right:8px;color:#ff6f00;transition:transform 0.3s;}
 
-body{
-margin:0;
-font-family: 'Segoe UI', Arial;
-background:#f8fafc;
-color:#111827;
-}
+/* --- FAQ Accordéon --- */
+.faq dt{font-weight:bold;margin-top:15px;cursor:pointer;padding:18px;background:#fff3e0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;}
+.faq dt:hover{background:#ffe0b2;transform:scale(1.03);}
+.faq dt .fa-chevron-down{transition:transform 0.3s;}
+.faq dt.active .fa-chevron-down{transform:rotate(180deg);}
+.faq dd{margin-left:0;padding:18px;display:none;background:#fff8e1;border-radius:10px;line-height:1.5;}
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
+/* --- Blog Articles --- */
+.blog-article{background:#fff8e1;border-radius:20px;padding:28px;margin-bottom:30px;box-shadow:0 10px 20px rgba(0,0,0,0.15);transition:all 0.4s;}
+.blog-article:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 14px 28px rgba(0,0,0,0.25);}
+.blog-article h3{font-size:1.4em;transition:all 0.3s;}
+.blog-article:hover h3{color:#ff8c42;}
 
-header{
-background:white;
-box-shadow:0 2px 15px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:1000;
-}
+/* --- Buttons pulsants --- */
+.btn{display:inline-block;background:#ff6f00;color:#fff;padding:14px 30px;text-decoration:none;border-radius:15px;margin-top:15px;font-weight:700;transition:all 0.3s, box-shadow 0.3s;}
+.btn:hover{background:#ff8c42;transform:scale(1.1);box-shadow:0 6px 20px rgba(255,111,0,0.5);}
 
-.header-flex{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+/* --- Carousel Témoignages --- */
+.carousel{position:relative;overflow:hidden;max-width:1000px;margin:auto;margin-bottom:50px;}
+.carousel-track{display:flex;transition:transform 0.6s ease;}
+.testimonial{min-width:100%;background:#fff8e1;padding:28px;border-left:8px solid #ff6f00;box-sizing:border-box;border-radius:20px;text-align:center;transition:all 0.3s;}
+.testimonial:hover{transform:scale(1.03);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,111,0,0.85);color:#fff;border:none;font-size:1.5em;padding:14px;cursor:pointer;border-radius:50%;z-index:1;transition:all 0.3s;}
+.carousel-btn:hover{background:rgba(255,111,0,1);transform:scale(1.1);}
 
-.logo{
-display:flex;
-align-items:center;
-font-size:22px;
-font-weight:bold;
-color:#2563eb;
-}
+/* --- Animations keyframes --- */
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes slideDown{from{transform:translateY(-50px);opacity:0;}to{transform:translateY(0);opacity:1;}}
 
-.logo-box{
-width:40px;
-height:40px;
-background:#2563eb;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:8px;
-margin-right:10px;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#111827;
-font-weight:600;
-}
-
-.hero{
-background:linear-gradient(135deg,#2563eb,#3b82f6);
-color:white;
-text-align:center;
-padding:100px 20px;
-}
-
-.hero h1{
-font-size:40px;
-}
-
-.btn{
-background:white;
-color:#2563eb;
-padding:14px 26px;
-border-radius:8px;
-font-weight:bold;
-text-decoration:none;
-display:inline-block;
-margin-top:15px;
-cursor:pointer;
-}
-
-.section{
-padding:70px 20px;
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-/* CALENDRIER PLANITY */
-
-.day{
-display:inline-block;
-padding:12px;
-margin:6px;
-border-radius:8px;
-background:#e5e7eb;
-cursor:pointer;
-}
-
-.day.available{
-background:#2563eb;
-color:white;
-}
-
-.slot{
-display:inline-block;
-padding:10px;
-margin:5px;
-background:#10b981;
-color:white;
-border-radius:6px;
-cursor:pointer;
-}
-
-form input{
-width:80%;
-padding:12px;
-margin:6px;
-}
-
-footer{
-background:#111827;
-color:white;
-padding:40px;
-text-align:center;
-}
-
+/* --- Responsive --- */
+@media(max-width:768px){header h1{font-size:2em;}nav{flex-direction:column;}nav a{margin:8px 0;}}
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="container header-flex">
-<div class="logo">
-<div class="logo-box">RF</div>
-Réussite Fréjus
-</div>
-
-<nav>
-<a href="#services">Matières</a>
-<a href="#avis">Avis</a>
-<a href="#agenda">Agenda</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
+<h1><i class="fa-solid fa-book-open-reader icon"></i>Devoirs et Délices</h1>
+<p>Plateforme gérée seul pour réussir tes devoirs ⭐⭐⭐⭐⭐</p>
 </header>
 
-<section class="hero">
-<div class="container">
-<h1>Soutien scolaire à Fréjus</h1>
-<p>Toutes matières – Primaire au lycée</p>
-<p>Réservation en ligne • Paiement sécurisé</p>
-<a href="#agenda" class="btn">Réserver maintenant</a>
+<nav>
+<a href="#faq"><i class="fa-solid fa-question icon"></i>FAQ</a>
+<a href="#blog"><i class="fa-solid fa-newspaper icon"></i>Blog</a>
+<a href="#temoignages"><i class="fa-solid fa-comments icon"></i>Témoignages</a>
+<a href="#avis"><i class="fa-solid fa-star icon"></i>Avis</a>
+</nav>
+
+<!-- FAQ -->
+<section id="faq">
+<h2><i class="fa-solid fa-question icon"></i>FAQ interactive</h2>
+<dl class="faq">
+<script>
+for(let i=1;i<=50;i++){
+  document.write(`<dt>Question FAQ n°${i} <i class="fa-solid fa-chevron-down"></i></dt>`);
+  document.write(`<dd>Réponse détaillée à la question FAQ n°${i}. Contenu explicatif et méthodologie pour réussir.</dd>`);
+}
+</script>
+</dl>
+</section>
+
+<!-- Blog -->
+<section id="blog">
+<h2><i class="fa-solid fa-newspaper icon"></i>Blog interactif</h2>
+<script>
+for(let i=1;i<=50;i++){
+  document.write(`<div class="blog-article"><h3><i class="fa-solid fa-book icon"></i>Article n°${i}</h3><p>Contenu détaillé de l'article n°${i}, conseils, astuces et exercices pour progresser.</p><a href="#avis" class="btn"><i class="fa-solid fa-star icon"></i>Laisser un avis</a></div>`);
+}
+</script>
+</section>
+
+<!-- Témoignages -->
+<section id="temoignages">
+<h2><i class="fa-solid fa-comments icon"></i>Témoignages</h2>
+<div class="carousel">
+<button id="prev" class="carousel-btn"><i class="fa-solid fa-chevron-left"></i></button>
+<div class="carousel-track">
+<script>
+for(let i=1;i<=20;i++){
+  document.write(`<div class="testimonial"><strong>Utilisateur n°${i}</strong><p>“Témoignage n°${i} sur la plateforme. Plateforme gérée seul par moi.”</p><a href="#avis" class="btn"><i class="fa-solid fa-star icon"></i>Laisser un avis</a></div>`);
+}
+</script>
+</div>
+<button id="next" class="carousel-btn"><i class="fa-solid fa-chevron-right"></i></button>
 </div>
 </section>
 
-<section class="section" id="services">
-<div class="container">
-<h2>Toutes les matières</h2>
-
-<div class="grid">
-<div class="card">Mathématiques</div>
-<div class="card">Français</div>
-<div class="card">Anglais</div>
-<div class="card">Sciences</div>
-<div class="card">Aide aux devoirs</div>
-<div class="card">Préparation Brevet</div>
-</div>
-
-</div>
-</section>
-
-<section class="section" id="avis">
-<div class="container">
-<h2>Avis des parents</h2>
-
-<div class="grid">
-<div class="card">⭐️⭐️⭐️⭐️⭐️ Progression rapide</div>
-<div class="card">⭐️⭐️⭐️⭐️⭐️ Très professionnel</div>
-<div class="card">⭐️⭐️⭐️⭐️⭐️ Excellent tarif</div>
-</div>
-
-</div>
-</section>
-
-<!-- PLANITY -->
-<section class="section" id="agenda">
-<div class="container">
-
-<h2>Choisir un créneau</h2>
-
-<div id="calendar"></div>
-<div id="slots"></div>
-
-<form id="form" style="display:none;">
-<input type="text" placeholder="Nom" required>
-<input type="tel" placeholder="Téléphone" required>
-
-<button class="btn" onclick="payer()">Payer et confirmer (10€)</button>
-</form>
-
-<p id="info"></p>
-
-</div>
+<!-- Avis -->
+<section id="avis">
+<h2><i class="fa-solid fa-star icon"></i>Laissez votre avis ⭐⭐⭐⭐⭐</h2>
+<p>Votre retour m’aide à améliorer mes services et atteindre mon objectif de 30 avis ⭐⭐⭐⭐⭐.</p>
+<a href="https://crealab83600.github.io/devoirs-delices/#agenda" class="btn"><i class="fa-solid fa-star icon"></i>Laisser un avis</a>
 </section>
 
 <footer>
-<p>© Réussite Fréjus – Soutien scolaire à Fréjus</p>
+<p>&copy; 2026 Devoirs et Délices | Géré seul | Tous droits réservés</p>
 </footer>
 
 <script>
+// FAQ Accordéon avec rotation icône
+document.querySelectorAll('.faq dt').forEach(dt=>{
+  dt.addEventListener('click',()=>{
+    dt.classList.toggle('active'); 
+    const dd = dt.nextElementSibling; 
+    dd.style.display = dd.style.display==='block'?'none':'block';
+  });
+});
 
-// Jours disponibles
-function dispo(d){
-let day=d.getDay();
-return day===3 || day===6 || day===0;
-}
+// Carousel Témoignages
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let index = 0;
+function updateCarousel(){ track.style.transform = `translateX(-${index*100}%)`; }
+prevBtn.addEventListener('click',()=>{ index = index===0?slides.length-1:index-1; updateCarousel(); });
+nextBtn.addEventListener('click',()=>{ index = index===slides.length-1?0:index+1; updateCarousel(); });
+setInterval(()=>{ index = index===slides.length-1?0:index+1; updateCarousel(); },5000);
 
-let cal=document.getElementById("calendar");
-let today=new Date();
-
-for(let i=0;i<30;i++){
-let d=new Date();
-d.setDate(today.getDate()+i);
-
-let div=document.createElement("div");
-div.className="day";
-div.innerText=d.toLocaleDateString();
-
-if(dispo(d)){
-div.classList.add("available");
-div.onclick=()=>slots(d);
-}
-
-cal.appendChild(div);
-}
-
-function slots(date){
-let s=document.getElementById("slots");
-s.innerHTML="<h3>Créneaux :</h3>";
-
-let start=14;
-let end=18;
-
-if(date.getDay()===6){
-start=10;
-end=18;
-}
-
-for(let h=start;h<end;h++){
-create(h,"00");
-create(h,"30");
-}
-}
-
-function create(h,m){
-let s=document.createElement("div");
-s.className="slot";
-s.innerText=h+":"+m;
-
-s.onclick=()=>{
-document.getElementById("form").style.display="block";
-document.getElementById("info").innerHTML="Créneau : "+h+":"+m;
-};
-
-document.getElementById("slots").appendChild(s);
-}
-
-// Paiement Stripe (lien)
-function payer(){
-window.location.href="https://buy.stripe.com/test_XXXXXXXX";
-}
-
+// Scroll Animations
+const sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+  sections.forEach(section=>{
+    if(section.getBoundingClientRect().top < window.innerHeight - 100){ section.classList.add('visible'); }
+  });
+});
 </script>
 
 </body>
 </html>
-
