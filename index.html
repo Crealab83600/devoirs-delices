@@ -17,13 +17,9 @@ nav ul {list-style:none; display:flex; gap:25px;}
 nav ul li {position:relative;}
 nav ul li a {color:white; text-decoration:none; padding:6px 10px; display:block; transition:0.3s;}
 nav ul li a:hover {background:#0a9396; border-radius:4px;}
-
-/* Sous-menu */
 nav ul li ul {display:none; position:absolute; top:100%; left:0; background:#0a9396; border-radius:4px; min-width:180px;}
 nav ul li:hover > ul {display:block;}
 nav ul li ul li a {padding:8px 16px;}
-
-/* Animations ligne sur hover */
 nav ul li a::after {content:''; position:absolute; width:0%; height:2px; bottom:0; left:0; background-color:#94d2bd; transition:0.3s;}
 nav ul li a:hover::after {width:100%;}
 
@@ -31,16 +27,16 @@ nav ul li a:hover::after {width:100%;}
 section {padding:80px 40px;}
 h2 {text-align:center; margin-bottom:40px;}
 
-/* FORMATIONS / COURS */
+/* COURS */
 .cours {background:#fff; color:#005f73; padding:20px; margin-bottom:30px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:transform 0.3s;}
 .cours:hover {transform:translateY(-5px);}
 .cours ul {margin-top:10px; list-style: disc; padding-left:20px;}
 
 /* TÉMOIGNAGES */
-.temoignage {background:#ee9b00; color:white; padding:20px; margin-bottom:30px; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:transform 0.3s;}
+.temoignage {background:#ee9b00; color:white; padding:20px; margin-bottom:20px; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:transform 0.3s;}
 .temoignage:hover {transform:translateY(-5px);}
 
-/* FORMULAIRE */
+/* FORMULAIRES */
 form {background:#fff; padding:20px; border-radius:8px; max-width:600px; margin:0 auto; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
 form label {display:block; margin-top:10px; margin-bottom:5px;}
 form input, form textarea, form select {width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;}
@@ -76,6 +72,8 @@ form button:hover {background:#0a9396;}
           <li><a href="#francais">Français</a></li>
           <li><a href="#sciences">Sciences</a></li>
           <li><a href="#anglais">Anglais</a></li>
+          <li><a href="#histoire">Histoire-Géo</a></li>
+          <li><a href="#physique">Physique-Chimie</a></li>
         </ul>
       </li>
       <li><a href="#resources">Ressources</a></li>
@@ -89,194 +87,91 @@ form button:hover {background:#0a9396;}
 <!-- ACCUEIL -->
 <section id="home" style="background:#94d2bd; color:#005f73;">
   <h2>Bienvenue sur notre site pédagogique</h2>
-  <p>Nous proposons des cours et des ressources pour les élèves de collège et lycée. Vous pouvez consulter les matières, poser vos questions et prendre rendez-vous pour des aides personnalisées.</p>
+  <p>Nous proposons des cours, exercices et ressources pour les élèves de collège et lycée. Vous pouvez consulter les matières, poser vos questions et prendre rendez-vous pour des aides personnalisées.</p>
 </section>
 
-<!-- COURS -->
-<section id="cours" style="background:#ee9b00; color:white;">
-  <h2>Nos Cours</h2>
+<!-- COURS MATHÉMATIQUES -->
+<section id="math" class="cours">
+  <h2>Mathématiques</h2>
 
-  <div id="math" class="cours">
-    <h3>Mathématiques</h3>
-    <p>Articles pour apprendre les maths facilement :</p>
+  <article>
+    <h3>Algèbre : Résolution d'équations</h3>
+    <p>Pour résoudre une équation : isoler l’inconnue et vérifier la solution.</p>
     <ul>
-      <li>Algèbre : équations, inéquations, factorisation</li>
-      <li>Géométrie : triangles, cercles, coordonnées</li>
-      <li>Probabilités et statistiques de base</li>
-      <li>Exercices corrigés pour réviser</li>
+      <li>Exemple : 3x + 5 = 17 → x = 4</li>
+      <li>Exercice : 2x - 7 = 13 → x = ?</li>
+      <li>Exercice : 5y + 12 = 32 → y = ?</li>
     </ul>
-  </div>
+  </article>
 
-  <div id="francais" class="cours">
-    <h3>Français</h3>
+  <article>
+    <h3>Géométrie : Triangles et angles</h3>
+    <p>La somme des angles d’un triangle = 180°.</p>
     <ul>
-      <li>Grammaire et orthographe</li>
-      <li>Analyse de textes et résumés</li>
-      <li>Rédaction et dissertations guidées</li>
-      <li>Exercices interactifs</li>
+      <li>Exercice : Deux angles = 50° et 60°, trouver le troisième → 70°</li>
+      <li>Exercice : Triangle équilatéral, chaque angle ? → 60°</li>
+      <li>Exercice : Triangle isocèle, angles égaux = 45°, angle restant ? → 90°</li>
     </ul>
-  </div>
+  </article>
 
-  <div id="sciences" class="cours">
-    <h3>Sciences</h3>
+  <article>
+    <h3>Probabilités et statistiques</h3>
     <ul>
-      <li>Physique : forces, énergie, mouvements</li>
-      <li>Chimie : réactions, mélanges, solutions</li>
-      <li>Biologie : cellules, organismes, écologie</li>
-      <li>TP et expériences simples à la maison</li>
+      <li>Exercice : Tirer un as dans un jeu de 52 cartes → 1/13</li>
+      <li>Exercice : Probabilité d’un nombre pair sur un dé → 3/6 = 1/2</li>
+      <li>Exercice : Lancer deux dés, probabilité d’avoir une somme = 7 → 6/36 = 1/6</li>
     </ul>
-  </div>
+  </article>
 
-  <div id="anglais" class="cours">
-    <h3>Anglais</h3>
+  <article>
+    <h3>Exercices supplémentaires</h3>
     <ul>
-      <li>Vocabulaire et expressions courantes</li>
-      <li>Grammaire et conjugaison</li>
-      <li>Compréhension écrite et orale</li>
-      <li>Rédaction et exercices pratiques</li>
+      <li>Factoriser x² + 5x + 6 → (x+2)(x+3)</li>
+      <li>Résoudre 4x - 9 = 7 → x = 4</li>
+      <li>Somme des angles quadrilatère → 360°</li>
     </ul>
-  </div>
+  </article>
 </section>
 
-<!-- RESSOURCES -->
-<section id="resources" style="background:#fff; color:#005f73;">
-  <h2>Ressources</h2>
-  <p>Téléchargez nos documents et exercices :</p>
-  <ul>
-    <li><a href="#">Fiches de mathématiques PDF</a></li>
-    <li><a href="#">Exercices de français corrigés</a></li>
-    <li><a href="#">Protocoles de sciences</a></li>
-    <li><a href="#">Vocabulaire anglais</a></li>
-  </ul>
+<!-- COURS FRANÇAIS -->
+<section id="francais" class="cours" style="background:#fff; color:#005f73;">
+  <h2>Français</h2>
+
+  <article>
+    <h3>Grammaire : Les accords</h3>
+    <ul>
+      <li>Les verbes s’accordent avec le sujet</li>
+      <li>Les adjectifs s’accordent avec le nom</li>
+      <li>Exercice : Les filles (être) contentes → Les filles sont contentes</li>
+      <li>Exercice : Le garçon (avoir) fini → Le garçon a fini</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Orthographe : Les homophones</h3>
+    <ul>
+      <li>et / est, a / à, son / sont</li>
+      <li>Exercice : Il (a/à) une pomme → Il a une pomme</li>
+      <li>Exercice : Les chats (son/sont) mignons → Les chats sont mignons</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Rédaction : Construire un paragraphe</h3>
+    <ul>
+      <li>Phrase d’introduction</li>
+      <li>Développement avec exemples</li>
+      <li>Conclusion ou phrase finale</li>
+      <li>Exercice : Rédigez un paragraphe sur votre loisir préféré</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>Lecture et analyse de texte</h3>
+    <ul>
+      <li>Identifier thème, personnages, actions principales</li>
+      <li>Analyser un extrait de "Le Petit Prince"</li>
+      <li>Exercice : Résumez chaque chapitre en 3 phrases</li>
+    </ul>
+  </article>
 </section>
-<!-- ================= TÉMOIGNAGES & COMMENTAIRES ================= -->
-<section id="temoignages" style="background:#005f73; color:white;">
-  <h2>Témoignages & Commentaires</h2>
-
-  <div class="temoignage">
-    <p>"Les cours de maths sont très clairs, j’ai beaucoup progressé grâce aux fiches PDF !" </p>
-    <h4>- Léa, 4ème</h4>
-  </div>
-
-  <div class="temoignage">
-    <p>"J’ai adoré les exercices de français, ça m’a aidé à mieux comprendre la grammaire."</p>
-    <h4>- Thomas, 3ème</h4>
-  </div>
-
-  <div class="temoignage">
-    <p>"Les TP de sciences sont super, j’ai pu expérimenter à la maison en toute sécurité."</p>
-    <h4>- Emma, 2nde</h4>
-  </div>
-
-  <!-- Formulaire pour ajouter un témoignage -->
-  <form id="commentaireForm">
-    <h3>Laissez un commentaire ou un témoignage</h3>
-    <label for="name">Nom :</label>
-    <input type="text" id="name" name="name" placeholder="Votre prénom" required>
-
-    <label for="classe">Classe :</label>
-    <input type="text" id="classe" name="classe" placeholder="Ex: 4ème, 2nde" required>
-
-    <label for="message">Commentaire :</label>
-    <textarea id="message" name="message" rows="4" placeholder="Votre message ici..." required></textarea>
-
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
-
-<!-- ================= RENDEZ-VOUS STYLE PLANITY ================= -->
-<section id="rdv" style="background:#ee9b00; color:white;">
-  <h2>Prendre rendez-vous</h2>
-  <p>Horaires disponibles :</p>
-  <ul>
-    <li><strong>Période scolaire :</strong> Mercredi 14h-18h, Samedi & Dimanche 10h-18h</li>
-    <li><strong>Période de vacances :</strong> Tous les jours sauf weekend, 10h-18h</li>
-  </ul>
-
-  <form id="rdvForm">
-    <label for="rdvName">Nom :</label>
-    <input type="text" id="rdvName" name="rdvName" required>
-
-    <label for="rdvClass">Classe :</label>
-    <input type="text" id="rdvClass" name="rdvClass" required>
-
-    <label for="rdvDate">Date :</label>
-    <input type="date" id="rdvDate" name="rdvDate" required>
-
-    <label for="rdvTime">Heure :</label>
-    <select id="rdvTime" name="rdvTime" required>
-      <option value="">--Choisissez une heure--</option>
-      <option>10:00</option>
-      <option>11:00</option>
-      <option>12:00</option>
-      <option>13:00</option>
-      <option>14:00</option>
-      <option>15:00</option>
-      <option>16:00</option>
-      <option>17:00</option>
-      <option>18:00</option>
-    </select>
-
-    <button type="submit">Réserver</button>
-  </form>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section id="faq" style="background:#fff; color:#005f73;">
-  <h2>FAQ</h2>
-
-  <div class="faq-item">
-    <h4>Comment accéder aux documents PDF ?</h4>
-    <div class="faq-answer">
-      <p>Dans la section "Ressources", cliquez sur les liens pour télécharger les fichiers ou les consulter directement.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <h4>Comment prendre un rendez-vous avec un bénévole ?</h4>
-    <div class="faq-answer">
-      <p>Remplissez le formulaire dans la section "Prendre rendez-vous" en choisissant votre date et heure disponibles.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <h4>Peut-on poser des questions après les cours ?</h4>
-    <div class="faq-answer">
-      <p>Oui, vous pouvez laisser un commentaire dans la section Témoignages & Commentaires, et nous y répondrons rapidement.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer style="background:#005f73; color:white; text-align:center; padding:20px;">
-  <p>© 2026 Site bénévole pour Collège/Lycée - Fait par un étudiant bénévole de 16 ans</p>
-</footer>
-
-<!-- ================= JAVASCRIPT ================= -->
-<script>
-// Afficher / cacher les réponses FAQ
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const answer = item.querySelector('.faq-answer');
-    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-  });
-});
-
-// Gérer l'envoi de formulaire commentaire (simple simulation)
-document.getElementById('commentaireForm').addEventListener('submit', e => {
-  e.preventDefault();
-  alert('Merci pour votre commentaire !');
-  e.target.reset();
-});
-
-// Gérer l'envoi de formulaire rendez-vous
-document.getElementById('rdvForm').addEventListener('submit', e => {
-  e.preventDefault();
-  alert('Votre rendez-vous a été enregistré !');
-  e.target.reset();
-});
-</script>
-</body>
-</html>
-
