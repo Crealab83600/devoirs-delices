@@ -3,175 +3,413 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collège/Lycée Bénévole</title>
+<title>Soutien Scolaire Bénévole</title>
+
 <style>
-/* RESET */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family: Arial, sans-serif; line-height:1.6; background:#f0f0f0;}
 
-/* HEADER */
-header {background:#005f73; color:white; padding:20px 40px; position:sticky; top:0; z-index:1000;}
-header h1 {display:inline-block; font-size:28px;}
-nav {display:inline-block; margin-left:40px;}
-nav ul {list-style:none; display:flex; gap:25px;}
-nav ul li {position:relative;}
-nav ul li a {color:white; text-decoration:none; padding:6px 10px; display:block; transition:0.3s;}
-nav ul li a:hover {background:#0a9396; border-radius:4px;}
-nav ul li ul {display:none; position:absolute; top:100%; left:0; background:#0a9396; border-radius:4px; min-width:180px;}
-nav ul li:hover > ul {display:block;}
-nav ul li ul li a {padding:8px 16px;}
-nav ul li a::after {content:''; position:absolute; width:0%; height:2px; bottom:0; left:0; background-color:#94d2bd; transition:0.3s;}
-nav ul li a:hover::after {width:100%;}
+/* =====================
+   STYLE GENERAL (Superprof)
+===================== */
 
-/* SECTIONS */
-section {padding:80px 40px;}
-h2 {text-align:center; margin-bottom:40px;}
-
-/* COURS */
-.cours {background:#fff; color:#005f73; padding:20px; margin-bottom:30px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:transform 0.3s;}
-.cours:hover {transform:translateY(-5px);}
-.cours ul {margin-top:10px; list-style: disc; padding-left:20px;}
-
-/* TÉMOIGNAGES */
-.temoignage {background:#ee9b00; color:white; padding:20px; margin-bottom:20px; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:transform 0.3s;}
-.temoignage:hover {transform:translateY(-5px);}
-
-/* FORMULAIRES */
-form {background:#fff; padding:20px; border-radius:8px; max-width:600px; margin:0 auto; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-form label {display:block; margin-top:10px; margin-bottom:5px;}
-form input, form textarea, form select {width:100%; padding:10px; border-radius:4px; border:1px solid #ccc;}
-form button {margin-top:15px; padding:10px 20px; background:#005f73; color:white; border:none; border-radius:4px; cursor:pointer; transition:0.3s;}
-form button:hover {background:#0a9396;}
-
-/* FAQ */
-.faq-item {background:#fff; margin-bottom:20px; padding:15px; border-radius:6px; cursor:pointer; transition:0.3s; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
-.faq-item:hover {background:#f0f0f0;}
-.faq-answer {display:none; margin-top:10px;}
-
-/* RESPONSIVE */
-@media (max-width:768px){
-  nav {display:block; margin-left:0;}
-  nav ul {flex-direction:column; gap:0;}
-  nav ul li {border-bottom:1px solid #0a9396;}
-  nav ul li ul {position:static;}
+body{
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
+background:#f6f8fb;
+color:#333;
+line-height:1.6;
 }
+
+header{
+background:linear-gradient(135deg,#2c3e50,#1abc9c);
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+nav{
+background:white;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+padding:15px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#1abc9c;
+}
+
+section{
+padding:40px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+color:#2c3e50;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+button{
+background:#1abc9c;
+color:white;
+border:none;
+padding:12px;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#16a085;
+}
+
+input, select, textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+#confirmation{
+background:#eafaf7;
+padding:15px;
+border-radius:6px;
+margin-top:10px;
+display:none;
+}
+
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+.stat{
+font-size:30px;
+color:#1abc9c;
+font-weight:bold;
+}
+
 </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
-  <h1>Collège/Lycée Bénévole</h1>
-  <nav>
-    <ul>
-      <li><a href="#home">Accueil</a></li>
-      <li>
-        <a href="#cours">Cours</a>
-        <ul>
-          <li><a href="#math">Mathématiques</a></li>
-          <li><a href="#francais">Français</a></li>
-          <li><a href="#sciences">Sciences</a></li>
-          <li><a href="#anglais">Anglais</a></li>
-          <li><a href="#histoire">Histoire-Géo</a></li>
-          <li><a href="#physique">Physique-Chimie</a></li>
-        </ul>
-      </li>
-      <li><a href="#resources">Ressources</a></li>
-      <li><a href="#temoignages">Témoignages</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<h1>Soutien Scolaire Bénévole</h1>
+<p>Projet étudiant – Aide gratuite Collège & Lycée</p>
 </header>
 
-<!-- ACCUEIL -->
-<section id="home" style="background:#94d2bd; color:#005f73;">
-  <h2>Bienvenue sur notre site pédagogique</h2>
-  <p>Nous proposons des cours, exercices et ressources pour les élèves de collège et lycée. Vous pouvez consulter les matières, poser vos questions et prendre rendez-vous pour des aides personnalisées.</p>
+<nav>
+<a href="#matieres">Matières</a>
+<a href="#planning">Réserver</a>
+<a href="#temoignages">Témoignages</a>
+<a href="#espace">Espace élève</a>
+<a href="#stats">Statistiques</a>
+<a href="#conseils">Conseils</a>
+<a href="#faq">FAQ</a>
+</nav>
+
+<!-- ================= MATIERES ================= -->
+
+<section id="matieres">
+<h2>Matières proposées</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Mathématiques</h3>
+<ul>
+<li>Fractions</li>
+<li>Équations</li>
+<li>Fonctions</li>
+<li>Probabilités</li>
+<li>Géométrie</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Français</h3>
+<ul>
+<li>Grammaire</li>
+<li>Orthographe</li>
+<li>Rédaction</li>
+<li>Analyse de texte</li>
+<li>Oral</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Anglais</h3>
+<ul>
+<li>Présent / passé</li>
+<li>Vocabulaire</li>
+<li>Compréhension</li>
+<li>Conversation</li>
+<li>Prononciation</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Physique-Chimie</h3>
+<ul>
+<li>Électricité</li>
+<li>Forces</li>
+<li>Calculs</li>
+<li>Réactions</li>
+<li>Formules</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>SVT</h3>
+<ul>
+<li>Cellule</li>
+<li>Corps humain</li>
+<li>Génétique</li>
+<li>Écologie</li>
+<li>Reproduction</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Histoire-Géo</h3>
+<ul>
+<li>Repères historiques</li>
+<li>Cartes</li>
+<li>Rédaction</li>
+<li>Méthodes</li>
+<li>Chronologie</li>
+</ul>
+</div>
+
+</div>
 </section>
 
-<!-- COURS MATHÉMATIQUES -->
-<section id="math" class="cours">
-  <h2>Mathématiques</h2>
+<!-- ================= PLANNING ================= -->
 
-  <article>
-    <h3>Algèbre : Résolution d'équations</h3>
-    <p>Pour résoudre une équation : isoler l’inconnue et vérifier la solution.</p>
-    <ul>
-      <li>Exemple : 3x + 5 = 17 → x = 4</li>
-      <li>Exercice : 2x - 7 = 13 → x = ?</li>
-      <li>Exercice : 5y + 12 = 32 → y = ?</li>
-    </ul>
-  </article>
+<section id="planning">
+<h2>Réservation (type Planity)</h2>
 
-  <article>
-    <h3>Géométrie : Triangles et angles</h3>
-    <p>La somme des angles d’un triangle = 180°.</p>
-    <ul>
-      <li>Exercice : Deux angles = 50° et 60°, trouver le troisième → 70°</li>
-      <li>Exercice : Triangle équilatéral, chaque angle ? → 60°</li>
-      <li>Exercice : Triangle isocèle, angles égaux = 45°, angle restant ? → 90°</li>
-    </ul>
-  </article>
+<form id="formReservation">
 
-  <article>
-    <h3>Probabilités et statistiques</h3>
-    <ul>
-      <li>Exercice : Tirer un as dans un jeu de 52 cartes → 1/13</li>
-      <li>Exercice : Probabilité d’un nombre pair sur un dé → 3/6 = 1/2</li>
-      <li>Exercice : Lancer deux dés, probabilité d’avoir une somme = 7 → 6/36 = 1/6</li>
-    </ul>
-  </article>
+<input type="text" id="nom" placeholder="Nom" required>
 
-  <article>
-    <h3>Exercices supplémentaires</h3>
-    <ul>
-      <li>Factoriser x² + 5x + 6 → (x+2)(x+3)</li>
-      <li>Résoudre 4x - 9 = 7 → x = 4</li>
-      <li>Somme des angles quadrilatère → 360°</li>
-    </ul>
-  </article>
+<select id="matiere">
+<option>Mathématiques</option>
+<option>Français</option>
+<option>Anglais</option>
+<option>Physique-Chimie</option>
+<option>SVT</option>
+<option>Histoire-Géo</option>
+</select>
+
+<select id="jour">
+<option>Mercredi</option>
+<option>Samedi</option>
+<option>Dimanche</option>
+</select>
+
+<select id="heure">
+<option>10h</option>
+<option>11h</option>
+<option>12h</option>
+<option>14h</option>
+<option>15h</option>
+<option>16h</option>
+<option>17h</option>
+</select>
+
+<button type="submit">Réserver</button>
+
+</form>
+
+<div id="confirmation"></div>
 </section>
 
-<!-- COURS FRANÇAIS -->
-<section id="francais" class="cours" style="background:#fff; color:#005f73;">
-  <h2>Français</h2>
+<!-- ================= TEMOIGNAGES ================= -->
 
-  <article>
-    <h3>Grammaire : Les accords</h3>
-    <ul>
-      <li>Les verbes s’accordent avec le sujet</li>
-      <li>Les adjectifs s’accordent avec le nom</li>
-      <li>Exercice : Les filles (être) contentes → Les filles sont contentes</li>
-      <li>Exercice : Le garçon (avoir) fini → Le garçon a fini</li>
-    </ul>
-  </article>
-
-  <article>
-    <h3>Orthographe : Les homophones</h3>
-    <ul>
-      <li>et / est, a / à, son / sont</li>
-      <li>Exercice : Il (a/à) une pomme → Il a une pomme</li>
-      <li>Exercice : Les chats (son/sont) mignons → Les chats sont mignons</li>
-    </ul>
-  </article>
-
-  <article>
-    <h3>Rédaction : Construire un paragraphe</h3>
-    <ul>
-      <li>Phrase d’introduction</li>
-      <li>Développement avec exemples</li>
-      <li>Conclusion ou phrase finale</li>
-      <li>Exercice : Rédigez un paragraphe sur votre loisir préféré</li>
-    </ul>
-  </article>
-
-  <article>
-    <h3>Lecture et analyse de texte</h3>
-    <ul>
-      <li>Identifier thème, personnages, actions principales</li>
-      <li>Analyser un extrait de "Le Petit Prince"</li>
-      <li>Exercice : Résumez chaque chapitre en 3 phrases</li>
-    </ul>
-  </article>
+<section id="temoignages">
+<h2>Témoignages</h2>
+<div class="grid" id="listeTemoignages"></div>
 </section>
+
+<!-- ================= ESPACE ELEVE ================= -->
+
+<section id="espace">
+<h2>Espace Élève</h2>
+
+<div class="card">
+<h3>Ajouter un témoignage</h3>
+<input id="nomTemoin" placeholder="Ton prénom">
+<textarea id="messageTemoin" placeholder="Ton avis"></textarea>
+<button onclick="ajouterTemoignage()">Publier</button>
+</div>
+
+<div class="card">
+<h3>Mes réservations</h3>
+<div id="mesReservations"></div>
+</div>
+
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section id="stats">
+<h2>Statistiques du projet</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="stat" id="nbSeances">0</div>
+Séances réservées
+</div>
+
+<div class="card">
+<div class="stat" id="nbEleves">0</div>
+Élèves accompagnés
+</div>
+
+<div class="card">
+<div class="stat">100%</div>
+Bénévole
+</div>
+
+</div>
+</section>
+
+<!-- ================= CONSEILS ================= -->
+
+<section id="conseils">
+<h2>Conseils pour réussir</h2>
+
+<div class="grid">
+
+<div class="card">Travaille un peu chaque jour.</div>
+<div class="card">Fais des fiches de révision.</div>
+<div class="card">Pose des questions quand tu ne comprends pas.</div>
+<div class="card">Refais les exercices importants.</div>
+<div class="card">Dors suffisamment avant un contrôle.</div>
+<div class="card">Organise ton temps avec un planning.</div>
+
+</div>
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+<h2>FAQ</h2>
+
+<div class="card"><b>Est-ce gratuit ?</b><br>Oui, entièrement bénévole.</div>
+<div class="card"><b>Pour quels niveaux ?</b><br>Collège et lycée.</div>
+<div class="card"><b>Durée d’une séance ?</b><br>Environ 1 heure.</div>
+<div class="card"><b>En ligne ?</b><br>Oui selon disponibilité.</div>
+<div class="card"><b>Comment annuler ?</b><br>Prévenir à l’avance.</div>
+<div class="card"><b>Qui a créé ce site ?</b><br>Un élève bénévole.</div>
+
+</section>
+
+<footer>
+Projet bénévole – Portfolio étudiant – Version GitHub
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+let temoignages = JSON.parse(localStorage.getItem("temoignages")) || [];
+
+document.getElementById("formReservation").addEventListener("submit", function(e){
+e.preventDefault();
+
+let nom = document.getElementById("nom").value;
+let matiere = document.getElementById("matiere").value;
+let jour = document.getElementById("jour").value;
+let heure = document.getElementById("heure").value;
+
+let resa = {nom, matiere, jour, heure};
+reservations.push(resa);
+
+localStorage.setItem("reservations", JSON.stringify(reservations));
+
+document.getElementById("confirmation").style.display="block";
+document.getElementById("confirmation").innerHTML =
+"Réservation confirmée pour "+nom+" : "+matiere+" le "+jour+" à "+heure;
+
+afficherReservations();
+mettreStats();
+});
+
+function afficherReservations(){
+let zone = document.getElementById("mesReservations");
+zone.innerHTML="";
+
+reservations.forEach(r=>{
+zone.innerHTML += r.nom+" - "+r.matiere+" - "+r.jour+" "+r.heure+"<br>";
+});
+}
+
+function ajouterTemoignage(){
+let nom = document.getElementById("nomTemoin").value;
+let msg = document.getElementById("messageTemoin").value;
+
+if(nom && msg){
+temoignages.push({nom,msg});
+localStorage.setItem("temoignages", JSON.stringify(temoignages));
+afficherTemoignages();
+}
+}
+
+function afficherTemoignages(){
+let zone = document.getElementById("listeTemoignages");
+zone.innerHTML="";
+
+temoignages.forEach(t=>{
+zone.innerHTML += "<div class='card'><b>"+t.nom+"</b><br>"+t.msg+"</div>";
+});
+}
+
+function mettreStats(){
+document.getElementById("nbSeances").innerText = reservations.length;
+
+let eleves = new Set(reservations.map(r=>r.nom));
+document.getElementById("nbEleves").innerText = eleves.size;
+}
+
+afficherReservations();
+afficherTemoignages();
+mettreStats();
+
+</script>
+
+</body>
+</html>
