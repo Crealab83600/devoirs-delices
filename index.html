@@ -1,109 +1,114 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soutien Scolaire Bénévole</title>
+<title>Devoirs & Délices</title>
 
 <style>
-
-/* =====================
-   STYLE GENERAL (Superprof)
-===================== */
-
 body{
-font-family:Arial, Helvetica, sans-serif;
+font-family: 'Segoe UI', Arial;
 margin:0;
-background:#f6f8fb;
-color:#333;
-line-height:1.6;
+background:#f5f7fb;
+color:#2c3e50;
 }
 
+/* Header style Superprof */
 header{
 background:linear-gradient(135deg,#2c3e50,#1abc9c);
 color:white;
-padding:40px 20px;
+padding:60px 20px;
 text-align:center;
 }
 
+.badge{
+display:inline-block;
+background:#f1c40f;
+color:#2c3e50;
+padding:6px 14px;
+border-radius:20px;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* Navigation */
 nav{
 background:white;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
+flex-wrap:wrap;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
 nav a{
-padding:15px;
+padding:15px 20px;
 text-decoration:none;
-color:#333;
-font-weight:bold;
+color:#2c3e50;
+font-weight:600;
 }
 
 nav a:hover{
 color:#1abc9c;
 }
 
+/* Sections */
 section{
-padding:40px 20px;
 max-width:1100px;
 margin:auto;
-}
-
-h2{
-color:#2c3e50;
-margin-bottom:20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+padding:40px 20px;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-transition:0.3s;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+margin-bottom:30px;
 }
 
-.card:hover{
-transform:translateY(-5px);
+/* Calendrier mensuel */
+.calendar{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:8px;
 }
 
-button{
+.day{
+background:white;
+padding:12px;
+min-height:70px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+cursor:pointer;
+font-size:14px;
+}
+
+.day:hover{
 background:#1abc9c;
 color:white;
-border:none;
-padding:12px;
-border-radius:6px;
-cursor:pointer;
-font-size:16px;
 }
 
-button:hover{
-background:#16a085;
+.booked{
+background:#e74c3c;
+color:white;
 }
 
-input, select, textarea{
-width:100%;
-padding:10px;
-margin:8px 0;
-border-radius:6px;
-border:1px solid #ccc;
+/* Stats */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
 }
 
-#confirmation{
-background:#eafaf7;
-padding:15px;
-border-radius:6px;
-margin-top:10px;
-display:none;
+.stat-number{
+font-size:32px;
+font-weight:bold;
+color:#1abc9c;
 }
 
+/* Footer */
 footer{
 background:#2c3e50;
 color:white;
@@ -111,304 +116,129 @@ text-align:center;
 padding:30px;
 margin-top:40px;
 }
-
-.stat{
-font-size:30px;
-color:#1abc9c;
-font-weight:bold;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Soutien Scolaire Bénévole</h1>
-<p>Projet étudiant – Aide gratuite Collège & Lycée</p>
+<h1>Devoirs & Délices</h1>
+<p>Soutien scolaire bénévole – Fréjus</p>
+<p>Créé par Raphaël – 16 ans</p>
+<div class="badge">Développeur Junior</div>
 </header>
 
 <nav>
-<a href="#matieres">Matières</a>
-<a href="#planning">Réserver</a>
-<a href="#temoignages">Témoignages</a>
-<a href="#espace">Espace élève</a>
+<a href="#calendrier">Calendrier</a>
 <a href="#stats">Statistiques</a>
-<a href="#conseils">Conseils</a>
-<a href="#faq">FAQ</a>
+<a href="#apropos">À propos</a>
+<a href="#contact">Contact</a>
+<a href="admin.html">Admin</a>
+<a href="parcoursup.html">Parcoursup</a>
 </nav>
 
-<!-- ================= MATIERES ================= -->
+<!-- Calendrier mensuel -->
 
-<section id="matieres">
-<h2>Matières proposées</h2>
-
-<div class="grid">
-
+<section id="calendrier">
 <div class="card">
-<h3>Mathématiques</h3>
-<ul>
-<li>Fractions</li>
-<li>Équations</li>
-<li>Fonctions</li>
-<li>Probabilités</li>
-<li>Géométrie</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Français</h3>
-<ul>
-<li>Grammaire</li>
-<li>Orthographe</li>
-<li>Rédaction</li>
-<li>Analyse de texte</li>
-<li>Oral</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Anglais</h3>
-<ul>
-<li>Présent / passé</li>
-<li>Vocabulaire</li>
-<li>Compréhension</li>
-<li>Conversation</li>
-<li>Prononciation</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Physique-Chimie</h3>
-<ul>
-<li>Électricité</li>
-<li>Forces</li>
-<li>Calculs</li>
-<li>Réactions</li>
-<li>Formules</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>SVT</h3>
-<ul>
-<li>Cellule</li>
-<li>Corps humain</li>
-<li>Génétique</li>
-<li>Écologie</li>
-<li>Reproduction</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Histoire-Géo</h3>
-<ul>
-<li>Repères historiques</li>
-<li>Cartes</li>
-<li>Rédaction</li>
-<li>Méthodes</li>
-<li>Chronologie</li>
-</ul>
-</div>
-
+<h2>Calendrier mensuel</h2>
+<div class="calendar" id="calendar"></div>
 </div>
 </section>
 
-<!-- ================= PLANNING ================= -->
-
-<section id="planning">
-<h2>Réservation (type Planity)</h2>
-
-<form id="formReservation">
-
-<input type="text" id="nom" placeholder="Nom" required>
-
-<select id="matiere">
-<option>Mathématiques</option>
-<option>Français</option>
-<option>Anglais</option>
-<option>Physique-Chimie</option>
-<option>SVT</option>
-<option>Histoire-Géo</option>
-</select>
-
-<select id="jour">
-<option>Mercredi</option>
-<option>Samedi</option>
-<option>Dimanche</option>
-</select>
-
-<select id="heure">
-<option>10h</option>
-<option>11h</option>
-<option>12h</option>
-<option>14h</option>
-<option>15h</option>
-<option>16h</option>
-<option>17h</option>
-</select>
-
-<button type="submit">Réserver</button>
-
-</form>
-
-<div id="confirmation"></div>
-</section>
-
-<!-- ================= TEMOIGNAGES ================= -->
-
-<section id="temoignages">
-<h2>Témoignages</h2>
-<div class="grid" id="listeTemoignages"></div>
-</section>
-
-<!-- ================= ESPACE ELEVE ================= -->
-
-<section id="espace">
-<h2>Espace Élève</h2>
-
-<div class="card">
-<h3>Ajouter un témoignage</h3>
-<input id="nomTemoin" placeholder="Ton prénom">
-<textarea id="messageTemoin" placeholder="Ton avis"></textarea>
-<button onclick="ajouterTemoignage()">Publier</button>
-</div>
-
-<div class="card">
-<h3>Mes réservations</h3>
-<div id="mesReservations"></div>
-</div>
-
-</section>
-
-<!-- ================= STATS ================= -->
+<!-- Statistiques -->
 
 <section id="stats">
-<h2>Statistiques du projet</h2>
-
-<div class="grid">
-
 <div class="card">
-<div class="stat" id="nbSeances">0</div>
-Séances réservées
+<h2>Statistiques</h2>
+<div class="stats">
+<div>
+<div class="stat-number" id="totalBookings">0</div>
+<p>Créneaux réservés</p>
 </div>
 
-<div class="card">
-<div class="stat" id="nbEleves">0</div>
-Élèves accompagnés
+<div>
+<div class="stat-number">6</div>
+<p>Matières proposées</p>
 </div>
 
-<div class="card">
-<div class="stat">100%</div>
-Bénévole
+<div>
+<div class="stat-number">100%</div>
+<p>Bénévole</p>
 </div>
 
+<div>
+<div class="stat-number">16 ans</div>
+<p>Créateur du projet</p>
+</div>
+</div>
 </div>
 </section>
 
-<!-- ================= CONSEILS ================= -->
+<!-- À propos -->
 
-<section id="conseils">
-<h2>Conseils pour réussir</h2>
+<section id="apropos">
+<div class="card">
+<h2>À propos</h2>
+<p>
+Je m'appelle Raphaël, j'ai 16 ans et j'ai créé Devoirs & Délices pour aider gratuitement les élèves de collège et lycée.
+</p>
 
-<div class="grid">
-
-<div class="card">Travaille un peu chaque jour.</div>
-<div class="card">Fais des fiches de révision.</div>
-<div class="card">Pose des questions quand tu ne comprends pas.</div>
-<div class="card">Refais les exercices importants.</div>
-<div class="card">Dors suffisamment avant un contrôle.</div>
-<div class="card">Organise ton temps avec un planning.</div>
-
+<p>Matières :</p>
+<ul>
+<li>Mathématiques</li>
+<li>Français</li>
+<li>Anglais</li>
+<li>Sciences</li>
+<li>Histoire-Géographie</li>
+<li>Physique-Chimie</li>
+</ul>
 </div>
 </section>
 
-<!-- ================= FAQ ================= -->
+<!-- Contact -->
 
-<section id="faq">
-<h2>FAQ</h2>
-
-<div class="card"><b>Est-ce gratuit ?</b><br>Oui, entièrement bénévole.</div>
-<div class="card"><b>Pour quels niveaux ?</b><br>Collège et lycée.</div>
-<div class="card"><b>Durée d’une séance ?</b><br>Environ 1 heure.</div>
-<div class="card"><b>En ligne ?</b><br>Oui selon disponibilité.</div>
-<div class="card"><b>Comment annuler ?</b><br>Prévenir à l’avance.</div>
-<div class="card"><b>Qui a créé ce site ?</b><br>Un élève bénévole.</div>
-
+<section id="contact">
+<div class="card">
+<h2>Contact</h2>
+<p>Email : <a href="mailto:raphaelmaury83600@gmail.com">raphaelmaury83600@gmail.com</a></p>
+<p>Instagram : <a href="https://www.instagram.com/devoirs_et_delices/" target="_blank">@devoirs_et_delices</a></p>
+<p>Localisation : Fréjus</p>
+</div>
 </section>
 
 <footer>
-Projet bénévole – Portfolio étudiant – Version GitHub
+Projet personnel – Site HTML / CSS / JavaScript – Hébergé sur GitHub Pages
 </footer>
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
+let bookings = JSON.parse(localStorage.getItem("calendarBookings")) || {};
+let calendar = document.getElementById("calendar");
 
-let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
-let temoignages = JSON.parse(localStorage.getItem("temoignages")) || [];
+let daysInMonth = 30;
 
-document.getElementById("formReservation").addEventListener("submit", function(e){
-e.preventDefault();
+for(let i=1;i<=daysInMonth;i++){
+let div = document.createElement("div");
+div.className="day";
+div.innerHTML="<b>"+i+"</b><br>10h-18h";
 
-let nom = document.getElementById("nom").value;
-let matiere = document.getElementById("matiere").value;
-let jour = document.getElementById("jour").value;
-let heure = document.getElementById("heure").value;
+if(bookings[i]) div.classList.add("booked");
 
-let resa = {nom, matiere, jour, heure};
-reservations.push(resa);
+div.onclick=()=>{
+let name = prompt("Votre prénom ?");
+if(name){
+bookings[i]=name;
+localStorage.setItem("calendarBookings",JSON.stringify(bookings));
+location.reload();
+}
+};
 
-localStorage.setItem("reservations", JSON.stringify(reservations));
-
-document.getElementById("confirmation").style.display="block";
-document.getElementById("confirmation").innerHTML =
-"Réservation confirmée pour "+nom+" : "+matiere+" le "+jour+" à "+heure;
-
-afficherReservations();
-mettreStats();
-});
-
-function afficherReservations(){
-let zone = document.getElementById("mesReservations");
-zone.innerHTML="";
-
-reservations.forEach(r=>{
-zone.innerHTML += r.nom+" - "+r.matiere+" - "+r.jour+" "+r.heure+"<br>";
-});
+calendar.appendChild(div);
 }
 
-function ajouterTemoignage(){
-let nom = document.getElementById("nomTemoin").value;
-let msg = document.getElementById("messageTemoin").value;
-
-if(nom && msg){
-temoignages.push({nom,msg});
-localStorage.setItem("temoignages", JSON.stringify(temoignages));
-afficherTemoignages();
-}
-}
-
-function afficherTemoignages(){
-let zone = document.getElementById("listeTemoignages");
-zone.innerHTML="";
-
-temoignages.forEach(t=>{
-zone.innerHTML += "<div class='card'><b>"+t.nom+"</b><br>"+t.msg+"</div>";
-});
-}
-
-function mettreStats(){
-document.getElementById("nbSeances").innerText = reservations.length;
-
-let eleves = new Set(reservations.map(r=>r.nom));
-document.getElementById("nbEleves").innerText = eleves.size;
-}
-
-afficherReservations();
-afficherTemoignages();
-mettreStats();
-
+/* Statistiques */
+document.getElementById("totalBookings").innerText = Object.keys(bookings).length;
 </script>
 
 </body>
