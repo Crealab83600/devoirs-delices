@@ -1,1 +1,38 @@
+<!DOCTYPE html>
 
+<html>
+<head>
+<title>Admin – Devoirs & Délices</title>
+<style>
+body{font-family:Arial;background:#f4f4f4;padding:40px;}
+.card{background:white;padding:30px;border-radius:10px;max-width:600px;margin:auto;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+button{background:#e74c3c;color:white;border:none;padding:12px 20px;border-radius:6px;font-size:16px;}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>Administration</h2>
+
+<p>Nombre total de réservations :</p>
+<h1 id="count">0</h1>
+
+<button onclick="reset()">Réinitialiser le calendrier</button>
+
+<br><br> <a href="index.html">Retour au site</a>
+
+</div>
+
+<script>
+let bookings = JSON.parse(localStorage.getItem("calendarBookings")) || {};
+document.getElementById("count").innerText = Object.keys(bookings).length;
+
+function reset(){
+localStorage.removeItem("calendarBookings");
+alert("Planning réinitialisé");
+location.reload();
+}
+</script>
+
+</body>
+</html>
