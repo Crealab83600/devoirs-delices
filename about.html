@@ -3,128 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>À propos | Devoirs & Délices - RM Tutorat</title>
-<meta name="description" content="À propos de Raphaël Maury, 17 ans, soutien scolaire à Fréjus - Primaire, Collège, Lycée, Python et Arduino">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:#f5f8fc;color:#1e293b;transition:0.3s;}
-a{text-decoration:none;color:white;}
-.container{max-width:1100px;margin:auto;padding:50px 20px;}
-
-/* MENU FIXE */
-nav{
-  position:fixed;top:0;left:0;width:100%;
-  background:linear-gradient(135deg,#0077b6,#00b4d8);
-  z-index:1000;padding:15px 0;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-nav ul{display:flex;justify-content:center;gap:25px;list-style:none;}
-nav ul li a{color:white;font-weight:600;transition:0.3s;}
-nav ul li a:hover{color:#ffcc00;transform:scale(1.1);}
-
-/* HEADER */
-header{
-  background:linear-gradient(135deg,#0077b6,#00b4d8);
-  color:white;text-align:center;padding:100px 20px;position:relative;overflow:hidden;margin-top:60px;
-  animation:headerPop 1s ease-out infinite alternate;
-}
-header h1{font-size:3rem;font-weight:700;margin-bottom:15px;animation:popIn 0.8s;}
-header p{font-size:1.2rem;margin-bottom:25px;}
-header .contact-button{
-  padding:15px 30px;background:#ff5722;border-radius:10px;font-weight:600;transition:0.3s;
-}
-header .contact-button:hover{
-  background:#e64a19;
-  transform:scale(1.05);
-  box-shadow:0 0 20px rgba(255,87,34,0.5);
-}
-
-/* SECTIONS */
-.section{margin-bottom:70px;transition:all 0.3s;border-radius:15px;background:white;padding:30px;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
-.section h2{text-align:center;color:#0077b6;margin-bottom:30px;transition:0.3s;}
-.section h2:hover{color:#00b4d8;transform:scale(1.05);}
-.section p{line-height:1.8;margin-bottom:15px;}
-
-/* LIST ICON */
-ul.feature-list{list-style:none;padding-left:0;}
-ul.feature-list li{position:relative;padding-left:30px;margin-bottom:15px;}
-ul.feature-list li::before{
-  content:"✔";
-  position:absolute;left:0;top:0;
-  color:#00b4d8;
-  font-weight:bold;
-  font-size:1.2rem;
-}
-
-/* IMAGE PROFESSIONNELLE SIMULÉE */
-.profile-img{
-  width:180px;height:180px;border-radius:50%;margin:20px auto;display:block;
-  border:5px solid #00b4d8;animation:imgPop 1s ease-out;
-}
-
-/* ANIMATIONS */
-@keyframes popIn{0%{transform:scale(0);}100%{transform:scale(1);}}
-@keyframes headerPop{0%{transform:scale(0.95);}100%{transform:scale(1);}}
-@keyframes imgPop{0%{transform:scale(0);}100%{transform:scale(1);}}
-</style>
+<title>À propos | Devoirs & Délices</title>
 </head>
+<body style="font-family:'Poppins',sans-serif;background: linear-gradient(135deg,#e0f7fa,#80deea);margin:0;">
 
-<body>
-
-<!-- MENU -->
-<nav>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="about.html">À propos</a></li>
-    <li><a href="packs.html">Offres</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="avis.html">Avis</a></li>
-  </ul>
+<nav style="position:fixed;top:0;width:100%;background:linear-gradient(135deg,#0077b6,#00b4d8);padding:15px 0;display:flex;justify-content:center;gap:25px;z-index:1000;">
+  <a href="index.html" style="color:white;font-weight:600;">Accueil</a>
+  <a href="about.html" style="color:white;font-weight:600;">À propos</a>
+  <a href="packs.html" style="color:white;font-weight:600;">Offres</a>
+  <a href="contact.html" style="color:white;font-weight:600;">Contact</a>
+  <a href="avis.html" style="color:white;font-weight:600;">Avis</a>
 </nav>
 
-<header>
+<header style="margin-top:60px;text-align:center;padding:120px 20px;background: url('images/header-bg-about.jpg') no-repeat center/cover;color:white;">
   <h1>À propos de Raphaël</h1>
-  <p>17 ans • Soutien scolaire à Fréjus • Python & Arduino • Devoirs & Délices</p>
-  <a class="contact-button" href="mailto:raphaelmaury83600@gmail.com">Contacter par mail</a>
+  <p>Découvrez mon approche pour aider les élèves à Fréjus</p>
 </header>
 
-<div class="container">
-  <div class="section" id="about">
-    <img src="https://via.placeholder.com/180" alt="Raphaël Maury" class="profile-img">
-    <h2>Qui suis-je ?</h2>
-    <p>Je m'appelle <strong>Raphaël Maury</strong>, j'ai 17 ans et je suis passionné par l'accompagnement scolaire et le codage. Depuis plusieurs années, j'aide les élèves de Fréjus à progresser en toutes matières, du primaire au lycée, tout en rendant les séances dynamiques et agréables.</p>
-    
-    <h2>Mon approche</h2>
-    <ul class="feature-list">
-      <li>Groupes de max 4 élèves par séance pour un suivi efficace</li>
-      <li>Soutien sur toutes les matières et projets Python & Arduino</li>
-      <li>Après chaque séance, possibilité de déguster un gâteau payant (2€)</li>
-      <li>Séances interactives et personnalisées selon le niveau et les besoins</li>
-      <li>Suivi régulier et conseils pour les examens (Brevet, Bac)</li>
-    </ul>
-    
-    <h2>Pourquoi me choisir ?</h2>
-    <p>Même à 17 ans, je propose un service sérieux et motivé. Mon objectif est de rendre l’apprentissage plus facile et agréable, avec un suivi personnalisé et des micro-animations pour rendre les cours vivants. Les parents apprécient mon sérieux et mon dynamisme, et les élèves se sentent à l’aise tout en progressant rapidement.</p>
-    
-    <h2>Ce que je propose :</h2>
-    <ul class="feature-list">
-      <li>Soutien scolaire du primaire au lycée</li>
-      <li>Initiation et perfectionnement en Python et Arduino</li>
-      <li>Groupes limités à 4 élèves pour chaque séance</li>
-      <li>Gâteaux payants (2€) après les séances pour rendre l'expérience plus agréable</li>
-      <li>Préparation aux examens : Brevet et Bac</li>
-    </ul>
-    
-  </div>
+<div style="max-width:1100px;margin:auto;margin-top:50px;padding:30px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-radius:15px;">
+  <img src="images/raphael.jpg" alt="Raphaël Maury" style="width:200px;border-radius:100%;display:block;margin:auto 0 20px;">
+  <p>Salut ! Je m'appelle Raphaël, j’ai 17 ans et je propose un accompagnement pour les élèves de Fréjus jusqu’au lycée. J’aide dans toutes les matières, et je propose aussi des ateliers Python et Arduino. Après chaque séance, possibilité de goûter un gâteau (2€).</p>
+  <p>J’aime rendre les cours interactifs, avec de petites animations, jeux ou exercices pratiques pour que l’apprentissage soit fun et efficace. Mes groupes sont limités à 4 élèves pour que chacun puisse avancer à son rythme.</p>
 </div>
 
 <footer style="text-align:center;padding:30px;background:#0077b6;color:white;">
-  📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br>
-  © 2026 Devoirs & Délices
+📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br>
+© 2026 Devoirs & Délices
 </footer>
 
 </body>
