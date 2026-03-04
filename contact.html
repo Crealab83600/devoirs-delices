@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Devoirs & Délices</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="about.html">À propos</a></li>
+    <li><a href="packs.html">Offres</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="avis.html">Avis</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Contactez-moi</h1>
+  <p>Envoyez un mail pour réserver ou poser vos questions</p>
+  <a class="contact-button" href="mailto:raphaelmaury83600@gmail.com">Contacter par mail</a>
+</header>
+
+<div class="container section">
+  <h2>Formulaire de contact</h2>
+  <form onsubmit="alert('Votre mail va s’ouvrir pour me contacter');" style="display:flex;flex-direction:column;gap:15px;">
+    <input type="text" placeholder="Nom complet" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" rows="4" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <h2 style="margin-top:50px;">📍 Localisation</h2>
+  <iframe src="https://www.google.com/maps?q=Fréjus&output=embed" style="width:100%;height:350px;border-radius:12px;border:none;"></iframe>
+</div>
+
+<footer>
+📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br>
+© 2026 Devoirs & Délices
+</footer>
+
+</body>
+</html>
