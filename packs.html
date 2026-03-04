@@ -9,15 +9,15 @@
 
 <!-- MENU FIXE -->
 <nav style="position:fixed;top:0;width:100%;background:linear-gradient(135deg,#0077b6,#00b4d8);padding:15px 0;display:flex;justify-content:center;gap:25px;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.2);">
-  <a href="index.html" style="color:white;font-weight:600;transition:0.3s;">Accueil</a>
-  <a href="about.html" style="color:white;font-weight:600;transition:0.3s;">À propos</a>
-  <a href="packs.html" style="color:white;font-weight:600;transition:0.3s;">Offres</a>
-  <a href="contact.html" style="color:white;font-weight:600;transition:0.3s;">Contact</a>
-  <a href="avis.html" style="color:white;font-weight:600;transition:0.3s;">Avis</a>
+  <a href="index.html" style="color:white;font-weight:600;">Accueil</a>
+  <a href="about.html" style="color:white;font-weight:600;">À propos</a>
+  <a href="packs.html" style="color:white;font-weight:600;">Offres</a>
+  <a href="contact.html" style="color:white;font-weight:600;">Contact</a>
+  <a href="avis.html" style="color:white;font-weight:600;">Avis</a>
 </nav>
 
 <!-- HEADER -->
-<header style="margin-top:60px;text-align:center;padding:150px 20px;background:url('images/header-bg-packs.jpg') no-repeat center/cover;color:white;position:relative;">
+<header style="margin-top:60px;text-align:center;padding:150px 20px;background:url('images/header-bg-packs.jpg') no-repeat center/cover;color:white;">
   <h1 style="font-size:3rem;animation:slideInHeader 1s ease-in-out;">Nos Offres</h1>
   <p style="font-size:1.3rem;margin-top:15px;animation:fadeInHeader 2s;">Pour tous les niveaux • Groupes max 4 élèves</p>
 </header>
@@ -49,13 +49,54 @@
     <div style="position:absolute;background:#00b4d8;color:white;padding:10px;border-radius:10px;top:100%;left:0;display:none;" class="tooltip">Groupes max 4 élèves • Gâteau 2€ optionnel</div>
   </div>
 
-</section>
+  <!-- Pack Coding -->
+  <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);padding:20px;border-radius:15px;position:relative;transition:0.3s;"
+       onmouseover="this.style.transform='translateY(-10px) scale(1.03)';"
+       onmouseout="this.style.transform='translateY(0) scale(1)';">
+    <img src="images/python.jpg" alt="Pack Python" style="width:100%;border-radius:12px;margin-bottom:15px;">
+    <h3>Pack Python & Arduino <span style="position:absolute;top:10px;right:10px;background:#00b4d8;color:white;padding:5px 10px;border-radius:12px;animation:pulseBadge 2s infinite;">Populaire</span></h3>
+    <p>Apprentissage codage • 1h de cours</p>
+    <p style="font-weight:700;">Prix : 20€</p>
+    <div style="font-weight:700;color:#0077b6;">Compteur : <span class="counter">0</span></div>
+    <div style="position:absolute;background:#ff5722;color:white;padding:10px;border-radius:10px;top:100%;left:0;display:none;" class="tooltip">Découverte programmation • Max 4 élèves</div>
+  </div>
 
-<!-- BONUS – micro-section gâteau -->
-<section style="max-width:1100px;margin:50px auto;padding:30px;text-align:center;">
-  <h2>🍰 Gâteaux après séance</h2>
-  <img src="images/gateau.jpg" alt="Gâteaux" style="width:60%;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,0.1);margin-top:20px;">
-  <p>Disponible • 2€ chacun</p>
+  <!-- Pack Mini-Groupe -->
+  <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);padding:20px;border-radius:15px;position:relative;transition:0.3s;"
+       onmouseover="this.style.transform='translateY(-10px) scale(1.03)';"
+       onmouseout="this.style.transform='translateY(0) scale(1)';">
+    <img src="images/groupe.jpg" alt="Pack Mini-Groupe" style="width:100%;border-radius:12px;margin-bottom:15px;">
+    <h3>Pack Mini-Groupe <span style="position:absolute;top:10px;right:10px;background:#ff9800;color:white;padding:5px 10px;border-radius:12px;animation:pulseBadge 2s infinite;">Nouveau</span></h3>
+    <p>Groupes de 2-3 élèves pour plus d’attention</p>
+    <p style="font-weight:700;">Prix : 18€</p>
+    <div style="font-weight:700;color:#0077b6;">Compteur : <span class="counter">0</span></div>
+    <div style="position:absolute;background:#00b4d8;color:white;padding:10px;border-radius:10px;top:100%;left:0;display:none;" class="tooltip">Idéal pour petits groupes</div>
+  </div>
+
+  <!-- Pack Défi**
+  <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);padding:20px;border-radius:15px;position:relative;transition:0.3s;"
+       onmouseover="this.style.transform='translateY(-10px) scale(1.03)';"
+       onmouseout="this.style.transform='translateY(0) scale(1)';">
+    <img src="images/defi.jpg" alt="Pack Défi" style="width:100%;border-radius:12px;margin-bottom:15px;">
+    <h3>Pack Défi <span style="position:absolute;top:10px;right:10px;background:#4caf50;color:white;padding:5px 10px;border-radius:12px;animation:pulseBadge 2s infinite;">Populaire</span></h3>
+    <p>Exercices challenge • 1h30</p>
+    <p style="font-weight:700;">Prix : 22€</p>
+    <div style="font-weight:700;color:#0077b6;">Compteur : <span class="counter">0</span></div>
+    <div style="position:absolute;background:#ff5722;color:white;padding:10px;border-radius:10px;top:100%;left:0;display:none;" class="tooltip">Pour les élèves qui veulent se dépasser</div>
+  </div>
+
+  <!-- Pack Premium -->
+  <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);padding:20px;border-radius:15px;position:relative;transition:0.3s;"
+       onmouseover="this.style.transform='translateY(-10px) scale(1.03)';"
+       onmouseout="this.style.transform='translateY(0) scale(1)';">
+    <img src="images/premium.jpg" alt="Pack Premium" style="width:100%;border-radius:12px;margin-bottom:15px;">
+    <h3>Pack Premium <span style="position:absolute;top:10px;right:10px;background:#9c27b0;color:white;padding:5px 10px;border-radius:12px;animation:pulseBadge 2s infinite;">Best Deal</span></h3>
+    <p>Cours individuel + suivi personnalisé</p>
+    <p style="font-weight:700;">Prix : 35€</p>
+    <div style="font-weight:700;color:#0077b6;">Compteur : <span class="counter">0</span></div>
+    <div style="position:absolute;background:#00b4d8;color:white;padding:10px;border-radius:10px;top:100%;left:0;display:none;" class="tooltip">Attention maximale • Gâteaux optionnels</div>
+  </div>
+
 </section>
 
 <footer style="text-align:center;padding:30px;background:#0077b6;color:white;margin-top:50px;">
@@ -65,7 +106,7 @@
 
 <script>
 // Counter hover
-const counters = document.querySelectorAll('.counter');
+const counters=document.querySelectorAll('.counter');
 counters.forEach(c=>{
   let count=0;
   c.parentElement.addEventListener('mouseover',()=>{
@@ -78,7 +119,7 @@ counters.forEach(c=>{
   c.parentElement.addEventListener('mouseout',()=>{c.textContent=0; count=0;});
 });
 
-// Tooltip
+// Tooltip hover
 document.querySelectorAll('.tooltip').forEach(t=>{
   const parent=t.parentElement;
   parent.addEventListener('mouseover',()=>{t.style.display='block';t.style.transform='scale(1)';});
