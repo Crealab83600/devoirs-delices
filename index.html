@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Poppins',sans-serif;background:#f5f8fc;color:#1e293b;transition:0.3s;}
 a{text-decoration:none;color:white;}
@@ -17,9 +18,9 @@ a{text-decoration:none;color:white;}
 /* HEADER */
 header{
   background:linear-gradient(135deg,#0077b6,#00b4d8);
-  color:white;text-align:center;padding:100px 20px;transition:0.3s;
+  color:white;text-align:center;padding:120px 20px;transition:0.3s;
+  position:relative;overflow:hidden;
 }
-header:hover{box-shadow:0 0 40px rgba(0,180,216,0.3);}
 header h1{font-size:3rem;font-weight:700;margin-bottom:15px;animation:popIn 0.8s;}
 header p{font-size:1.2rem;margin-bottom:25px;}
 header .contact-button{
@@ -32,10 +33,11 @@ header .contact-button{
 header .contact-button:hover{
   background:#e64a19;
   transform:scale(1.05);
+  box-shadow:0 0 20px rgba(255,87,34,0.5);
 }
 
 /* OFFRES */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px;position:relative;}
 .card.offer{
   background:white;
   border-radius:15px;
@@ -52,8 +54,8 @@ header .contact-button:hover{
 .card.offer:nth-child(2){animation-delay:0.3s;}
 .card.offer:nth-child(3){animation-delay:0.5s;}
 .card.offer:hover{
-  transform:translateY(-12px) scale(1.05);
-  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+  transform:translateY(-15px) scale(1.05);
+  box-shadow:0 15px 50px rgba(0,0,0,0.25);
 }
 .card.offer h3{color:#0077b6;margin-bottom:10px;transition:0.3s;}
 .card.offer p{margin-bottom:10px;transition:0.3s;}
@@ -64,6 +66,20 @@ header .contact-button:hover{
   padding:5px 10px;border-radius:12px;
   animation:pulse 1.5s infinite;
   transition:0.3s;
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute;
+  background: rgba(0, 180, 216, 0.95);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  display: none;
+  z-index: 10;
+  max-width: 220px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* SECTIONS */
@@ -77,7 +93,7 @@ header .contact-button:hover{
 
 /* AVIS */
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.review{background:white;padding:20px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.07);}
+.review{background:white;padding:20px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.07);transform:scale(0);animation:popInReview 0.5s forwards;}
 .review strong{color:#0077b6;font-weight:600;}
 
 /* FORMULAIRE AVIS */
@@ -94,20 +110,11 @@ header .contact-button:hover{
 /* MAP */
 iframe{width:100%;border-radius:12px;border:none;height:350px;}
 
-/* CONTACT BUTTON */
-.contact-button{
-  display:inline-block;padding:12px 25px;background:#00b4d8;color:white;border-radius:10px;font-weight:600;transition:0.3s;
-}
-.contact-button:hover{
-  background:#0077b6;
-  box-shadow:0 0 15px rgba(0,180,216,0.5);
-  transform:scale(1.05);
-}
-
 /* ANIMATIONS */
 @keyframes fadeInUp{to{opacity:1; transform:translateY(0);}}
 @keyframes popIn{0%{transform:scale(0);}100%{transform:scale(1);}}
 @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+@keyframes popInReview{0%{transform:scale(0);}100%{transform:scale(1);}}
 </style>
 </head>
 
@@ -115,7 +122,7 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
 
 <header>
   <h1>Devoirs & Délices - RM Tutorat</h1>
-  <p>Cours + gâteau payant (2€) après 1h de séance • Max 4 élèves par groupe</p>
+  <p>Cours + gâteau payant (2€) après 1h • Max 4 élèves par groupe</p>
   <a class="contact-button" href="mailto:raphaelmaury83600@gmail.com" id="contactBtn">Contacter par mail</a>
 </header>
 
@@ -124,8 +131,7 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
   <!-- À PROPOS -->
   <div class="section about">
     <h2>🧑 À propos de moi</h2>
-    <p>Bonjour ! Je m'appelle Raphaël Maury, j'ai 17 ans et je propose un accompagnement scolaire pour les élèves du primaire au lycée à Fréjus. Après chaque séance d'1h, un gâteau est proposé au prix de 2 € par élève.</p>
-    <p>Chaque groupe est limité à 4 élèves par heure pour un suivi efficace.</p>
+    <p>Je m'appelle Raphaël, j'ai 17 ans et je propose un accompagnement scolaire pour les élèves du primaire au lycée à Fréjus. Je combine soutien scolaire et petits plaisirs gourmands (gâteau 2€ après chaque séance). Max 4 élèves par groupe pour un suivi efficace.</p>
   </div>
 
   <!-- OFFRES -->
@@ -133,25 +139,28 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
     <h2>📘 Nos Offres</h2>
     <div class="cards">
 
-      <div class="card offer">
+      <div class="card offer" data-tooltip="Découverte des cours, idéal pour débuter. 1h de soutien + gâteau 2€ après la séance.">
         <h3>Pack de Bienvenue</h3>
-        <p>Découverte des cours + gâteau 2 € après 1h • Idéal pour commencer</p>
+        <p>Découverte des cours + gâteau 2 € après 1h</p>
         <div class="price">15€ / heure</div>
         <div class="badge">Populaire</div>
+        <div class="tooltip"></div>
       </div>
 
-      <div class="card offer">
+      <div class="card offer" data-tooltip="Préparation intensive pour le Bac ou le Brevet, 1h de cours + gâteau 2€.">
         <h3>Pack Spécial Bac / Brevet</h3>
-        <p>Préparation intensive pour examens + gâteau 2 € après 1h</p>
+        <p>Préparation examens + gâteau 2 € après 1h</p>
         <div class="price">25€ / heure</div>
         <div class="badge">Best Deal</div>
+        <div class="tooltip"></div>
       </div>
 
-      <div class="card offer">
+      <div class="card offer" data-tooltip="Initiation Python et Arduino pour tous niveaux + gâteau 2€ après 1h.">
         <h3>Spécialité Codage</h3>
         <p>Initiation Python et Arduino + gâteau 2 € après 1h</p>
         <div class="price">22€ / heure</div>
         <div class="badge">Nouveau</div>
+        <div class="tooltip"></div>
       </div>
 
     </div>
@@ -193,17 +202,26 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
 </footer>
 
 <script>
-// Hover effets cartes
+// Hover effets cartes + tooltip
 document.querySelectorAll('.card.offer').forEach(card => {
+  const tooltip = card.querySelector('.tooltip');
+  tooltip.innerText = card.getAttribute('data-tooltip');
+
   card.addEventListener('mouseenter',()=>{
     card.style.transform="translateY(-10px) scale(1.03)";
     card.style.boxShadow="0 15px 40px rgba(0,0,0,0.2)";
     card.querySelector('.badge').style.boxShadow="0 0 25px #ff5722,0 0 35px #ff8a50";
+    
+    tooltip.style.display="block";
+    tooltip.style.top = (card.offsetTop + card.offsetHeight + 10) + "px";
+    tooltip.style.left = card.offsetLeft + "px";
   });
   card.addEventListener('mouseleave',()=>{
     card.style.transform="translateY(0) scale(1)";
     card.style.boxShadow="0 8px 25px rgba(0,0,0,0.08)";
     card.querySelector('.badge').style.boxShadow="none";
+
+    tooltip.style.display="none";
   });
 });
 
@@ -215,7 +233,7 @@ contactBtn.addEventListener('click',(e)=>{
   window.location.href="mailto:raphaelmaury83600@gmail.com";
 });
 
-// Formulaire avis
+// Formulaire avis avec animation pop
 const reviewForm = document.getElementById("reviewForm");
 const reviewsContainer = document.getElementById("reviewsContainer");
 reviewForm.addEventListener('submit',(e)=>{
