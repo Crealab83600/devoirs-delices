@@ -10,19 +10,24 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f5f8fc;color:#1e293b;}
+body{font-family:'Poppins',sans-serif;background:#f5f8fc;color:#1e293b;transition:background 0.3s;}
+body:hover{background:#f0f4f8;}
 
 header{
   background:linear-gradient(135deg,#0077b6,#00b4d8);
   color:white;
   text-align:center;
   padding:80px 20px;
+  transition:all 0.3s;
 }
+header:hover{box-shadow:0 0 30px rgba(0,180,216,0.3);}
 header h1{font-size:2.5rem;font-weight:700;}
 header p{margin-top:10px;}
 
 .container{max-width:1000px;margin:auto;padding:50px 20px;}
-.section{margin-bottom:70px;}
+.section{margin-bottom:70px;transition:all 0.3s;}
+.section:hover{box-shadow:0 0 25px rgba(0,180,216,0.15);border-radius:15px;background:white;}
+
 .section h2{text-align:center;margin-bottom:30px;color:#0077b6;}
 
 /* Offres cartes */
@@ -49,26 +54,9 @@ header p{margin-top:10px;}
 .card.offer h3{margin-bottom:10px;color:#0077b6;}
 .card.offer p{font-size:0.95rem;margin-bottom:10px;}
 .card.offer .price{margin-top:15px;font-weight:700;color:#00b4d8;transition:0.3s, transform 0.2s;}
+.card.offer .counterOffer{font-weight:600;font-size:1rem;color:#0077b6;margin-top:5px;}
 
-/* Tooltip */
-.card.offer[data-tooltip]:hover::after {
-  content: attr(data-tooltip);
-  position:absolute;
-  bottom:105%;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,0.85);
-  color:white;
-  padding:8px 12px;
-  border-radius:8px;
-  font-size:0.8rem;
-  white-space:nowrap;
-  opacity:1;
-  pointer-events:none;
-}
-.card.offer::after{opacity:0;content:"";}
-
-/* Badge */
+/* Badge pulse */
 .card.offer .badge{
   position:absolute;
   top:15px;
@@ -96,11 +84,27 @@ header p{margin-top:10px;}
 .review{background:white;padding:20px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.07);}
 .review strong{color:#0077b6;font-weight:600;}
 
-/* Iframe Google Form et Maps */
+/* Iframe Maps */
 iframe{width:100%;border-radius:12px;border:none;}
 
-/* Compteur */
+/* Compteur total */
 .counter{text-align:center;font-size:3rem;font-weight:700;color:#00b4d8;transition:0.3s;}
+
+/* Bouton contact mail */
+.contact-button{
+  display:inline-block;
+  padding:12px 25px;
+  background:#00b4d8;
+  color:white;
+  font-weight:600;
+  border-radius:10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.contact-button:hover{
+  background:#0077b6;
+  box-shadow:0 0 15px rgba(0,180,216,0.5);
+}
 
 /* Footer */
 footer{background:#023e8a;color:white;text-align:center;padding:30px;margin-top:60px;}
@@ -116,29 +120,42 @@ footer{background:#023e8a;color:white;text-align:center;padding:30px;margin-top:
 
 <div class="container">
 
+  <!-- À PROPOS -->
+  <div class="section">
+    <h2>🧑 À propos de moi</h2>
+    <p>Bonjour ! Je m'appelle Raphaël Maury, j'ai 17 ans et je propose un accompagnement scolaire pour les élèves du primaire au lycée à Fréjus. Passionné par le codage, je peux également aider en Python et Arduino. Mon objectif est de rendre l'apprentissage ludique et efficace.</p>
+    <p>Si vous souhaitez me contacter pour plus d'informations ou prendre rendez-vous, cliquez ci-dessous :</p>
+    <div style="text-align:center;margin-top:15px;">
+      <a class="contact-button" href="mailto:raphaelmaury83600@gmail.com">Contacter par mail</a>
+    </div>
+  </div>
+
   <!-- OFFRES -->
   <div class="section">
     <h2>📘 Nos Offres</h2>
     <div class="cards">
 
-      <div class="card offer" data-tooltip="Maths, Français, Anglais, Méthodologie générale">
+      <div class="card offer" data-tooltip="Maths, Français, Anglais, Méthodologie générale" data-students="12">
         <h3>Soutien Classique</h3>
         <p>Pour tous niveaux du primaire au lycée</p>
         <div class="price" data-count="18">0€ / heure</div>
+        <div class="counterOffer">Élèves inscrits: 0</div>
         <div class="badge">Populaire</div>
       </div>
 
-      <div class="card offer" data-tooltip="Initiation Python, Projets Arduino, Logique informatique">
+      <div class="card offer" data-tooltip="Initiation Python, Projets Arduino, Logique informatique" data-students="8">
         <h3>Spécialité Codage</h3>
         <p>Apprentissage du codage pour tous les âges</p>
         <div class="price" data-count="22">0€ / heure</div>
+        <div class="counterOffer">Élèves inscrits: 0</div>
         <div class="badge">Nouveau</div>
       </div>
 
-      <div class="card offer" data-tooltip="4h = 70€, 8h = 130€">
+      <div class="card offer" data-tooltip="4h = 70€, 8h = 130€" data-students="5">
         <h3>Pack Mensuel</h3>
         <p>Forfait flexible pour progresser régulièrement</p>
         <div class="price" data-count="70">0€ / mois</div>
+        <div class="counterOffer">Élèves inscrits: 0</div>
         <div class="badge">Best Deal</div>
       </div>
 
@@ -153,13 +170,6 @@ footer{background:#023e8a;color:white;text-align:center;padding:30px;margin-top:
       Samedi : 10h – 18h<br>
       Dimanche : 14h – 18h
     </div>
-  </div>
-
-  <!-- FORMULAIRE GOOGLE -->
-  <div class="section">
-    <h2>📅 Réservation en ligne</h2>
-    <!-- REMPLACE LE LIEN CI-DESSOUS PAR TON IFRAME GOOGLE FORM -->
-    <iframe src="COLLE_ICI_TON_LIEN_GOOGLE_FORM" height="600"></iframe>
   </div>
 
   <!-- AVIS -->
@@ -201,30 +211,44 @@ footer{background:#023e8a;color:white;text-align:center;padding:30px;margin-top:
 </footer>
 
 <script>
-// Compteur animé pour chaque prix
-document.querySelectorAll('.card.offer .price').forEach(el => {
-  const target = parseInt(el.getAttribute('data-count'));
-  let current = 0;
-  const interval = setInterval(() => {
-    current++;
-    if(current > target) current = target;
-    el.innerText = current + (el.innerText.includes("€ / mois") ? "€ / mois" : "€ / heure");
-    if(current >= target) clearInterval(interval);
-  }, 30);
+// Compteur prix et élèves sur chaque carte
+document.querySelectorAll('.card.offer').forEach(card => {
+  const priceEl = card.querySelector('.price');
+  const counterEl = card.querySelector('.counterOffer');
+  const priceTarget = parseInt(priceEl.getAttribute('data-count'));
+  const students = parseInt(card.getAttribute('data-students'));
 
-  // Animation pop au hover sur la carte
-  el.parentElement.addEventListener('mouseenter', ()=>{ el.style.transform="scale(1.2)"; });
-  el.parentElement.addEventListener('mouseleave', ()=>{ el.style.transform="scale(1)"; });
+  // Prix compteur
+  let priceCurrent = 0;
+  const intervalPrice = setInterval(()=>{
+    priceCurrent++;
+    if(priceCurrent>priceTarget) priceCurrent = priceTarget;
+    priceEl.innerText = priceCurrent + (priceEl.innerText.includes("€ / mois") ? "€ / mois" : "€ / heure");
+    if(priceCurrent>=priceTarget) clearInterval(intervalPrice);
+  },30);
+
+  // Compteur élèves sur la carte
+  let stuCurrent = 0;
+  const intervalStu = setInterval(()=>{
+    stuCurrent++;
+    if(stuCurrent>students) stuCurrent = students;
+    counterEl.innerText = "Élèves inscrits: "+stuCurrent;
+    if(stuCurrent>=students) clearInterval(intervalStu);
+  },80);
+
+  // Hover pop
+  card.addEventListener('mouseenter',()=>{priceEl.style.transform="scale(1.2)"; counterEl.style.transform="scale(1.1)";});
+  card.addEventListener('mouseleave',()=>{priceEl.style.transform="scale(1)"; counterEl.style.transform="scale(1)";});
 });
 
-// Compteur total élèves animé
-let total = 15; // change le nombre réel d'élèves ici
+// Compteur total élèves
+let total = 25; // total réel
 let count = 0;
 const counter = document.getElementById("counter");
 const interval = setInterval(()=>{
   count++;
   counter.innerText=count;
-  if(count >= total) clearInterval(interval);
+  if(count>=total) clearInterval(interval);
 },50);
 </script>
 
