@@ -3,131 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>  Aide aux devoirs Fréjus</title>
-<meta name="description" content="Soutien scolaire à Fréjus - Primaire, Collège, Lycée - Python et Arduino">
+<title>Devoirs & Délices | RM Tutorat Fréjus</title>
+<meta name="description" content="Cours et gâteaux à Fréjus - Primaire, Collège, Lycée - Python et Arduino">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f5f8fc;color:#1e293b;transition:background 0.3s;}
-body:hover{background:#f0f4f8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f5f8fc;color:#1e293b;transition:0.3s;}
+a{text-decoration:none;color:white;}
+.container{max-width:1100px;margin:auto;padding:50px 20px;}
 
+/* HEADER */
 header{
   background:linear-gradient(135deg,#0077b6,#00b4d8);
-  color:white;
-  text-align:center;
-  padding:80px 20px;
-  transition:all 0.3s;
+  color:white;text-align:center;padding:100px 20px;transition:0.3s;
 }
-header:hover{box-shadow:0 0 30px rgba(0,180,216,0.3);}
-header h1{font-size:2.5rem;font-weight:700;}
-header p{margin-top:10px;}
+header:hover{box-shadow:0 0 40px rgba(0,180,216,0.3);}
+header h1{font-size:3rem;font-weight:700;margin-bottom:15px;animation:popIn 0.8s;}
+header p{font-size:1.2rem;margin-bottom:25px;}
+header .contact-button{
+  padding:15px 30px;
+  background:#ff5722;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+header .contact-button:hover{
+  background:#e64a19;
+  transform:scale(1.05);
+}
 
-.container{max-width:1000px;margin:auto;padding:50px 20px;}
-.section{margin-bottom:70px;transition:all 0.3s;}
-.section:hover{box-shadow:0 0 25px rgba(0,180,216,0.15);border-radius:15px;background:white;}
-
-.section h2{text-align:center;margin-bottom:30px;color:#0077b6;}
-
-/* Offres cartes */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+/* OFFRES */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:40px;}
 .card.offer{
-  position:relative;
   background:white;
-  padding:25px;
   border-radius:15px;
+  padding:25px;
   box-shadow:0 8px 25px rgba(0,0,0,0.08);
-  transition:0.5s;
+  position:relative;
   cursor:pointer;
-  transform: translateY(0);
+  transition:0.5s;
+  transform:translateY(0);
   opacity:0;
-  animation: fadeInUp 0.8s forwards;
+  animation:fadeInUp 0.8s forwards;
 }
 .card.offer:nth-child(1){animation-delay:0.1s;}
 .card.offer:nth-child(2){animation-delay:0.3s;}
 .card.offer:nth-child(3){animation-delay:0.5s;}
-.card.offer:hover{transform:translateY(-12px) scale(1.05);box-shadow:0 20px 40px rgba(0,0,0,0.2);}
-.card.offer:hover p,
-.card.offer:hover h3{text-shadow: 0 0 10px rgba(0,180,216,0.5);transition:0.3s;}
-
-.card.offer h3{margin-bottom:10px;color:#0077b6;}
-.card.offer p{font-size:0.95rem;margin-bottom:10px;}
-.card.offer .price{margin-top:15px;font-weight:700;color:#00b4d8;transition:0.3s, transform 0.2s;}
-.card.offer .counterOffer{font-weight:600;font-size:1rem;color:#0077b6;margin-top:5px;}
-
-/* Badge pulse */
-.card.offer .badge{
-  position:absolute;
-  top:15px;
-  right:15px;
-  background:#ff5722;
-  color:white;
-  font-size:0.8rem;
-  font-weight:600;
-  padding:5px 10px;
-  border-radius:12px;
-  opacity:1;
-  animation: pulse 1.5s infinite;
+.card.offer:hover{
+  transform:translateY(-12px) scale(1.05);
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
 }
-.card.offer:hover .badge{box-shadow:0 0 20px #ff5722, 0 0 30px #ff8a50;}
+.card.offer h3{color:#0077b6;margin-bottom:10px;transition:0.3s;}
+.card.offer p{margin-bottom:10px;transition:0.3s;}
+.card.offer .price{font-weight:700;color:#00b4d8;margin-bottom:5px;transition:0.3s;}
+.card.offer .badge{
+  position:absolute;top:15px;right:15px;
+  background:#ff5722;color:white;
+  padding:5px 10px;border-radius:12px;
+  animation:pulse 1.5s infinite;
+  transition:0.3s;
+}
 
-/* Animation cartes */
-@keyframes fadeInUp{to{opacity:1; transform:translateY(0);}}
-@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+/* SECTIONS */
+.section{margin-bottom:70px;transition:all 0.3s;border-radius:15px;}
+.section:hover{box-shadow:0 0 25px rgba(0,180,216,0.15);background:white;transform:translateY(-5px);}
+.section h2{text-align:center;color:#0077b6;margin-bottom:30px;transition:0.3s;}
+.section h2:hover{color:#00b4d8;transform:scale(1.05);}
 
-/* Horaires */
+/* HORAIRES */
 .schedule{text-align:center;font-weight:600;line-height:2;}
 
-/* Reviews */
-.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+/* AVIS */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
 .review{background:white;padding:20px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.07);}
 .review strong{color:#0077b6;font-weight:600;}
 
-/* Iframe Maps */
-iframe{width:100%;border-radius:12px;border:none;}
-
-/* Compteur total */
-.counter{text-align:center;font-size:3rem;font-weight:700;color:#00b4d8;transition:0.3s;}
-
-/* Bouton contact mail */
-.contact-button{
-  display:inline-block;
-  padding:12px 25px;
-  background:#00b4d8;
-  color:white;
-  font-weight:600;
-  border-radius:10px;
-  text-decoration:none;
+/* FORMULAIRE AVIS */
+#reviewForm{background:white;padding:25px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.07);}
+#reviewForm input,#reviewForm textarea,#reviewForm button{
+  width:100%;margin-bottom:15px;padding:12px;border-radius:8px;border:1px solid #ccc;font-size:1rem;
+}
+#reviewForm button{
+  background:#00b4d8;color:white;border:none;font-weight:600;cursor:pointer;
   transition:0.3s;
+}
+#reviewForm button:hover{background:#0077b6;transform:scale(1.05);}
+
+/* MAP */
+iframe{width:100%;border-radius:12px;border:none;height:350px;}
+
+/* CONTACT BUTTON */
+.contact-button{
+  display:inline-block;padding:12px 25px;background:#00b4d8;color:white;border-radius:10px;font-weight:600;transition:0.3s;
 }
 .contact-button:hover{
   background:#0077b6;
   box-shadow:0 0 15px rgba(0,180,216,0.5);
+  transform:scale(1.05);
 }
 
-/* Footer */
-footer{background:#023e8a;color:white;text-align:center;padding:30px;margin-top:60px;}
+/* ANIMATIONS */
+@keyframes fadeInUp{to{opacity:1; transform:translateY(0);}}
+@keyframes popIn{0%{transform:scale(0);}100%{transform:scale(1);}}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>RM Tutorat - Fréjus</h1>
-  <p>Soutien scolaire & Initiation Python / Arduino</p>
+  <h1>Devoirs & Délices - RM Tutorat</h1>
+  <p>Cours + gâteau payant (2€) après 1h de séance • Max 4 élèves par groupe</p>
+  <a class="contact-button" href="mailto:raphaelmaury83600@gmail.com" id="contactBtn">Contacter par mail</a>
 </header>
 
 <div class="container">
 
   <!-- À PROPOS -->
-  <div class="section">
+  <div class="section about">
     <h2>🧑 À propos de moi</h2>
-    <p>Bonjour ! Je m'appelle Raphaël Maury, j'ai 17 ans et je propose un accompagnement scolaire pour les élèves du primaire au lycée à Fréjus. Passionné par le codage, je peux également aider en Python et Arduino. Mon objectif est de rendre l'apprentissage ludique et efficace.</p>
-    <p>Si vous souhaitez me contacter pour plus d'informations ou prendre rendez-vous, cliquez ci-dessous :</p>
-    <div style="text-align:center;margin-top:15px;">
-      <a class="contact-button" href="mailto:raphaelmaury83600@gmail.com">Contacter par mail</a>
-    </div>
+    <p>Bonjour ! Je m'appelle Raphaël Maury, j'ai 17 ans et je propose un accompagnement scolaire pour les élèves du primaire au lycée à Fréjus. Après chaque séance d'1h, un gâteau est proposé au prix de 2 € par élève.</p>
+    <p>Chaque groupe est limité à 4 élèves par heure pour un suivi efficace.</p>
   </div>
 
   <!-- OFFRES -->
@@ -135,28 +133,25 @@ footer{background:#023e8a;color:white;text-align:center;padding:30px;margin-top:
     <h2>📘 Nos Offres</h2>
     <div class="cards">
 
-      <div class="card offer" data-tooltip="Maths, Français, Anglais, Méthodologie générale" data-students="12">
-        <h3>Soutien Classique</h3>
-        <p>Pour tous niveaux du primaire au lycée</p>
-        <div class="price" data-count="18">0€ / heure</div>
-        <div class="counterOffer">Élèves inscrits: 0</div>
+      <div class="card offer">
+        <h3>Pack de Bienvenue</h3>
+        <p>Découverte des cours + gâteau 2 € après 1h • Idéal pour commencer</p>
+        <div class="price">15€ / heure</div>
         <div class="badge">Populaire</div>
       </div>
 
-      <div class="card offer" data-tooltip="Initiation Python, Projets Arduino, Logique informatique" data-students="8">
-        <h3>Spécialité Codage</h3>
-        <p>Apprentissage du codage pour tous les âges</p>
-        <div class="price" data-count="22">0€ / heure</div>
-        <div class="counterOffer">Élèves inscrits: 0</div>
-        <div class="badge">Nouveau</div>
+      <div class="card offer">
+        <h3>Pack Spécial Bac / Brevet</h3>
+        <p>Préparation intensive pour examens + gâteau 2 € après 1h</p>
+        <div class="price">25€ / heure</div>
+        <div class="badge">Best Deal</div>
       </div>
 
-      <div class="card offer" data-tooltip="4h = 70€, 8h = 130€" data-students="5">
-        <h3>Pack Mensuel</h3>
-        <p>Forfait flexible pour progresser régulièrement</p>
-        <div class="price" data-count="70">0€ / mois</div>
-        <div class="counterOffer">Élèves inscrits: 0</div>
-        <div class="badge">Best Deal</div>
+      <div class="card offer">
+        <h3>Spécialité Codage</h3>
+        <p>Initiation Python et Arduino + gâteau 2 € après 1h</p>
+        <div class="price">22€ / heure</div>
+        <div class="badge">Nouveau</div>
       </div>
 
     </div>
@@ -172,84 +167,71 @@ footer{background:#023e8a;color:white;text-align:center;padding:30px;margin-top:
     </div>
   </div>
 
-  <!-- AVIS -->
+  <!-- FORMULAIRE AVIS -->
   <div class="section">
-    <h2>⭐ Avis Parents</h2>
-    <div class="reviews">
-      <div class="review">
-        <strong>Parent Collège</strong>
-        <p>Très sérieux et pédagogue. Mon fils a progressé rapidement.</p>
-      </div>
-      <div class="review">
-        <strong>Parent Lycée</strong>
-        <p>Excellent pour Python, explications claires.</p>
-      </div>
-      <div class="review">
-        <strong>Parent Primaire</strong>
-        <p>Patient et motivant. Nous recommandons.</p>
-      </div>
-    </div>
+    <h2>📝 Laisser un avis</h2>
+    <form id="reviewForm">
+      <input type="text" id="parentName" placeholder="Nom du parent" required>
+      <input type="text" id="childName" placeholder="Nom de l'élève" required>
+      <textarea id="reviewText" rows="4" placeholder="Votre avis..." required></textarea>
+      <button type="submit">Envoyer l'avis</button>
+    </form>
+    <div id="reviewsContainer" class="reviews"></div>
   </div>
 
   <!-- GOOGLE MAPS -->
   <div class="section">
     <h2>📍 Localisation</h2>
-    <iframe src="https://www.google.com/maps?q=Fréjus&output=embed" height="350"></iframe>
-  </div>
-
-  <!-- COMPTEUR TOTAL -->
-  <div class="section">
-    <h2>🎯 Élèves accompagnés</h2>
-    <div class="counter" id="counter">0</div>
+    <iframe src="https://www.google.com/maps?q=Fréjus&output=embed"></iframe>
   </div>
 
 </div>
 
 <footer>
   📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br>
-  © 2026 RM Tutorat
+  © 2026 Devoirs & Délices
 </footer>
 
 <script>
-// Compteur prix et élèves sur chaque carte
+// Hover effets cartes
 document.querySelectorAll('.card.offer').forEach(card => {
-  const priceEl = card.querySelector('.price');
-  const counterEl = card.querySelector('.counterOffer');
-  const priceTarget = parseInt(priceEl.getAttribute('data-count'));
-  const students = parseInt(card.getAttribute('data-students'));
-
-  // Prix compteur
-  let priceCurrent = 0;
-  const intervalPrice = setInterval(()=>{
-    priceCurrent++;
-    if(priceCurrent>priceTarget) priceCurrent = priceTarget;
-    priceEl.innerText = priceCurrent + (priceEl.innerText.includes("€ / mois") ? "€ / mois" : "€ / heure");
-    if(priceCurrent>=priceTarget) clearInterval(intervalPrice);
-  },30);
-
-  // Compteur élèves sur la carte
-  let stuCurrent = 0;
-  const intervalStu = setInterval(()=>{
-    stuCurrent++;
-    if(stuCurrent>students) stuCurrent = students;
-    counterEl.innerText = "Élèves inscrits: "+stuCurrent;
-    if(stuCurrent>=students) clearInterval(intervalStu);
-  },80);
-
-  // Hover pop
-  card.addEventListener('mouseenter',()=>{priceEl.style.transform="scale(1.2)"; counterEl.style.transform="scale(1.1)";});
-  card.addEventListener('mouseleave',()=>{priceEl.style.transform="scale(1)"; counterEl.style.transform="scale(1)";});
+  card.addEventListener('mouseenter',()=>{
+    card.style.transform="translateY(-10px) scale(1.03)";
+    card.style.boxShadow="0 15px 40px rgba(0,0,0,0.2)";
+    card.querySelector('.badge').style.boxShadow="0 0 25px #ff5722,0 0 35px #ff8a50";
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform="translateY(0) scale(1)";
+    card.style.boxShadow="0 8px 25px rgba(0,0,0,0.08)";
+    card.querySelector('.badge').style.boxShadow="none";
+  });
 });
 
-// Compteur total élèves
-let total = 25; // total réel
-let count = 0;
-const counter = document.getElementById("counter");
-const interval = setInterval(()=>{
-  count++;
-  counter.innerText=count;
-  if(count>=total) clearInterval(interval);
-},50);
+// Pop-up bouton mail
+const contactBtn = document.getElementById("contactBtn");
+contactBtn.addEventListener('click',(e)=>{
+  e.preventDefault();
+  alert("Merci ! Votre mail va s'ouvrir pour me contacter.");
+  window.location.href="mailto:raphaelmaury83600@gmail.com";
+});
+
+// Formulaire avis
+const reviewForm = document.getElementById("reviewForm");
+const reviewsContainer = document.getElementById("reviewsContainer");
+reviewForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const parent = document.getElementById("parentName").value;
+  const child = document.getElementById("childName").value;
+  const text = document.getElementById("reviewText").value;
+
+  const reviewDiv = document.createElement('div');
+  reviewDiv.className = 'review';
+  reviewDiv.innerHTML = `<strong>${parent} (parent de ${child})</strong><p>${text}</p>`;
+  reviewsContainer.prepend(reviewDiv);
+
+  reviewForm.reset();
+  alert("Merci pour votre avis !");
+});
 </script>
 
 </body>
