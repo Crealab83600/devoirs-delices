@@ -3,64 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avis | Devoirs & Délices</title>
-<link rel="stylesheet" href="style.css">
+<title>Contact | Devoirs & Délices</title>
 </head>
-<body>
+<body style="font-family:'Poppins',sans-serif;background: linear-gradient(135deg,#e0f7fa,#80deea); margin:0;">
 
-<nav>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="about.html">À propos</a></li>
-    <li><a href="packs.html">Offres</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="avis.html">Avis</a></li>
-  </ul>
+<nav style="position:fixed;top:0;width:100%;background:linear-gradient(135deg,#0077b6,#00b4d8);padding:15px 0;display:flex;justify-content:center;gap:25px;z-index:1000;">
+  <a href="index.html" style="color:white;font-weight:600;">Accueil</a>
+  <a href="about.html" style="color:white;font-weight:600;">À propos</a>
+  <a href="packs.html" style="color:white;font-weight:600;">Offres</a>
+  <a href="contact.html" style="color:white;font-weight:600;">Contact</a>
+  <a href="avis.html" style="color:white;font-weight:600;">Avis</a>
 </nav>
 
-<header>
-  <h1>Avis des parents</h1>
-  <p>Laissez votre avis sur les séances Devoirs & Délices</p>
+<header style="margin-top:60px;text-align:center;padding:120px 20px;background: url('images/header-bg-contact.jpg') no-repeat center/cover;color:white;">
+  <h1>Contactez-moi</h1>
+  <p>Envoyez un mail pour réserver ou poser vos questions</p>
+  <a href="mailto:raphaelmaury83600@gmail.com" style="display:inline-block;margin-top:15px;padding:15px 30px;background:#ff5722;border-radius:10px;color:white;font-weight:600;">Contacter par mail</a>
 </header>
 
-<div class="container section">
-  <h2>Ajouter un avis</h2>
-  <form id="reviewForm" style="display:flex;flex-direction:column;gap:15px;">
-    <input type="text" id="parentName" placeholder="Nom du parent" required>
-    <input type="text" id="childName" placeholder="Nom de l'élève" required>
-    <textarea id="reviewText" rows="4" placeholder="Votre avis..." required></textarea>
-    <button type="submit">Envoyer l'avis</button>
+<div style="max-width:1100px;margin:auto;margin-top:50px;padding:30px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-radius:15px;">
+  <h2>Formulaire de contact</h2>
+  <form onsubmit="alert('Votre mail va s’ouvrir pour me contacter');" style="display:flex;flex-direction:column;gap:15px;">
+    <input type="text" placeholder="Nom complet" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" rows="4" required></textarea>
+    <button type="submit" style="padding:10px 20px;background:#0077b6;color:white;border:none;border-radius:8px;">Envoyer</button>
   </form>
-  <div id="reviewsContainer" style="margin-top:30px;"></div>
+
+  <h2 style="margin-top:50px;">📍 Localisation</h2>
+  <iframe src="https://www.google.com/maps?q=Fréjus&output=embed" style="width:100%;height:350px;border-radius:12px;border:none;"></iframe>
 </div>
 
-<footer>
+<footer style="text-align:center;padding:30px;background:#0077b6;color:white;">
 📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br>
 © 2026 Devoirs & Délices
 </footer>
-
-<script>
-const reviewForm = document.getElementById("reviewForm");
-const reviewsContainer = document.getElementById("reviewsContainer");
-reviewForm.addEventListener('submit',(e)=>{
-  e.preventDefault();
-  const parent = document.getElementById("parentName").value;
-  const child = document.getElementById("childName").value;
-  const text = document.getElementById("reviewText").value;
-
-  const reviewDiv = document.createElement('div');
-  reviewDiv.style.background='white';
-  reviewDiv.style.padding='15px';
-  reviewDiv.style.marginBottom='15px';
-  reviewDiv.style.borderRadius='12px';
-  reviewDiv.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)';
-  reviewDiv.innerHTML = `<strong>${parent} (parent de ${child})</strong><p>${text}</p>`;
-  reviewsContainer.prepend(reviewDiv);
-
-  reviewForm.reset();
-  alert("Merci pour votre avis !");
-});
-</script>
 
 </body>
 </html>
