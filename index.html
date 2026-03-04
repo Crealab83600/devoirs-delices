@@ -15,11 +15,24 @@ body{font-family:'Poppins',sans-serif;background:#f5f8fc;color:#1e293b;transitio
 a{text-decoration:none;color:white;}
 .container{max-width:1100px;margin:auto;padding:50px 20px;}
 
+/* MENU FIXE */
+nav{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:linear-gradient(135deg,#0077b6,#00b4d8);
+  z-index:1000;
+  padding:15px 0;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+nav ul{display:flex;justify-content:center;gap:25px;list-style:none;}
+nav ul li a{color:white;font-weight:600;transition:0.3s;}
+nav ul li a:hover{color:#ffcc00;transform:scale(1.1);}
+
 /* HEADER */
 header{
   background:linear-gradient(135deg,#0077b6,#00b4d8);
-  color:white;text-align:center;padding:120px 20px;transition:0.3s;
-  position:relative;overflow:hidden;
+  color:white;text-align:center;padding:120px 20px;position:relative;overflow:hidden;margin-top:60px;
+  animation:headerPop 1s ease-out;
 }
 header h1{font-size:3rem;font-weight:700;margin-bottom:15px;animation:popIn 0.8s;}
 header p{font-size:1.2rem;margin-bottom:25px;}
@@ -49,6 +62,7 @@ header .contact-button:hover{
   transform:translateY(0);
   opacity:0;
   animation:fadeInUp 0.8s forwards;
+  overflow:visible;
 }
 .card.offer:nth-child(1){animation-delay:0.1s;}
 .card.offer:nth-child(2){animation-delay:0.3s;}
@@ -67,6 +81,9 @@ header .contact-button:hover{
   animation:pulse 1.5s infinite;
   transition:0.3s;
 }
+.card.offer .counter{
+  font-size:1.5rem;font-weight:700;color:#0077b6;margin-top:10px;transition:0.3s;
+}
 
 /* TOOLTIP */
 .tooltip {
@@ -79,7 +96,10 @@ header .contact-button:hover{
   display: none;
   z-index: 10;
   max-width: 220px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* SECTIONS */
@@ -115,10 +135,22 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
 @keyframes popIn{0%{transform:scale(0);}100%{transform:scale(1);}}
 @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
 @keyframes popInReview{0%{transform:scale(0);}100%{transform:scale(1);}}
+@keyframes headerPop{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
 </style>
 </head>
 
 <body>
+
+<!-- MENU -->
+<nav>
+  <ul>
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#offers">Offres</a></li>
+    <li><a href="#schedule">Horaires</a></li>
+    <li><a href="#reviewsSection">Avis</a></li>
+    <li><a href="#mapSection">Localisation</a></li>
+  </ul>
+</nav>
 
 <header>
   <h1>Devoirs & Délices - RM Tutorat</h1>
@@ -129,37 +161,40 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
 <div class="container">
 
   <!-- À PROPOS -->
-  <div class="section about">
+  <div class="section about" id="about">
     <h2>🧑 À propos de moi</h2>
-    <p>Je m'appelle Raphaël, j'ai 17 ans et je propose un accompagnement scolaire pour les élèves du primaire au lycée à Fréjus. Je combine soutien scolaire et petits plaisirs gourmands (gâteau 2€ après chaque séance). Max 4 élèves par groupe pour un suivi efficace.</p>
+    <p>Je m'appelle Raphaël, 17 ans, et je propose un accompagnement scolaire pour les élèves du primaire au lycée à Fréjus. Après chaque séance, un gâteau est proposé (2€). Max 4 élèves par groupe pour un suivi efficace.</p>
   </div>
 
   <!-- OFFRES -->
-  <div class="section">
+  <div class="section" id="offers">
     <h2>📘 Nos Offres</h2>
     <div class="cards">
 
-      <div class="card offer" data-tooltip="Découverte des cours, idéal pour débuter. 1h de soutien + gâteau 2€ après la séance.">
+      <div class="card offer" data-tooltip="Découverte des cours, idéal pour débuter. 1h de soutien + gâteau 2€ après la séance." data-count="0">
         <h3>Pack de Bienvenue</h3>
         <p>Découverte des cours + gâteau 2 € après 1h</p>
         <div class="price">15€ / heure</div>
         <div class="badge">Populaire</div>
+        <div class="counter">0</div>
         <div class="tooltip"></div>
       </div>
 
-      <div class="card offer" data-tooltip="Préparation intensive pour le Bac ou le Brevet, 1h de cours + gâteau 2€.">
+      <div class="card offer" data-tooltip="Préparation intensive pour le Bac ou le Brevet, 1h de cours + gâteau 2€." data-count="0">
         <h3>Pack Spécial Bac / Brevet</h3>
         <p>Préparation examens + gâteau 2 € après 1h</p>
         <div class="price">25€ / heure</div>
         <div class="badge">Best Deal</div>
+        <div class="counter">0</div>
         <div class="tooltip"></div>
       </div>
 
-      <div class="card offer" data-tooltip="Initiation Python et Arduino pour tous niveaux + gâteau 2€ après 1h.">
+      <div class="card offer" data-tooltip="Initiation Python et Arduino pour tous niveaux + gâteau 2€ après 1h." data-count="0">
         <h3>Spécialité Codage</h3>
         <p>Initiation Python et Arduino + gâteau 2 € après 1h</p>
         <div class="price">22€ / heure</div>
         <div class="badge">Nouveau</div>
+        <div class="counter">0</div>
         <div class="tooltip"></div>
       </div>
 
@@ -167,7 +202,7 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
   </div>
 
   <!-- HORAIRES -->
-  <div class="section">
+  <div class="section" id="schedule">
     <h2>🕒 Horaires</h2>
     <div class="schedule">
       Mercredi : 14h – 18h<br>
@@ -177,7 +212,7 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
   </div>
 
   <!-- FORMULAIRE AVIS -->
-  <div class="section">
+  <div class="section" id="reviewsSection">
     <h2>📝 Laisser un avis</h2>
     <form id="reviewForm">
       <input type="text" id="parentName" placeholder="Nom du parent" required>
@@ -189,7 +224,7 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
   </div>
 
   <!-- GOOGLE MAPS -->
-  <div class="section">
+  <div class="section" id="mapSection">
     <h2>📍 Localisation</h2>
     <iframe src="https://www.google.com/maps?q=Fréjus&output=embed"></iframe>
   </div>
@@ -202,30 +237,47 @@ iframe{width:100%;border-radius:12px;border:none;height:350px;}
 </footer>
 
 <script>
-// Hover effets cartes + tooltip
+// Hover + tooltip + compteur pop
 document.querySelectorAll('.card.offer').forEach(card => {
   const tooltip = card.querySelector('.tooltip');
   tooltip.innerText = card.getAttribute('data-tooltip');
+  const counterEl = card.querySelector('.counter');
 
   card.addEventListener('mouseenter',()=>{
     card.style.transform="translateY(-10px) scale(1.03)";
     card.style.boxShadow="0 15px 40px rgba(0,0,0,0.2)";
     card.querySelector('.badge').style.boxShadow="0 0 25px #ff5722,0 0 35px #ff8a50";
-    
+
+    // Tooltip pop
     tooltip.style.display="block";
+    tooltip.style.opacity = 1;
+    tooltip.style.transform = "scale(1)";
     tooltip.style.top = (card.offsetTop + card.offsetHeight + 10) + "px";
     tooltip.style.left = card.offsetLeft + "px";
+
+    // Compteur animé
+    let count = parseInt(card.dataset.count);
+    const max = Math.floor(Math.random() * 10) + 1; // simulate students/sessions
+    const interval = setInterval(()=>{
+      if(count < max){
+        count++;
+        counterEl.innerText = count;
+        card.dataset.count = count;
+      } else clearInterval(interval);
+    },150);
   });
   card.addEventListener('mouseleave',()=>{
     card.style.transform="translateY(0) scale(1)";
     card.style.boxShadow="0 8px 25px rgba(0,0,0,0.08)";
     card.querySelector('.badge').style.boxShadow="none";
 
-    tooltip.style.display="none";
+    tooltip.style.opacity = 0;
+    tooltip.style.transform = "scale(0)";
+    setTimeout(()=>{tooltip.style.display="none";},300);
   });
 });
 
-// Pop-up bouton mail
+// Pop-up mail
 const contactBtn = document.getElementById("contactBtn");
 contactBtn.addEventListener('click',(e)=>{
   e.preventDefault();
@@ -233,7 +285,7 @@ contactBtn.addEventListener('click',(e)=>{
   window.location.href="mailto:raphaelmaury83600@gmail.com";
 });
 
-// Formulaire avis avec animation pop
+// Formulaire avis avec pop
 const reviewForm = document.getElementById("reviewForm");
 const reviewsContainer = document.getElementById("reviewsContainer");
 reviewForm.addEventListener('submit',(e)=>{
