@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avis | Devoirs & Délices</title>
 </head>
-<body style="font-family:'Poppins',sans-serif;background: linear-gradient(135deg,#e0f7fa,#80deea);margin:0;">
+<body style="font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg,#e0f7fa,#80deea);">
 
 <!-- MENU FIXE -->
-<nav style="position:fixed;top:0;width:100%;background:linear-gradient(135deg,#0077b6,#00b4d8);padding:15px 0;display:flex;justify-content:center;gap:25px;z-index:1000;">
+<nav style="position:fixed;top:0;width:100%;background:linear-gradient(135deg,#0077b6,#00b4d8);padding:15px 0;display:flex;justify-content:center;gap:25px;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.2);">
   <a href="index.html" style="color:white;font-weight:600;">Accueil</a>
   <a href="about.html" style="color:white;font-weight:600;">À propos</a>
   <a href="packs.html" style="color:white;font-weight:600;">Offres</a>
@@ -17,23 +17,30 @@
 </nav>
 
 <!-- HEADER -->
-<header style="margin-top:60px;text-align:center;padding:120px 20px;background: url('images/header-bg-avis.jpg') no-repeat center/cover;color:white;animation: popHeader 1.5s infinite alternate;">
-  <h1>Avis des parents</h1>
-  <p>Laissez votre avis sur les séances Devoirs & Délices</p>
+<header style="margin-top:60px;text-align:center;padding:150px 20px;background:url('images/header-bg-avis.jpg') no-repeat center/cover;color:white;">
+  <h1 style="font-size:3rem;animation:slideInHeader 1s ease-in-out;">Avis des parents</h1>
+  <p style="font-size:1.3rem;margin-top:15px;animation:fadeInHeader 2s;">Laissez votre témoignage sur les séances</p>
 </header>
 
-<div style="max-width:1100px;margin:auto;margin-top:50px;padding:30px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-radius:15px;">
-
-  <h2>Ajouter un avis</h2>
-  <form id="reviewForm" style="display:flex;flex-direction:column;gap:15px;">
+<!-- Formulaire avis -->
+<section style="max-width:1100px;margin:50px auto;padding:30px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-radius:15px;">
+  <h2 style="text-align:center;margin-bottom:25px;">Laisser un avis</h2>
+  <form id="avisForm" style="display:flex;flex-direction:column;gap:15px;max-width:600px;margin:auto;">
     <input type="text" id="parentName" placeholder="Nom du parent" required style="padding:10px;border-radius:8px;border:1px solid #ccc;">
     <input type="text" id="childName" placeholder="Nom de l'élève" required style="padding:10px;border-radius:8px;border:1px solid #ccc;">
-    <textarea id="reviewText" rows="4" placeholder="Votre avis..." required style="padding:10px;border-radius:8px;border:1px solid #ccc;"></textarea>
-    <button type="submit" style="padding:12px 20px;background:#0077b6;color:white;border:none;border-radius:8px;cursor:pointer;transition:0.3s;" onmouseover="this.style.background='#005f87';" onmouseout="this.style.background='#0077b6';">Envoyer l'avis</button>
+    <textarea id="avisMessage" placeholder="Votre avis..." required style="padding:10px;border-radius:8px;border:1px solid #ccc;height:100px;"></textarea>
+    <button type="submit" style="padding:15px;background:#ff5722;color:white;font-weight:700;border-radius:10px;border:none;cursor:pointer;transition:0.3s;">Envoyer l'avis</button>
   </form>
+  <div id="avisNotif" style="margin-top:20px;text-align:center;font-weight:700;color:green;display:none;">Merci ! Votre avis a été enregistré ✔</div>
+</section>
 
-  <div id="reviewsContainer" style="margin-top:30px;"></div>
-</div>
+<!-- Section avis affichés -->
+<section style="max-width:1100px;margin:50px auto;padding:30px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-radius:15px;">
+  <h2 style="text-align:center;margin-bottom:25px;">Témoignages</h2>
+  <div id="avisList" style="display:flex;flex-direction:column;gap:20px;">
+    <!-- Avis dynamiques ajoutés ici -->
+  </div>
+</section>
 
 <footer style="text-align:center;padding:30px;background:#0077b6;color:white;margin-top:50px;">
 📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br>
@@ -41,36 +48,28 @@
 </footer>
 
 <script>
-// Animation pop header
-const header = document.querySelector('header');
-let scale=1, dir=0.002;
-setInterval(()=>{
-  scale+=dir;
-  if(scale>1.02 || scale<0.98) dir*=-1;
-  header.style.transform=`scale(${scale})`;
-},20);
-
-// Avis dynamique
-const reviewForm = document.getElementById("reviewForm");
-const reviewsContainer = document.getElementById("reviewsContainer");
-reviewForm.addEventListener('submit',(e)=>{
+document.getElementById('avisForm').addEventListener('submit', function(e){
   e.preventDefault();
-  const parent = document.getElementById("parentName").value;
-  const child = document.getElementById("childName").value;
-  const text = document.getElementById("reviewText").value;
-
-  const reviewDiv = document.createElement('div');
-  reviewDiv.style.background='white';
-  reviewDiv.style.padding='15px';
-  reviewDiv.style.marginBottom='15px';
-  reviewDiv.style.borderRadius='12px';
-  reviewDiv.style.boxShadow='0 5px 20px rgba(0,0,0,0.08)';
-  reviewDiv.innerHTML = `<strong>${parent} (parent de ${child})</strong><p>${text}</p>`;
-  reviewsContainer.prepend(reviewDiv);
-
-  reviewForm.reset();
-  alert("Merci pour votre avis !");
+  const parent=document.getElementById('parentName').value;
+  const child=document.getElementById('childName').value;
+  const message=document.getElementById('avisMessage').value;
+  const avisDiv=document.createElement('div');
+  avisDiv.style.background='rgba(0,180,216,0.1)';
+  avisDiv.style.padding='15px';
+  avisDiv.style.borderRadius='12px';
+  avisDiv.style.transition='0.3s';
+  avisDiv.style.animation='fadeInAvis 1s ease forwards';
+  avisDiv.innerHTML=`<strong>${parent}</strong> pour <em>${child}</em>: <p>${message}</p>`;
+  document.getElementById('avisList').prepend(avisDiv);
+  document.getElementById('avisNotif').style.display='block';
+  setTimeout(()=>{document.getElementById('avisNotif').style.display='none';},4000);
+  document.getElementById('avisForm').reset();
 });
+
+// Animations CSS
+const style=document.createElement('style');
+style.innerHTML='@keyframes fadeInAvis{0%{opacity:0;transform:translateY(-10px);}100%{opacity:1;transform:translateY(0);}}';
+document.head.appendChild(style);
 </script>
 
 </body>
