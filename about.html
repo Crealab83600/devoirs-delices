@@ -5,30 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Devoirs & Délices | À propos</title>
 <style>
-/* ================= GLOBAL STYLES ================= */
-body{margin:0;font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#dff6ff,#bbdefb);overflow-x:hidden;}
-nav{position:fixed;top:0;width:100%;background:#0077b6;padding:15px;display:flex;justify-content:center;gap:25px;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,0.2);}
-nav a{color:white;font-weight:bold;transition:0.3s;}
-nav a:hover{color:#ffeb3b;}
-header{margin-top:60px;height:400px;background:url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') center/cover;color:white;text-align:center;padding-top:140px;position:relative;}
-header::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);}
-header h1{font-size:50px;animation:slideIn 1s ease-in-out;position:relative;z-index:1;}
-header p{font-size:22px;margin-top:15px;animation:fadeIn 2s;position:relative;z-index:1;}
-section{padding:60px 20px;max-width:1200px;margin:auto;position:relative;}
-h2{font-size:36px;margin-bottom:20px;text-align:center;}
-.about-container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:40px;}
-.about-container img{width:100%;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.2);transition:0.3s;}
-.about-container img:hover{transform:scale(1.05);}
-.about-text{font-size:18px;line-height:1.6;}
-section p{margin-bottom:15px;}
-footer{background:#0077b6;color:white;text-align:center;padding:30px;margin-top:50px;}
+body{
+  margin:0; font-family:'Poppins',sans-serif; color:#333;
+  background: linear-gradient(135deg,#f0f8ff,#e0f7fa);
+  background-image: url('https://images.unsplash.com/photo-1584697964193-63a3b07b109b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
+  background-size:cover; background-attachment:fixed;
+}
+nav{
+  position:fixed; top:0; width:100%; background:rgba(0,119,182,0.9);
+  padding:15px; display:flex; justify-content:center; gap:25px; z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,0.2);
+}
+nav a{color:white; font-weight:bold; text-decoration:none; transition:0.3s;}
+nav a:hover{ color:#ffeb3b; }
+
+header{
+  margin-top:60px; height:350px; color:white; text-align:center;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') center/cover no-repeat;
+}
+header h1{font-size:50px; margin:0; animation:slideIn 1s ease-in-out;}
+header p{font-size:22px; margin-top:10px; animation:fadeIn 2s;}
 @keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+
+section{padding:60px 20px; max-width:1100px; margin:auto;}
+h2{font-size:36px; margin-bottom:25px; text-align:center; color:#0077b6;}
+
+.cards-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;
+}
+
+.card{
+  background:rgba(255,255,255,0.9); padding:25px; border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2); transition:0.3s; text-align:center;
+}
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+.card img{width:100%; border-radius:15px; margin-bottom:15px;}
+.card h3{margin-top:0; color:#0077b6;}
+.card p{margin:8px 0; font-size:16px;}
+
+.badge{
+  position:absolute; top:10px; right:10px; background:#ff5722; color:white;
+  padding:5px 10px; border-radius:12px; animation:pulse 2s infinite;
+}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+
+.faq-section{margin-top:50px;}
+.faq-item{background:rgba(255,255,255,0.9); padding:20px; border-radius:15px; margin-bottom:15px; cursor:pointer; transition:0.3s; box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.faq-item:hover{transform:translateY(-5px) scale(1.01); box-shadow:0 15px 40px rgba(0,0,0,0.15);}
+.faq-answer{display:none; margin-top:10px; font-size:16px; color:#0077b6;}
 </style>
 </head>
 <body>
 
-<!-- MENU -->
 <nav>
 <a href="index.html">Accueil</a>
 <a href="about.html">À propos</a>
@@ -37,77 +70,66 @@ footer{background:#0077b6;color:white;text-align:center;padding:30px;margin-top:
 <a href="avis.html">Avis</a>
 </nav>
 
-<!-- HEADER -->
 <header>
-<h1>À propos de Raphaël</h1>
-<p>Apprendre devient un plaisir 🍰 • Soutien scolaire pour tous les niveaux</p>
+<h1>À propos de Devoirs & Délices</h1>
+<p>Votre partenaire pour l’aide aux devoirs et ateliers gourmands à Fréjus</p>
 </header>
 
-<!-- SECTION À PROPOS -->
 <section>
-<h2>Ma philosophie</h2>
-<div class="about-container">
-<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1" alt="Raphaël en action">
-<div class="about-text">
-<p>Bonjour ! Je m'appelle Raphaël, j'ai 17 ans et je propose un accompagnement scolaire pour les élèves du primaire jusqu’au lycée. Mon objectif est de rendre les cours à la fois efficaces et agréables.</p>
-<p>Après chaque séance, possibilité de partager un gâteau maison 🍰 pour rendre l’expérience encore plus conviviale et motivante. Mon approche combine clarté, patience et méthode structurée pour que chaque élève progresse selon son rythme.</p>
-<p>J’aime créer un environnement positif et ludique : exercices interactifs, mini-projets de codage (Python et Arduino) et préparation spécifique aux examens comme le Brevet ou le Bac.</p>
-</div>
+<h2>Qui suis-je ?</h2>
+<div class="cards-grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Moi">
+    <h3>Raphaël Maury</h3>
+    <p>17 ans, passionné par l’enseignement et le codage. J’accompagne les élèves du primaire au lycée, avec un suivi adapté et bienveillant.</p>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1601741491365-c0b2c1f8b5a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Objectifs">
+    <h3>Notre mission</h3>
+    <p>Fournir un soutien scolaire accessible et stimulant, alliant apprentissage et plaisir grâce à nos ateliers “Devoirs & Délices”.</p>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Valeurs">
+    <h3>Nos valeurs</h3>
+    <p>Bienveillance, engagement et créativité. Chaque élève est accompagné selon ses besoins et son rythme, dans un cadre motivant et chaleureux.</p>
+  </div>
 </div>
 </section>
 
-<section>
-<h2>Comment je travaille</h2>
-<div class="about-container">
-<div class="about-text">
-<p>Chaque séance est personnalisée :</p>
-<ul>
-<li>Explications adaptées au niveau de l’élève</li>
-<li>Correction des devoirs et exercices pratiques</li>
-<li>Conseils méthodologiques pour réussir les contrôles</li>
-<li>Mini-projets ludiques pour découvrir le codage</li>
-<li>Groupes limités à 4 élèves pour un suivi optimal</li>
-</ul>
-<p>Le suivi peut se faire en séance individuelle ou duo selon le besoin de chaque élève. L'objectif est de renforcer la confiance et l'autonomie dans l'apprentissage.</p>
+<section class="faq-section">
+<h2>FAQ</h2>
+<div class="faq-item">
+  <strong>Qui peut participer aux séances ?</strong>
+  <div class="faq-answer">Du primaire au lycée, ainsi que des ateliers de codage pour tous niveaux.</div>
 </div>
-<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Apprentissage interactif">
+<div class="faq-item">
+  <strong>Comment se déroule une séance ?</strong>
+  <div class="faq-answer">Cours de 1h, groupes de 2 à 4 élèves, suivi personnalisé, et possibilité de goûter nos gâteaux à 2€ après la séance.</div>
 </div>
-</section>
-
-<section>
-<h2>Pourquoi choisir Devoirs & Délices ?</h2>
-<div class="about-container">
-<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Convivialité">
-<div class="about-text">
-<p>- Méthode simple, claire et motivante</p>
-<p>- Séances efficaces et interactives</p>
-<p>- Possibilité de partager un gâteau maison 🍰</p>
-<p>- Préparation Bac / Brevet</p>
-<p>- Découverte ludique du codage Python et Arduino</p>
-<p>Chaque élève progresse à son rythme et prend plaisir à apprendre. Les parents apprécient le suivi personnalisé et la motivation qui se dégage des séances.</p>
+<div class="faq-item">
+  <strong>Pourquoi choisir Devoirs & Délices ?</strong>
+  <div class="faq-answer">Pour un apprentissage ludique et efficace, encadré par un jeune passionné et motivé à aider les élèves à progresser.</div>
 </div>
+<div class="faq-item">
+  <strong>Comment me contacter ?</strong>
+  <div class="faq-answer">Via la page Contact, par mail : raphaelmaury83600@gmail.com.</div>
 </div>
 </section>
 
-<section>
-<h2>Infos pratiques</h2>
-<div class="about-container">
-<div class="about-text">
-<p><strong>Horaires :</strong> Mercredi 14h-18h, Samedi 10h-18h, Dimanche 14h-18h</p>
-<p><strong>Groupes :</strong> maximum 4 élèves par séance</p>
-<p><strong>Option Gâteaux :</strong> 2€ par gâteau</p>
-<p><strong>Localisation :</strong> Fréjus</p>
-<p>Mon objectif : offrir un suivi scolaire sérieux tout en rendant l’apprentissage agréable et motivant pour tous les élèves.</p>
-</div>
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Horaires et organisation">
-</div>
-</section>
-
-<footer>
+<footer style="text-align:center;padding:30px;background:rgba(0,119,182,0.9);color:white;margin-top:50px;">
 📍 Fréjus • 📧 raphaelmaury83600@gmail.com
 <br><br>
 © 2026 Devoirs & Délices
 </footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const answer=item.querySelector('.faq-answer');
+    answer.style.display=answer.style.display==='block'?'none':'block';
+  });
+});
+</script>
 
 </body>
 </html>
