@@ -5,49 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avis | Devoirs & Délices</title>
 <style>
-body{
-  margin:0; font-family:'Poppins',sans-serif; color:#333;
-  background: linear-gradient(135deg,#f0f8ff,#e0f7fa);
-  background-image:url('https://images.unsplash.com/photo-1554774853-dc5d6c58a8c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
-  background-size:cover; background-attachment:fixed;
+/* ===== BODY ===== */
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#f0f8ff,#e0f7fa);
+  color:#333;
 }
-nav{
-  position:fixed; top:0; width:100%; background:rgba(0,119,182,0.9);
-  padding:15px; display:flex; justify-content:center; gap:25px; z-index:1000;
-  box-shadow:0 2px 15px rgba(0,0,0,0.2);
-}
-nav a{color:white; font-weight:bold; text-decoration:none; transition:0.3s;}
-nav a:hover{ color:#ffeb3b; }
 
-header{
-  margin-top:60px; height:350px; color:white; text-align:center;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') center/cover no-repeat;
+/* ===== NAVBAR ===== */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,119,182,0.95);
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,0.3);
 }
-header h1{font-size:50px; margin:0; animation:slideIn 1s ease-in-out;}
-header p{font-size:22px; margin-top:10px; animation:fadeIn 2s;}
+nav a {
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+nav a:hover {
+  color:#ffeb3b;
+  transform:scale(1.1);
+}
 
+/* ===== HEADER ===== */
+header {
+  margin-top:60px;
+  height:400px;
+  color:white;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1601972966788-3de4c4c091e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') center/cover no-repeat;
+}
+header h1 {font-size:50px;margin:0;animation:slideIn 1s ease-in-out;}
+header p {font-size:22px;margin-top:15px;animation:fadeIn 2s;}
 @keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
 
-section{padding:60px 20px; max-width:900px; margin:auto;}
-h2{font-size:36px; margin-bottom:25px; text-align:center; color:#0077b6;}
+/* ===== SECTIONS ===== */
+section {padding:60px 20px; max-width:1200px;margin:auto;}
+h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
 
-.review{
-  background:rgba(255,255,255,0.9); padding:25px; border-radius:20px;
-  margin-bottom:20px; box-shadow:0 15px 40px rgba(0,0,0,0.2); transition:0.3s;
+/* ===== CARDS GRID ===== */
+.cards-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
-.review:hover{transform:translateY(-10px) scale(1.03);}
-.review p{font-size:16px;}
-.review strong{color:#0077b6;}
 
-form{
-  background:rgba(255,255,255,0.9); padding:25px; border-radius:20px;
-  margin-top:30px; display:flex; flex-direction:column; gap:15px; box-shadow:0 15px 40px rgba(0,0,0,0.2);
+/* ===== CARD ===== */
+.card {
+  background:rgba(255,255,255,0.9);
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  transition:0.3s;
+  position:relative;
+  overflow:hidden;
 }
-input, textarea{padding:12px; border-radius:12px; border:1px solid #ccc; font-size:16px; width:100%;}
-button{padding:15px; border:none; border-radius:12px; background:#0077b6; color:white; font-weight:bold; cursor:pointer; transition:0.3s;}
-button:hover{background:#00b4d8;}
+.card:hover {
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 60px rgba(0,0,0,0.35);
+}
+.card h3 {margin-top:0;color:#0077b6;}
+.card p {margin:8px 0;font-size:16px;line-height:1.5;}
+.badge {
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#ff5722;
+  color:white;
+  padding:6px 12px;
+  border-radius:12px;
+  font-weight:bold;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+.tooltip {
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#0077b6;
+  color:white;
+  padding:10px;
+  border-radius:10px;
+  display:none;
+  width:calc(100% - 20px);
+  margin-top:10px;
+  font-size:14px;
+  z-index:10;
+  transform:scale(0);
+  transition:0.3s;
+}
+.card:hover .tooltip {display:block;transform:scale(1);}
+
+/* ===== FORM ===== */
+form {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  background:rgba(255,255,255,0.9);
+  padding:40px;
+  border-radius:20px;
+  max-width:600px;
+  margin:auto;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+form:hover {transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+input, textarea {
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  font-size:16px;
+  transition:0.3s;
+}
+input:focus, textarea:focus {
+  border-color:#0077b6;
+  box-shadow:0 0 10px rgba(0,119,182,0.4);
+  outline:none;
+}
+button {
+  padding:15px;
+  background:#ff5722;
+  color:white;
+  font-weight:bold;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover {background:#ff7043; transform:scale(1.05);}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align:center;
+  padding:40px;
+  background:rgba(0,119,182,0.95);
+  color:white;
+  margin-top:50px;
+  line-height:1.6;
+}
 </style>
 </head>
 <body>
@@ -61,46 +172,77 @@ button:hover{background:#00b4d8;}
 </nav>
 
 <header>
-<h1>Avis des parents</h1>
-<p>Ce que les familles pensent de nos ateliers à Fréjus</p>
+<h1>Avis des Parents</h1>
+<p>Vos retours nous permettent de nous améliorer</p>
 </header>
 
 <section>
-<h2>Commentaires récents</h2>
+<h2>Ce que disent nos parents</h2>
+<div class="cards-grid">
 
-<div class="review">
-<p><strong>Marie D.</strong> : Mon fils adore les séances, et les gâteaux après le cours sont un vrai plus !</p>
-</div>
-<div class="review">
-<p><strong>Luc P.</strong> : Excellent suivi pour le Bac, je recommande vivement.</p>
-</div>
-<div class="review">
-<p><strong>Sophie L.</strong> : Les cours de codage sont super ludiques, mon enfant progresse vite.</p>
+<!-- Avis 1 -->
+<div class="card">
+<h3>Marie D.</h3>
+<p>"Mon fils adore les cours, très pédagogiques et ludiques. Les gâteaux sont un plus pour motiver !" </p>
+<span class="badge">Top</span>
+<div class="tooltip">Cours 1h • Max 4 élèves</div>
 </div>
 
+<!-- Avis 2 -->
+<div class="card">
+<h3>Jean P.</h3>
+<p>"Merci pour l’accompagnement pour le brevet. Très efficace et attentionné."</p>
+<span class="badge" style="background:#4caf50;">Best Deal</span>
+<div class="tooltip">Préparation intensive Bac/Brevet</div>
+</div>
+
+<!-- Avis 3 -->
+<div class="card">
+<h3>Claire R.</h3>
+<p>"Les cours de codage ont vraiment ouvert de nouvelles passions à mon fils. Je recommande !" </p>
+<span class="badge" style="background:#2196f3;">Populaire</span>
+<div class="tooltip">Python & Arduino • 1h</div>
+</div>
+
+<!-- Avis 4 -->
+<div class="card">
+<h3>Lucas T.</h3>
+<p>"Le pack Duo permet un suivi personnalisé et efficace. Très satisfaite."</p>
+<span class="badge" style="background:#ff9800;">Nouveau</span>
+<div class="tooltip">Groupe de 2 élèves</div>
+</div>
+
+</div>
+</section>
+
+<section>
 <h2>Laisser un avis</h2>
-<form onsubmit="sendReview(event)">
-<input type="text" id="reviewer" placeholder="Votre nom" required>
-<textarea id="reviewText" placeholder="Votre avis..." rows="4" required></textarea>
-<button type="submit">Envoyer</button>
+<form onsubmit="sendMail(event)">
+<input type="text" id="name" placeholder="Nom de l'enfant" required>
+<input type="email" id="email" placeholder="Email du parent" required>
+<textarea id="message" placeholder="Votre avis / commentaire" rows="5" required></textarea>
+<button type="submit">Envoyer votre avis</button>
 </form>
 </section>
 
-<footer style="text-align:center;padding:30px;background:rgba(0,119,182,0.9);color:white;margin-top:50px;">
+<script>
+function sendMail(event){
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  const subject = 'Avis Devoirs & Délices';
+  const body = `Nom: ${name}%0D%0AEmail: ${email}%0D%0AAvis: ${message}`;
+  window.location.href = `mailto:raphaelmaury83600@gmail.com?subject=${subject}&body=${body}`;
+  alert("Votre avis a été préparé dans votre application mail.");
+}
+</script>
+
+<footer>
 📍 Fréjus • 📧 raphaelmaury83600@gmail.com
 <br><br>
 © 2026 Devoirs & Délices
 </footer>
-
-<script>
-function sendReview(e){
-  e.preventDefault();
-  const name=document.getElementById('reviewer').value;
-  const text=document.getElementById('reviewText').value;
-  alert(`Merci ${name} ! Votre avis a été préparé pour envoi par mail.`);
-  window.location.href=`mailto:raphaelmaury83600@gmail.com?subject=Avis Devoirs & Délices&body=Nom: ${name}%0D%0ACommentaire: ${text}`;
-}
-</script>
 
 </body>
 </html>
