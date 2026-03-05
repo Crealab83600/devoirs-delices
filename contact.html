@@ -5,52 +5,118 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Devoirs & Délices</title>
 <style>
-body{
-  margin:0; font-family:'Poppins',sans-serif; color:#333;
-  background: linear-gradient(135deg,#f0f8ff,#e0f7fa);
-  background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
-  background-size:cover; background-attachment:fixed;
+/* ===== BODY ===== */
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#e0f7fa,#f0f8ff);
+  color:#333;
 }
-nav{
-  position:fixed; top:0; width:100%; background:rgba(0,119,182,0.9);
-  padding:15px; display:flex; justify-content:center; gap:25px; z-index:1000;
-  box-shadow:0 2px 15px rgba(0,0,0,0.2);
-}
-nav a{color:white; font-weight:bold; text-decoration:none; transition:0.3s;}
-nav a:hover{ color:#ffeb3b; }
 
-header{
-  margin-top:60px; height:350px; color:white; text-align:center;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1581091215362-622fbdc61e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') center/cover no-repeat;
+/* ===== NAVBAR ===== */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,119,182,0.95);
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,0.3);
 }
-header h1{font-size:50px; margin:0; animation:slideIn 1s ease-in-out;}
-header p{font-size:22px; margin-top:10px; animation:fadeIn 2s;}
+nav a {
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+nav a:hover {
+  color:#ffeb3b;
+  transform:scale(1.1);
+}
 
+/* ===== HEADER ===== */
+header {
+  margin-top:60px;
+  height:450px;
+  color:white;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1581092795362-d9d3f436fb7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') center/cover no-repeat;
+}
+header h1 {font-size:50px;margin:0;animation:slideIn 1s ease-in-out;}
+header p {font-size:22px;margin-top:15px;animation:fadeIn 2s;}
 @keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
 
-section{padding:60px 20px; max-width:900px; margin:auto;}
-h2{font-size:36px; margin-bottom:25px; text-align:center; color:#0077b6;}
+/* ===== SECTIONS ===== */
+section {padding:60px 20px; max-width:1200px;margin:auto;}
+h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
 
-form{
-  background:rgba(255,255,255,0.9); padding:30px; border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.2);
-  display:flex; flex-direction:column; gap:15px;
+/* ===== FORM ===== */
+form {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  background:rgba(255,255,255,0.9);
+  padding:40px;
+  border-radius:20px;
+  max-width:600px;
+  margin:auto;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
   transition:0.3s;
 }
-form:hover{transform:scale(1.02);}
-input, textarea{
-  padding:12px; border-radius:12px; border:1px solid #ccc; font-size:16px; width:100%;
+form:hover {transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+input, textarea {
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  font-size:16px;
+  transition:0.3s;
 }
-button{
-  padding:15px; border:none; border-radius:12px; background:#0077b6; color:white;
-  font-weight:bold; cursor:pointer; transition:0.3s;
+input:focus, textarea:focus {
+  border-color:#0077b6;
+  box-shadow:0 0 10px rgba(0,119,182,0.4);
+  outline:none;
 }
-button:hover{background:#00b4d8;}
+button {
+  padding:15px;
+  background:#ff5722;
+  color:white;
+  font-weight:bold;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover {background:#ff7043; transform:scale(1.05);}
 
-.map{
-  margin-top:40px; width:100%; height:300px; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.2);
+/* ===== MAP ===== */
+.map-container {
+  margin-top:60px;
+  max-width:1200px;
+  height:450px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  transition:0.3s;
+}
+.map-container:hover {transform:scale(1.02);box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align:center;
+  padding:40px;
+  background:rgba(0,119,182,0.95);
+  color:white;
+  margin-top:50px;
+  line-height:1.6;
 }
 </style>
 </head>
@@ -66,42 +132,44 @@ button:hover{background:#00b4d8;}
 
 <header>
 <h1>Contactez-nous</h1>
-<p>Pour toute question ou information sur nos ateliers à Fréjus</p>
+<p>Pour réserver ou poser vos questions à Devoirs & Délices</p>
 </header>
 
 <section>
-<h2>Formulaire de contact</h2>
+<h2>Envoyer un message</h2>
 <form onsubmit="sendMail(event)">
-<input type="text" id="name" placeholder="Nom parent" required>
-<input type="email" id="email" placeholder="Email" required>
-<textarea id="message" placeholder="Votre message..." rows="5" required></textarea>
+<input type="text" id="name" placeholder="Nom de l'enfant" required>
+<input type="email" id="email" placeholder="Email du parent" required>
+<textarea id="message" placeholder="Votre message / question" rows="5" required></textarea>
 <button type="submit">Envoyer</button>
 </form>
+</section>
 
-<h2>Localisation</h2>
-<div class="map">
-<iframe src="https://www.google.com/maps?q=Fréjus&output=embed" style="width:100%; height:100%; border:0;"></iframe>
+<section>
+<h2>Nous trouver à Fréjus</h2>
+<div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2894.6790743536033!2d6.748200615500196!3d43.42882037913279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9aa3c3a75a2c1%3A0xb865c4cce5b38b5c!2sFr%C3%A9jus%2C%20France!5e0!3m2!1sfr!2sus!4v1709540275941!5m2!1sfr!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 </section>
 
-<footer style="text-align:center;padding:30px;background:rgba(0,119,182,0.9);color:white;margin-top:50px;">
+<script>
+function sendMail(event){
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  const subject = 'Demande Devoirs & Délices';
+  const body = `Nom: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+  window.location.href = `mailto:raphaelmaury83600@gmail.com?subject=${subject}&body=${body}`;
+  alert("Votre message a été préparé dans votre application mail.");
+}
+</script>
+
+<footer>
 📍 Fréjus • 📧 raphaelmaury83600@gmail.com
 <br><br>
 © 2026 Devoirs & Délices
 </footer>
-
-<script>
-function sendMail(e){
-  e.preventDefault();
-  const name=document.getElementById('name').value;
-  const email=document.getElementById('email').value;
-  const message=document.getElementById('message').value;
-  const subject="Contact Devoirs & Délices";
-  const body=`Nom: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
-  window.location.href=`mailto:raphaelmaury83600@gmail.com?subject=${subject}&body=${body}`;
-  alert("Merci ! Votre message a été préparé pour envoi par mail.");
-}
-</script>
 
 </body>
 </html>
