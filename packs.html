@@ -3,389 +3,448 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packs | Devoirs & Délices</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Offres | Devoirs & Délices</title>
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(120deg,#eef2ff,#ffffff);
+}
+
+/* header */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+z-index:999;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+margin:0 15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#4f46e5;
+}
+
+/* hero */
+
+.hero{
+padding-top:120px;
+text-align:center;
+padding-bottom:60px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+color:#555;
+}
+
+/* packs */
+
+.packs{
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+padding-bottom:80px;
+}
+
+.pack{
+background:white;
+padding:35px;
+width:260px;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+position:relative;
+cursor:pointer;
+}
+
+.pack:hover{
+transform:translateY(-12px) scale(1.04);
+box-shadow:0 25px 40px rgba(0,0,0,0.15);
+}
+
+.price{
+font-size:34px;
+font-weight:bold;
+margin:15px 0;
+color:#4f46e5;
+}
+
+ul{
+padding:0;
+list-style:none;
+}
+
+li{
+margin:8px 0;
+color:#555;
+}
+
+/* badges */
+
+.badge{
+position:absolute;
+top:-12px;
+right:-12px;
+background:#4f46e5;
+color:white;
+padding:6px 12px;
+font-size:12px;
+border-radius:20px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.1)}
+100%{transform:scale(1)}
+}
+
+/* tooltip */
+
+.tooltip{
+position:absolute;
+bottom:100%;
+left:50%;
+transform:translateX(-50%);
+background:#333;
+color:white;
+padding:6px 10px;
+font-size:12px;
+border-radius:6px;
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+}
+
+.pack:hover .tooltip{
+opacity:1;
+bottom:110%;
+}
+
+/* section bonus */
+
+.bonus{
+background:white;
+padding:60px 20px;
+text-align:center;
+}
+
+.bonus h2{
+font-size:32px;
+}
+
+.bonus p{
+max-width:700px;
+margin:auto;
+color:#555;
+}
+
+/* FAQ */
+
+.faq{
+padding:70px 20px;
+max-width:900px;
+margin:auto;
+}
+
+.faq h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.faq-item{
+background:white;
+padding:20px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* footer */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+</style>
 
 </head>
 
-<body style="margin:0;font-family:Poppins,Arial;background:linear-gradient(135deg,#e0f7fa,#80deea);">
+<body>
 
+<header>
+<nav>
+<h2>Devoirs & Délices</h2>
 
-<!-- MENU -->
-
-<nav style="position:fixed;top:0;width:100%;background:linear-gradient(135deg,#0077b6,#00b4d8);padding:15px 0;display:flex;justify-content:center;gap:30px;z-index:1000;box-shadow:0 4px 15px rgba(0,0,0,0.2);">
-
-<a href="index.html" style="color:white;font-weight:600;text-decoration:none;">Accueil</a>
-
-<a href="about.html" style="color:white;font-weight:600;text-decoration:none;">À propos</a>
-
-<a href="packs.html" style="color:white;font-weight:600;text-decoration:none;">Offres</a>
-
-<a href="contact.html" style="color:white;font-weight:600;text-decoration:none;">Contact</a>
-
-<a href="avis.html" style="color:white;font-weight:600;text-decoration:none;">Avis</a>
+<div>
+<a href="index.html">Accueil</a>
+<a href="about.html">À propos</a>
+<a href="packs.html">Packs</a>
+<a href="contact.html">Contact</a>
+<a href="avis.html">Avis</a>
+</div>
 
 </nav>
-
-
-
-<!-- HEADER -->
-
-<header style="margin-top:70px;padding:140px 20px;text-align:center;color:white;background:url('images/header-bg-packs.jpg') center/cover no-repeat;">
-
-<h1 style="font-size:3rem;">Nos Offres</h1>
-
-<p style="font-size:1.3rem;">Cours à Fréjus • Groupes max 4 élèves</p>
-
 </header>
 
+<section class="hero">
 
+<h1>Choisissez votre pack</h1>
 
-<!-- SECTION PACKS -->
-
-<section style="max-width:1200px;margin:auto;padding:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
-
-
-
-<!-- PACK BIENVENUE -->
-
-<div class="card">
-
-<img src="images/bienvenue.jpg">
-
-<h3>Pack Bienvenue <span class="badge new">Nouveau</span></h3>
-
-<p>Découverte des cours</p>
-
-<p class="price">15€</p>
-
-<div class="count">0</div>
-
-<div class="tooltip">Séance découverte • 1h</div>
-
-</div>
-
-
-
-<!-- PACK EXAMENS -->
-
-<div class="card">
-
-<img src="images/bac.jpg">
-
-<h3>Pack Spécial Bac / Brevet <span class="badge best">Best</span></h3>
-
-<p>Préparation examens</p>
-
-<p class="price">25€</p>
-
-<div class="count">0</div>
-
-<div class="tooltip">Révisions intensives</div>
-
-</div>
-
-
-
-<!-- PACK PYTHON -->
-
-<div class="card">
-
-<img src="images/python.jpg">
-
-<h3>Pack Python & Arduino <span class="badge popular">Populaire</span></h3>
-
-<p>Initiation programmation</p>
-
-<p class="price">25€</p>
-
-<div class="count">0</div>
-
-<div class="tooltip">Programmation + projets</div>
-
-</div>
-
-
-
-<!-- PACK DUO -->
-
-<div class="card">
-
-<img src="images/duo.jpg">
-
-<h3>Pack Duo <span class="badge new">Nouveau</span></h3>
-
-<p>2 élèves maximum</p>
-
-<p class="price">20€</p>
-
-<div class="count">0</div>
-
-<div class="tooltip">Suivi personnalisé</div>
-
-</div>
-
-
-
-<!-- PACK DEFI -->
-
-<div class="card">
-
-<img src="images/defi.jpg">
-
-<h3>Pack Défi <span class="badge popular">Challenge</span></h3>
-
-<p>Exercices avancés</p>
-
-<p class="price">24€</p>
-
-<div class="count">0</div>
-
-<div class="tooltip">Pour progresser vite</div>
-
-</div>
-
-
-
-<!-- PACK PREMIUM -->
-
-<div class="card">
-
-<img src="images/premium.jpg">
-
-<h3>Pack Premium <span class="badge best">Premium</span></h3>
-
-<p>Cours individuel</p>
-
-<p class="price">28€</p>
-
-<div class="count">0</div>
-
-<div class="tooltip">Suivi complet</div>
-
-</div>
-
-
+<p>
+Des séances adaptées pour aider les élèves à progresser rapidement.
+</p>
 
 </section>
 
+<section class="packs">
 
+<!-- PACK MINI -->
 
-<footer style="text-align:center;padding:30px;background:#0077b6;color:white;margin-top:50px;">
+<div class="pack">
 
-📍 Fréjus  
-<br>
-📧 raphaelmaury83600@gmail.com  
+<div class="badge">Nouveau</div>
 
-<br><br>
+<div class="tooltip">
+Séance rapide pour questions simples
+</div>
 
-© 2026 Devoirs & Délices
+<h3>Pack Mini</h3>
+
+<div class="price" data-price="9">0€</div>
+
+<ul>
+<li>30 minutes d'aide</li>
+<li>explication ciblée</li>
+<li>idéal devoir rapide</li>
+</ul>
+
+</div>
+
+<!-- PACK DUO -->
+
+<div class="pack">
+
+<div class="badge">Populaire</div>
+
+<div class="tooltip">
+2 élèves maximum
+</div>
+
+<h3>Pack Duo</h3>
+
+<div class="price" data-price="18">0€</div>
+
+<ul>
+<li>1h de soutien</li>
+<li>2 élèves max</li>
+<li>travail collaboratif</li>
+</ul>
+
+</div>
+
+<!-- PACK STANDARD -->
+
+<div class="pack">
+
+<div class="tooltip">
+séance classique
+</div>
+
+<h3>Pack Standard</h3>
+
+<div class="price" data-price="19">0€</div>
+
+<ul>
+<li>1h complète</li>
+<li>exercices corrigés</li>
+<li>explications détaillées</li>
+</ul>
+
+</div>
+
+<!-- PACK PREMIUM -->
+
+<div class="pack">
+
+<div class="badge">Best</div>
+
+<div class="tooltip">
+suivi personnalisé
+</div>
+
+<h3>Pack Premium</h3>
+
+<div class="price" data-price="27">0€</div>
+
+<ul>
+<li>suivi personnalisé</li>
+<li>coaching méthode</li>
+<li>préparation contrôle</li>
+</ul>
+
+</div>
+
+<!-- PACK EXAM -->
+
+<div class="pack">
+
+<div class="badge">Exam</div>
+
+<div class="tooltip">
+préparation bac / brevet
+</div>
+
+<h3>Pack Examen</h3>
+
+<div class="price" data-price="35">0€</div>
+
+<ul>
+<li>préparation brevet</li>
+<li>préparation bac</li>
+<li>stratégies d'examen</li>
+</ul>
+
+</div>
+
+<!-- PACK INTENSIF -->
+
+<div class="pack">
+
+<div class="tooltip">
+session intensive
+</div>
+
+<h3>Pack Intensif</h3>
+
+<div class="price" data-price="49">0€</div>
+
+<ul>
+<li>2h de coaching</li>
+<li>programme personnalisé</li>
+<li>progression rapide</li>
+</ul>
+
+</div>
+
+</section>
+
+<section class="bonus">
+
+<h2>🍰 Devoirs & Délices</h2>
+
+<p>
+
+Après chaque séance d'une heure, les élèves peuvent profiter d'un petit moment
+convivial avec un gâteau fait maison.
+
+Les gâteaux sont **optionnels et coûtent seulement 2€ par gâteau**.
+
+C'est un moment de détente qui rend l'apprentissage plus agréable.
+
+</p>
+
+</section>
+
+<section class="faq">
+
+<h2>Questions des parents</h2>
+
+<div class="faq-item">
+
+<strong>Qui donne les cours ?</strong>
+
+<p>
+Un lycéen motivé de 17 ans qui aime expliquer et aider les autres élèves.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<strong>Combien d'élèves par séance ?</strong>
+
+<p>
+Maximum 4 élèves par heure pour garantir une bonne attention à chacun.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<strong>Comment réserver ?</strong>
+
+<p>
+Les réservations se font simplement par mail via la page contact.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Devoirs & Délices - Soutien scolaire à Fréjus
+</p>
 
 </footer>
 
-
-
 <script>
 
+/* compteur animé prix */
 
-/* STYLE CSS INSIDE */
+const prices = document.querySelectorAll(".price");
 
-const style=document.createElement("style");
+prices.forEach(price => {
 
-style.innerHTML=`
+let target = parseInt(price.dataset.price);
 
+let count = 0;
 
-.card{
-
-background:rgba(255,255,255,0.9);
-
-backdrop-filter:blur(10px);
-
-padding:20px;
-
-border-radius:18px;
-
-text-align:center;
-
-transition:0.3s;
-
-position:relative;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-
-}
-
-
-.card:hover{
-
-transform:translateY(-12px) scale(1.03);
-
-box-shadow:0 20px 40px rgba(0,0,0,0.25);
-
-}
-
-
-.card img{
-
-width:100%;
-
-border-radius:12px;
-
-margin-bottom:15px;
-
-}
-
-
-.price{
-
-font-weight:700;
-
-font-size:22px;
-
-color:#0077b6;
-
-}
-
-
-.count{
-
-font-size:22px;
-
-font-weight:700;
-
-color:#00b4d8;
-
-margin-top:10px;
-
-}
-
-
-.badge{
-
-padding:4px 10px;
-
-border-radius:10px;
-
-color:white;
-
-font-size:12px;
-
-margin-left:8px;
-
-animation:pulse 2s infinite;
-
-}
-
-
-.new{background:#ff5722;}
-
-.popular{background:#00b4d8;}
-
-.best{background:#9c27b0;}
-
-
-.tooltip{
-
-position:absolute;
-
-bottom:-45px;
-
-left:50%;
-
-transform:translateX(-50%) scale(0.8);
-
-background:#333;
-
-color:white;
-
-padding:8px 12px;
-
-border-radius:8px;
-
-opacity:0;
-
-transition:0.3s;
-
-font-size:13px;
-
-}
-
-
-.card:hover .tooltip{
-
-opacity:1;
-
-transform:translateX(-50%) scale(1);
-
-}
-
-
-@keyframes pulse{
-
-0%{transform:scale(1);}
-
-50%{transform:scale(1.15);}
-
-100%{transform:scale(1);}
-
-}
-
-`;
-
-document.head.appendChild(style);
-
-
-
-/* COMPTEUR */
-
-document.querySelectorAll(".card").forEach(card=>{
-
-const counter=card.querySelector(".count");
-
-let count=0;
-
-let interval;
-
-
-
-card.addEventListener("mouseenter",()=>{
-
-interval=setInterval(()=>{
-
-if(count<4){
+let interval = setInterval(()=>{
 
 count++;
 
-counter.textContent=count;
+price.innerText = count + "€";
 
-}else{
-
+if(count >= target){
 clearInterval(interval);
-
 }
 
-},120);
+},30);
 
 });
-
-
-card.addEventListener("mouseleave",()=>{
-
-clearInterval(interval);
-
-count=0;
-
-counter.textContent=0;
-
-});
-
-});
-
 
 </script>
-
-
 
 </body>
 
