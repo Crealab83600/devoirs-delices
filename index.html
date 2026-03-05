@@ -5,20 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Devoirs & Délices | Accueil</title>
 <style>
-/* ===== BODY ===== */
+/* === BODY === */
 body {
   margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#f0f8ff,#e0f7fa);
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg,#f0f8ff,#e0f7fa);
   color:#333;
+  overflow-x:hidden;
 }
-/* ===== NAVBAR FIXE ===== */
+/* === NAVBAR FIXE === */
 nav {
   position:fixed;
   top:0;
   width:100%;
   background:rgba(0,119,182,0.95);
-  padding:15px;
+  padding:15px 0;
   display:flex;
   justify-content:center;
   gap:25px;
@@ -36,7 +37,7 @@ nav a:hover {
   transform:scale(1.1);
 }
 
-/* ===== HEADER ===== */
+/* === HEADER === */
 header {
   margin-top:60px;
   height:500px;
@@ -46,37 +47,53 @@ header {
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-  url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') center/cover no-repeat;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('images/header-bg.jpg') center/cover no-repeat;
+  position:relative;
+  overflow:hidden;
 }
-header h1 {
-  font-size:55px;
+header h1{
+  font-size:4rem;
   margin:0;
   animation:slideIn 1s ease-in-out;
 }
-header p {
-  font-size:22px;
+header p{
+  font-size:1.5rem;
   margin-top:15px;
   animation:fadeIn 2s;
 }
-@keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
-@keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+@keyframes slideIn{
+  0%{transform:translateY(-50px);opacity:0;}
+  100%{transform:translateY(0);opacity:1;}
+}
+@keyframes fadeIn{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
 
-/* ===== SECTIONS ===== */
-section {padding:60px 20px; max-width:1200px;margin:auto;}
-h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
+/* === SECTIONS === */
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+h2{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:40px;
+  color:#0077b6;
+}
 
-/* ===== CARDS GRID ===== */
+/* === CARDS GRID === */
 .cards-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
 }
 
-/* ===== CARD ===== */
+/* === CARDS === */
 .card{
   background:rgba(255,255,255,0.9);
-  padding:30px;
+  padding:25px;
   border-radius:20px;
   box-shadow:0 15px 40px rgba(0,0,0,0.25);
   transition:0.3s;
@@ -89,15 +106,20 @@ h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
 }
 .card img{
   width:100%;
-  border-radius:15px;
+  border-radius:12px;
   margin-bottom:15px;
-  transition:0.5s;
 }
-.card img:hover{
-  transform:scale(1.05) rotate(1deg);
+.card h3{
+  margin-top:0;
+  color:#0077b6;
 }
-.card h3{margin-top:0;color:#0077b6;}
-.card p{margin:8px 0;font-size:16px;line-height:1.5;}
+.card p{
+  margin:8px 0;
+  font-size:16px;
+  line-height:1.5;
+}
+
+/* === BADGES === */
 .badge{
   position:absolute;
   top:10px;
@@ -109,7 +131,13 @@ h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
   font-weight:bold;
   animation:pulse 2s infinite;
 }
-@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
+
+/* === TOOLTIP === */
 .tooltip{
   position:absolute;
   top:100%;
@@ -126,22 +154,31 @@ h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
   transform:scale(0);
   transition:0.3s;
 }
-.card:hover .tooltip{display:block;transform:scale(1);}
+.card:hover .tooltip{
+  display:block;
+  transform:scale(1);
+}
 
-/* ===== BUTTON ===== */
-.button{
-  display:inline-block;
-  padding:12px 25px;
-  background:#ff5722;
-  color:white;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:bold;
+/* === FAQ === */
+.faq-item{
+  margin-bottom:20px;
+  background:rgba(255,255,255,0.85);
+  padding:20px;
+  border-radius:15px;
+  cursor:pointer;
   transition:0.3s;
 }
-.button:hover{background:#ff7043; transform:scale(1.05);}
+.faq-item:hover{
+  background:rgba(255,255,255,1);
+  transform:translateX(5px);
+}
+.faq-answer{
+  display:none;
+  margin-top:10px;
+  font-size:15px;
+}
 
-/* ===== FOOTER ===== */
+/* === FOOTER === */
 footer{
   text-align:center;
   padding:40px;
@@ -155,99 +192,120 @@ footer{
 <body>
 
 <nav>
-<a href="index.html">Accueil</a>
-<a href="about.html">À propos</a>
-<a href="packs.html">Offres</a>
-<a href="contact.html">Contact</a>
-<a href="avis.html">Avis</a>
+  <a href="index.html">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="packs.html">Offres</a>
+  <a href="contact.html">Contact</a>
+  <a href="avis.html">Avis</a>
 </nav>
 
 <header>
 <h1>Devoirs & Délices</h1>
-<p>Soutien scolaire et gourmandises pour les enfants à Fréjus</p>
-<a href="packs.html" class="button">Voir les Offres</a>
+<p>Apprentissage motivant et gourmandises pour les élèves de Fréjus</p>
 </header>
 
 <section>
-<h2>Nos Packs</h2>
+<h2>Nos offres phares</h2>
 <div class="cards-grid">
+  <div class="card">
+    <img src="images/bienvenue.jpg" alt="Pack Bienvenue">
+    <h3>Pack Bienvenue <span class="badge">Nouveau</span></h3>
+    <p>Découverte des cours • 1h • Max 4 élèves</p>
+    <p>Prix : 15€</p>
+    <div class="tooltip">Gâteau optionnel 2€</div>
+  </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1584697964193-63a3b07b109b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Bienvenue">
-<h3>Pack Bienvenue</h3>
-<p>Découverte des cours • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
-<span class="badge">Nouveau</span>
-<div class="tooltip">Séance douce et ludique pour débutants</div>
-<p>Prix : 15€</p>
+  <div class="card">
+    <img src="images/duo.jpg" alt="Pack Duo">
+    <h3>Pack Duo <span class="badge" style="background:#ff9800;">Nouveau</span></h3>
+    <p>Suivi personnalisé • Groupe de 2 élèves</p>
+    <p>Prix : 20€</p>
+    <div class="tooltip">Gâteau optionnel 2€</div>
+  </div>
+
+  <div class="card">
+    <img src="images/bac.jpg" alt="Pack Examens">
+    <h3>Pack Examens <span class="badge" style="background:#4caf50;">Best Deal</span></h3>
+    <p>Soutien intensif pour Bac ou Brevet</p>
+    <p>Prix : 25€</p>
+    <div class="tooltip">Max 4 élèves • Gâteau 2€ optionnel</div>
+  </div>
+
+  <div class="card">
+    <img src="images/python.jpg" alt="Pack Programmation">
+    <h3>Pack Programmation <span class="badge" style="background:#00b4d8;">Populaire</span></h3>
+    <p>Python & Arduino • 1h de cours</p>
+    <p>Prix : 25€</p>
+    <div class="tooltip">Max 4 élèves</div>
+  </div>
+
+  <div class="card">
+    <img src="images/classique.jpg" alt="Pack Classique">
+    <h3>Pack Classique <span class="badge" style="background:#9c27b0;">Best Deal</span></h3>
+    <p>Soutien scolaire standard • 1h</p>
+    <p>Prix : 17€</p>
+    <div class="tooltip">Max 5 élèves</div>
+  </div>
+
+  <div class="card">
+    <img src="images/premium.jpg" alt="Pack Premium">
+    <h3>Pack Premium <span class="badge" style="background:#ff5722;">Top</span></h3>
+    <p>Cours individuel + suivi personnalisé</p>
+    <p>Prix : 28€</p>
+    <div class="tooltip">Gâteau optionnel 2€</div>
+  </div>
 </div>
+</section>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1596496052631-8b6b0d9c583b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Examens">
-<h3>Pack Examens</h3>
-<p>Préparation Bac / Brevet • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
-<span class="badge" style="background:#4caf50;">Best Deal</span>
-<div class="tooltip">Approfondissement intensif pour réussir vos examens</div>
-<p>Prix : 25€</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1581091870626-2ef222acdb62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Programmation">
-<h3>Pack Programmation</h3>
-<p>Python & Arduino • 1h • Max 4 élèves</p>
-<span class="badge" style="background:#2196f3;">Populaire</span>
-<div class="tooltip">Découverte du codage et électronique pour tous niveaux</div>
-<p>Prix : 25€</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1596493027582-3452f7b6b7a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Duo">
-<h3>Pack Duo</h3>
-<p>Groupes de 2 élèves • 1h • Suivi rapproché • Gâteau 2€ optionnel</p>
-<span class="badge" style="background:#ff9800;">Nouveau</span>
-<div class="tooltip">Travail en duo pour un suivi plus personnalisé</div>
-<p>Prix : 20€</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1618886458515-2a0b1a1d56d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Classique">
-<h3>Pack Classique</h3>
-<p>Cours standard • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
-<span class="badge" style="background:#607d8b;">Classique</span>
-<div class="tooltip">Cours standard pour renforcer les bases</div>
-<p>Prix : 17€</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Premium">
-<h3>Pack Premium</h3>
-<p>Cours individuel + suivi personnalisé • 1h • Gâteau 2€ optionnel</p>
-<span class="badge" style="background:#9c27b0;">Premium</span>
-<div class="tooltip">Attention maximale et suivi personnalisé</div>
-<p>Prix : 28€</p>
-</div>
-
+<section>
+<h2>Pourquoi ça marche ?</h2>
+<div class="cards-grid">
+  <div class="card">
+    <h3>Clarté et suivi</h3>
+    <p>Chaque séance permet de clarifier les notions et de progresser sereinement.</p>
+  </div>
+  <div class="card">
+    <h3>Confiance et autonomie</h3>
+    <p>Les élèves gagnent confiance en eux grâce à un accompagnement bienveillant.</p>
+  </div>
+  <div class="card">
+    <h3>Motivation ludique</h3>
+    <p>Les gâteaux en option rendent l’apprentissage plus motivant et agréable.</p>
+  </div>
 </div>
 </section>
 
 <section>
 <h2>FAQ</h2>
-<div class="cards-grid">
-<div class="card"><h3>Quel âge pour participer ?</h3><p>De 7 à 18 ans, tous niveaux bienvenus !</p></div>
-<div class="card"><h3>Comment réserver ?</h3><p>Contact par email, pas de paiement en ligne nécessaire.</p></div>
-<div class="card"><h3>Gâteaux inclus ?</h3><p>Gâteaux optionnels à 2€ chacun après la séance.</p></div>
-<div class="card"><h3>Groupes maximum ?</h3><p>4 élèves par groupe pour un suivi efficace.</p></div>
-<div class="card"><h3>Paiement ?</h3><p>En espèces ou virement à la fin de chaque séance.</p></div>
-<div class="card"><h3>Matériel fourni ?</h3><p>Crayons, cahiers, et matériel électronique pour les cours de codage.</p></div>
-<div class="card"><h3>Durée des séances ?</h3><p>1h pour chaque atelier, possibilité d'enchaîner plusieurs séances.</p></div>
-<div class="card"><h3>Pourquoi nous choisir ?</h3><p>Approche ludique et efficace, petits groupes pour progresser rapidement.</p></div>
+<div class="faq-item" onclick="toggleFaq(this)">
+  <strong>À qui s’adresse l’aide aux devoirs ?</strong>
+  <div class="faq-answer">De 7 à 18 ans, quel que soit le niveau ou la matière.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+  <strong>Comment se déroule une séance ?</strong>
+  <div class="faq-answer">Remise à niveau, explications concrètes et exercices adaptés.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+  <strong>À quel rythme pour voir les progrès ?</strong>
+  <div class="faq-answer">Des séances régulières chaque semaine permettent de consolider les acquis.</div>
+</div>
+<div class="faq-item" onclick="toggleFaq(this)">
+  <strong>Quelles matières sont couvertes ?</strong>
+  <div class="faq-answer">Français, Maths, Anglais, Sciences, et soutien aux devoirs généraux.</div>
 </div>
 </section>
 
 <footer>
-📍 Fréjus • 📧 raphaelmaury83600@gmail.com
-<br><br>
+📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br><br>
 © 2026 Devoirs & Délices
 </footer>
+
+<script>
+function toggleFaq(el){
+  const ans = el.querySelector('.faq-answer');
+  ans.style.display = (ans.style.display==='block') ? 'none' : 'block';
+}
+</script>
 
 </body>
 </html>
