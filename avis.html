@@ -3,73 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avis | Devoirs & Délices</title>
-</head>
-<body style="font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(135deg,#e0f7fa,#80deea);">
+<title>Devoirs & Délices | Avis</title>
+<style>
+body {
+  margin:0;
+  font-family:Poppins,Arial,sans-serif;
+  background: linear-gradient(135deg,#e0f7fa,#80deea);
+}
+nav {
+  position:fixed; top:0; width:100%; background:#0077b6;
+  padding:15px; display:flex; justify-content:center; gap:25px;
+  z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.2);
+}
+nav a {
+  color:white; font-weight:bold; transition:0.3s;
+}
+nav a:hover { color:#ffeb3b; }
 
-<!-- MENU FIXE -->
-<nav style="position:fixed;top:0;width:100%;background:linear-gradient(135deg,#0077b6,#00b4d8);padding:15px 0;display:flex;justify-content:center;gap:25px;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.2);">
-  <a href="index.html" style="color:white;font-weight:600;">Accueil</a>
-  <a href="about.html" style="color:white;font-weight:600;">À propos</a>
-  <a href="packs.html" style="color:white;font-weight:600;">Offres</a>
-  <a href="contact.html" style="color:white;font-weight:600;">Contact</a>
-  <a href="avis.html" style="color:white;font-weight:600;">Avis</a>
+header {
+  margin-top:60px; height:300px;
+  background:url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') center/cover;
+  color:white; text-align:center; padding-top:120px; position:relative;
+}
+header::after {
+  content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.3);
+}
+header h1 {
+  font-size:45px; animation:slideIn 1s ease-in-out; position:relative; z-index:1;
+}
+header p {
+  font-size:20px; margin-top:10px; animation:fadeIn 2s; position:relative; z-index:1;
+}
+
+section { padding:60px 20px; max-width:1200px; margin:auto; }
+h2 { font-size:36px; margin-bottom:20px; text-align:center; }
+
+.review-container {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+  margin-top:50px;
+}
+
+.review {
+  background:rgba(255,255,255,0.9);
+  padding:25px; border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  position:relative; transition:0.4s; cursor:pointer;
+  animation:breathing 5s infinite;
+}
+.review:hover {
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+.review h3 { margin-top:0; display:flex; align-items:center; justify-content:space-between; }
+.badge-review {
+  background:#ff9800; color:white; padding:4px 10px;
+  border-radius:8px; font-size:0.8rem; animation:pulseBadge 2s infinite;
+}
+.review p { font-size:16px; line-height:1.5; }
+.review-time { font-size:14px; color:#0077b6; margin-top:10px; }
+
+.new-review-form {
+  max-width:600px; margin:auto; margin-top:50px;
+  display:grid; gap:15px;
+  background:rgba(255,255,255,0.9); padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+.new-review-form input, .new-review-form textarea {
+  padding:12px; border-radius:10px; border:1px solid #ccc; font-size:16px; width:100%;
+}
+.new-review-form button {
+  padding:15px; background:#0077b6; color:white; font-weight:bold;
+  border:none; border-radius:10px; cursor:pointer; transition:0.3s;
+}
+.new-review-form button:hover { background:#00b4d8; }
+
+footer { background:#0077b6; color:white; text-align:center; padding:30px; margin-top:50px; }
+
+@keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
+@keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+@keyframes pulseBadge{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+@keyframes breathing{0%{transform:scale(1);}50%{transform:scale(1.01);}100%{transform:scale(1);}}
+.success-popup{
+  position:fixed; top:20px; right:20px;
+  background:#00b4d8; color:white; padding:15px 20px;
+  border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  display:none; z-index:2000; animation:fadeInPopup 0.5s;
+}
+@keyframes fadeInPopup{0%{opacity:0;transform:translateY(-20px);}100%{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<!-- MENU -->
+<nav>
+<a href="index.html">Accueil</a>
+<a href="about.html">À propos</a>
+<a href="packs.html">Offres</a>
+<a href="contact.html">Contact</a>
+<a href="avis.html">Avis</a>
 </nav>
 
 <!-- HEADER -->
-<header style="margin-top:60px;text-align:center;padding:150px 20px;background:url('images/header-bg-avis.jpg') no-repeat center/cover;color:white;">
-  <h1 style="font-size:3rem;animation:slideInHeader 1s ease-in-out;">Avis des parents</h1>
-  <p style="font-size:1.3rem;margin-top:15px;animation:fadeInHeader 2s;">Laissez votre témoignage sur les séances</p>
+<header>
+<h1>Avis des parents</h1>
+<p>Découvrez les témoignages et recommandations de Fréjus 🍰</p>
 </header>
 
-<!-- Formulaire avis -->
-<section style="max-width:1100px;margin:50px auto;padding:30px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-radius:15px;">
-  <h2 style="text-align:center;margin-bottom:25px;">Laisser un avis</h2>
-  <form id="avisForm" style="display:flex;flex-direction:column;gap:15px;max-width:600px;margin:auto;">
-    <input type="text" id="parentName" placeholder="Nom du parent" required style="padding:10px;border-radius:8px;border:1px solid #ccc;">
-    <input type="text" id="childName" placeholder="Nom de l'élève" required style="padding:10px;border-radius:8px;border:1px solid #ccc;">
-    <textarea id="avisMessage" placeholder="Votre avis..." required style="padding:10px;border-radius:8px;border:1px solid #ccc;height:100px;"></textarea>
-    <button type="submit" style="padding:15px;background:#ff5722;color:white;font-weight:700;border-radius:10px;border:none;cursor:pointer;transition:0.3s;">Envoyer l'avis</button>
-  </form>
-  <div id="avisNotif" style="margin-top:20px;text-align:center;font-weight:700;color:green;display:none;">Merci ! Votre avis a été enregistré ✔</div>
+<!-- SECTION AVIS -->
+<section>
+<h2>Ils nous recommandent</h2>
+<div class="review-container">
+
+<div class="review">
+<h3>Marie L. <span class="badge-review">Top Parent</span></h3>
+<p>Mon fils progresse rapidement grâce aux explications claires et la patience de Raphaël. Les séances sont motivantes et conviviales.</p>
+<div class="review-time">1 semaine ago</div>
+</div>
+
+<div class="review">
+<h3>Jean P. <span class="badge-review">Recommandé</span></h3>
+<p>Très bon accompagnement scolaire. Les exercices sont adaptés et les mini-projets de codage intéressants. Mon fils adore les gâteaux après la séance !</p>
+<div class="review-time">3 jours ago</div>
+</div>
+
+<div class="review">
+<h3>Claire M. <span class="badge-review">Top Parent</span></h3>
+<p>Raphaël sait captiver l’attention des élèves et rendre l’apprentissage agréable. Les groupes sont limités, ce qui est idéal pour le suivi.</p>
+<div class="review-time">5 jours ago</div>
+</div>
+
+<div class="review">
+<h3>Paul T. <span class="badge-review">Recommandé</span></h3>
+<p>Excellente expérience ! Les enfants sont motivés, les explications sont claires et les gâteaux rendent la pause encore plus agréable.</p>
+<div class="review-time">2 semaines ago</div>
+</div>
+
+<div class="review">
+<h3>Lucie R. <span class="badge-review">Top Parent</span></h3>
+<p>Une approche très humaine et efficace. Mon fils a beaucoup progressé en maths et en codage. Les séances sont très bien structurées.</p>
+<div class="review-time">1 mois ago</div>
+</div>
+
+</div>
 </section>
 
-<!-- Section avis affichés -->
-<section style="max-width:1100px;margin:50px auto;padding:30px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-radius:15px;">
-  <h2 style="text-align:center;margin-bottom:25px;">Témoignages</h2>
-  <div id="avisList" style="display:flex;flex-direction:column;gap:20px;">
-    <!-- Avis dynamiques ajoutés ici -->
-  </div>
+<!-- NOUVEL AVIS -->
+<section>
+<h2>Laisser un avis</h2>
+<form class="new-review-form" id="reviewForm" onsubmit="addReview(event)">
+<input type="text" id="rname" placeholder="Nom du parent" required>
+<input type="text" id="rstudent" placeholder="Nom de l'élève" required>
+<textarea id="rmessage" rows="4" placeholder="Votre avis" required></textarea>
+<button type="submit">Envoyer l'avis</button>
+</form>
+<div class="success-popup" id="successPopup">Avis envoyé ! Merci !</div>
 </section>
 
-<footer style="text-align:center;padding:30px;background:#0077b6;color:white;margin-top:50px;">
-📍 Fréjus • 📧 raphaelmaury83600@gmail.com<br>
+<!-- FOOTER -->
+<footer>
+📍 Fréjus • 📧 raphaelmaury83600@gmail.com
+<br><br>
 © 2026 Devoirs & Délices
 </footer>
 
+<!-- JS -->
 <script>
-document.getElementById('avisForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const parent=document.getElementById('parentName').value;
-  const child=document.getElementById('childName').value;
-  const message=document.getElementById('avisMessage').value;
-  const avisDiv=document.createElement('div');
-  avisDiv.style.background='rgba(0,180,216,0.1)';
-  avisDiv.style.padding='15px';
-  avisDiv.style.borderRadius='12px';
-  avisDiv.style.transition='0.3s';
-  avisDiv.style.animation='fadeInAvis 1s ease forwards';
-  avisDiv.innerHTML=`<strong>${parent}</strong> pour <em>${child}</em>: <p>${message}</p>`;
-  document.getElementById('avisList').prepend(avisDiv);
-  document.getElementById('avisNotif').style.display='block';
-  setTimeout(()=>{document.getElementById('avisNotif').style.display='none';},4000);
-  document.getElementById('avisForm').reset();
-});
+function addReview(e){
+e.preventDefault();
+const name=document.getElementById('rname').value;
+const student=document.getElementById('rstudent').value;
+const message=document.getElementById('rmessage').value;
 
-// Animations CSS
-const style=document.createElement('style');
-style.innerHTML='@keyframes fadeInAvis{0%{opacity:0;transform:translateY(-10px);}100%{opacity:1;transform:translateY(0);}}';
-document.head.appendChild(style);
+const container=document.querySelector('.review-container');
+const newReview=document.createElement('div');
+newReview.classList.add('review');
+newReview.innerHTML=`<h3>${name} <span class="badge-review">Nouveau</span></h3>
+<p>${message}</p>
+<div class="review-time">Just now</div>`;
+container.prepend(newReview);
+
+document.getElementById('successPopup').style.display='block';
+setTimeout(()=>{document.getElementById('successPopup').style.display='none';},3000);
+document.getElementById('reviewForm').reset();
+}
 </script>
 
 </body>
