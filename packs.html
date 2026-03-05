@@ -1,451 +1,223 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
-<title>Packs | Devoirs & Délices</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(120deg,#eef2ff,#ffffff);
-}
-
-/* header */
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
-z-index:999;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-}
-
-nav a{
-text-decoration:none;
-color:#333;
-margin:0 15px;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#4f46e5;
-}
-
-/* hero */
-
-.hero{
-padding-top:120px;
-text-align:center;
-padding-bottom:60px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-color:#555;
-}
-
-/* packs */
-
-.packs{
-max-width:1200px;
-margin:auto;
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-justify-content:center;
-padding-bottom:80px;
-}
-
-.pack{
-background:white;
-padding:35px;
-width:260px;
-border-radius:18px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transition:0.3s;
-position:relative;
-cursor:pointer;
-}
-
-.pack:hover{
-transform:translateY(-12px) scale(1.04);
-box-shadow:0 25px 40px rgba(0,0,0,0.15);
-}
-
-.price{
-font-size:34px;
-font-weight:bold;
-margin:15px 0;
-color:#4f46e5;
-}
-
-ul{
-padding:0;
-list-style:none;
-}
-
-li{
-margin:8px 0;
-color:#555;
-}
-
-/* badges */
-
-.badge{
-position:absolute;
-top:-12px;
-right:-12px;
-background:#4f46e5;
-color:white;
-padding:6px 12px;
-font-size:12px;
-border-radius:20px;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.1)}
-100%{transform:scale(1)}
-}
-
-/* tooltip */
-
-.tooltip{
-position:absolute;
-bottom:100%;
-left:50%;
-transform:translateX(-50%);
-background:#333;
-color:white;
-padding:6px 10px;
-font-size:12px;
-border-radius:6px;
-opacity:0;
-pointer-events:none;
-transition:0.3s;
-}
-
-.pack:hover .tooltip{
-opacity:1;
-bottom:110%;
-}
-
-/* section bonus */
-
-.bonus{
-background:white;
-padding:60px 20px;
-text-align:center;
-}
-
-.bonus h2{
-font-size:32px;
-}
-
-.bonus p{
-max-width:700px;
-margin:auto;
-color:#555;
-}
-
-/* FAQ */
-
-.faq{
-padding:70px 20px;
-max-width:900px;
-margin:auto;
-}
-
-.faq h2{
-text-align:center;
-margin-bottom:40px;
-}
-
-.faq-item{
-background:white;
-padding:20px;
-margin-bottom:15px;
-border-radius:10px;
-box-shadow:0 6px 12px rgba(0,0,0,0.08);
-}
-
-/* footer */
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:30px;
-}
-
-</style>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offres | Devoirs & Délices</title>
 </head>
 
-<body>
+<body style="margin:0;font-family:Poppins,Arial;background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
 
-<header>
-<nav>
-<h2>Devoirs & Délices</h2>
-
-<div>
-<a href="index.html">Accueil</a>
-<a href="about.html">À propos</a>
-<a href="packs.html">Packs</a>
-<a href="contact.html">Contact</a>
-<a href="avis.html">Avis</a>
-</div>
-
+<!-- MENU -->
+<nav style="position:fixed;top:0;width:100%;background:#0077b6;padding:15px;display:flex;justify-content:center;gap:25px;z-index:1000;">
+<a href="index.html" style="color:white;text-decoration:none;font-weight:bold;">Accueil</a>
+<a href="about.html" style="color:white;text-decoration:none;font-weight:bold;">À propos</a>
+<a href="packs.html" style="color:white;text-decoration:none;font-weight:bold;">Offres</a>
+<a href="contact.html" style="color:white;text-decoration:none;font-weight:bold;">Contact</a>
+<a href="avis.html" style="color:white;text-decoration:none;font-weight:bold;">Avis</a>
 </nav>
+
+<!-- HEADER -->
+<header style="margin-top:60px;height:350px;background:url('https://images.unsplash.com/photo-1509062522246-3755977927d7') center/cover;color:white;text-align:center;padding-top:120px;">
+<h1 style="font-size:48px;">Nos Offres</h1>
+<p style="font-size:20px;">Soutien scolaire accessible à Fréjus</p>
 </header>
 
-<section class="hero">
-
-<h1>Choisissez votre pack</h1>
-
+<!-- INTRO -->
+<section style="padding:50px;text-align:center;max-width:900px;margin:auto;">
+<h2>Des cours simples, efficaces et accessibles</h2>
 <p>
-Des séances adaptées pour aider les élèves à progresser rapidement.
+L'objectif de <b>Devoirs & Délices</b> est d'aider les élèves à progresser sans pression,
+dans une ambiance motivante. Les groupes sont volontairement petits pour
+favoriser l'explication et la compréhension.
 </p>
-
 </section>
 
-<section class="packs">
+<!-- PACKS -->
+<section style="max-width:1200px;margin:auto;padding:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
 
-<!-- PACK MINI -->
-
-<div class="pack">
-
-<div class="badge">Nouveau</div>
-
-<div class="tooltip">
-Séance rapide pour questions simples
-</div>
-
-<h3>Pack Mini</h3>
-
-<div class="price" data-price="9">0€</div>
-
+<!-- DECOUVERTE -->
+<div class="pack" style="background:white;border-radius:15px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:0.3s;"
+onmouseover="hoverPack(this)" onmouseout="leavePack(this)">
+<h3>Pack Découverte</h3>
+<p>Tester l'aide aux devoirs.</p>
 <ul>
-<li>30 minutes d'aide</li>
-<li>explication ciblée</li>
-<li>idéal devoir rapide</li>
+<li>1 séance de 1h</li>
+<li>Explications simples</li>
+<li>Conseils méthodologiques</li>
 </ul>
-
+<p style="font-size:28px;color:#0077b6;font-weight:bold;">12€</p>
+<p>Élèves intéressés : <span class="counter">0</span></p>
 </div>
 
-<!-- PACK DUO -->
-
-<div class="pack">
-
-<div class="badge">Populaire</div>
-
-<div class="tooltip">
-2 élèves maximum
+<!-- CLASSIQUE -->
+<div class="pack" style="background:white;border-radius:15px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:0.3s;"
+onmouseover="hoverPack(this)" onmouseout="leavePack(this)">
+<h3>Pack Classique <span style="background:#00b4d8;color:white;padding:5px 10px;border-radius:10px;">Populaire</span></h3>
+<p>Le cours standard.</p>
+<ul>
+<li>1h d'aide aux devoirs</li>
+<li>Correction des exercices</li>
+<li>Explications détaillées</li>
+</ul>
+<p style="font-size:28px;color:#0077b6;font-weight:bold;">17€</p>
+<p>Élèves intéressés : <span class="counter">0</span></p>
 </div>
 
+<!-- DUO -->
+<div class="pack" style="background:white;border-radius:15px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:0.3s;"
+onmouseover="hoverPack(this)" onmouseout="leavePack(this)">
 <h3>Pack Duo</h3>
-
-<div class="price" data-price="18">0€</div>
-
+<p>Travail à deux élèves.</p>
 <ul>
-<li>1h de soutien</li>
-<li>2 élèves max</li>
-<li>travail collaboratif</li>
+<li>2 élèves maximum</li>
+<li>1h de travail</li>
+<li>Entraide et explication</li>
 </ul>
-
+<p style="font-size:28px;color:#0077b6;font-weight:bold;">20€</p>
+<p>Élèves intéressés : <span class="counter">0</span></p>
 </div>
 
-<!-- PACK STANDARD -->
-
-<div class="pack">
-
-<div class="tooltip">
-séance classique
-</div>
-
-<h3>Pack Standard</h3>
-
-<div class="price" data-price="19">0€</div>
-
+<!-- EXAMENS -->
+<div class="pack" style="background:white;border-radius:15px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:0.3s;"
+onmouseover="hoverPack(this)" onmouseout="leavePack(this)">
+<h3>Pack Examens</h3>
+<p>Préparation Brevet et Bac.</p>
 <ul>
-<li>1h complète</li>
-<li>exercices corrigés</li>
-<li>explications détaillées</li>
+<li>Annales corrigées</li>
+<li>Méthodes de révision</li>
+<li>Simulation d'examen</li>
 </ul>
-
+<p style="font-size:28px;color:#0077b6;font-weight:bold;">22€</p>
+<p>Élèves intéressés : <span class="counter">0</span></p>
 </div>
 
-<!-- PACK PREMIUM -->
-
-<div class="pack">
-
-<div class="badge">Best</div>
-
-<div class="tooltip">
-suivi personnalisé
-</div>
-
-<h3>Pack Premium</h3>
-
-<div class="price" data-price="27">0€</div>
-
+<!-- PROGRAMMATION -->
+<div class="pack" style="background:white;border-radius:15px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:0.3s;"
+onmouseover="hoverPack(this)" onmouseout="leavePack(this)">
+<h3>Pack Programmation</h3>
+<p>Découverte du code.</p>
 <ul>
-<li>suivi personnalisé</li>
-<li>coaching méthode</li>
-<li>préparation contrôle</li>
+<li>Python</li>
+<li>Arduino</li>
+<li>Mini projets</li>
 </ul>
-
+<p style="font-size:28px;color:#0077b6;font-weight:bold;">25€</p>
+<p>Élèves intéressés : <span class="counter">0</span></p>
 </div>
 
-<!-- PACK EXAM -->
-
-<div class="pack">
-
-<div class="badge">Exam</div>
-
-<div class="tooltip">
-préparation bac / brevet
-</div>
-
-<h3>Pack Examen</h3>
-
-<div class="price" data-price="35">0€</div>
-
+<!-- PREMIUM -->
+<div class="pack" style="background:white;border-radius:15px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:0.3s;border:3px solid #ff9800;"
+onmouseover="hoverPack(this)" onmouseout="leavePack(this)">
+<h3>Pack Premium ⭐</h3>
+<p>Séance individuelle.</p>
 <ul>
-<li>préparation brevet</li>
-<li>préparation bac</li>
-<li>stratégies d'examen</li>
+<li>1 élève</li>
+<li>Suivi personnalisé</li>
+<li>Préparation contrôles</li>
 </ul>
-
-</div>
-
-<!-- PACK INTENSIF -->
-
-<div class="pack">
-
-<div class="tooltip">
-session intensive
-</div>
-
-<h3>Pack Intensif</h3>
-
-<div class="price" data-price="49">0€</div>
-
-<ul>
-<li>2h de coaching</li>
-<li>programme personnalisé</li>
-<li>progression rapide</li>
-</ul>
-
+<p style="font-size:28px;color:#0077b6;font-weight:bold;">28€</p>
+<p>Élèves intéressés : <span class="counter">0</span></p>
 </div>
 
 </section>
 
-<section class="bonus">
+<!-- COMPARAISON -->
+<section style="background:white;padding:60px;text-align:center;">
+<h2>Pourquoi choisir Devoirs & Délices ?</h2>
 
-<h2>🍰 Devoirs & Délices</h2>
+<table style="margin:auto;border-collapse:collapse;margin-top:30px;">
+<tr>
+<th style="padding:15px;border:1px solid #ccc;">Critère</th>
+<th style="padding:15px;border:1px solid #ccc;">Devoirs & Délices</th>
+<th style="padding:15px;border:1px solid #ccc;">Plateformes classiques</th>
+</tr>
 
-<p>
+<tr>
+<td style="padding:15px;border:1px solid #ccc;">Prix</td>
+<td style="padding:15px;border:1px solid #ccc;">12€ - 28€</td>
+<td style="padding:15px;border:1px solid #ccc;">30€ - 60€</td>
+</tr>
 
-Après chaque séance d'une heure, les élèves peuvent profiter d'un petit moment
-convivial avec un gâteau fait maison.
+<tr>
+<td style="padding:15px;border:1px solid #ccc;">Groupes</td>
+<td style="padding:15px;border:1px solid #ccc;">Max 4 élèves</td>
+<td style="padding:15px;border:1px solid #ccc;">Variable</td>
+</tr>
 
-Les gâteaux sont **optionnels et coûtent seulement 2€ par gâteau**.
+<tr>
+<td style="padding:15px;border:1px solid #ccc;">Ambiance</td>
+<td style="padding:15px;border:1px solid #ccc;">Conviviale</td>
+<td style="padding:15px;border:1px solid #ccc;">Classique</td>
+</tr>
 
-C'est un moment de détente qui rend l'apprentissage plus agréable.
-
-</p>
+</table>
 
 </section>
 
-<section class="faq">
+<!-- GATEAUX -->
+<section style="padding:60px;text-align:center;background:linear-gradient(135deg,#ffe0b2,#ffcc80);">
+<h2>🍰 Option Délices</h2>
+<p>Après la séance, les élèves peuvent acheter un gâteau maison.</p>
+<p style="font-size:26px;font-weight:bold;">2€ par gâteau</p>
+</section>
 
+<!-- FAQ -->
+<section style="padding:60px;text-align:center;max-width:900px;margin:auto;">
 <h2>Questions des parents</h2>
 
-<div class="faq-item">
+<p><b>Combien d'élèves par groupe ?</b></p>
+<p>Maximum 4 élèves pour garantir un bon suivi.</p>
 
-<strong>Qui donne les cours ?</strong>
+<p><b>Quel niveau scolaire ?</b></p>
+<p>Primaire, collège et lycée.</p>
 
-<p>
-Un lycéen motivé de 17 ans qui aime expliquer et aider les autres élèves.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<strong>Combien d'élèves par séance ?</strong>
-
-<p>
-Maximum 4 élèves par heure pour garantir une bonne attention à chacun.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<strong>Comment réserver ?</strong>
-
-<p>
-Les réservations se font simplement par mail via la page contact.
-</p>
-
-</div>
+<p><b>Comment réserver ?</b></p>
+<p>Il suffit d'envoyer un email via la page contact.</p>
 
 </section>
 
-<footer>
-
-<p>
-© 2026 Devoirs & Délices - Soutien scolaire à Fréjus
-</p>
-
+<!-- FOOTER -->
+<footer style="background:#0077b6;color:white;text-align:center;padding:30px;">
+📍 Fréjus  
+<br>
+📧 raphaelmaury83600@gmail.com
+<br><br>
+© 2026 Devoirs & Délices
 </footer>
 
 <script>
 
-/* compteur animé prix */
+function hoverPack(el){
 
-const prices = document.querySelectorAll(".price");
+el.style.transform="translateY(-10px) scale(1.03)"
 
-prices.forEach(price => {
+let counter=el.querySelector(".counter")
+let count=0
 
-let target = parseInt(price.dataset.price);
+let interval=setInterval(()=>{
 
-let count = 0;
-
-let interval = setInterval(()=>{
-
-count++;
-
-price.innerText = count + "€";
-
-if(count >= target){
-clearInterval(interval);
+if(count>5){
+clearInterval(interval)
+}else{
+counter.innerText=count
+count++
 }
 
-},30);
+},120)
 
-});
+}
+
+function leavePack(el){
+
+el.style.transform="translateY(0)"
+
+let counter=el.querySelector(".counter")
+counter.innerText=0
+
+}
 
 </script>
 
 </body>
-
 </html>
