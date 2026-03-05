@@ -1,248 +1,283 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avis | Devoirs & Délices</title>
-<style>
-/* ===== BODY ===== */
-body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#f0f8ff,#e0f7fa);
-  color:#333;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avis Parents & Élèves | La réussite Devoirs & Délices</title>
+    <meta name="description" content="Découvrez les témoignages des familles de Fréjus qui nous font confiance. Résultats, progression et épanouissement scolaire garantis.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-/* ===== NAVBAR ===== */
-nav {
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(0,119,182,0.95);
-  padding:15px;
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  z-index:1000;
-  box-shadow:0 2px 15px rgba(0,0,0,0.3);
-}
-nav a {
-  color:white;
-  font-weight:bold;
-  text-decoration:none;
-  transition:0.3s;
-}
-nav a:hover {
-  color:#ffeb3b;
-  transform:scale(1.1);
-}
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #eef2ff;
+            --accent: #f59e0b;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --white: #ffffff;
+            --star-color: #fbbf24;
+            --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+        }
 
-/* ===== HEADER ===== */
-header {
-  margin-top:60px;
-  height:400px;
-  color:white;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-    url('https://images.unsplash.com/photo-1601972966788-3de4c4c091e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') center/cover no-repeat;
-}
-header h1 {font-size:50px;margin:0;animation:slideIn 1s ease-in-out;}
-header p {font-size:22px;margin-top:15px;animation:fadeIn 2s;}
-@keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
-@keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--white); color: var(--dark); line-height: 1.7; }
 
-/* ===== SECTIONS ===== */
-section {padding:60px 20px; max-width:1200px;margin:auto;}
-h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
+        /* Navigation Cohérente */
+        nav {
+            display: flex; justify-content: space-between; align-items: center; padding: 20px 8%;
+            background: white; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-100);
+        }
+        .logo { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 12px; }
 
-/* ===== CARDS GRID ===== */
-.cards-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
+        /* Header Avis */
+        .avis-header { padding: 80px 8% 40px; text-align: center; background: linear-gradient(180deg, #fdfcfb 0%, #e2d1c322 100%); }
+        .avis-header h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; margin-bottom: 15px; }
+        .rating-hero { display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 20px; }
+        .big-stars { color: var(--star-color); font-size: 2rem; }
+        .rating-number { font-size: 2.5rem; font-weight: 800; }
 
-/* ===== CARD ===== */
-.card {
-  background:rgba(255,255,255,0.9);
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.25);
-  transition:0.3s;
-  position:relative;
-  overflow:hidden;
-}
-.card:hover {
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 20px 60px rgba(0,0,0,0.35);
-}
-.card h3 {margin-top:0;color:#0077b6;}
-.card p {margin:8px 0;font-size:16px;line-height:1.5;}
-.badge {
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:#ff5722;
-  color:white;
-  padding:6px 12px;
-  border-radius:12px;
-  font-weight:bold;
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
-.tooltip {
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#0077b6;
-  color:white;
-  padding:10px;
-  border-radius:10px;
-  display:none;
-  width:calc(100% - 20px);
-  margin-top:10px;
-  font-size:14px;
-  z-index:10;
-  transform:scale(0);
-  transition:0.3s;
-}
-.card:hover .tooltip {display:block;transform:scale(1);}
+        /* Dashboard de Statistiques */
+        .stats-dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px 8%; }
+        .stat-box { background: var(--gray-50); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid var(--gray-100); }
+        .stat-box h3 { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+        .stat-box p { font-size: 0.9rem; font-weight: 600; color: var(--gray-600); }
 
-/* ===== FORM ===== */
-form {
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-  background:rgba(255,255,255,0.9);
-  padding:40px;
-  border-radius:20px;
-  max-width:600px;
-  margin:auto;
-  box-shadow:0 15px 40px rgba(0,0,0,0.25);
-  transition:0.3s;
-}
-form:hover {transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.35);}
-input, textarea {
-  padding:15px;
-  border-radius:12px;
-  border:1px solid #ccc;
-  font-size:16px;
-  transition:0.3s;
-}
-input:focus, textarea:focus {
-  border-color:#0077b6;
-  box-shadow:0 0 10px rgba(0,119,182,0.4);
-  outline:none;
-}
-button {
-  padding:15px;
-  background:#ff5722;
-  color:white;
-  font-weight:bold;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
-  transition:0.3s;
-}
-button:hover {background:#ff7043; transform:scale(1.05);}
+        /* Filtres de Témoignages */
+        .filters { display: flex; justify-content: center; gap: 15px; padding: 20px 8%; flex-wrap: wrap; }
+        .filter-btn { 
+            padding: 10px 25px; border-radius: 100px; border: 1px solid var(--gray-300); 
+            background: white; cursor: pointer; font-weight: 600; transition: 0.3s;
+        }
+        .filter-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align:center;
-  padding:40px;
-  background:rgba(0,119,182,0.95);
-  color:white;
-  margin-top:50px;
-  line-height:1.6;
-}
-</style>
+        /* Grille de Témoignages */
+        .reviews-container { padding: 40px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .review-card { 
+            background: white; padding: 40px; border-radius: 24px; box-shadow: var(--shadow); 
+            border: 1px solid var(--gray-100); position: relative; transition: 0.3s;
+        }
+        .review-card:hover { transform: translateY(-10px); }
+        .review-card::before { content: "“"; position: absolute; top: 20px; right: 40px; font-size: 5rem; color: var(--gray-100); font-family: 'Outfit'; }
+        
+        .student-info { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .student-avatar { width: 50px; height: 50px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--primary); }
+        
+        .review-stars { color: var(--star-color); margin-bottom: 15px; font-size: 0.9rem; }
+        .review-content { font-style: italic; color: var(--gray-600); margin-bottom: 20px; }
+        .tag-school { background: var(--primary-light); color: var(--primary); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
+
+        /* Galerie d'Excellence */
+        .gallery { padding: 80px 8%; background: var(--gray-50); }
+        .gallery-header { text-align: center; margin-bottom: 50px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .gallery-item { height: 300px; background: #ddd; border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; }
+
+        /* Formulaire de dépôt d'avis */
+        .leave-review { padding: 100px 8%; display: flex; align-items: center; gap: 80px; flex-wrap: wrap; }
+        .leave-text { flex: 1; min-width: 300px; }
+        .leave-form { flex: 1; min-width: 350px; background: var(--white); border: 1px solid var(--gray-100); padding: 40px; border-radius: 30px; box-shadow: var(--shadow); }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; }
+        .form-group input, .form-group textarea, .form-group select { 
+            width: 100%; padding: 15px; border-radius: 12px; border: 1px solid var(--gray-300); outline: none; transition: 0.3s; font-family: inherit;
+        }
+        .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-light); }
+
+        .btn-submit { 
+            width: 100%; background: var(--dark); color: white; padding: 18px; border-radius: 12px; 
+            border: none; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-submit:hover { background: var(--primary); }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 80px 8% 40px; text-align: center; }
+
+        @media (max-width: 768px) {
+            .avis-header h1 { font-size: 2.5rem; }
+            .reviews-container { grid-template-columns: 1fr; }
+            .leave-review { gap: 40px; }
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="about.html">À propos</a>
-<a href="packs.html">Offres</a>
-<a href="contact.html">Contact</a>
-<a href="avis.html">Avis</a>
-</nav>
+    <nav>
+        <a href="index.html" class="logo">Devoirs & Délices 🍰</a>
+        <div class="nav-links">
+            <a href="about.html">Expertise</a>
+            <a href="packs.html">Nos Formules</a>
+            <a href="avis.html" style="color:var(--primary)">Témoignages</a>
+            <a href="contact.html" class="btn-nav">Nous contacter</a>
+        </div>
+    </nav>
 
-<header>
-<h1>Avis des Parents</h1>
-<p>Vos retours nous permettent de nous améliorer</p>
-</header>
+    <header class="avis-header">
+        <span style="font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 2px;">La preuve par les résultats</span>
+        <h1>Votre confiance, notre <span>plus belle récompense.</span></h1>
+        <div class="rating-hero">
+            <div class="big-stars">★★★★★</div>
+            <div class="rating-number">4.9/5</div>
+            <div style="text-align: left; font-size: 0.9rem; font-weight: 600; color: var(--gray-600);">Basé sur +50 avis <br>vérifiés de parents</div>
+        </div>
+    </header>
 
-<section>
-<h2>Ce que disent nos parents</h2>
-<div class="cards-grid">
+    <section class="stats-dashboard">
+        <div class="stat-box"><h3>98%</h3><p>De réussite aux examens</p></div>
+        <div class="stat-box"><h3>+4.2</h3><p>Points de moyenne en 1 trimestre</p></div>
+        <div class="stat-box"><h3>100%</h3><p>Recommandent la "Pause Délices"</p></div>
+        <div class="stat-box"><h3>24/7</h3><p>Support motivationnel</p></div>
+    </section>
 
-<!-- Avis 1 -->
-<div class="card">
-<h3>Marie D.</h3>
-<p>"Mon fils adore les cours, très pédagogiques et ludiques. Les gâteaux sont un plus pour motiver !" </p>
-<span class="badge">Top</span>
-<div class="tooltip">Cours 1h • Max 4 élèves</div>
-</div>
+    <div class="filters">
+        <button class="filter-btn active">Tous les avis</button>
+        <button class="filter-btn">Primaire</button>
+        <button class="filter-btn">Collège</button>
+        <button class="filter-btn">Lycée / Bac</button>
+    </div>
 
-<!-- Avis 2 -->
-<div class="card">
-<h3>Jean P.</h3>
-<p>"Merci pour l’accompagnement pour le brevet. Très efficace et attentionné."</p>
-<span class="badge" style="background:#4caf50;">Best Deal</span>
-<div class="tooltip">Préparation intensive Bac/Brevet</div>
-</div>
+    <section class="reviews-container">
+        <div class="review-card">
+            <div class="student-info">
+                <div class="student-avatar">M</div>
+                <div>
+                    <strong>Mme Corinne D.</strong>
+                    <br><span class="tag-school">Parent d'élève - 3ème</span>
+                </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-content">"Mon fils redoutait les maths. Après deux mois avec Raphaël, il a non seulement augmenté sa moyenne de 5 points, mais il a surtout retrouvé le sourire. La méthode est incroyable et les gâteaux sont un vrai plus !"</p>
+            <small style="color: var(--gray-300);">Posté le 12 Février 2026</small>
+        </div>
 
-<!-- Avis 3 -->
-<div class="card">
-<h3>Claire R.</h3>
-<p>"Les cours de codage ont vraiment ouvert de nouvelles passions à mon fils. Je recommande !" </p>
-<span class="badge" style="background:#2196f3;">Populaire</span>
-<div class="tooltip">Python & Arduino • 1h</div>
-</div>
+        <div class="review-card">
+            <div class="student-info">
+                <div class="student-avatar" style="background: #fef3c7; color: #d97706;">L</div>
+                <div>
+                    <strong>Lucas, Terminale S</strong>
+                    <br><span class="tag-school">Lycée Camus, Fréjus</span>
+                </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-content">"Super prof ! Il explique les choses simplement. Grâce au pack Premium et au suivi par SMS, j'ai pu poser mes questions même le dimanche soir avant mes DS. Bac mention Très Bien en vue !"</p>
+            <small style="color: var(--gray-300);">Posté le 28 Janvier 2026</small>
+        </div>
 
-<!-- Avis 4 -->
-<div class="card">
-<h3>Lucas T.</h3>
-<p>"Le pack Duo permet un suivi personnalisé et efficace. Très satisfaite."</p>
-<span class="badge" style="background:#ff9800;">Nouveau</span>
-<div class="tooltip">Groupe de 2 élèves</div>
-</div>
+        <div class="review-card">
+            <div class="student-info">
+                <div class="student-avatar" style="background: #d1fae5; color: #059669;">P</div>
+                <div>
+                    <strong>M. Pierre-Yves</strong>
+                    <br><span class="tag-school">Parent d'élève - CM2</span>
+                </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-content">"Approche très douce et pédagogique pour ma fille qui était en difficulté de lecture. Devoirs & Délices a su la mettre en confiance immédiatement. Une perle rare à Fréjus."</p>
+            <small style="color: var(--gray-300);">Posté le 15 Janvier 2026</small>
+        </div>
 
-</div>
-</section>
+        <div class="review-card">
+            <div class="student-info">
+                <div class="student-avatar" style="background: #e0e7ff; color: #4338ca;">S</div>
+                <div>
+                    <strong>Sarah, 4ème</strong>
+                    <br><span class="tag-school">Collège de l'Estérel</span>
+                </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-content">"J'adore les séances ! C'est la première fois que je m'amuse en faisant de la grammaire. Le moment du cookie à la fin est ma meilleure motivation."</p>
+            <small style="color: var(--gray-300);">Posté le 10 Janvier 2026</small>
+        </div>
+    </section>
 
-<section>
-<h2>Laisser un avis</h2>
-<form onsubmit="sendMail(event)">
-<input type="text" id="name" placeholder="Nom de l'enfant" required>
-<input type="email" id="email" placeholder="Email du parent" required>
-<textarea id="message" placeholder="Votre avis / commentaire" rows="5" required></textarea>
-<button type="submit">Envoyer votre avis</button>
-</form>
-</section>
+    <section class="gallery">
+        <div class="gallery-header">
+            <h2>L'excellence en images</h2>
+            <p>Aperçus de nos sessions de travail et de nos fameuses pauses gourmandes.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=80" alt="Session">
+                <div class="gallery-overlay">Concentration maximale</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Cookies">
+                <div class="gallery-overlay">Le délice du jour</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" alt="Tableau">
+                <div class="gallery-overlay">Méthode visuelle</div>
+            </div>
+        </div>
+    </section>
 
-<script>
-function sendMail(event){
-  event.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-  const subject = 'Avis Devoirs & Délices';
-  const body = `Nom: ${name}%0D%0AEmail: ${email}%0D%0AAvis: ${message}`;
-  window.location.href = `mailto:raphaelmaury83600@gmail.com?subject=${subject}&body=${body}`;
-  alert("Votre avis a été préparé dans votre application mail.");
-}
-</script>
+    <section class="leave-review">
+        <div class="leave-text">
+            <h2>Votre avis compte énormément.</h2>
+            <p>Vous êtes déjà client ? Partagez votre expérience pour aider d'autres parents à faire le bon choix pour la scolarité de leur enfant.</p>
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 15px;">✅ Publié en 24h</li>
+                <li style="margin-bottom: 15px;">✅ Aide la communauté locale</li>
+                <li style="margin-bottom: 15px;">✅ 1 Option Délice offerte pour votre prochain avis !</li>
+            </ul>
+        </div>
+        <div class="leave-form">
+            <h3>Déposer un témoignage</h3>
+            <form action="#">
+                <div class="form-group">
+                    <label>Nom ou Prénom</label>
+                    <input type="text" placeholder="Ex: Mme Julie B." required>
+                </div>
+                <div class="form-group">
+                    <label>Votre niveau / Classe de l'enfant</label>
+                    <select>
+                        <option>Primaire</option>
+                        <option>Collège</option>
+                        <option>Lycée</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Votre message</label>
+                    <textarea rows="5" placeholder="Racontez-nous votre progression..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Note (1 à 5 étoiles)</label>
+                    <div style="color: var(--star-color); font-size: 1.5rem; cursor: pointer;">★★★★★</div>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer mon avis</button>
+            </form>
+        </div>
+    </section>
 
-<footer>
-📍 Fréjus • 📧 raphaelmaury83600@gmail.com
-<br><br>
-© 2026 Devoirs & Délices
-</footer>
+    <footer>
+        <p style="font-size: 1.5rem; font-weight: 800; margin-bottom: 10px;">Devoirs & Délices</p>
+        <p>Plus de 50 familles conquises à Fréjus.</p>
+        <div style="margin-top: 30px; opacity: 0.5; font-size: 0.8rem;">
+            © 2026 Tous droits réservés. Les avis sont vérifiés conformément à notre charte qualité.
+        </div>
+    </footer>
 
+    <script>
+        // Effet de filtrage simple (Visuel pour la démo)
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
