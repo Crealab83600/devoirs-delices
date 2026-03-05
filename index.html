@@ -3,203 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devoirs & Délices | Soutien scolaire à Fréjus</title>
+<title>Devoirs & Délices - Accueil</title>
 <style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#e0f7fa,#f0f8ff);
-  color:#222;
-}
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f5f5f5;color:#222;scroll-behavior:smooth;}
+a{text-decoration:none;color:inherit;}
+
+/* ===== NAV ===== */
 nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(0,119,182,0.95);
-  padding:15px 0;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  z-index:1000;
-  box-shadow:0 3px 15px rgba(0,0,0,0.3);
+  position:fixed;top:0;width:100%;background:#2c2c2c;display:flex;justify-content:center;gap:30px;padding:20px 0;z-index:1000;box-shadow:0 3px 20px rgba(0,0,0,0.25);
 }
-nav a{
-  color:white;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
-}
-nav a:hover{
-  color:#ffeb3b;
-  transform:scale(1.1);
-}
+nav a{color:white;font-weight:600;transition:0.3s;}
+nav a:hover{color:#ffeb3b;transform:scale(1.05);}
+
+/* ===== HERO ===== */
 header{
-  height:700px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:white;
-  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('images/header-bg.jpg') center/cover no-repeat;
-  overflow:hidden;
+  height:650px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('images/hero.jpg') center/cover no-repeat;
+  color:white;position:relative;overflow:hidden;
 }
-header h1{
-  font-size:4rem;
-  margin:0;
-  animation:slideIn 1s ease-out forwards;
-}
-header p{
-  font-size:1.7rem;
-  margin-top:15px;
-  animation:fadeIn 2s forwards;
-}
+header h1{font-size:3.8rem;margin-bottom:20px;animation:slideIn 1s ease-out forwards;}
+header p{font-size:1.6rem;max-width:700px;animation:fadeIn 2s forwards;}
 @keyframes slideIn{0%{transform:translateY(-60px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
-section{
-  padding:80px 20px;
-  max-width:1200px;
-  margin:auto;
-}
-h2{
-  text-align:center;
-  font-size:38px;
-  margin-bottom:50px;
-  color:#0077b6;
-}
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-}
+
+/* ===== SECTIONS ===== */
+section{padding:80px 20px;max-width:1200px;margin:auto;}
+h2{text-align:center;font-size:38px;margin-bottom:50px;color:#2c2c2c;position:relative;}
+h2::after{content:'';display:block;width:60px;height:4px;background:#ff5722;margin:10px auto;border-radius:2px;}
+
+/* ===== CARDS ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;}
 .card{
-  background:rgba(255,255,255,0.95);
-  padding:25px;
-  border-radius:25px;
-  box-shadow:0 15px 45px rgba(0,0,0,0.25);
-  transition:0.3s;
-  position:relative;
+  background:#fff;padding:25px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  transition:0.3s;position:relative;overflow:hidden;
 }
-.card:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 25px 60px rgba(0,0,0,0.35);
-}
-.card img{
-  width:100%;
-  border-radius:15px;
-  margin-bottom:15px;
-}
-.card h3{
-  margin:0 0 10px 0;
-  color:#0077b6;
-}
-.card p{
-  font-size:16px;
-  line-height:1.5;
-  margin:8px 0;
-}
+.card:hover{transform:translateY(-10px);box-shadow:0 25px 60px rgba(0,0,0,0.25);}
+.card img{width:100%;border-radius:15px;margin-bottom:15px;transition:0.5s;filter:brightness(0.95);}
+.card:hover img{filter:brightness(1);}
+.card h3{color:#2c2c2c;margin-bottom:12px;font-size:22px;}
+.card p{font-size:16px;line-height:1.6;}
+
+/* ===== BADGES ===== */
 .badge{
-  position:absolute;
-  top:15px;
-  right:15px;
-  background:#ff5722;
-  color:white;
-  padding:6px 14px;
-  border-radius:15px;
-  font-weight:bold;
+  position:absolute;top:15px;right:15px;background:#ff5722;color:white;
+  padding:6px 12px;border-radius:15px;font-weight:bold;
   animation:pulse 2s infinite;
 }
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.15);}
-  100%{transform:scale(1);}
-}
-.tooltip{
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#0077b6;
-  color:white;
-  padding:12px;
-  border-radius:12px;
-  display:none;
-  width:calc(100% - 20px);
-  margin-top:12px;
-  font-size:14px;
-  z-index:10;
-  transform:scale(0);
-  transition:0.3s;
-}
-.card:hover .tooltip{
-  display:block;
-  transform:scale(1);
-}
-form{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  background:rgba(255,255,255,0.9);
-  padding:25px;
-  border-radius:25px;
-  max-width:600px;
-  margin:auto;
-  box-shadow:0 15px 45px rgba(0,0,0,0.2);
-}
-form input, form select, form textarea{
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:16px;
-  transition:0.3s;
-}
-form input:focus, form select:focus, form textarea:focus{
-  outline:none;
-  border-color:#0077b6;
-  box-shadow:0 0 10px rgba(0,119,182,0.3);
-}
-form button{
-  padding:12px;
-  border:none;
-  border-radius:12px;
-  background:#0077b6;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
-form button:hover{
-  background:#00b4d8;
-}
-.faq-item{
-  margin-bottom:25px;
-  background:rgba(255,255,255,0.95);
-  padding:25px;
-  border-radius:20px;
-  cursor:pointer;
-  transition:0.3s;
-}
-.faq-item:hover{
-  transform:translateX(5px);
-  background:rgba(255,255,255,1);
-}
-.faq-answer{
-  display:none;
-  margin-top:10px;
-  font-size:16px;
-  line-height:1.6;
-}
-footer{
-  text-align:center;
-  padding:50px;
-  background:rgba(0,119,182,0.95);
-  color:white;
-  line-height:1.8;
-  margin-top:50px;
-}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+
+/* ===== FAQ ===== */
+.faq-item{background:#fff;padding:20px;border-radius:15px;margin-bottom:20px;cursor:pointer;transition:0.3s;box-shadow:0 8px 25px rgba(0,0,0,0.1);}
+.faq-item:hover{transform:translateX(5px);box-shadow:0 12px 35px rgba(0,0,0,0.15);}
+.faq-answer{display:none;margin-top:10px;font-size:16px;line-height:1.6;}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:50px;background:#2c2c2c;color:white;line-height:1.8;margin-top:50px;}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="index.html">Accueil</a>
   <a href="about.html">À propos</a>
@@ -208,101 +73,99 @@ footer{
   <a href="avis.html">Avis</a>
 </nav>
 
+<!-- HERO -->
 <header>
   <h1>Devoirs & Délices</h1>
-  <p>Accompagnement scolaire & gourmandises à Fréjus • Pour tous niveaux</p>
+  <p>Accompagnement scolaire personnalisé pour les élèves à Fréjus • Méthode sérieuse, résultats garantis</p>
 </header>
 
+<!-- NOS SERVICES -->
 <section>
-<h2>Nos offres phares</h2>
-<div class="cards-grid">
+<h2>Nos services</h2>
+<div class="grid">
   <div class="card">
-    <img src="images/bienvenue.jpg" alt="Pack Bienvenue">
-    <h3>Pack Bienvenue <span class="badge">Nouveau</span></h3>
-    <p>Découverte • 1h • Max 4 élèves</p>
-    <p>Prix : 15€</p>
-    <div class="tooltip">Gâteau optionnel 2€</div>
+    <img src="images/service-soutien.jpg" alt="Soutien scolaire">
+    <h3>Soutien scolaire personnalisé</h3>
+    <p>Cours adaptés aux besoins de chaque élève, du primaire au lycée, pour progresser rapidement et efficacement.</p>
   </div>
   <div class="card">
-    <img src="images/duo.jpg" alt="Pack Duo">
-    <h3>Pack Duo <span class="badge" style="background:#ff9800;">Nouveau</span></h3>
-    <p>Suivi personnalisé • 2 élèves</p>
-    <p>Prix : 20€</p>
-    <div class="tooltip">Gâteau optionnel 2€</div>
+    <img src="images/service-examens.jpg" alt="Préparation examens">
+    <h3>Préparation examens</h3>
+    <p>Accompagnement ciblé pour Brevet et Bac, avec conseils méthodologiques et exercices pratiques.</p>
   </div>
   <div class="card">
-    <img src="images/examens.jpg" alt="Pack Examens">
-    <h3>Pack Examens <span class="badge" style="background:#4caf50;">Best Deal</span></h3>
-    <p>Préparation brevet/Bac • Max 4 élèves</p>
-    <p>Prix : 25€</p>
-    <div class="tooltip">Gâteau optionnel 2€</div>
-  </div>
-  <div class="card">
-    <img src="images/python.jpg" alt="Pack Programmation">
-    <h3>Pack Programmation <span class="badge" style="background:#00b4d8;">Populaire</span></h3>
-    <p>Python & Arduino • 1h</p>
-    <p>Prix : 25€</p>
-    <div class="tooltip">Max 4 élèves</div>
-  </div>
-  <div class="card">
-    <img src="images/classique.jpg" alt="Pack Classique">
-    <h3>Pack Classique <span class="badge" style="background:#9c27b0;">Best Deal</span></h3>
-    <p>Soutien standard • 1h • Max 5 élèves</p>
-    <p>Prix : 17€</p>
-    <div class="tooltip">Gâteau optionnel 2€</div>
-  </div>
-  <div class="card">
-    <img src="images/premium.jpg" alt="Pack Premium">
-    <h3>Pack Premium <span class="badge" style="background:#ff5722;">Top</span></h3>
-    <p>Individuel • Suivi personnalisé</p>
-    <p>Prix : 28€</p>
-    <div class="tooltip">Gâteau optionnel 2€</div>
+    <img src="images/service-gateaux.jpg" alt="Pause gourmande">
+    <h3>Pause gourmande</h3>
+    <p>Chaque séance peut inclure des gâteaux optionnels à 2€ pour motiver et récompenser les élèves.</p>
   </div>
 </div>
 </section>
 
+<!-- POINTS FORTS -->
 <section>
-<h2>Inscription / Demande de devis</h2>
-<form onsubmit="submitForm(event)">
-  <input type="text" id="name" placeholder="Nom complet" required>
-  <input type="email" id="email" placeholder="Email" required>
-  <select id="level">
-    <option>Primaire</option>
-    <option>Collège</option>
-    <option>Lycée</option>
-  </select>
-  <select id="pack">
-    <option>Pack Bienvenue</option>
-    <option>Pack Duo</option>
-    <option>Pack Examens</option>
-    <option>Pack Programmation</option>
-    <option>Pack Classique</option>
-    <option>Pack Premium</option>
-  </select>
-  <input type="text" id="horaire" placeholder="Préférence horaire" required>
-  <textarea id="message" placeholder="Message supplémentaire (optionnel)"></textarea>
-  <button type="submit">Envoyer la demande</button>
-</form>
-<div id="confirmation" style="text-align:center;margin-top:15px;font-weight:bold;color:green;"></div>
+<h2>Pourquoi nous choisir ?</h2>
+<div class="grid">
+  <div class="card">
+    <img src="images/point-fort1.jpg" alt="Expérience">
+    <h3>Expérience</h3>
+    <p>Malgré mon jeune âge, j’ai déjà aidé de nombreux élèves à progresser efficacement et à prendre confiance.</p>
+  </div>
+  <div class="card">
+    <img src="images/point-fort2.jpg" alt="Flexibilité">
+    <h3>Flexibilité</h3>
+    <p>Horaires adaptables selon vos disponibilités, particulièrement utile pendant les périodes d’examens.</p>
+  </div>
+  <div class="card">
+    <img src="images/point-fort3.jpg" alt="Méthode sérieuse">
+    <h3>Méthode sérieuse</h3>
+    <p>Approche structurée, suivi régulier, et progression mesurable pour chaque élève.</p>
+  </div>
+</div>
 </section>
 
+<!-- PACKS (APERÇU) -->
+<section>
+<h2>Nos offres principales</h2>
+<div class="grid">
+  <div class="card">
+    <img src="images/pack-bienvenue.jpg" alt="Pack Bienvenue">
+    <h3>Pack Bienvenue</h3>
+    <p>Découverte et première séance • 1h • Prix : 15€</p>
+    <span class="badge">Nouveau</span>
+  </div>
+  <div class="card">
+    <img src="images/pack-duo.jpg" alt="Pack Duo">
+    <h3>Pack Duo</h3>
+    <p>Suivi en groupe de 2 élèves pour plus de concentration • 1h • Prix : 20€</p>
+    <span class="badge">Populaire</span>
+  </div>
+  <div class="card">
+    <img src="images/pack-premium.jpg" alt="Pack Premium">
+    <h3>Pack Premium</h3>
+    <p>Cours individuel + suivi personnalisé • 1h • Prix : 28€</p>
+    <span class="badge">Best Deal</span>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
 <section>
 <h2>FAQ</h2>
 <div class="faq-item" onclick="toggleFaq(this)">
-<strong>À qui s’adresse l’aide aux devoirs ?</strong>
-<div class="faq-answer">De 7 à 18 ans, tous niveaux et matières.</div>
+<strong>À qui s’adresse Devoirs & Délices ?</strong>
+<div class="faq-answer">Pour tous les élèves de primaire, collège et lycée, tous niveaux et matières.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <strong>Comment se déroule une séance ?</strong>
-<div class="faq-answer">Remise à niveau, explications concrètes et exercices adaptés.</div>
+<div class="faq-answer">Cours d’1h, explications concrètes, exercices adaptés, suivi individuel.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
-<strong>Quelles matières sont couvertes ?</strong>
-<div class="faq-answer">Français, Maths, Anglais, Sciences et devoirs généraux.</div>
+<strong>Gâteaux obligatoires ?</strong>
+<div class="faq-answer">Non, optionnels à 2€ seulement si souhaité.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
-<strong>À quel rythme pour voir les progrès ?</strong>
-<div class="faq-answer">Séances régulières chaque semaine permettent de consolider les acquis.</div>
+<strong>Comment réserver ?</strong>
+<div class="faq-answer">Par email : raphaelmaury83600@gmail.com, en précisant le pack et horaire.</div>
 </div>
 </section>
 
@@ -316,16 +179,6 @@ function toggleFaq(el){
   const ans = el.querySelector('.faq-answer');
   ans.style.display = (ans.style.display==='block') ? 'none' : 'block';
 }
-function submitForm(e){
-  e.preventDefault();
-  const name=document.getElementById('name').value;
-  const email=document.getElementById('email').value;
-  const level=document.getElementById('level').value;
-  const pack=document.getElementById('pack').value;
-  const horaire=document.getElementById('horaire').value;
-  document.getElementById('confirmation').innerText=`Merci ${name}, votre demande pour ${pack} (${level}) à ${horaire} a été envoyée !`;
-}
 </script>
-
 </body>
 </html>
