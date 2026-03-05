@@ -5,35 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Devoirs & Délices - Accueil</title>
 <style>
-/* ===== RESET ===== */
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Poppins',sans-serif;background:#f5f5f5;color:#222;scroll-behavior:smooth;}
 a{text-decoration:none;color:inherit;}
 
-/* ===== NAV ===== */
+/* NAV */
 nav{
   position:fixed;top:0;width:100%;background:#2c2c2c;display:flex;justify-content:center;gap:30px;padding:20px 0;z-index:1000;box-shadow:0 3px 20px rgba(0,0,0,0.25);
 }
 nav a{color:white;font-weight:600;transition:0.3s;}
 nav a:hover{color:#ffeb3b;transform:scale(1.05);}
 
-/* ===== HERO ===== */
+/* HERO */
 header{
-  height:650px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
-  background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('images/hero.jpg') center/cover no-repeat;
-  color:white;position:relative;overflow:hidden;
+  height:700px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('images/hero.jpg') center/cover no-repeat;
+  color:white;overflow:hidden;
 }
-header h1{font-size:3.8rem;margin-bottom:20px;animation:slideIn 1s ease-out forwards;}
-header p{font-size:1.6rem;max-width:700px;animation:fadeIn 2s forwards;}
+header h1{font-size:4rem;margin-bottom:20px;animation:slideIn 1s ease-out forwards;}
+header p{font-size:1.7rem;max-width:700px;animation:fadeIn 2s forwards;}
 @keyframes slideIn{0%{transform:translateY(-60px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section{padding:80px 20px;max-width:1200px;margin:auto;}
 h2{text-align:center;font-size:38px;margin-bottom:50px;color:#2c2c2c;position:relative;}
 h2::after{content:'';display:block;width:60px;height:4px;background:#ff5722;margin:10px auto;border-radius:2px;}
 
-/* ===== CARDS ===== */
+/* GRID CARDS */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;}
 .card{
   background:#fff;padding:25px;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.15);
@@ -45,7 +45,7 @@ h2::after{content:'';display:block;width:60px;height:4px;background:#ff5722;marg
 .card h3{color:#2c2c2c;margin-bottom:12px;font-size:22px;}
 .card p{font-size:16px;line-height:1.6;}
 
-/* ===== BADGES ===== */
+/* BADGES */
 .badge{
   position:absolute;top:15px;right:15px;background:#ff5722;color:white;
   padding:6px 12px;border-radius:15px;font-weight:bold;
@@ -53,12 +53,12 @@ h2::after{content:'';display:block;width:60px;height:4px;background:#ff5722;marg
 }
 @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
 
-/* ===== FAQ ===== */
+/* FAQ */
 .faq-item{background:#fff;padding:20px;border-radius:15px;margin-bottom:20px;cursor:pointer;transition:0.3s;box-shadow:0 8px 25px rgba(0,0,0,0.1);}
 .faq-item:hover{transform:translateX(5px);box-shadow:0 12px 35px rgba(0,0,0,0.15);}
 .faq-answer{display:none;margin-top:10px;font-size:16px;line-height:1.6;}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{text-align:center;padding:50px;background:#2c2c2c;color:white;line-height:1.8;margin-top:50px;}
 </style>
 </head>
@@ -76,7 +76,7 @@ footer{text-align:center;padding:50px;background:#2c2c2c;color:white;line-height
 <!-- HERO -->
 <header>
   <h1>Devoirs & Délices</h1>
-  <p>Accompagnement scolaire personnalisé pour les élèves à Fréjus • Méthode sérieuse, résultats garantis</p>
+  <p>Accompagnement scolaire personnalisé à Fréjus • Méthode sérieuse et résultats garantis</p>
 </header>
 
 <!-- NOS SERVICES -->
@@ -86,17 +86,20 @@ footer{text-align:center;padding:50px;background:#2c2c2c;color:white;line-height
   <div class="card">
     <img src="images/service-soutien.jpg" alt="Soutien scolaire">
     <h3>Soutien scolaire personnalisé</h3>
-    <p>Cours adaptés aux besoins de chaque élève, du primaire au lycée, pour progresser rapidement et efficacement.</p>
+    <p>Cours adaptés aux besoins de chaque élève, du primaire au lycée, pour progresser efficacement.</p>
+    <span class="badge">Populaire</span>
   </div>
   <div class="card">
     <img src="images/service-examens.jpg" alt="Préparation examens">
     <h3>Préparation examens</h3>
-    <p>Accompagnement ciblé pour Brevet et Bac, avec conseils méthodologiques et exercices pratiques.</p>
+    <p>Accompagnement ciblé pour Brevet et Bac, avec exercices et méthodologie.</p>
+    <span class="badge">Best Deal</span>
   </div>
   <div class="card">
     <img src="images/service-gateaux.jpg" alt="Pause gourmande">
     <h3>Pause gourmande</h3>
-    <p>Chaque séance peut inclure des gâteaux optionnels à 2€ pour motiver et récompenser les élèves.</p>
+    <p>Option de gâteaux 2€ pour motiver et récompenser les élèves après la séance.</p>
+    <span class="badge">Option</span>
   </div>
 </div>
 </section>
@@ -108,41 +111,41 @@ footer{text-align:center;padding:50px;background:#2c2c2c;color:white;line-height
   <div class="card">
     <img src="images/point-fort1.jpg" alt="Expérience">
     <h3>Expérience</h3>
-    <p>Malgré mon jeune âge, j’ai déjà aidé de nombreux élèves à progresser efficacement et à prendre confiance.</p>
+    <p>Malgré mon jeune âge, j’ai déjà aidé de nombreux élèves à progresser efficacement.</p>
   </div>
   <div class="card">
     <img src="images/point-fort2.jpg" alt="Flexibilité">
     <h3>Flexibilité</h3>
-    <p>Horaires adaptables selon vos disponibilités, particulièrement utile pendant les périodes d’examens.</p>
+    <p>Horaires adaptables selon vos disponibilités, surtout pendant les périodes d’examens.</p>
   </div>
   <div class="card">
     <img src="images/point-fort3.jpg" alt="Méthode sérieuse">
     <h3>Méthode sérieuse</h3>
-    <p>Approche structurée, suivi régulier, et progression mesurable pour chaque élève.</p>
+    <p>Approche structurée, suivi régulier et progression mesurable pour chaque élève.</p>
   </div>
 </div>
 </section>
 
-<!-- PACKS (APERÇU) -->
+<!-- PACKS APERÇU -->
 <section>
 <h2>Nos offres principales</h2>
 <div class="grid">
   <div class="card">
     <img src="images/pack-bienvenue.jpg" alt="Pack Bienvenue">
     <h3>Pack Bienvenue</h3>
-    <p>Découverte et première séance • 1h • Prix : 15€</p>
+    <p>Découverte • 1h • Prix : 15€</p>
     <span class="badge">Nouveau</span>
   </div>
   <div class="card">
     <img src="images/pack-duo.jpg" alt="Pack Duo">
     <h3>Pack Duo</h3>
-    <p>Suivi en groupe de 2 élèves pour plus de concentration • 1h • Prix : 20€</p>
+    <p>Groupe de 2 élèves • 1h • Prix : 20€</p>
     <span class="badge">Populaire</span>
   </div>
   <div class="card">
     <img src="images/pack-premium.jpg" alt="Pack Premium">
     <h3>Pack Premium</h3>
-    <p>Cours individuel + suivi personnalisé • 1h • Prix : 28€</p>
+    <p>Cours individuel • 1h • Prix : 28€</p>
     <span class="badge">Best Deal</span>
   </div>
 </div>
@@ -153,11 +156,11 @@ footer{text-align:center;padding:50px;background:#2c2c2c;color:white;line-height
 <h2>FAQ</h2>
 <div class="faq-item" onclick="toggleFaq(this)">
 <strong>À qui s’adresse Devoirs & Délices ?</strong>
-<div class="faq-answer">Pour tous les élèves de primaire, collège et lycée, tous niveaux et matières.</div>
+<div class="faq-answer">Tous les élèves de primaire, collège et lycée.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <strong>Comment se déroule une séance ?</strong>
-<div class="faq-answer">Cours d’1h, explications concrètes, exercices adaptés, suivi individuel.</div>
+<div class="faq-answer">Cours d’1h, explications concrètes, exercices adaptés, suivi individualisé.</div>
 </div>
 <div class="faq-item" onclick="toggleFaq(this)">
 <strong>Gâteaux obligatoires ?</strong>
@@ -180,5 +183,6 @@ function toggleFaq(el){
   ans.style.display = (ans.style.display==='block') ? 'none' : 'block';
 }
 </script>
+
 </body>
 </html>
