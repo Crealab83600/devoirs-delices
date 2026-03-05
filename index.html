@@ -5,56 +5,151 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Devoirs & Délices | Accueil</title>
 <style>
-body{
-  margin:0; font-family:'Poppins',sans-serif; background:#f0f8ff; color:#333;
-  background-image:url('https://images.unsplash.com/photo-1596496052631-8b6b0d9c583b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
-  background-size:cover; background-attachment:fixed;
+/* ===== BODY ===== */
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#f0f8ff,#e0f7fa);
+  color:#333;
 }
-nav{
-  position:fixed; top:0; width:100%; background:rgba(0,119,182,0.9);
-  padding:15px; display:flex; justify-content:center; gap:25px; z-index:1000;
-  box-shadow:0 2px 15px rgba(0,0,0,0.2);
+/* ===== NAVBAR FIXE ===== */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,119,182,0.95);
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,0.3);
 }
-nav a{color:white; font-weight:bold; text-decoration:none; transition:0.3s;}
-nav a:hover{ color:#ffeb3b; }
+nav a {
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+nav a:hover {
+  color:#ffeb3b;
+  transform:scale(1.1);
+}
 
-header{
-  margin-top:60px; height:400px; color:white; text-align:center;
-  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1601741491365-c0b2c1f8b5a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') center/cover no-repeat;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
+/* ===== HEADER ===== */
+header {
+  margin-top:60px;
+  height:500px;
+  color:white;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+  url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') center/cover no-repeat;
 }
-header h1{font-size:50px; animation:slideIn 1s ease-in-out; margin:0;}
-header p{font-size:22px; animation:fadeIn 2s; margin-top:10px;}
-
+header h1 {
+  font-size:55px;
+  margin:0;
+  animation:slideIn 1s ease-in-out;
+}
+header p {
+  font-size:22px;
+  margin-top:15px;
+  animation:fadeIn 2s;
+}
 @keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
 
-section{padding:60px 20px; max-width:1200px; margin:auto;}
-h2{font-size:36px; margin-bottom:25px; text-align:center; color:#0077b6;}
+/* ===== SECTIONS ===== */
+section {padding:60px 20px; max-width:1200px;margin:auto;}
+h2 {text-align:center;font-size:36px;margin-bottom:40px;color:#0077b6;}
 
-.offers-grid{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;
+/* ===== CARDS GRID ===== */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
-.offer-card{
-  background:rgba(255,255,255,0.9); padding:25px; border-radius:20px; position:relative;
-  box-shadow:0 15px 40px rgba(0,0,0,0.2); transition:0.3s;
+
+/* ===== CARD ===== */
+.card{
+  background:rgba(255,255,255,0.9);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  transition:0.3s;
+  position:relative;
+  overflow:hidden;
 }
-.offer-card:hover{
-  transform:translateY(-10px) scale(1.03); box-shadow:0 20px 50px rgba(0,0,0,0.25);
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 60px rgba(0,0,0,0.35);
 }
-.offer-card img{width:100%; border-radius:15px; margin-bottom:15px;}
-.offer-card h3{margin-top:0; color:#0077b6;}
-.offer-card p{margin:8px 0; font-size:16px;}
+.card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+  transition:0.5s;
+}
+.card img:hover{
+  transform:scale(1.05) rotate(1deg);
+}
+.card h3{margin-top:0;color:#0077b6;}
+.card p{margin:8px 0;font-size:16px;line-height:1.5;}
 .badge{
-  position:absolute; top:10px; right:10px; background:#ff5722; color:white;
-  padding:5px 10px; border-radius:12px; animation:pulse 2s infinite;
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#ff5722;
+  color:white;
+  padding:6px 12px;
+  border-radius:12px;
+  font-weight:bold;
+  animation:pulse 2s infinite;
 }
 @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+.tooltip{
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#0077b6;
+  color:white;
+  padding:10px;
+  border-radius:10px;
+  display:none;
+  width:calc(100% - 20px);
+  margin-top:10px;
+  font-size:14px;
+  z-index:10;
+  transform:scale(0);
+  transition:0.3s;
+}
+.card:hover .tooltip{display:block;transform:scale(1);}
 
-.faq-section{margin-top:50px;}
-.faq-item{background:rgba(255,255,255,0.9); padding:20px; border-radius:15px; margin-bottom:15px; cursor:pointer; transition:0.3s; box-shadow:0 10px 30px rgba(0,0,0,0.1);}
-.faq-item:hover{transform:translateY(-5px) scale(1.01); box-shadow:0 15px 40px rgba(0,0,0,0.15);}
-.faq-answer{display:none; margin-top:10px; font-size:16px; color:#0077b6;}
+/* ===== BUTTON ===== */
+.button{
+  display:inline-block;
+  padding:12px 25px;
+  background:#ff5722;
+  color:white;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+.button:hover{background:#ff7043; transform:scale(1.05);}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  background:rgba(0,119,182,0.95);
+  color:white;
+  margin-top:50px;
+  line-height:1.6;
+}
 </style>
 </head>
 <body>
@@ -69,77 +164,90 @@ h2{font-size:36px; margin-bottom:25px; text-align:center; color:#0077b6;}
 
 <header>
 <h1>Devoirs & Délices</h1>
-<p>Aide aux devoirs et ateliers gourmands à Fréjus</p>
+<p>Soutien scolaire et gourmandises pour les enfants à Fréjus</p>
+<a href="packs.html" class="button">Voir les Offres</a>
 </header>
 
 <section>
-<h2>Nos Offres Aperçu</h2>
-<div class="offers-grid">
-  <div class="offer-card">
-    <img src="https://images.unsplash.com/photo-1584697964193-63a3b07b109b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Bienvenue">
-    <h3>Pack Bienvenue</h3>
-    <p>Découverte des cours • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
-    <span class="badge">Nouveau</span>
-    <p>Prix : 15€</p>
-  </div>
-  <div class="offer-card">
-    <img src="https://images.unsplash.com/photo-1596496052631-8b6b0d9c583b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Examens">
-    <h3>Pack Examens</h3>
-    <p>Préparation Bac / Brevet • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
-    <span class="badge">Best Deal</span>
-    <p>Prix : 25€</p>
-  </div>
-  <div class="offer-card">
-    <img src="https://images.unsplash.com/photo-1581091870626-2ef222acdb62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Programmation">
-    <h3>Pack Programmation</h3>
-    <p>Python & Arduino • 1h • Max 4 élèves</p>
-    <span class="badge">Populaire</span>
-    <p>Prix : 25€</p>
-  </div>
-  <div class="offer-card">
-    <img src="https://images.unsplash.com/photo-1601741491365-c0b2c1f8b5a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Duo">
-    <h3>Pack Duo</h3>
-    <p>2 élèves • Suivi rapproché • 1h • Gâteau 2€ optionnel</p>
-    <span class="badge">Nouveau</span>
-    <p>Prix : 20€</p>
-  </div>
+<h2>Nos Packs</h2>
+<div class="cards-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1584697964193-63a3b07b109b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Bienvenue">
+<h3>Pack Bienvenue</h3>
+<p>Découverte des cours • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
+<span class="badge">Nouveau</span>
+<div class="tooltip">Séance douce et ludique pour débutants</div>
+<p>Prix : 15€</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596496052631-8b6b0d9c583b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Examens">
+<h3>Pack Examens</h3>
+<p>Préparation Bac / Brevet • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
+<span class="badge" style="background:#4caf50;">Best Deal</span>
+<div class="tooltip">Approfondissement intensif pour réussir vos examens</div>
+<p>Prix : 25€</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091870626-2ef222acdb62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Programmation">
+<h3>Pack Programmation</h3>
+<p>Python & Arduino • 1h • Max 4 élèves</p>
+<span class="badge" style="background:#2196f3;">Populaire</span>
+<div class="tooltip">Découverte du codage et électronique pour tous niveaux</div>
+<p>Prix : 25€</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596493027582-3452f7b6b7a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Duo">
+<h3>Pack Duo</h3>
+<p>Groupes de 2 élèves • 1h • Suivi rapproché • Gâteau 2€ optionnel</p>
+<span class="badge" style="background:#ff9800;">Nouveau</span>
+<div class="tooltip">Travail en duo pour un suivi plus personnalisé</div>
+<p>Prix : 20€</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618886458515-2a0b1a1d56d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Classique">
+<h3>Pack Classique</h3>
+<p>Cours standard • 1h • Max 4 élèves • Gâteau 2€ optionnel</p>
+<span class="badge" style="background:#607d8b;">Classique</span>
+<div class="tooltip">Cours standard pour renforcer les bases</div>
+<p>Prix : 17€</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Pack Premium">
+<h3>Pack Premium</h3>
+<p>Cours individuel + suivi personnalisé • 1h • Gâteau 2€ optionnel</p>
+<span class="badge" style="background:#9c27b0;">Premium</span>
+<div class="tooltip">Attention maximale et suivi personnalisé</div>
+<p>Prix : 28€</p>
+</div>
+
 </div>
 </section>
 
-<section class="faq-section">
+<section>
 <h2>FAQ</h2>
-<div class="faq-item">
-  <strong>Quels niveaux sont pris en charge ?</strong>
-  <div class="faq-answer">Du primaire au lycée, et cours de codage pour tous.</div>
-</div>
-<div class="faq-item">
-  <strong>Comment réserver une séance ?</strong>
-  <div class="faq-answer">Envoyez-nous un mail via la page Contact, c’est simple et rapide.</div>
-</div>
-<div class="faq-item">
-  <strong>Peut-on goûter les gâteaux après les cours ?</strong>
-  <div class="faq-answer">Oui, à 2€ par gâteau, optionnel, pour chaque élève.</div>
-</div>
-<div class="faq-item">
-  <strong>Les groupes sont-ils limités ?</strong>
-  <div class="faq-answer">Oui, max 4 élèves par groupe, sauf Pack Duo limité à 2 élèves.</div>
+<div class="cards-grid">
+<div class="card"><h3>Quel âge pour participer ?</h3><p>De 7 à 18 ans, tous niveaux bienvenus !</p></div>
+<div class="card"><h3>Comment réserver ?</h3><p>Contact par email, pas de paiement en ligne nécessaire.</p></div>
+<div class="card"><h3>Gâteaux inclus ?</h3><p>Gâteaux optionnels à 2€ chacun après la séance.</p></div>
+<div class="card"><h3>Groupes maximum ?</h3><p>4 élèves par groupe pour un suivi efficace.</p></div>
+<div class="card"><h3>Paiement ?</h3><p>En espèces ou virement à la fin de chaque séance.</p></div>
+<div class="card"><h3>Matériel fourni ?</h3><p>Crayons, cahiers, et matériel électronique pour les cours de codage.</p></div>
+<div class="card"><h3>Durée des séances ?</h3><p>1h pour chaque atelier, possibilité d'enchaîner plusieurs séances.</p></div>
+<div class="card"><h3>Pourquoi nous choisir ?</h3><p>Approche ludique et efficace, petits groupes pour progresser rapidement.</p></div>
 </div>
 </section>
 
-<footer style="text-align:center;padding:30px;background:rgba(0,119,182,0.9);color:white;margin-top:50px;">
+<footer>
 📍 Fréjus • 📧 raphaelmaury83600@gmail.com
 <br><br>
 © 2026 Devoirs & Délices
 </footer>
-
-<script>
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.addEventListener('click',()=>{
-    const answer=item.querySelector('.faq-answer');
-    answer.style.display=answer.style.display==='block'?'none':'block';
-  });
-});
-</script>
 
 </body>
 </html>
