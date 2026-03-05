@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devoirs & Délices | Accueil</title>
+<title>Devoirs & Délices | Inscription</title>
 <style>
-/* === BODY === */
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
   background:linear-gradient(135deg,#e0f7fa,#f0f8ff);
-  overflow-x:hidden;
   color:#222;
+  overflow-x:hidden;
 }
 
-/* === NAVBAR FIXE === */
+/* NAVBAR */
 nav{
   position:fixed;
   top:0;
@@ -38,16 +37,16 @@ nav a:hover{
   transform:scale(1.1);
 }
 
-/* === HEADER === */
+/* HEADER */
 header{
-  height:600px;
+  height:650px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
   color:white;
-  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('images/header-bg.jpg') center/cover no-repeat;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('images/header-bg.jpg') center/cover no-repeat;
   position:relative;
   overflow:hidden;
 }
@@ -78,7 +77,7 @@ header p{
 @keyframes slideIn{0%{transform:translateY(-60px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
 
-/* === SECTIONS === */
+/* SECTIONS */
 section{
   padding:80px 20px;
   max-width:1200px;
@@ -91,16 +90,16 @@ h2{
   color:#0077b6;
 }
 
-/* === CARDS GRID === */
+/* CARDS GRID */
 .cards-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:30px;
 }
 
-/* === CARDS === */
+/* CARDS */
 .card{
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.95);
   padding:25px;
   border-radius:25px;
   box-shadow:0 15px 45px rgba(0,0,0,0.25);
@@ -127,7 +126,7 @@ h2{
   margin:8px 0;
 }
 
-/* === BADGES === */
+/* BADGES */
 .badge{
   position:absolute;
   top:15px;
@@ -145,7 +144,7 @@ h2{
   100%{transform:scale(1);}
 }
 
-/* === TOOLTIP === */
+/* TOOLTIP */
 .tooltip{
   position:absolute;
   top:100%;
@@ -167,10 +166,48 @@ h2{
   transform:scale(1);
 }
 
-/* === FAQ === */
+/* FORMULAIRE */
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  background:rgba(255,255,255,0.9);
+  padding:25px;
+  border-radius:25px;
+  max-width:500px;
+  margin:auto;
+  box-shadow:0 15px 45px rgba(0,0,0,0.2);
+}
+form input, form select, form textarea{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:16px;
+  transition:0.3s;
+}
+form input:focus, form select:focus, form textarea:focus{
+  outline:none;
+  border-color:#0077b6;
+  box-shadow:0 0 10px rgba(0,119,182,0.3);
+}
+form button{
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#0077b6;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+form button:hover{
+  background:#00b4d8;
+}
+
+/* FAQ */
 .faq-item{
   margin-bottom:25px;
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.95);
   padding:25px;
   border-radius:20px;
   cursor:pointer;
@@ -187,7 +224,7 @@ h2{
   line-height:1.6;
 }
 
-/* === FOOTER === */
+/* FOOTER */
 footer{
   text-align:center;
   padding:50px;
@@ -212,7 +249,7 @@ footer{
 <!-- HEADER -->
 <header>
   <h1>Devoirs & Délices</h1>
-  <p>Apprentissage motivant avec gourmandises • Fréjus</p>
+  <p>Inscrivez votre enfant à Fréjus • Apprentissage & gourmandises</p>
 </header>
 
 <!-- OFFRES EN APERÇU -->
@@ -269,23 +306,29 @@ footer{
 </div>
 </section>
 
-<!-- POURQUOI ÇA MARCHE -->
+<!-- FORMULAIRE -->
 <section>
-<h2>Pourquoi ça marche ?</h2>
-<div class="cards-grid">
-  <div class="card">
-    <h3>Clarté et suivi</h3>
-    <p>Les séances permettent de clarifier les notions et consolider les acquis.</p>
-  </div>
-  <div class="card">
-    <h3>Confiance et autonomie</h3>
-    <p>Les élèves gagnent confiance en eux grâce à un accompagnement bienveillant.</p>
-  </div>
-  <div class="card">
-    <h3>Motivation ludique</h3>
-    <p>Les gâteaux rendent les séances plus plaisantes et motivantes.</p>
-  </div>
-</div>
+<h2>Inscrivez votre enfant</h2>
+<form onsubmit="submitForm(event)">
+  <input type="text" id="name" placeholder="Nom complet" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <select id="level">
+    <option>Primaire</option>
+    <option>Collège</option>
+    <option>Lycée</option>
+  </select>
+  <select id="pack">
+    <option>Pack Bienvenue</option>
+    <option>Pack Duo</option>
+    <option>Pack Examens</option>
+    <option>Pack Programmation</option>
+    <option>Pack Classique</option>
+    <option>Pack Premium</option>
+  </select>
+  <input type="text" id="horaire" placeholder="Préférence horaire" required>
+  <button type="submit">Envoyer l'inscription</button>
+</form>
+<div id="confirmation" style="text-align:center;margin-top:15px;font-weight:bold;color:green;"></div>
 </section>
 
 <!-- FAQ -->
@@ -319,6 +362,16 @@ footer{
 function toggleFaq(el){
   const ans = el.querySelector('.faq-answer');
   ans.style.display = (ans.style.display==='block') ? 'none' : 'block';
+}
+
+function submitForm(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const email=document.getElementById('email').value;
+  const level=document.getElementById('level').value;
+  const pack=document.getElementById('pack').value;
+  const horaire=document.getElementById('horaire').value;
+  document.getElementById('confirmation').innerText=`Merci ${name}, votre demande pour ${pack} (${level}) à ${horaire} a été envoyée !`;
 }
 </script>
 
