@@ -3,99 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devoirs & Délices | Avis</title>
+<title>Avis | Devoirs & Délices</title>
 <style>
-body {
-  margin:0;
-  font-family:Poppins,Arial,sans-serif;
-  background: linear-gradient(135deg,#e0f7fa,#80deea);
+body{
+  margin:0; font-family:'Poppins',sans-serif; color:#333;
+  background: linear-gradient(135deg,#f0f8ff,#e0f7fa);
+  background-image:url('https://images.unsplash.com/photo-1554774853-dc5d6c58a8c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920');
+  background-size:cover; background-attachment:fixed;
 }
-nav {
-  position:fixed; top:0; width:100%; background:#0077b6;
-  padding:15px; display:flex; justify-content:center; gap:25px;
-  z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.2);
+nav{
+  position:fixed; top:0; width:100%; background:rgba(0,119,182,0.9);
+  padding:15px; display:flex; justify-content:center; gap:25px; z-index:1000;
+  box-shadow:0 2px 15px rgba(0,0,0,0.2);
 }
-nav a {
-  color:white; font-weight:bold; transition:0.3s;
-}
-nav a:hover { color:#ffeb3b; }
+nav a{color:white; font-weight:bold; text-decoration:none; transition:0.3s;}
+nav a:hover{ color:#ffeb3b; }
 
-header {
-  margin-top:60px; height:300px;
-  background:url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') center/cover;
-  color:white; text-align:center; padding-top:120px; position:relative;
+header{
+  margin-top:60px; height:350px; color:white; text-align:center;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') center/cover no-repeat;
 }
-header::after {
-  content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.3);
-}
-header h1 {
-  font-size:45px; animation:slideIn 1s ease-in-out; position:relative; z-index:1;
-}
-header p {
-  font-size:20px; margin-top:10px; animation:fadeIn 2s; position:relative; z-index:1;
-}
-
-section { padding:60px 20px; max-width:1200px; margin:auto; }
-h2 { font-size:36px; margin-bottom:20px; text-align:center; }
-
-.review-container {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:25px;
-  margin-top:50px;
-}
-
-.review {
-  background:rgba(255,255,255,0.9);
-  padding:25px; border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  position:relative; transition:0.4s; cursor:pointer;
-  animation:breathing 5s infinite;
-}
-.review:hover {
-  transform:translateY(-10px) scale(1.02);
-  box-shadow:0 15px 35px rgba(0,0,0,0.2);
-}
-.review h3 { margin-top:0; display:flex; align-items:center; justify-content:space-between; }
-.badge-review {
-  background:#ff9800; color:white; padding:4px 10px;
-  border-radius:8px; font-size:0.8rem; animation:pulseBadge 2s infinite;
-}
-.review p { font-size:16px; line-height:1.5; }
-.review-time { font-size:14px; color:#0077b6; margin-top:10px; }
-
-.new-review-form {
-  max-width:600px; margin:auto; margin-top:50px;
-  display:grid; gap:15px;
-  background:rgba(255,255,255,0.9); padding:30px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-.new-review-form input, .new-review-form textarea {
-  padding:12px; border-radius:10px; border:1px solid #ccc; font-size:16px; width:100%;
-}
-.new-review-form button {
-  padding:15px; background:#0077b6; color:white; font-weight:bold;
-  border:none; border-radius:10px; cursor:pointer; transition:0.3s;
-}
-.new-review-form button:hover { background:#00b4d8; }
-
-footer { background:#0077b6; color:white; text-align:center; padding:30px; margin-top:50px; }
+header h1{font-size:50px; margin:0; animation:slideIn 1s ease-in-out;}
+header p{font-size:22px; margin-top:10px; animation:fadeIn 2s;}
 
 @keyframes slideIn{0%{transform:translateY(-50px);opacity:0;}100%{transform:translateY(0);opacity:1;}}
 @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
-@keyframes pulseBadge{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
-@keyframes breathing{0%{transform:scale(1);}50%{transform:scale(1.01);}100%{transform:scale(1);}}
-.success-popup{
-  position:fixed; top:20px; right:20px;
-  background:#00b4d8; color:white; padding:15px 20px;
-  border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.2);
-  display:none; z-index:2000; animation:fadeInPopup 0.5s;
+
+section{padding:60px 20px; max-width:900px; margin:auto;}
+h2{font-size:36px; margin-bottom:25px; text-align:center; color:#0077b6;}
+
+.review{
+  background:rgba(255,255,255,0.9); padding:25px; border-radius:20px;
+  margin-bottom:20px; box-shadow:0 15px 40px rgba(0,0,0,0.2); transition:0.3s;
 }
-@keyframes fadeInPopup{0%{opacity:0;transform:translateY(-20px);}100%{opacity:1;transform:translateY(0);}}
+.review:hover{transform:translateY(-10px) scale(1.03);}
+.review p{font-size:16px;}
+.review strong{color:#0077b6;}
+
+form{
+  background:rgba(255,255,255,0.9); padding:25px; border-radius:20px;
+  margin-top:30px; display:flex; flex-direction:column; gap:15px; box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+input, textarea{padding:12px; border-radius:12px; border:1px solid #ccc; font-size:16px; width:100%;}
+button{padding:15px; border:none; border-radius:12px; background:#0077b6; color:white; font-weight:bold; cursor:pointer; transition:0.3s;}
+button:hover{background:#00b4d8;}
 </style>
 </head>
 <body>
 
-<!-- MENU -->
 <nav>
 <a href="index.html">Accueil</a>
 <a href="about.html">À propos</a>
@@ -104,88 +60,45 @@ footer { background:#0077b6; color:white; text-align:center; padding:30px; margi
 <a href="avis.html">Avis</a>
 </nav>
 
-<!-- HEADER -->
 <header>
 <h1>Avis des parents</h1>
-<p>Découvrez les témoignages et recommandations de Fréjus 🍰</p>
+<p>Ce que les familles pensent de nos ateliers à Fréjus</p>
 </header>
 
-<!-- SECTION AVIS -->
 <section>
-<h2>Ils nous recommandent</h2>
-<div class="review-container">
+<h2>Commentaires récents</h2>
 
 <div class="review">
-<h3>Marie L. <span class="badge-review">Top Parent</span></h3>
-<p>Mon fils progresse rapidement grâce aux explications claires et la patience de Raphaël. Les séances sont motivantes et conviviales.</p>
-<div class="review-time">1 semaine ago</div>
+<p><strong>Marie D.</strong> : Mon fils adore les séances, et les gâteaux après le cours sont un vrai plus !</p>
 </div>
-
 <div class="review">
-<h3>Jean P. <span class="badge-review">Recommandé</span></h3>
-<p>Très bon accompagnement scolaire. Les exercices sont adaptés et les mini-projets de codage intéressants. Mon fils adore les gâteaux après la séance !</p>
-<div class="review-time">3 jours ago</div>
+<p><strong>Luc P.</strong> : Excellent suivi pour le Bac, je recommande vivement.</p>
 </div>
-
 <div class="review">
-<h3>Claire M. <span class="badge-review">Top Parent</span></h3>
-<p>Raphaël sait captiver l’attention des élèves et rendre l’apprentissage agréable. Les groupes sont limités, ce qui est idéal pour le suivi.</p>
-<div class="review-time">5 jours ago</div>
+<p><strong>Sophie L.</strong> : Les cours de codage sont super ludiques, mon enfant progresse vite.</p>
 </div>
 
-<div class="review">
-<h3>Paul T. <span class="badge-review">Recommandé</span></h3>
-<p>Excellente expérience ! Les enfants sont motivés, les explications sont claires et les gâteaux rendent la pause encore plus agréable.</p>
-<div class="review-time">2 semaines ago</div>
-</div>
-
-<div class="review">
-<h3>Lucie R. <span class="badge-review">Top Parent</span></h3>
-<p>Une approche très humaine et efficace. Mon fils a beaucoup progressé en maths et en codage. Les séances sont très bien structurées.</p>
-<div class="review-time">1 mois ago</div>
-</div>
-
-</div>
-</section>
-
-<!-- NOUVEL AVIS -->
-<section>
 <h2>Laisser un avis</h2>
-<form class="new-review-form" id="reviewForm" onsubmit="addReview(event)">
-<input type="text" id="rname" placeholder="Nom du parent" required>
-<input type="text" id="rstudent" placeholder="Nom de l'élève" required>
-<textarea id="rmessage" rows="4" placeholder="Votre avis" required></textarea>
-<button type="submit">Envoyer l'avis</button>
+<form onsubmit="sendReview(event)">
+<input type="text" id="reviewer" placeholder="Votre nom" required>
+<textarea id="reviewText" placeholder="Votre avis..." rows="4" required></textarea>
+<button type="submit">Envoyer</button>
 </form>
-<div class="success-popup" id="successPopup">Avis envoyé ! Merci !</div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+<footer style="text-align:center;padding:30px;background:rgba(0,119,182,0.9);color:white;margin-top:50px;">
 📍 Fréjus • 📧 raphaelmaury83600@gmail.com
 <br><br>
 © 2026 Devoirs & Délices
 </footer>
 
-<!-- JS -->
 <script>
-function addReview(e){
-e.preventDefault();
-const name=document.getElementById('rname').value;
-const student=document.getElementById('rstudent').value;
-const message=document.getElementById('rmessage').value;
-
-const container=document.querySelector('.review-container');
-const newReview=document.createElement('div');
-newReview.classList.add('review');
-newReview.innerHTML=`<h3>${name} <span class="badge-review">Nouveau</span></h3>
-<p>${message}</p>
-<div class="review-time">Just now</div>`;
-container.prepend(newReview);
-
-document.getElementById('successPopup').style.display='block';
-setTimeout(()=>{document.getElementById('successPopup').style.display='none';},3000);
-document.getElementById('reviewForm').reset();
+function sendReview(e){
+  e.preventDefault();
+  const name=document.getElementById('reviewer').value;
+  const text=document.getElementById('reviewText').value;
+  alert(`Merci ${name} ! Votre avis a été préparé pour envoi par mail.`);
+  window.location.href=`mailto:raphaelmaury83600@gmail.com?subject=Avis Devoirs & Délices&body=Nom: ${name}%0D%0ACommentaire: ${text}`;
 }
 </script>
 
