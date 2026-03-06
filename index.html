@@ -1,162 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devoirs & Délices | Aide aux devoirs à Fréjus</title>
+
+<title>Devoirs & Délices | Soutien scolaire à Fréjus</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter, Arial;
-}
-
 body{
-background:#f9fbff;
-color:#1a1a1a;
+margin:0;
+font-family:Arial;
+background:#f4f7fb;
+color:#222;
 }
-
-/* NAVBAR */
 
 nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+padding:20px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
-background:white;
-box-shadow:0 2px 15px rgba(0,0,0,0.05);
-position:fixed;
-width:100%;
-top:0;
-z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+z-index:1000;
 }
 
 nav a{
-text-decoration:none;
 margin-left:25px;
+text-decoration:none;
 color:#333;
 font-weight:600;
 }
 
-nav a:hover{
-color:#0077ff;
-}
-
-/* HERO */
-
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-background:linear-gradient(135deg,#0077ff,#00c6ff);
+margin-top:80px;
+background:linear-gradient(120deg,#0077ff,#00c6ff);
 color:white;
+padding:120px 20px;
+text-align:center;
 }
 
 .hero h1{
-font-size:52px;
-max-width:700px;
-margin-bottom:25px;
+font-size:48px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
-max-width:600px;
-margin-bottom:40px;
+max-width:700px;
+margin:auto;
 }
 
-.hero button{
-background:white;
-color:#0077ff;
-border:none;
-padding:16px 35px;
-font-weight:bold;
-border-radius:30px;
-cursor:pointer;
-}
-
-.hero button:hover{
-transform:scale(1.05);
-}
-
-/* SECTION */
-
-section{
-padding:100px 20px;
-max-width:1200px;
+.section{
+padding:80px 20px;
+max-width:1100px;
 margin:auto;
 }
 
 .title{
+font-size:36px;
 text-align:center;
-font-size:40px;
-margin-bottom:60px;
+margin-bottom:50px;
 }
 
-/* CARDS */
-
-.grid{
+.cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .card{
 background:white;
-padding:35px;
-border-radius:18px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-transition:0.3s;
+padding:30px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.card:hover{
-transform:translateY(-10px);
+.card h3{
+margin-top:0;
+}
+
+.pack{
+border-top:4px solid #0077ff;
 }
 
 .price{
-font-size:34px;
-color:#0077ff;
+font-size:28px;
 font-weight:bold;
+color:#0077ff;
 margin:15px 0;
 }
 
-/* CTA */
-
-.cta{
+.btn{
+display:inline-block;
+padding:12px 25px;
 background:#0077ff;
 color:white;
-text-align:center;
-padding:120px 20px;
+border-radius:25px;
+text-decoration:none;
+margin-top:15px;
 }
-
-.cta h2{
-font-size:36px;
-margin-bottom:20px;
-}
-
-/* FOOTER */
 
 footer{
-background:#0d1b2a;
+background:#0f172a;
 color:white;
+padding:60px 20px;
 text-align:center;
-padding:50px;
+margin-top:60px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <nav>
 
-<div style="font-weight:bold;font-size:22px;">
+<div style="font-weight:bold;font-size:20px;">
 Devoirs & Délices
 </div>
 
@@ -172,142 +137,148 @@ Devoirs & Délices
 
 <div class="hero">
 
-<h1>
-Aide aux devoirs efficace à Fréjus
-</h1>
+<h1>Soutien scolaire à Fréjus</h1>
 
 <p>
-Un accompagnement scolaire sérieux pour aider les élèves à comprendre leurs cours et progresser durablement.
+Aide aux devoirs simple, efficace et accessible pour accompagner les élèves dans leur réussite scolaire.
 </p>
 
-<button onclick="location.href='packs.html'">
-Découvrir les offres
-</button>
+<a href="packs.html" class="btn">Voir les offres</a>
 
 </div>
 
-<section>
+<div class="section">
 
-<h2 class="title">
-Pourquoi choisir Devoirs & Délices
-</h2>
+<h2 class="title">Pourquoi choisir Devoirs & Délices</h2>
 
-<div class="grid">
+<div class="cards">
+
+<div class="card">
+<h3>Suivi personnalisé</h3>
+<p>
+Chaque élève est accompagné selon ses besoins et ses difficultés.
+</p>
+</div>
 
 <div class="card">
 <h3>Petits groupes</h3>
 <p>
-Maximum 4 élèves pour garantir un suivi sérieux.
+Les groupes sont limités pour permettre une meilleure compréhension.
 </p>
 </div>
 
 <div class="card">
-<h3>Progression réelle</h3>
+<h3>Ambiance positive</h3>
 <p>
-Objectif : comprendre les cours et améliorer les résultats.
-</p>
-</div>
-
-<div class="card">
-<h3>Ambiance motivante</h3>
-<p>
-Un cadre positif qui donne envie d'apprendre.
-</p>
-</div>
-
-<div class="card">
-<h3>Goûter possible</h3>
-<p>
-Gâteaux disponibles après la séance (2€).
+Un environnement motivant pour redonner confiance aux élèves.
 </p>
 </div>
 
 </div>
 
-</section>
+</div>
 
-<section>
+<div class="section">
 
-<h2 class="title">
-Les offres
-</h2>
+<h2 class="title">Nos packs principaux</h2>
 
-<div class="grid">
+<div class="cards">
 
-<div class="card">
+<div class="card pack">
+<h3>Pack Découverte</h3>
+<div class="price">12€</div>
+<p>Première séance pour découvrir l'aide aux devoirs.</p>
+</div>
 
+<div class="card pack">
 <h3>Pack Classique</h3>
-
 <div class="price">17€</div>
-
-<p>
-1h d'aide aux devoirs en petit groupe.
-</p>
-
+<p>Format standard pour progresser régulièrement.</p>
 </div>
 
-<div class="card">
-
+<div class="card pack">
 <h3>Pack Duo</h3>
-
 <div class="price">20€</div>
+<p>Deux élèves seulement pour un meilleur suivi.</p>
+</div>
 
+</div>
+
+</div>
+
+<div class="section">
+
+<h2 class="title">Comment se déroule une séance</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>1. Analyse</h3>
 <p>
-Seulement deux élèves pour plus d'attention.
+On regarde les devoirs et les difficultés de l'élève.
 </p>
-
 </div>
 
 <div class="card">
-
-<h3>Pack Examens</h3>
-
-<div class="price">25€</div>
-
+<h3>2. Explication</h3>
 <p>
-Préparation Brevet ou Bac.
+On explique les notions importantes avec des exemples.
 </p>
-
 </div>
 
 <div class="card">
-
-<h3>Pack Premium</h3>
-
-<div class="price">28€</div>
-
+<h3>3. Entraînement</h3>
 <p>
-Cours individuel avec suivi personnalisé.
+L'élève s'entraîne avec des exercices adaptés.
 </p>
+</div>
 
 </div>
 
 </div>
 
-</section>
+<div class="section">
 
-<div class="cta">
+<h2 class="title">Questions fréquentes</h2>
 
-<h2>
-Réserver une séance
-</h2>
+<div class="cards">
 
+<div class="card">
+<h3>Combien dure une séance ?</h3>
 <p>
-Contactez-nous pour organiser une séance.
+Les séances durent environ 1 heure.
 </p>
+</div>
+
+<div class="card">
+<h3>Combien d'élèves par groupe ?</h3>
+<p>
+Les groupes sont limités pour garder un bon suivi.
+</p>
+</div>
+
+<div class="card">
+<h3>Y a-t-il d'autres services ?</h3>
+<p>
+Après la séance, les élèves peuvent acheter un gâteau maison pour 2€.
+</p>
+</div>
+
+</div>
 
 </div>
 
 <footer>
 
 📍 Fréjus  
+
 <br><br>
 
 📧 raphaelmaury83600@gmail.com  
 
 <br><br>
 
-© Devoirs & Délices
+© 2026 Devoirs & Délices
 
 </footer>
 
