@@ -1,345 +1,315 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devoirs & Délices | Soutien Scolaire d'Excellence à Fréjus</title>
-    <meta name="description" content="Accompagnement scolaire sur-mesure à Fréjus. Découvrez une méthode unique mêlant rigueur académique et bien-être.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devoirs & Délices | Aide aux devoirs à Fréjus</title>
 
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --accent: #f59e0b;
-            --secondary: #10b981;
-            --dark: #0f172a;
-            --gray-100: #f1f5f9;
-            --gray-600: #475569;
-            --white: #ffffff;
-            --shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
+<style>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--white); color: var(--dark); line-height: 1.7; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter, Arial;
+}
 
-        /* Barre d'annonce */
-        .announcement-bar {
-            background: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
+body{
+background:#f9fbff;
+color:#1a1a1a;
+}
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--gray-100);
-        }
+/* NAVBAR */
 
-        .logo {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+position:fixed;
+width:100%;
+top:0;
+z-index:100;
+}
 
-        .nav-links { display: flex; gap: 35px; align-items: center; }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-        .nav-links a:hover { color: var(--primary); }
+nav a{
+text-decoration:none;
+margin-left:25px;
+color:#333;
+font-weight:600;
+}
 
-        .btn-nav {
-            background: var(--primary);
-            color: white !important;
-            padding: 12px 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-        }
+nav a:hover{
+color:#0077ff;
+}
 
-        /* Hero Section */
-        .hero {
-            padding: 120px 8% 80px;
-            background: radial-gradient(circle at 90% 10%, #eef2ff 0%, #ffffff 100%);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 85vh;
-        }
+/* HERO */
 
-        .hero-content { flex: 1; max-width: 650px; }
-        .hero-badge {
-            background: #e0e7ff;
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            display: inline-block;
-        }
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+background:linear-gradient(135deg,#0077ff,#00c6ff);
+color:white;
+}
 
-        .hero h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            color: var(--dark);
-        }
+.hero h1{
+font-size:52px;
+max-width:700px;
+margin-bottom:25px;
+}
 
-        .hero h1 span {
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.hero p{
+font-size:20px;
+max-width:600px;
+margin-bottom:40px;
+}
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--gray-600);
-            margin-bottom: 40px;
-        }
+.hero button{
+background:white;
+color:#0077ff;
+border:none;
+padding:16px 35px;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+}
 
-        .hero-btns { display: flex; gap: 20px; }
+.hero button:hover{
+transform:scale(1.05);
+}
 
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 60px 8%;
-            background: var(--white);
-        }
+/* SECTION */
 
-        .stat-card {
-            padding: 30px;
-            text-align: center;
-            border-radius: 20px;
-            background: var(--gray-100);
-            transition: 0.4s;
-        }
-        .stat-card:hover { transform: translateY(-10px); background: var(--white); box-shadow: var(--shadow); }
-        .stat-card h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
+section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
+}
 
-        /* Section Concept */
-        .concept { padding: 100px 8%; display: flex; align-items: center; gap: 80px; }
-        .concept-img { flex: 1; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow); height: 500px; background: #ddd; }
-        .concept-text { flex: 1; }
-        .concept-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+}
 
-        /* Services Grid */
-        .services { padding: 100px 8%; background: var(--gray-100); text-align: center; }
-        .services-header { max-width: 700px; margin: 0 auto 60px; }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .service-card {
-            background: var(--white);
-            padding: 50px 40px;
-            border-radius: 24px;
-            text-align: left;
-            transition: 0.3s;
-        }
-        .service-card:hover { border-bottom: 6px solid var(--primary); }
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: #eef2ff;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-        }
+/* CARDS */
 
-        /* FAQ */
-        .faq { padding: 100px 20%; background: var(--white); }
-        .faq-item { border-bottom: 1px solid var(--gray-100); padding: 25px 0; cursor: pointer; }
-        .faq-question { font-weight: 700; font-size: 1.1rem; display: flex; justify-content: space-between; }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px;
+}
 
-        /* Footer */
-        footer { background: var(--dark); color: var(--white); padding: 80px 8% 40px; }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 60px;
-        }
-        .footer-logo { font-size: 1.8rem; font-weight: 800; color: var(--white); margin-bottom: 20px; display: block; text-decoration: none; }
-        .footer-links h4 { margin-bottom: 20px; color: var(--primary); }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 12px; opacity: 0.7; cursor: pointer; transition: 0.3s; }
-        .footer-links li:hover { opacity: 1; color: var(--primary); }
+.card{
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+transition:0.3s;
+}
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 60px; }
-            .hero-btns { justify-content: center; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-    </style>
+.card:hover{
+transform:translateY(-10px);
+}
+
+.price{
+font-size:34px;
+color:#0077ff;
+font-weight:bold;
+margin:15px 0;
+}
+
+/* CTA */
+
+.cta{
+background:#0077ff;
+color:white;
+text-align:center;
+padding:120px 20px;
+}
+
+.cta h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0d1b2a;
+color:white;
+text-align:center;
+padding:50px;
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="announcement-bar">✨ Inscriptions ouvertes pour le stage intensif d'Avril - Places limitées !</div>
+<nav>
 
-    <nav>
-        <a href="index.html" class="logo">Devoirs & Délices 🍰</a>
-        <div class="nav-links">
-            <a href="about.html">Expertise</a>
-            <a href="packs.html">Nos Formules</a>
-            <a href="avis.html">Témoignages</a>
-            <a href="contact.html" class="btn-nav">Réserver un bilan</a>
-        </div>
-    </nav>
+<div style="font-weight:bold;font-size:22px;">
+Devoirs & Délices
+</div>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-badge">🎓 N°1 de l'accompagnement à Fréjus</div>
-                <h1>Réinventons ensemble la <span>réussite scolaire.</span></h1>
-                <p>Un soutien académique de haut niveau combiné à une approche bienveillante pour redonner le goût d'apprendre à chaque élève, du primaire au lycée.</p>
-                <div class="hero-btns">
-                    <a href="packs.html" class="btn-nav" style="padding: 18px 36px; font-size: 1.1rem;">Découvrir nos offres</a>
-                    <a href="about.html" style="padding: 18px 36px; text-decoration: none; color: var(--dark); font-weight: 700;">En savoir plus →</a>
-                </div>
-            </div>
-            <div style="flex: 1; max-width: 500px;">
-                <div style="width: 100%; height: 500px; background: linear-gradient(var(--primary), var(--accent)); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; overflow:hidden;">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Soutien" style="width:100%; height:100%; object-fit:cover; opacity: 0.9;">
-                </div>
-            </div>
-        </section>
+<div>
+<a href="index.html">Accueil</a>
+<a href="about.html">À propos</a>
+<a href="packs.html">Offres</a>
+<a href="contact.html">Contact</a>
+<a href="avis.html">Avis</a>
+</div>
 
-        <section class="stats-grid">
-            <div class="stat-card"><h2>+15</h2><p>Points de moyenne gagnés</p></div>
-            <div class="stat-card"><h2>100%</h2><p>Taux de réussite au Brevet/Bac</p></div>
-            <div class="stat-card"><h2>250+</h2><p>Heures de cours dispensées</p></div>
-            <div class="stat-card"><h2>4.9/5</h2><p>Satisfaction des parents</p></div>
-        </section>
+</nav>
 
-        <section class="concept">
-            <div class="concept-img">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Concept Délices" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-            <div class="concept-text">
-                <div class="hero-badge">Le Concept</div>
-                <h2>Pourquoi "Délices" ?</h2>
-                <p>Nous pensons que l'apprentissage ne doit pas être synonyme de stress. Le plaisir est le moteur de la mémoire. </p>
-                <p>C'est pourquoi chaque séance peut se conclure par une "Pause Gourmande" : un moment de détente avec un goûter maison pour récompenser les efforts fournis. Résultat ? L'enfant n'associe plus les devoirs à une contrainte, mais à un moment privilégié.</p>
-                <a href="about.html" class="btn-nav" style="background: var(--dark); margin-top: 20px; display: inline-block;">Découvrir la méthode complète</a>
-            </div>
-        </section>
+<div class="hero">
 
-        <section class="services">
-            <div class="services-header">
-                <h2>Un accompagnement adapté à chaque étape</h2>
-                <p>Nous ne nous contentons pas de corriger les exercices. Nous apprenons à votre enfant à devenir autonome et organisé.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon-box">✏️</div>
-                    <h3>Primaire</h3>
-                    <p>Bases fondamentales en lecture, écriture et calcul. Apprentissage ludique.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon-box">📚</div>
-                    <h3>Collège</h3>
-                    <p>Méthodologie, organisation et préparation intensive au Brevet des Collèges.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon-box">🔬</div>
-                    <h3>Lycée</h3>
-                    <p>Spécialisation, aide aux devoirs complexe et coaching pour le Baccalauréat.</p>
-                </div>
-            </div>
-        </section>
+<h1>
+Aide aux devoirs efficace à Fréjus
+</h1>
 
-        <section class="faq">
-            <h2 style="text-align: center; margin-bottom: 50px;">Questions Fréquentes</h2>
-            <div class="faq-item">
-                <div class="faq-question">Où se déroulent les cours ? <span>+</span></div>
-                <p style="margin-top: 15px; display: none;">Les cours se déroulent à votre domicile à Fréjus, Saint-Raphaël et alentours, ou dans mon espace dédié.</p>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Quelles sont les matières enseignées ? <span>+</span></div>
-                <p style="margin-top: 15px; display: none;">Nous couvrons les mathématiques, le français, l'anglais, l'histoire-géo et les sciences.</p>
-            </div>
-        </section>
-    </main>
+<p>
+Un accompagnement scolaire sérieux pour aider les élèves à comprendre leurs cours et progresser durablement.
+</p>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <a href="#" class="footer-logo">Devoirs & Délices</a>
-                <p>L'excellence scolaire à visage humain. Basé à Fréjus, au service de la réussite de vos enfants depuis 2026.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li>Accueil</li>
-                    <li>À Propos</li>
-                    <li>Tarifs</li>
-                    <li>Avis</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Services</h4>
-                <ul>
-                    <li>Primaire</li>
-                    <li>Collège</li>
-                    <li>Lycée</li>
-                    <li>Stages Vacances</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Fréjus, Var</li>
-                    <li>raphaelmaury83600@gmail.com</li>
-                    <li>WhatsApp Direct</li>
-                </ul>
-            </div>
-        </div>
-        <div style="text-align: center; padding-top: 40px; border-top: 1px solid #334155; font-size: 0.9rem; opacity: 0.6;">
-            © 2026 Devoirs & Délices. Créé avec passion pour l'éducation.
-        </div>
-    </footer>
+<button onclick="location.href='packs.html'">
+Découvrir les offres
+</button>
 
-    <script>
-        // Simple script pour la FAQ
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const p = item.querySelector('p');
-                p.style.display = p.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
+</div>
+
+<section>
+
+<h2 class="title">
+Pourquoi choisir Devoirs & Délices
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Petits groupes</h3>
+<p>
+Maximum 4 élèves pour garantir un suivi sérieux.
+</p>
+</div>
+
+<div class="card">
+<h3>Progression réelle</h3>
+<p>
+Objectif : comprendre les cours et améliorer les résultats.
+</p>
+</div>
+
+<div class="card">
+<h3>Ambiance motivante</h3>
+<p>
+Un cadre positif qui donne envie d'apprendre.
+</p>
+</div>
+
+<div class="card">
+<h3>Goûter possible</h3>
+<p>
+Gâteaux disponibles après la séance (2€).
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Les offres
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Pack Classique</h3>
+
+<div class="price">17€</div>
+
+<p>
+1h d'aide aux devoirs en petit groupe.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Pack Duo</h3>
+
+<div class="price">20€</div>
+
+<p>
+Seulement deux élèves pour plus d'attention.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Pack Examens</h3>
+
+<div class="price">25€</div>
+
+<p>
+Préparation Brevet ou Bac.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Pack Premium</h3>
+
+<div class="price">28€</div>
+
+<p>
+Cours individuel avec suivi personnalisé.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="cta">
+
+<h2>
+Réserver une séance
+</h2>
+
+<p>
+Contactez-nous pour organiser une séance.
+</p>
+
+</div>
+
+<footer>
+
+📍 Fréjus  
+<br><br>
+
+📧 raphaelmaury83600@gmail.com  
+
+<br><br>
+
+© Devoirs & Délices
+
+</footer>
+
 </body>
 </html>
