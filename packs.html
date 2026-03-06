@@ -3,303 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarifs & Formules | Devoirs & Délices Fréjus</title>
-    <meta name="description" content="Découvrez nos formules de soutien scolaire sur-mesure à Fréjus. Du pack découverte au suivi premium, trouvez l'accompagnement idéal pour votre enfant.">
+    <title>Packs & Tarifs | Devoirs & Délices - Fréjus</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* =========================================
+           1. DESIGN SYSTEM (BENTO-GLASS)
+           ========================================= */
         :root {
-            --primary: #6366f1;
-            --primary-light: #eef2ff;
-            --primary-dark: #4338ca;
-            --accent: #f59e0b;
-            --accent-light: #fef3c7;
-            --secondary: #10b981;
-            --dark: #0f172a;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-500: #64748b;
+            --bg-page: #f9fbff;
+            --primary: #6c5ce7;
+            --primary-soft: #efedff;
+            --accent-yellow: #ffeaa7;
+            --accent-green: #55efc4;
+            --accent-pink: #fab1a0;
+            --dark: #2d3436;
+            --text-muted: #636e72;
             --white: #ffffff;
-            --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-            --radius: 20px;
+            --radius-bento: 35px;
+            --radius-pill: 100px;
+            --glass: rgba(255, 255, 255, 0.7);
+            --shadow-bento: 0 20px 50px rgba(108, 92, 231, 0.08);
+            --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
+        /* Base */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--white); color: var(--dark); line-height: 1.6; }
-
-        /* Navigation */
-        nav {
-            display: flex; justify-content: space-between; align-items: center; padding: 20px 8%;
-            background: white; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-100);
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-page);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
-        .logo { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; }
-        .btn-nav { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2); }
 
-        /* Hero Section Packs */
-        .packs-hero { padding: 80px 8% 40px; text-align: center; background: radial-gradient(circle at center, #f5f7ff 0%, #ffffff 100%); }
-        .packs-hero h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; margin-bottom: 15px; }
-        .packs-hero p { color: var(--gray-500); font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+        h1, h2, h3, .font-fredoka { font-family: 'Fredoka', sans-serif; }
+        a { text-decoration: none; transition: var(--transition); }
 
-        /* Toggle Switch */
-        .pricing-toggle { display: flex; align-items: center; justify-content: center; margin: 40px 0; gap: 15px; }
-        .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--gray-200); transition: .4s; border-radius: 34px; }
-        .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
-        input:checked + .slider { background-color: var(--primary); }
-        input:checked + .slider:before { transform: translateX(26px); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
 
-        /* Pricing Grid */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 40px 8%; }
+        /* =========================================
+           2. NAVIGATION (FLOATING PILL)
+           ========================================= */
+        .navbar {
+            position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1000px; z-index: 1000;
+            background: var(--glass); backdrop-filter: blur(15px);
+            padding: 12px 30px; border-radius: var(--radius-pill);
+            display: flex; justify-content: space-between; align-items: center;
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .logo { font-size: 1.4rem; color: var(--primary); font-weight: 700; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--primary); color: white !important; padding: 10px 22px; border-radius: 50px; }
+
+        /* =========================================
+           3. HERO PRICING (Lignes 70-150)
+           ========================================= */
+        .hero { text-align: center; padding: 150px 0 60px; }
+        .hero h1 { font-size: 4.5rem; letter-spacing: -3px; margin-bottom: 20px; line-height: 1; }
+        .hero p { font-size: 1.3rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+
+        /* Toggle Button */
+        .switcher {
+            display: flex; align-items: center; justify-content: center;
+            gap: 15px; margin-top: 50px;
+        }
+        .switch-input { display: none; }
+        .switch-label {
+            width: 60px; height: 32px; background: #ddd;
+            border-radius: 30px; position: relative; cursor: pointer;
+            transition: 0.3s;
+        }
+        .switch-label::after {
+            content: ''; position: absolute; top: 4px; left: 4px;
+            width: 24px; height: 24px; background: white; border-radius: 50%;
+            transition: 0.3s;
+        }
+        .switch-input:checked + .switch-label { background: var(--primary); }
+        .switch-input:checked + .switch-label::after { transform: translateX(28px); }
+        .discount-tag { background: var(--accent-green); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 800; }
+
+        /* =========================================
+           4. BENTO PRICING GRID (Lignes 150-350)
+           ========================================= */
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 30px; margin-bottom: 80px;
+        }
+
         .price-card {
-            background: white; border: 1px solid var(--gray-200); padding: 50px 40px; border-radius: 30px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden;
+            background: var(--white);
+            border-radius: var(--radius-bento);
+            padding: 50px 40px;
+            display: flex; flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: var(--shadow-bento);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-        .price-card:hover { transform: scale(1.03); box-shadow: var(--shadow-card); border-color: var(--primary); }
-        
-        .price-card.featured { background: var(--dark); color: white; border: none; transform: scale(1.05); }
-        .price-card.featured:hover { transform: scale(1.08); }
-        .price-card.featured .badge { background: var(--primary); color: white; }
+        .price-card:hover { transform: translateY(-15px); }
 
-        .badge { background: var(--gray-100); color: var(--gray-500); padding: 5px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .price-val { font-size: 3.5rem; font-weight: 800; margin: 25px 0 10px; font-family: 'Outfit'; }
-        .price-val span { font-size: 1.2rem; font-weight: 400; opacity: 0.7; }
+        /* Card Highlights */
+        .card-popular { background: var(--dark); color: white; transform: scale(1.05); z-index: 5; }
+        .card-popular .price-tag { color: var(--accent-yellow); }
+        .card-popular .feature-item { color: rgba(255,255,255,0.8); }
+        .card-popular .btn-price { background: var(--primary); color: white; }
 
-        .feature-list { list-style: none; margin: 35px 0; text-align: left; }
-        .feature-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 1rem; }
-        .feature-list li i { color: var(--secondary); font-weight: bold; }
-        
+        .badge-popular {
+            position: absolute; top: 25px; right: -35px;
+            background: var(--accent-pink); color: white;
+            padding: 8px 100px; transform: rotate(45deg);
+            font-size: 0.7rem; font-weight: 900; text-transform: uppercase;
+        }
+
+        .price-name { font-size: 1.6rem; margin-bottom: 10px; }
+        .price-tag { font-size: 3.5rem; font-weight: 900; margin: 25px 0; }
+        .price-tag span { font-size: 1.1rem; font-weight: 400; color: var(--text-muted); }
+
+        .features { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+        .feature-item { 
+            display: flex; align-items: center; gap: 12px; 
+            margin-bottom: 18px; font-weight: 500; font-size: 0.95rem;
+        }
+        .feature-item i { color: var(--primary); font-size: 1.2rem; }
+
         .btn-price {
-            display: block; width: 100%; padding: 18px; border-radius: 15px; text-align: center;
-            text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s;
-            background: var(--gray-100); color: var(--dark);
-        }
-        .featured .btn-price { background: var(--primary); color: white; }
-        .btn-price:hover { filter: brightness(0.9); }
-
-        /* Detail Section */
-        .detail-section { padding: 100px 8%; background: var(--gray-50); }
-        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .detail-box h2 { font-family: 'Outfit'; font-size: 2.5rem; margin-bottom: 25px; }
-        .detail-box p { margin-bottom: 20px; font-size: 1.1rem; color: var(--gray-500); }
-
-        .step-list { margin-top: 30px; }
-        .step-item { display: flex; gap: 20px; margin-bottom: 25px; }
-        .step-num { 
-            background: var(--primary-light); color: var(--primary); width: 45px; height: 45px; 
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
-            font-weight: 800; flex-shrink: 0;
+            width: 100%; padding: 18px; border-radius: 20px;
+            background: var(--primary-soft); color: var(--primary);
+            font-weight: 800; text-align: center; border: none; cursor: pointer;
         }
 
-        /* Délices Add-on */
-        .delices-promo {
-            background: var(--accent); color: var(--dark); padding: 60px 8%; border-radius: 40px;
-            margin: 60px 8%; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+        /* =========================================
+           5. COMPARATEUR BENTO (Lignes 350-500)
+           ========================================= */
+        .bento-info {
+            display: grid; grid-template-columns: 2fr 1fr;
+            gap: 25px; margin-bottom: 100px;
         }
-        .delices-promo img { width: 120px; height: 120px; background: white; border-radius: 20px; padding: 10px; }
+        .bento-box {
+            background: var(--white); padding: 50px;
+            border-radius: var(--radius-bento); box-shadow: var(--shadow-bento);
+        }
+        .box-tax { background: var(--accent-yellow); }
+        .box-tax h2 { font-size: 2.2rem; margin-bottom: 15px; }
+        .box-tax span { color: var(--primary); font-weight: 900; }
 
-        /* Table de comparaison */
-        .comparison { padding: 100px 8%; overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; text-align: center; background: white; border-radius: 20px; overflow: hidden; }
-        th { background: var(--gray-100); padding: 25px; font-family: 'Outfit'; font-size: 1.2rem; }
-        td { padding: 20px; border-bottom: 1px solid var(--gray-100); }
-        .check { color: var(--secondary); font-weight: 800; font-size: 1.4rem; }
+        .faq-card {
+            background: var(--primary-soft); padding: 40px;
+            border-radius: var(--radius-bento);
+        }
+        .faq-item { margin-bottom: 25px; }
+        .faq-item h4 { color: var(--primary); margin-bottom: 8px; }
 
-        /* FAQ */
-        .faq { padding: 100px 15%; text-align: center; }
-        .faq-container { margin-top: 50px; text-align: left; }
-        .faq-item { background: var(--gray-50); margin-bottom: 15px; padding: 25px; border-radius: 15px; cursor: pointer; transition: 0.3s; }
-        .faq-item:hover { background: var(--gray-100); }
-        .faq-q { font-weight: 700; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; }
-        .faq-a { margin-top: 15px; color: var(--gray-500); display: none; }
+        /* =========================================
+           6. SECTION GOURMANDE (Lignes 500-600)
+           ========================================= */
+        .delice-option {
+            background: var(--white); border-radius: var(--radius-bento);
+            padding: 60px; display: flex; align-items: center; gap: 50px;
+            border: 2px dashed var(--primary); margin-bottom: 100px;
+        }
+        .delice-circle {
+            width: 120px; height: 120px; background: var(--accent-pink);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; flex-shrink: 0;
+        }
 
-        footer { background: var(--dark); color: white; padding: 80px 8% 40px; text-align: center; }
+        /* Footer */
+        footer { text-align: center; padding: 80px 0; background: var(--dark); color: white; border-radius: 50px 50px 0 0; }
 
-        @media (max-width: 768px) {
-            .detail-grid { grid-template-columns: 1fr; }
-            .packs-hero h1 { font-size: 2.5rem; }
-            .pricing-grid { padding: 20px 4%; }
+        /* Responsive */
+        @media (max-width: 950px) {
+            .pricing-grid, .bento-info { grid-template-columns: 1fr; }
+            .card-popular { transform: none; }
+            .hero h1 { font-size: 3rem; }
+            .delice-option { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">Devoirs & Délices 🍰</a>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🍰 Devoirs & Délices</a>
         <div class="nav-links">
             <a href="about.html">Expertise</a>
-            <a href="packs.html" style="color:var(--primary)">Nos Formules</a>
-            <a href="avis.html">Témoignages</a>
-            <a href="contact.html" class="btn-nav">Réserver une séance</a>
+            <a href="packs.html" style="color:var(--primary)">Packs</a>
+            <a href="avis.html">Avis</a>
         </div>
+        <a href="contact.html" class="btn-nav">Contact</a>
     </nav>
 
-    <section class="packs-hero">
-        <span class="badge" style="background:var(--primary-light); color:var(--primary)">Tarifs 2026</span>
-        <h1>Choisissez le pack adapté à vos <span>objectifs.</span></h1>
-        <p>Pas d'engagement à long terme, pas de frais de dossier cachés. Juste de la pédagogie pure et des résultats concrets.</p>
-        
-        <div class="pricing-toggle">
-            <span>Cours Ponctuel</span>
-            <label class="switch">
-              <input type="checkbox" id="priceToggle">
-              <span class="slider"></span>
-            </label>
-            <span>Forfait Mensuel (Économique)</span>
-        </div>
-    </section>
+    <div class="container">
+        <header class="hero">
+            <span style="color: var(--primary); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Investissez dans l'avenir</span>
+            <h1>Le prix de la <span>Sérénité.</span></h1>
+            <p>Pas de frais d'inscription, pas d'engagement longue durée. Juste des résultats et du plaisir.</p>
+            
+            <div class="switcher">
+                <span style="font-weight: 700; opacity: 0.5;">À la séance</span>
+                <input type="checkbox" id="pricing-toggle" class="switch-input">
+                <label for="pricing-toggle" class="switch-label"></label>
+                <span style="font-weight: 700;">Abonnement Mensuel</span>
+                <span class="discount-tag">-15% 🔥</span>
+            </div>
+        </header>
 
-    <div class="pricing-grid">
-        <div class="price-card">
-            <span class="badge">Nouveau</span>
-            <h3>Pack Bienvenue</h3>
-            <p>Le test sans risque pour découvrir ma méthode.</p>
-            <div class="price-val">15€<span> / 1h</span></div>
-            <ul class="feature-list">
-                <li><i>✓</i> Bilan de compétences initial</li>
-                <li><i>✓</i> Analyse des blocages</li>
-                <li><i>✓</i> Plan d'action personnalisé</li>
-                <li><i>✓</i> Valable une seule fois</li>
-            </ul>
-            <a href="contact.html" class="btn-price">Essayer maintenant</a>
-        </div>
+        <section class="pricing-grid">
+            
+            <div class="price-card">
+                <h3 class="price-name">Le Bilan 🔍</h3>
+                <p style="color: var(--text-muted)">Pour faire connaissance.</p>
+                <div class="price-tag">15€<span> / séance</span></div>
+                <ul class="features">
+                    <li class="feature-item"><i>✔</i> Diagnostic complet (1h)</li>
+                    <li class="feature-item"><i>✔</i> Analyse des blocages</li>
+                    <li class="feature-item"><i>✔</i> Test de profil cognitif</li>
+                    <li class="feature-item"><i>✔</i> Rapport PDF envoyé</li>
+                </ul>
+                <button class="btn-price">Réserver mon bilan</button>
+            </div>
 
-        <div class="price-card featured">
-            <span class="badge">Recommandé</span>
-            <h3>Individuel Premium</h3>
-            <p>L'accompagnement haut de gamme pour exceller.</p>
-            <div class="price-val">28€<span> / 1h</span></div>
-            <ul class="feature-list">
-                <li><i>✓</i> Suivi ultra-personnalisé</li>
-                <li><i>✓</i> Préparation Brevet / Bac</li>
-                <li><i>✓</i> <strong>Pause Gourmande Incluse</strong></li>
-                <li><i>✓</i> Support WhatsApp 7j/7</li>
-                <li><i>✓</i> Accès ressources privées</li>
-            </ul>
-            <a href="contact.html" class="btn-price">Réserver mon créneau</a>
-        </div>
+            <div class="price-card card-popular">
+                <div class="badge-popular">Recommandé</div>
+                <h3 class="price-name">Le Premium 🚀</h3>
+                <p style="opacity: 0.7">L'accompagnement complet.</p>
+                <div class="price-tag">28€<span> / heure</span></div>
+                <ul class="features">
+                    <li class="feature-item"><i>★</i> Cours de méthodologie</li>
+                    <li class="feature-item"><i>★</i> <strong>Pause Délices Incluse</strong></li>
+                    <li class="feature-item"><i>★</i> Support WhatsApp 7j/7</li>
+                    <li class="feature-item"><i>★</i> Fiches de révisions personnalisées</li>
+                    <li class="feature-item"><i>★</i> Suivi de progression parents</li>
+                </ul>
+                <button class="btn-price">Choisir l'excellence</button>
+            </div>
 
-        <div class="price-card">
-            <span class="badge">Convivial</span>
-            <h3>Pack Duo</h3>
-            <p>Apprendre entre amis pour plus de motivation.</p>
-            <div class="price-val">20€<span> / élève</span></div>
-            <ul class="feature-list">
-                <li><i>✓</i> Dynamique de groupe stimulante</li>
-                <li><i>✓</i> Exercices collaboratifs</li>
-                <li><i>✓</i> Durée : 1h15 (bonus temps)</li>
-                <li><i>✓</i> Idéal pour les binômes</li>
-            </ul>
-            <a href="contact.html" class="btn-price">Réserver à deux</a>
-        </div>
-    </div>
+            <div class="price-card">
+                <h3 class="price-name">Le Duo 🤝</h3>
+                <p style="color: var(--text-muted)">Apprendre à deux.</p>
+                <div class="price-tag">20€<span> / élève / h</span></div>
+                <ul class="features">
+                    <li class="feature-item"><i>✔</i> Dynamique de groupe</li>
+                    <li class="feature-item"><i>✔</i> Idéal pour la fratrie</li>
+                    <li class="feature-item"><i>✔</i> Challenge & Motivation</li>
+                    <li class="feature-item"><i>✔</i> Support de cours partagé</li>
+                </ul>
+                <button class="btn-price">Réserver à deux</button>
+            </div>
 
-    <section class="delices-promo">
-        <img src="https://img.icons8.com/emoji/96/cookie-emoji.png" alt="Cookie">
-        <div style="flex:1">
-            <h2>L'Option Délices : Le plaisir comme moteur.</h2>
-            <p>Pour chaque séance (hors pack Premium), ajoutez l'option goûter maison pour seulement 2€. Des produits sains, faits avec amour, pour recharger les batteries cérébrales après l'effort.</p>
-        </div>
-    </section>
+        </section>
 
-    <section class="detail-section">
-        <div class="detail-grid">
-            <div class="detail-box">
-                <h2>Que contient une séance type ?</h2>
-                <p>Chez Devoirs & Délices, nous ne faisons pas que de l'aide aux devoirs classique. Chaque minute est optimisée pour l'apprentissage.</p>
-                <div class="step-list">
-                    <div class="step-item">
-                        <div class="step-num">01</div>
-                        <div><strong>Rappel & Ancrage (10 min)</strong><br>Retour sur les notions vues la semaine précédente pour vérifier la mémorisation.</div>
+        <section class="bento-info">
+            <div class="bento-box box-tax">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div>
+                        <h2>Divisez vos frais par <span>deux.</span></h2>
+                        <p style="font-size: 1.2rem; max-width: 450px;">Grâce à mon statut de service à la personne, bénéficiez de <strong>50% de crédit d'impôt</strong>. Un cours à 28€ ne vous revient qu'à 14€ après déduction.</p>
                     </div>
-                    <div class="step-item">
-                        <div class="step-num">02</div>
-                        <div><strong>Anatomie du cours (20 min)</strong><br>Explication théorique, simplification des concepts complexes et création de fiches.</div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-num">03</div>
-                        <div><strong>Mise en pratique (20 min)</strong><br>Exercices d'application directe et résolution de problèmes.</div>
-                    </div>
-                    <div class="step-item">
-                        <div class="step-num">04</div>
-                        <div><strong>Bilan & Délice (10 min)</strong><br>Synthèse de la séance et moment de convivialité gourmand.</div>
-                    </div>
+                    <span style="font-size: 5rem;">🧾</span>
                 </div>
             </div>
-            <div style="background:var(--primary); border-radius:30px; padding:60px; color:white; text-align:center;">
-                <h3 style="font-size:2rem; margin-bottom:20px;">Nos Garanties</h3>
-                <ul style="list-style:none; text-align:left; font-size:1.1rem;">
-                    <li style="margin-bottom:20px;">🛡️ <strong>Sans engagement :</strong> Arrêtez quand vous voulez.</li>
-                    <li style="margin-bottom:20px;">📅 <strong>Flexibilité :</strong> Report possible jusqu'à 24h avant.</li>
-                    <li style="margin-bottom:20px;">📍 <strong>Proximité :</strong> Déplacement inclus (secteur Fréjus).</li>
-                    <li>📊 <strong>Compte-rendu :</strong> Un SMS envoyé aux parents après chaque séance.</li>
-                </ul>
+            
+            <div class="faq-card">
+                <h3 style="margin-bottom: 25px;">Questions fréquentes</h3>
+                <div class="faq-item">
+                    <h4>Comment payer ?</h4>
+                    <p>Virement, espèces ou chèques CESU acceptés.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Zone de déplacement ?</h4>
+                    <p>Fréjus, St-Raphaël, Puget sans frais supp.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="comparison">
-        <h2 style="text-align:center; margin-bottom:50px; font-family:'Outfit'; font-size:2.5rem;">Comparatif des services</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Fonctionnalités</th>
-                    <th>Bienvenue</th>
-                    <th>Premium</th>
-                    <th>Duo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Bilan de niveau</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
-                <tr><td>Fiches de révision offertes</td><td>-</td><td class="check">✓</td><td>-</td></tr>
-                <tr><td>Option Délices incluse</td><td>-</td><td class="check">✓</td><td>-</td></tr>
-                <tr><td>Support SMS Prioritaire</td><td>-</td><td class="check">✓</td><td>-</td></tr>
-                <tr><td>Préparation examens spécifique</td><td>-</td><td class="check">✓</td><td class="check">✓</td></tr>
-            </tbody>
-        </table>
-    </section>
+        <section class="delice-option">
+            <div class="delice-circle">🍪</div>
+            <div>
+                <h2 style="font-size: 2.2rem; margin-bottom: 10px;">L'Option Gourmande est gratuite.</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted);">Sur les forfaits mensuels, le goûter maison est offert à chaque séance. Parce qu'on ne réfléchit jamais aussi bien que le ventre plein et le cœur léger.</p>
+            </div>
+        </section>
 
-    <section class="faq">
-        <h2>Foire Aux Questions (Tarifs)</h2>
-        <div class="faq-container">
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">Comment s'effectue le paiement ? <span>+</span></div>
-                <div class="faq-a">Le paiement s'effectue à la fin de chaque séance ou par forfait mensuel via virement, espèces ou Chèque Emploi Service Universel (CESU).</div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">Y a-t-il des frais de déplacement ? <span>+</span></div>
-                <div class="faq-a">Les frais de déplacement sont inclus dans le prix pour toute la zone de Fréjus et Saint-Raphaël. Au-delà (Puget-sur-Argens, Roquebrune), un petit supplément peut être appliqué.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-q">Peut-on partager un pack Duo entre frères et sœurs ? <span>+</span></div>
-                <div class="faq-a">Absolument ! Le pack Duo est idéal pour les fratries, permettant un tarif réduit tout en gardant une dynamique d'entraide.</div>
-            </div>
+        <div style="text-align: center; background: var(--primary); padding: 80px; border-radius: var(--radius-bento); color: white; margin-bottom: 100px;">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Démarrons l'aventure.</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 35px; opacity: 0.8;">Réservez votre créneau pour le trimestre prochain dès aujourd'hui.</p>
+            <a href="contact.html" style="background: var(--accent-yellow); color: var(--dark); padding: 20px 50px; border-radius: 50px; font-weight: 900; font-size: 1.2rem; display: inline-block;">Prendre rendez-vous</a>
         </div>
-    </section>
+
+    </div>
 
     <footer>
-        <p style="font-size:1.5rem; font-weight:800; margin-bottom:20px;">Prêt à investir dans son avenir ?</p>
-        <p>Contactez-moi directement par mail pour bloquer votre créneau hebdomadaire.</p>
-        <a href="mailto:raphaelmaury83600@gmail.com" style="color:var(--accent); text-decoration:none; font-weight:bold; font-size:1.2rem;">raphaelmaury83600@gmail.com</a>
-        <div style="margin-top:40px; opacity:0.5; font-size:0.8rem;">© 2026 Devoirs & Délices. Tous droits réservés.</div>
+        <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 20px;">Devoirs & Délices</p>
+        <div style="opacity: 0.5; font-size: 0.9rem;">
+            © 2026 Raphaël Maury - Fréjus/St-Raphaël <br>
+            Soutien scolaire & Pédagogie neuro-active.
+        </div>
     </footer>
 
     <script>
-        function toggleFaq(element) {
-            const answer = element.querySelector('.faq-a');
-            const span = element.querySelector('span');
-            if (answer.style.display === "block") {
-                answer.style.display = "none";
-                span.textContent = "+";
+        // Changement dynamique des prix (Simulation)
+        const toggle = document.getElementById('pricing-toggle');
+        const prices = document.querySelectorAll('.price-tag');
+        
+        toggle.addEventListener('change', () => {
+            if(toggle.checked) {
+                prices[1].innerHTML = '24€<span> / heure</span>';
+                prices[2].innerHTML = '17€<span> / élève / h</span>';
             } else {
-                answer.style.display = "block";
-                span.textContent = "-";
+                prices[1].innerHTML = '28€<span> / heure</span>';
+                prices[2].innerHTML = '20€<span> / élève / h</span>';
             }
-        }
+        });
     </script>
 </body>
 </html>
