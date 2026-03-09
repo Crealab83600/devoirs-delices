@@ -1,286 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Devoirs & Délices | Soutien scolaire à Fréjus</title>
+<title>Devoirs Délices – Projet local à Fréjus</title>
 
-<style>
+<link rel="stylesheet" href="css/style.css">
 
-body{
-margin:0;
-font-family:Arial;
-background:#f4f7fb;
-color:#222;
-}
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-z-index:1000;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#333;
-font-weight:600;
-}
-
-.hero{
-margin-top:80px;
-background:linear-gradient(120deg,#0077ff,#00c6ff);
-color:white;
-padding:120px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-max-width:700px;
-margin:auto;
-}
-
-.section{
-padding:80px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.title{
-font-size:36px;
-text-align:center;
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.card h3{
-margin-top:0;
-}
-
-.pack{
-border-top:4px solid #0077ff;
-}
-
-.price{
-font-size:28px;
-font-weight:bold;
-color:#0077ff;
-margin:15px 0;
-}
-
-.btn{
-display:inline-block;
-padding:12px 25px;
-background:#0077ff;
-color:white;
-border-radius:25px;
-text-decoration:none;
-margin-top:15px;
-}
-
-footer{
-background:#0f172a;
-color:white;
-padding:60px 20px;
-text-align:center;
-margin-top:60px;
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
+<header class="navbar">
+
+<h1>Devoirs Délices</h1>
+
 <nav>
 
-<div style="font-weight:bold;font-size:20px;">
-Devoirs & Délices
-</div>
-
-<div>
 <a href="index.html">Accueil</a>
-<a href="about.html">À propos</a>
-<a href="packs.html">Offres</a>
-<a href="contact.html">Contact</a>
+<a href="about.html">Le projet</a>
+<a href="activites.html">Activités</a>
 <a href="avis.html">Avis</a>
-</div>
+<a href="contact.html">Contact</a>
 
 </nav>
 
-<div class="hero">
+</header>
 
-<h1>Soutien scolaire à Fréjus</h1>
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>Un projet éducatif créé par un lycéen à Fréjus</h2>
 
 <p>
-Aide aux devoirs simple, efficace et accessible pour accompagner les élèves dans leur réussite scolaire.
+Devoirs Délices est un projet personnel qui vise à proposer
+un espace convivial autour de l’apprentissage et de l’aide aux devoirs.
 </p>
 
-<a href="packs.html" class="btn">Voir les offres</a>
+<a class="btn" href="about.html">Découvrir le projet</a>
 
 </div>
 
-<div class="section">
+</section>
 
-<h2 class="title">Pourquoi choisir Devoirs & Délices</h2>
+<section class="reveal">
+
+<h2>Pourquoi ce projet ?</h2>
+
+<p>
+En tant que lycéen passionné par le numérique et l’éducation,
+j’ai créé ce site pour partager une idée simple :
+apprendre ensemble dans un cadre motivant et convivial.
+</p>
+
+</section>
+
+<section class="reveal">
+
+<h2>Ce que propose le projet</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Suivi personnalisé</h3>
-<p>
-Chaque élève est accompagné selon ses besoins et ses difficultés.
-</p>
+<h3>Aide aux devoirs</h3>
+<p>Un espace pour accompagner les élèves dans leurs devoirs.</p>
 </div>
 
 <div class="card">
-<h3>Petits groupes</h3>
-<p>
-Les groupes sont limités pour permettre une meilleure compréhension.
-</p>
+<h3>Partage de connaissances</h3>
+<p>Des ressources et conseils pour progresser.</p>
 </div>
 
 <div class="card">
-<h3>Ambiance positive</h3>
-<p>
-Un environnement motivant pour redonner confiance aux élèves.
-</p>
+<h3>Moments conviviaux</h3>
+<p>Apprendre dans une ambiance positive et motivante.</p>
 </div>
 
 </div>
 
-</div>
-
-<div class="section">
-
-<h2 class="title">Nos packs principaux</h2>
-
-<div class="cards">
-
-<div class="card pack">
-<h3>Pack Découverte</h3>
-<div class="price">12€</div>
-<p>Première séance pour découvrir l'aide aux devoirs.</p>
-</div>
-
-<div class="card pack">
-<h3>Pack Classique</h3>
-<div class="price">17€</div>
-<p>Format standard pour progresser régulièrement.</p>
-</div>
-
-<div class="card pack">
-<h3>Pack Duo</h3>
-<div class="price">20€</div>
-<p>Deux élèves seulement pour un meilleur suivi.</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2 class="title">Comment se déroule une séance</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>1. Analyse</h3>
-<p>
-On regarde les devoirs et les difficultés de l'élève.
-</p>
-</div>
-
-<div class="card">
-<h3>2. Explication</h3>
-<p>
-On explique les notions importantes avec des exemples.
-</p>
-</div>
-
-<div class="card">
-<h3>3. Entraînement</h3>
-<p>
-L'élève s'entraîne avec des exercices adaptés.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2 class="title">Questions fréquentes</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Combien dure une séance ?</h3>
-<p>
-Les séances durent environ 1 heure.
-</p>
-</div>
-
-<div class="card">
-<h3>Combien d'élèves par groupe ?</h3>
-<p>
-Les groupes sont limités pour garder un bon suivi.
-</p>
-</div>
-
-<div class="card">
-<h3>Y a-t-il d'autres services ?</h3>
-<p>
-Après la séance, les élèves peuvent acheter un gâteau maison pour 2€.
-</p>
-</div>
-
-</div>
-
-</div>
+</section>
 
 <footer>
 
-📍 Fréjus  
-
-<br><br>
-
-📧 raphaelmaury83600@gmail.com  
-
-<br><br>
-
-© 2026 Devoirs & Délices
+<p>© 2026 Devoirs Délices – Projet personnel créé à Fréjus</p>
 
 </footer>
 
+<script src="js/script.js"></script>
+
 </body>
+
 </html>
