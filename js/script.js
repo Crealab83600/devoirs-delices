@@ -1,18 +1,19 @@
-function reveal(){
+function revealSections() {
 
-let elements=document.querySelectorAll(".reveal");
+const elements = document.querySelectorAll(".section");
 
-elements.forEach(el=>{
+elements.forEach(function(element) {
 
-let windowHeight=window.innerHeight;
-let elementTop=el.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+const elementTop = element.getBoundingClientRect().top;
 
-if(elementTop < windowHeight - 150){
-el.classList.add("visible");
+if (elementTop < windowHeight - 120) {
+element.style.opacity = "1";
+element.style.transform = "translateY(0)";
 }
 
 });
 
 }
 
-window.addEventListener("scroll",reveal);
+window.addEventListener("scroll", revealSections);
