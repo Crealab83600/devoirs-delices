@@ -1,359 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Offres | Devoirs & Délices</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,Arial;
-}
-
-body{
-background:#f6f9ff;
-color:#1a1a1a;
-}
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-box-shadow:0 3px 12px rgba(0,0,0,0.08);
-z-index:1000;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#333;
-font-weight:600;
-}
-
-nav a:hover{
-color:#0077ff;
-}
-
-/* HERO */
-
-.hero{
-margin-top:80px;
-background:linear-gradient(120deg,#0077ff,#00c6ff);
-color:white;
-padding:110px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-max-width:650px;
-margin:auto;
-}
-
-/* SECTION */
-
-section{
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-}
-
-.title{
-font-size:36px;
-text-align:center;
-margin-bottom:60px;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:35px;
-}
-
-/* CARD */
-
-.card{
-background:white;
-padding:35px;
-border-radius:18px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-transition:0.3s;
-position:relative;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-/* BADGE */
-
-.badge{
-position:absolute;
-top:15px;
-right:15px;
-background:#0077ff;
-color:white;
-padding:6px 12px;
-border-radius:20px;
-font-size:12px;
-}
-
-/* PRICE */
-
-.price{
-font-size:34px;
-font-weight:bold;
-color:#0077ff;
-margin:15px 0;
-}
-
-/* LIST */
-
-ul{
-margin-top:10px;
-padding-left:18px;
-color:#444;
-}
-
-/* CTA */
-
-button{
-margin-top:20px;
-padding:12px 25px;
-border:none;
-background:#0077ff;
-color:white;
-border-radius:25px;
-cursor:pointer;
-}
-
-button:hover{
-background:#005fd1;
-}
-
-/* FOOTER */
-
-footer{
-background:#0d1b2a;
-color:white;
-text-align:center;
-padding:50px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <title>Devoirs & Délices — Packs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
-
 <body>
 
+<!-- Navigation -->
 <nav>
-
-<div style="font-weight:bold;font-size:22px;">
-Devoirs & Délices
-</div>
-
-<div>
-<a href="index.html">Accueil</a>
-<a href="about.html">À propos</a>
-<a href="packs.html">Offres</a>
-<a href="contact.html">Contact</a>
-<a href="avis.html">Avis</a>
-</div>
-
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="packs.html">Packs</a>
+    <a href="avis.html">Avis</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
-<div class="hero">
-
-<h1>Nos offres de soutien scolaire</h1>
-
-<p>
-Des séances accessibles et efficaces pour aider les élèves à progresser.
-</p>
-
-</div>
-
-<section>
-
-<h2 class="title">Choisir une formule</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<span class="badge">Découverte</span>
-
-<h3>Pack Découverte</h3>
-
-<div class="price">12€</div>
-
-<p>Une première séance pour découvrir l'aide aux devoirs.</p>
-
-<ul>
-<li>1h de soutien</li>
-<li>Petit groupe</li>
-<li>Découverte du fonctionnement</li>
-</ul>
-
-<button onclick="location.href='contact.html'">
-Réserver
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Pack Classique</h3>
-
-<div class="price">17€</div>
-
-<p>Le format standard pour progresser régulièrement.</p>
-
-<ul>
-<li>1h de soutien</li>
-<li>Maximum 4 élèves</li>
-<li>Explication des exercices</li>
-</ul>
-
-<button onclick="location.href='contact.html'">
-Réserver
-</button>
-
-</div>
-
-<div class="card">
-
-<span class="badge">Populaire</span>
-
-<h3>Pack Duo</h3>
-
-<div class="price">20€</div>
-
-<p>Deux élèves seulement pour un meilleur suivi.</p>
-
-<ul>
-<li>1h de séance</li>
-<li>2 élèves maximum</li>
-<li>Travail personnalisé</li>
-</ul>
-
-<button onclick="location.href='contact.html'">
-Réserver
-</button>
-
-</div>
-
-<div class="card">
-
-<span class="badge">Examens</span>
-
-<h3>Pack Examens</h3>
-
-<div class="price">25€</div>
-
-<p>Préparation au Brevet ou au Bac.</p>
-
-<ul>
-<li>Révision intensive</li>
-<li>Méthodes d'examen</li>
-<li>Exercices types</li>
-</ul>
-
-<button onclick="location.href='contact.html'">
-Réserver
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>Pack Programmation</h3>
-
-<div class="price">25€</div>
-
-<p>Initiation au code et à la logique informatique.</p>
-
-<ul>
-<li>Python</li>
-<li>Arduino</li>
-<li>Logique algorithmique</li>
-</ul>
-
-<button onclick="location.href='contact.html'">
-Réserver
-</button>
-
-</div>
-
-<div class="card">
-
-<span class="badge">Premium</span>
-
-<h3>Pack Premium</h3>
-
-<div class="price">28€</div>
-
-<p>Suivi individuel pour progresser plus vite.</p>
-
-<ul>
-<li>Cours individuel</li>
-<li>Suivi personnalisé</li>
-<li>Progression rapide</li>
-</ul>
-
-<button onclick="location.href='contact.html'">
-Réserver
-</button>
-
-</div>
-
-</div>
-
+<!-- Hero -->
+<section class="hero">
+    <h1>Nos packs pédagogiques</h1>
+    <p>Découvrez nos formules adaptées aux besoins de chaque enfant : individuelle, duo ou petit groupe.</p>
 </section>
 
-<section>
+<!-- Présentation des packs -->
+<section class="presentation">
+    <h2>Accompagnement complet avec packs</h2>
+    <p>Chez Devoirs & Délices, nous proposons plusieurs packs pour répondre aux besoins et au rythme de chaque élève :</p>
+    <ul>
+        <li><strong>Packs individuels :</strong> un suivi entièrement personnalisé pour un seul élève.</li>
+        <li><strong>Pack Duo :</strong> pour 2 élèves souhaitant apprendre ensemble tout en restant suivis individuellement.</li>
+        <li><strong>Pack Petit groupe :</strong> pour 3 à 4 élèves, idéal pour les séances interactives et collaboratives.</li>
+    </ul>
+    <p>Chaque pack est conçu pour maximiser la progression, la motivation et le plaisir d’apprendre. Les séances combinent exercices pratiques, révisions, aide aux devoirs et conseils d’organisation.</p>
+</section>
 
-<h2 class="title">Informations importantes</h2>
+<!-- Méthodes détaillées -->
+<section class="methodes">
+    <h2>Méthodes pédagogiques</h2>
+    <p>Chaque pack utilise des méthodes complémentaires pour un apprentissage efficace :</p>
+    <ul>
+        <li>Explications détaillées des notions adaptées au nombre d’élèves du pack.</li>
+        <li>Exercices pratiques adaptés au niveau des participants.</li>
+        <li>Révisions ciblées pour préparer les examens ou contrôles.</li>
+        <li>Travail collaboratif en duo ou petit groupe pour favoriser l’entraide et l’échange tout en gardant un suivi personnalisé.</li>
+        <li>Conseils méthodologiques et organisationnels pour chaque pack.</li>
+    </ul>
+</section>
 
-<p style="text-align:center;max-width:700px;margin:auto;color:#444;font-size:18px;">
-Les séances durent environ 1 heure.  
-Les groupes sont limités pour garantir un suivi sérieux et efficace.  
-Après la séance, les élèves peuvent acheter un gâteau maison pour 2€.
-</p>
+<!-- Packs et tarifs -->
+<section class="packs-detail">
+    <h2>Nos packs et tarifs</h2>
+    <p>Choisissez le pack le plus adapté :</p>
+    <ul>
+        <li><strong>Pack individuel :</strong> 25€ par heure – suivi entièrement personnalisé pour un seul participant.</li>
+        <li><strong>Pack Duo :</strong> 20€ par participant et par heure – pour 2 enfants apprenant ensemble avec suivi adapté.</li>
+        <li><strong>Pack Petit groupe :</strong> 15€ par participant et par heure – pour 3 à 4 enfants travaillant ensemble dans un cadre interactif.</li>
+    </ul>
+    <p>Le paiement se fait en espèces pour le moment. Le paiement par carte bancaire sera bientôt disponible.</p>
+    <p>Chaque pack comprend :</p>
+    <ul>
+        <li>Suivi pédagogique individualisé</li>
+        <li>Exercices pratiques et corrigés</li>
+        <li>Conseils méthodologiques et organisationnels</li>
+        <li>Support aux devoirs et projets scolaires</li>
+    </ul>
+</section>
 
+<!-- Horaires -->
+<section class="horaires">
+    <h2>Horaires</h2>
+    <p>Les packs sont disponibles aux horaires suivants :</p>
+    <ul>
+        <li>Mercredi : 14h – 18h</li>
+        <li>Samedi : 10h – 18h</li>
+        <li>Dimanche : 14h – 18h</li>
+    </ul>
+    <p>Chaque créneau peut accueillir plusieurs participants selon le pack choisi, tout en maintenant un suivi personnalisé pour chacun.</p>
+</section>
+
+<!-- Témoignages -->
+<section class="temoignages">
+    <h2>Témoignages</h2>
+    <blockquote>
+        <p>“Le Pack Duo a parfaitement convenu à mes enfants. Chacun a progressé tout en s’amusant.”</p>
+        <cite>— Parent A.</cite>
+    </blockquote>
+    <blockquote>
+        <p>“Le Pack Petit groupe a permis à mes enfants de collaborer tout en étant suivis individuellement. Très efficace !”</p>
+        <cite>— Parent B.</cite>
+    </blockquote>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+        <h3>Comment réserver un pack ?</h3>
+        <p>Vous pouvez réserver via le formulaire de contact, par email ou par téléphone. Nous confirmerons votre créneau rapidement.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Combien de participants par pack ?</h3>
+        <p>Pack individuel : 1 participant. Pack Duo : 2 participants. Pack Petit groupe : 3 à 4 participants.</p>
+    </div>
+</section>
+
+<!-- Contact rapide -->
+<section class="contact-cta">
+    <h2>Réservez votre pack</h2>
+    <p>Pour réserver un pack ou poser une question, utilisez le formulaire de contact.</p>
+    <a href="contact.html" class="btn">Contactez-moi</a>
 </section>
 
 <footer>
-
-📍 Fréjus  
-
-<br><br>
-
-📧 raphaelmaury83600@gmail.com  
-
-<br><br>
-
-© 2026 Devoirs & Délices
-
+    <p>Horaires : Mercredi 14h-18h | Samedi 10h-18h | Dimanche 14h-18h</p>
+    <p>© 2026 Devoirs & Délices</p>
 </footer>
 
 </body>
