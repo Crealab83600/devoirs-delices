@@ -1,52 +1,110 @@
-/* Reset et base */
+/* ==========================
+   Reset & Base
+========================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: #fffaf8;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
+    scroll-behavior: smooth;
 }
 
 a {
     text-decoration: none;
     color: #ff6b6b;
+    transition: color 0.3s;
 }
 
 a:hover {
     color: #ff3b3b;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background-color: #fff3f0;
-    padding: 15px 0;
-    border-bottom: 3px solid #ff6b6b;
+/* ==========================
+   Header / Navigation
+========================== */
+header {
     position: sticky;
     top: 0;
     z-index: 100;
-    font-weight: bold;
+    background-color: #fff3f0;
+    border-bottom: 3px solid #ff6b6b;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-nav a {
-    font-size: 16px;
-    transition: color 0.3s, transform 0.3s;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    flex-wrap: wrap;
 }
 
-nav a:hover {
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #ff3b3b;
-    transform: scale(1.05);
 }
 
-/* Hero */
+.menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.menu li a {
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.menu li a:hover {
+    transform: scale(1.05);
+    color: #ff3b3b;
+}
+
+/* Hamburger menu mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #ff6b6b;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #fff3f0;
+        padding: 20px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* ==========================
+   Hero
+========================== */
 .hero {
     background: url("../images/hero.jpg") center/cover no-repeat;
     color: #fff;
@@ -66,7 +124,9 @@ nav a:hover {
     text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
-/* Sections */
+/* ==========================
+   Sections
+========================== */
 section {
     padding: 60px 20px;
     max-width: 1000px;
@@ -90,13 +150,11 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* Paragraphs */
 section p {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
 
-/* Listes */
 ul {
     margin: 15px 0 25px 25px;
 }
@@ -105,43 +163,53 @@ ul li {
     margin-bottom: 10px;
 }
 
-/* Images */
+/* ==========================
+   Images
+========================== */
 section img {
     max-width: 100%;
     display: block;
     margin: 25px auto;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
-/* Boutons */
+section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ==========================
+   Buttons
+========================== */
 .btn {
     display: inline-block;
     background: linear-gradient(45deg, #ff6b6b, #ff3b3b);
     color: #fff;
     padding: 14px 28px;
-    border-radius: 12px;
-    font-weight: bold;
+    border-radius: 50px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #ff3b3b, #ff6b6b);
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-/* Témoignages */
+/* ==========================
+   Témoignages
+========================== */
 blockquote {
     background-color: #fff3f0;
     padding: 25px 30px;
     border-left: 6px solid #ff6b6b;
     margin-bottom: 25px;
     border-radius: 8px;
-    position: relative;
     transition: transform 0.3s;
 }
 
@@ -161,7 +229,9 @@ blockquote cite {
     font-weight: bold;
 }
 
-/* FAQ */
+/* ==========================
+   FAQ
+========================== */
 .faq-item {
     margin-bottom: 20px;
     border: 1px solid #ffd6d0;
@@ -193,7 +263,9 @@ blockquote cite {
     background-color: #fff;
 }
 
-/* Formulaire */
+/* ==========================
+   Formulaire
+========================== */
 form {
     display: flex;
     flex-direction: column;
@@ -222,13 +294,17 @@ form button {
     align-self: center;
 }
 
-/* Contact CTA */
+/* ==========================
+   Contact CTA
+========================== */
 .contact-cta {
     text-align: center;
     margin-top: 40px;
 }
 
-/* Footer */
+/* ==========================
+   Footer
+========================== */
 footer {
     text-align: center;
     padding: 30px 20px;
@@ -238,16 +314,19 @@ footer {
     color: #555;
 }
 
-/* Responsive */
+/* ==========================
+   Responsive
+========================== */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.2rem;
     }
+
     .hero p {
         font-size: 1.2rem;
     }
-    nav {
+
+    .menu {
         flex-direction: column;
-        gap: 15px;
     }
 }
