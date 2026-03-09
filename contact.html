@@ -1,102 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Devoirs & Délices — Contact</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Devoirs & Délices - Raphaël Maury</title>
+<meta name="description" content="Contactez Raphaël Maury pour réserver une séance d'accompagnement scolaire, poser une question ou demander un devis personnalisé.">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="js/script.js" defer></script>
 </head>
+
 <body>
 
-<!-- Navigation -->
-<nav>
-    <a href="index.html">Accueil</a>
-    <a href="about.html">À propos</a>
-    <a href="packs.html">Packs</a>
-    <a href="avis.html">Avis</a>
-    <a href="contact.html">Contact</a>
+<header>
+<nav class="navbar">
+
+<div class="logo">Devoirs & Délices</div>
+
+<ul class="menu">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="about.html">À propos</a></li>
+<li><a href="packs.html">Packs</a></li>
+<li><a href="avis.html">Avis</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+<a href="contact.html" class="btn">Réserver</a>
+
 </nav>
+</header>
 
-<!-- Hero -->
+<main>
+
 <section class="hero">
-    <h1>Contactez Devoirs & Délices</h1>
-    <p>Pour toute question, réservation ou information, utilisez le formulaire ci-dessous ou contactez-moi directement.</p>
+<h1>Contactez Devoirs & Délices</h1>
+<p>Pour toute question, réservation ou information, utilisez le formulaire ci-dessous ou contactez-moi directement.</p>
 </section>
 
-<!-- Coordonnées et zone d’intervention -->
-<section class="coordonnees">
-    <h2>Mes coordonnées</h2>
-    <p>Email : <a href="mailto:raphaelmaury83600@gmail.com">raphaelmaury83600@gmail.com</a></p>
-    <p>Zone d’intervention : Fréjus</p>
+<section class="container coordonnees">
+<h2>Mes coordonnées</h2>
+<p>Email : <a href="mailto:raphaelmaury83600@gmail.com">raphaelmaury83600@gmail.com</a></p>
+<p>Zone d’intervention : Fréjus</p>
 </section>
 
-<!-- Horaires détaillés -->
-<section class="horaires">
-    <h2>Horaires des séances</h2>
-    <p>Je propose des séances individuelles ou en petit groupe (maximum 4 participants) selon les créneaux suivants :</p>
-    <ul>
-        <li>Mercredi : 14h – 18h</li>
-        <li>Samedi : 10h – 18h</li>
-        <li>Dimanche : 14h – 18h</li>
-    </ul>
+<section class="container horaires">
+<h2>Horaires des séances</h2>
+<p>Je propose des séances individuelles ou en petit groupe (maximum 4 participants) :</p>
+<ul>
+<li>Mercredi : 14h – 18h</li>
+<li>Samedi : 10h – 18h</li>
+<li>Dimanche : 14h – 18h</li>
+</ul>
 </section>
 
-<!-- Formulaire de contact -->
-<section class="formulaire">
-    <h2>Formulaire de contact</h2>
-    <p>Remplissez le formulaire ci-dessous pour réserver une séance, poser une question ou demander un devis personnalisé.</p>
-    <form action="#" method="post">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
+<section class="container formulaire">
+<h2>Formulaire de contact</h2>
+<p>Remplissez ce formulaire pour réserver une séance, poser une question ou demander un devis personnalisé.</p>
+<form action="#" method="post">
+<label for="nom">Nom :</label>
+<input type="text" id="nom" name="nom" required>
 
-        <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" required>
+<label for="prenom">Prénom :</label>
+<input type="text" id="prenom" name="prenom" required>
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
+<label for="email">Email :</label>
+<input type="email" id="email" name="email" required>
 
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+<label for="message">Message :</label>
+<textarea id="message" name="message" rows="6" required></textarea>
 
-        <button type="submit">Envoyer</button>
-    </form>
+<button type="submit" class="btn">Envoyer</button>
+</form>
 </section>
 
-<!-- FAQ contact -->
-<section class="faq">
-    <h2>Questions fréquentes</h2>
-    <div class="faq-item">
-        <h3>Comment réserver une séance ?</h3>
-        <p>Vous pouvez remplir le formulaire ci-dessus ou me contacter directement par email pour fixer votre créneau.</p>
-    </div>
-    <div class="faq-item">
-        <h3>Combien de participants par séance ?</h3>
-        <p>Chaque séance peut accueillir jusqu’à 4 participants selon la formule choisie (individuelle, duo ou petit groupe).</p>
-    </div>
-    <div class="faq-item">
-        <h3>Modes de paiement ?</h3>
-        <p>Le paiement se fait actuellement en espèces. Le paiement par carte bancaire sera bientôt disponible.</p>
-    </div>
-    <div class="faq-item">
-        <h3>Quels packs sont disponibles ?</h3>
-        <p>Vous pouvez consulter toutes les formules sur la page <a href="packs.html">Packs</a>.</p>
-    </div>
-    <div class="faq-item">
-        <h3>Où puis-je lire les avis des familles ?</h3>
-        <p>Les témoignages des parents et des enfants sont disponibles sur la page <a href="avis.html">Avis</a>.</p>
-    </div>
+<section class="container faq">
+<h2>Questions fréquentes</h2>
+
+<div class="faq-item">
+<h3>Comment réserver une séance ?</h3>
+<p>Remplissez le formulaire ou contactez-moi directement par email pour fixer votre créneau.</p>
+</div>
+
+<div class="faq-item">
+<h3>Combien de participants par séance ?</h3>
+<p>Chaque séance peut accueillir jusqu’à 4 participants selon la formule choisie : individuelle, duo ou petit groupe.</p>
+</div>
+
+<div class="faq-item">
+<h3>Modes de paiement ?</h3>
+<p>Le paiement se fait actuellement en espèces. Le paiement par carte bancaire sera bientôt disponible.</p>
+</div>
+
+<div class="faq-item">
+<h3>Quels packs sont disponibles ?</h3>
+<p>Consultez toutes les formules sur la page <a href="packs.html">Packs</a>.</p>
+</div>
+
+<div class="faq-item">
+<h3>Où lire les avis des familles ?</h3>
+<p>Les témoignages sont disponibles sur la page <a href="avis.html">Avis</a>.</p>
+</div>
 </section>
 
-<!-- Contact rapide -->
-<section class="contact-cta">
-    <h2>Prêt à réserver votre séance ?</h2>
-    <p>Envoyez-moi un message via le formulaire ou contactez-moi directement par email pour confirmer votre créneau.</p>
-    <a href="contact.html" class="btn">Réserver une séance</a>
+<section class="cta">
+<h2>Prêt à réserver votre séance ?</h2>
+<p>Envoyez-moi un message via le formulaire ou contactez-moi directement par email pour confirmer votre créneau.</p>
+<a href="contact.html" class="btn">Réserver une séance</a>
 </section>
+
+</main>
 
 <footer>
-    <p>Horaires : Mercredi 14h-18h | Samedi 10h-18h | Dimanche 14h-18h</p>
-    <p>© 2026 Devoirs & Délices</p>
+<div class="footer-container">
+<div>
+<h3>Devoirs & Délices</h3>
+<p>Accompagnement scolaire personnalisé avec Raphaël Maury.</p>
+</div>
+
+<div>
+<h3>Navigation</h3>
+<a href="index.html">Accueil</a>
+<a href="about.html">À propos</a>
+<a href="packs.html">Packs</a>
+<a href="avis.html">Avis</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div>
+<h3>Horaires</h3>
+<p>Mercredi : 14h – 18h</p>
+<p>Samedi : 10h – 18h</p>
+<p>Dimanche : 14h – 18h</p>
+</div>
+</div>
+
+<p class="copyright">
+© 2026 Devoirs & Délices — Raphaël Maury
+</p>
 </footer>
 
 </body>
