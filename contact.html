@@ -2,313 +2,93 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactez Raphaël | Devoirs & Délices Fréjus</title>
-    <meta name="description" content="Prenez rendez-vous pour un bilan gratuit ou posez vos questions. Devoirs & Délices vous accompagne à Fréjus, St-Raphaël et Puget.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-light: #eef2ff;
-            --accent: #f59e0b;
-            --secondary: #10b981;
-            --dark: #0f172a;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-300: #cbd5e1;
-            --gray-600: #475569;
-            --white: #ffffff;
-            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--white); color: var(--dark); line-height: 1.6; }
-
-        /* Nav (Standardisée) */
-        nav {
-            display: flex; justify-content: space-between; align-items: center; padding: 20px 8%;
-            background: white; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-100);
-        }
-        .logo { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; }
-        .btn-nav { background: var(--primary); color: white !important; padding: 12px 24px; border-radius: 12px; text-decoration: none; }
-
-        /* Hero Contact */
-        .contact-hero {
-            padding: 100px 8% 60px;
-            text-align: center;
-            background: radial-gradient(circle at 0% 0%, #eef2ff 0%, #ffffff 100%);
-        }
-        .contact-hero h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; margin-bottom: 20px; }
-        .contact-hero p { color: var(--gray-600); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
-
-        /* Layout Contact */
-        .contact-wrapper {
-            padding: 40px 8% 100px;
-            display: grid;
-            grid-template-columns: 1.2fr 1.8fr;
-            gap: 60px;
-        }
-
-        /* Colonne Gauche : Infos */
-        .info-panel { display: flex; flex-direction: column; gap: 30px; }
-        
-        .info-card {
-            background: var(--gray-50);
-            padding: 30px;
-            border-radius: 24px;
-            border: 1px solid var(--gray-100);
-            transition: 0.3s;
-        }
-        .info-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .info-card h3 { margin-bottom: 15px; color: var(--primary); font-family: 'Outfit'; }
-        .info-card p, .info-card a { color: var(--gray-600); text-decoration: none; font-weight: 500; }
-        
-        /* Map Simulator */
-        .map-box {
-            background: #e2e8f0;
-            height: 300px;
-            border-radius: 24px;
-            margin-top: 30px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--white);
-            box-shadow: var(--shadow);
-        }
-        .map-dot {
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border: 4px solid white;
-            border-radius: 50%;
-            position: relative;
-            z-index: 2;
-        }
-        .map-dot::after {
-            content: "";
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            background: rgba(99, 102, 241, 0.3);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
-
-        /* Colonne Droite : Formulaire */
-        .form-container {
-            background: var(--white);
-            padding: 50px;
-            border-radius: 30px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--gray-100);
-        }
-        .form-container h2 { margin-bottom: 30px; font-family: 'Outfit'; font-size: 2rem; }
-        
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-full { grid-column: 1 / span 2; }
-        
-        .field { margin-bottom: 20px; }
-        .field label { display: block; margin-bottom: 10px; font-weight: 700; font-size: 0.9rem; color: var(--dark); }
-        .field input, .field select, .field textarea {
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 12px;
-            border: 1px solid var(--gray-300);
-            background: var(--gray-50);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-        .field input:focus, .field select:focus, .field textarea:focus {
-            background: white;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px var(--primary-light);
-            outline: none;
-        }
-
-        .checkbox-group { display: flex; align-items: center; gap: 10px; margin: 20px 0; }
-        .checkbox-group input { width: 18px; height: 18px; cursor: pointer; }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--dark);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            border: none;
-            font-size: 1.1rem;
-            font-weight: 800;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .submit-btn:hover { background: var(--primary); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
-
-        /* FAQ Flash */
-        .contact-faq { padding: 60px 8%; background: var(--gray-50); }
-        .faq-mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-        .faq-mini-item h4 { color: var(--primary); margin-bottom: 10px; }
-
-        /* Social Banner */
-        .social-cta {
-            padding: 60px 8%;
-            background: var(--accent);
-            text-align: center;
-            color: var(--dark);
-        }
-        .social-icons { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-        .social-link { background: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; color: var(--dark); }
-
-        footer { background: var(--dark); color: white; padding: 60px 8% 30px; text-align: center; }
-
-        @media (max-width: 1024px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            .form-grid { grid-template-columns: 1fr; }
-            .form-full { grid-column: auto; }
-            .faq-mini-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <title>Devoirs & Délices — Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">Devoirs & Délices 🍰</a>
-        <div class="nav-links">
-            <a href="about.html">Expertise</a>
-            <a href="packs.html">Nos Formules</a>
-            <a href="avis.html">Témoignages</a>
-            <a href="contact.html" style="color:var(--primary)">Contact</a>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="packs.html">Packs</a>
+    <a href="avis.html">Avis</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-    <header class="contact-hero">
-        <span style="background: var(--accent-light); color: var(--accent); padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase;">Disponible maintenant</span>
-        <h1>On discute de <span>votre enfant ?</span></h1>
-        <p>Une question sur les tarifs, les disponibilités ou ma méthode ? Je vous réponds personnellement sous 24h maximum.</p>
-    </header>
+<!-- Hero -->
+<section class="hero">
+    <h1>Contactez Devoirs & Délices</h1>
+    <p>Pour toute question, réservation ou information, utilisez le formulaire ci-dessous ou nos coordonnées.</p>
+</section>
 
-    <section class="contact-wrapper">
-        <aside class="info-panel">
-            <div class="info-card">
-                <h3>Contact Direct</h3>
-                <p>📩 <a href="mailto:raphaelmaury83600@gmail.com">raphaelmaury83600@gmail.com</a></p>
-                <p style="margin-top: 10px;">📱 WhatsApp : Disponible sur demande</p>
-            </div>
+<!-- Coordonnées détaillées -->
+<section class="coordonnees">
+    <h2>Nos coordonnées</h2>
+   <p>Email : raphaelmaury83600@gmail.com</p>
+</section>
 
-            <div class="info-card">
-                <h3>Zone d'intervention</h3>
-                <p>📍 Fréjus, Saint-Raphaël</p>
-                <p>📍 Puget-sur-Argens, Roquebrune</p>
-                <p>📍 Saint-Aygulf</p>
-            </div>
+<!-- Horaires -->
+<section class="horaires">
+    <h2>Horaires</h2>
+    <p>Je travaille seul et propose des séances individuelles ou en petit groupe (max 4 participants) :</p>
+    <ul>
+        <li>Mercredi : 14h – 18h</li>
+        <li>Samedi : 10h – 18h</li>
+        <li>Dimanche : 14h – 18h</li>
+    </ul>
+</section>
 
-            <div class="info-card">
-                <h3>Disponibilités</h3>
-                <p>📅 Lun - Sam : 08:30 - 19:30</p>
-                <p>📅 Dimanche : Stages intensifs</p>
-            </div>
+<!-- Formulaire de contact -->
+<section class="formulaire">
+    <h2>Formulaire de contact</h2>
+    <p>Remplissez le formulaire ci-dessous pour réserver une séance, poser une question ou demander un devis personnalisé.</p>
+    <form action="#" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
 
-            <div class="map-box">
-                <div style="position: absolute; color: #94a3b8; font-weight: 800; opacity: 0.5; font-size: 3rem;">FRÉJUS</div>
-                <div class="map-dot"></div>
-            </div>
-        </aside>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
 
-        <main class="form-container">
-            <h2>Démarrer un accompagnement</h2>
-            <form action="https://formspree.io/f/votre_id" method="POST"> <div class="form-grid">
-                    <div class="field">
-                        <label>Votre Nom & Prénom</label>
-                        <input type="text" name="name" placeholder="Ex: Julie Dupont" required>
-                    </div>
-                    <div class="field">
-                        <label>Email de contact</label>
-                        <input type="email" name="email" placeholder="julie@exemple.com" required>
-                    </div>
-                    <div class="field">
-                        <label>Classe de l'enfant</label>
-                        <select name="classe">
-                            <option>Primaire (CP-CM2)</option>
-                            <option>6ème - 4ème</option>
-                            <option>3ème (Brevet)</option>
-                            <option>Lycée (2nde - Term)</option>
-                            <option>Autre / Études Sup</option>
-                        </select>
-                    </div>
-                    <div class="field">
-                        <label>Formule souhaitée</label>
-                        <select name="formule">
-                            <option>Pack Bienvenue (Bilan)</option>
-                            <option>Cours Individuel Premium</option>
-                            <option>Pack Duo (Ami/Fratrie)</option>
-                            <option>Je ne sais pas encore</option>
-                        </select>
-                    </div>
-                    <div class="field form-full">
-                        <label>Comment puis-je vous aider ?</label>
-                        <textarea name="message" rows="6" placeholder="Détaillez les difficultés rencontrées, les matières ciblées..."></textarea>
-                    </div>
-                </div>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="delices" name="interet_delices">
-                    <label for="delices">Je suis intéressé(e) par l'option "Pause Gourmande" 🍪</label>
-                </div>
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
 
-                <button type="submit" class="submit-btn">
-                    Envoyer ma demande →
-                </button>
-                <p style="text-align:center; font-size: 0.8rem; color: var(--gray-500); margin-top: 20px;">
-                    Vos données sont sécurisées et ne seront jamais partagées.
-                </p>
-            </form>
-        </main>
-    </section>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
 
-    <section class="contact-faq">
-        <h2 style="text-align: center; font-family: 'Outfit';">Questions de dernière minute</h2>
-        <div class="faq-mini-grid">
-            <div class="faq-mini-item">
-                <h4>Quels délais pour un 1er cours ?</h4>
-                <p>Généralement, nous pouvons organiser le bilan de bienvenue sous 48 à 72 heures selon vos disponibilités.</p>
-            </div>
-            <div class="faq-mini-item">
-                <h4>Et si mon enfant n'accroche pas ?</h4>
-                <p>C'est tout l'intérêt du pack Bienvenue. S'il n'y a pas de "feeling" pédagogique, vous n'avez aucun engagement.</p>
-            </div>
-            <div class="faq-mini-item">
-                <h4>Prenez-vous les CESU ?</h4>
-                <p>Oui ! Le règlement par Chèque Emploi Service Universel est accepté et encouragé.</p>
-            </div>
-        </div>
-    </section>
+<!-- FAQ contact -->
+<section class="faq">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+        <h3>Comment réserver une séance ?</h3>
+        <p>Vous pouvez remplir le formulaire ci-dessus ou nous contacter directement par téléphone ou email.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Combien de participants par séance ?</h3>
+        <p>Chaque séance peut accueillir jusqu’à 4 participants selon le pack choisi (individuel, duo ou petit groupe).</p>
+    </div>
+    <div class="faq-item">
+        <h3>Modes de paiement ?</h3>
+        <p>Paiement en espèces pour le moment. Paiement par carte bancaire sera bientôt disponible.</p>
+    </div>
+</section>
 
-    <section class="social-cta">
-        <h2>Retrouvez les conseils de Raphaël</h2>
-        <p>Je partage régulièrement des astuces de mémorisation et de méthodologie sur les réseaux.</p>
-        <div class="social-icons">
-            <a href="#" class="social-link">📸</a>
-            <a href="#" class="social-link">💼</a>
-            <a href="#" class="social-link">📘</a>
-        </div>
-    </section>
+<!-- Contact rapide -->
+<section class="contact-cta">
+    <h2>Prêt à réserver ?</h2>
+    <p>Envoyez-nous un message via le formulaire ou contactez-nous directement pour fixer votre séance.</p>
+    <a href="contact.html" class="btn">Réserver une séance</a>
+</section>
 
-    <footer>
-        <p style="font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">Devoirs & Délices</p>
-        <p>Expertise scolaire & Bien-être à Fréjus</p>
-        <div style="margin-top: 30px; opacity: 0.4; font-size: 0.8rem;">
-            Conçu pour la réussite de vos enfants en 2026.
-        </div>
-    </footer>
+<footer>
+    <p>Horaires : Mercredi 14h-18h | Samedi 10h-18h | Dimanche 14h-18h</p>
+    <p>© 2026 Devoirs & Délices</p>
+</footer>
 
 </body>
 </html>
