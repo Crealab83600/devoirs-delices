@@ -1,332 +1,157 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>À propos | Devoirs & Délices</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter, Arial;
-}
-
-body{
-background:#f5f8ff;
-color:#1a1a1a;
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:white;
-box-shadow:0 3px 15px rgba(0,0,0,0.08);
-z-index:1000;
-}
-
-nav a{
-text-decoration:none;
-margin-left:25px;
-color:#333;
-font-weight:600;
-}
-
-nav a:hover{
-color:#0077ff;
-}
-
-/* HERO */
-
-.hero{
-margin-top:80px;
-background:linear-gradient(120deg,#0077ff,#00c6ff);
-color:white;
-padding:120px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-max-width:700px;
-margin:auto;
-}
-
-/* SECTION */
-
-section{
-padding:80px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.title{
-font-size:36px;
-text-align:center;
-margin-bottom:50px;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
-}
-
-/* CARD */
-
-.card{
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-/* FAQ */
-
-.faq{
-background:white;
-padding:25px;
-border-radius:10px;
-margin-bottom:15px;
-cursor:pointer;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.answer{
-display:none;
-margin-top:10px;
-color:#555;
-}
-
-/* FOOTER */
-
-footer{
-background:#0d1b2a;
-color:white;
-text-align:center;
-padding:50px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <title>Devoirs & Délices — À propos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
-
 <body>
 
+<!-- Navigation -->
 <nav>
-
-<div style="font-size:22px;font-weight:bold;">
-Devoirs & Délices
-</div>
-
-<div>
-<a href="index.html">Accueil</a>
-<a href="about.html">À propos</a>
-<a href="packs.html">Offres</a>
-<a href="contact.html">Contact</a>
-<a href="avis.html">Avis</a>
-</div>
-
+    <a href="index.html">Accueil</a>
+    <a href="about.html">À propos</a>
+    <a href="activites.html">Activités</a>
+    <a href="avis.html">Avis</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
-<div class="hero">
-
-<h1>Une aide aux devoirs sérieuse à Fréjus</h1>
-
-<p>
-Devoirs & Délices propose un accompagnement scolaire simple, efficace et motivant pour aider les élèves à progresser dans leurs études.
-</p>
-
-</div>
-
-<section>
-
-<h2 class="title">Qui suis-je ?</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Un élève motivé</h3>
-
-<p>
-Je suis un lycéen passionné par l’apprentissage et le partage de connaissances.  
-J’aide d’autres élèves à comprendre leurs cours et à réussir leurs devoirs.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Une approche simple</h3>
-
-<p>
-Plutôt que de simplement donner les réponses, l’objectif est d’expliquer les méthodes pour que l’élève comprenne réellement ses exercices.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Un environnement positif</h3>
-
-<p>
-Les séances se déroulent dans un cadre calme, motivant et encourageant pour donner confiance aux élèves.
-</p>
-
-</div>
-
-</div>
-
+<!-- Hero -->
+<section class="hero">
+    <h1>À propos de Devoirs & Délices</h1>
+    <p>Un accompagnement pédagogique individuel et personnalisé pour chaque élève.</p>
 </section>
 
-<section>
-
-<h2 class="title">Comment se déroulent les séances ?</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Étape 1</h3>
-
-<p>
-Analyse des devoirs et des difficultés rencontrées par l’élève.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Étape 2</h3>
-
-<p>
-Explication des notions importantes du cours.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Étape 3</h3>
-
-<p>
-Réalisation d’exercices pour vérifier la compréhension.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Étape 4</h3>
-
-<p>
-Possibilité de goûter après la séance avec des gâteaux maison (2€).
-</p>
-
-</div>
-
-</div>
-
+<!-- Présentation détaillée -->
+<section class="presentation">
+    <h2>Qui suis-je ?</h2>
+    <p>Je m’appelle [Ton prénom], j’ai 17 ans et je travaille seul pour offrir un suivi complet et personnalisé à chaque enfant. Depuis plusieurs années, j’accompagne des élèves de tous niveaux dans leurs devoirs, la compréhension de leurs cours et la préparation des examens. Mon objectif est de rendre l’apprentissage motivant et de renforcer la confiance de l’élève dans ses capacités.</p>
+    <p>Travailler seul me permet de suivre chaque élève de manière attentive. Je m’assure que toutes les notions sont comprises avant de passer à l’étape suivante. Chaque élève bénéficie ainsi d’un suivi individualisé et structuré, que ce soit pour des séances individuelles ou des petits groupes (maximum 4 élèves par heure).</p>
+    <p>Je m’efforce également de développer l’autonomie de l’élève, en lui fournissant des outils et méthodes pour organiser son travail, préparer ses devoirs et gérer son temps efficacement. Cela permet aux élèves de progresser de manière durable et de prendre confiance dans leurs capacités scolaires.</p>
+    <img src="images/portrait.jpg" alt="Portrait du pédagogue">
 </section>
 
-<section>
+<!-- Mission -->
+<section class="mission">
+    <h2>Ma mission</h2>
+    <p>Mon rôle est d’accompagner chaque enfant ou adolescent pour :</p>
+    <ul>
+        <li>Renforcer la confiance et la motivation</li>
+        <li>Améliorer la compréhension et l’organisation des devoirs</li>
+        <li>Fournir un suivi individualisé et personnalisé</li>
+        <li>Préparer aux examens et projets scolaires avec efficacité</li>
+    </ul>
+    <p>Je m’assure que chaque séance est productive et adaptée aux besoins et objectifs de l’élève. Mon objectif est que chaque enfant quitte la séance avec un sentiment de réussite et de progrès concret.</p>
+</section>
 
-<h2 class="title">Questions fréquentes</h2>
+<!-- Approche pédagogique -->
+<section class="approche">
+    <h2>Mon approche pédagogique</h2>
+    <p>Mon accompagnement repose sur plusieurs principes essentiels :</p>
+    <ul>
+        <li>Écoute et compréhension des besoins de chaque élève</li>
+        <li>Adaptation des méthodes pédagogiques selon le niveau et la personnalité</li>
+        <li>Mise en pratique immédiate des notions vues pour renforcer l’apprentissage</li>
+        <li>Encouragement constant et objectifs atteignables pour stimuler la motivation</li>
+        <li>Suivi régulier pour mesurer la progression et ajuster le travail</li>
+    </ul>
+    <p>Cette approche permet d’allier sérieux et plaisir, afin que l’apprentissage soit à la fois efficace et motivant. Chaque séance est conçue pour répondre aux difficultés spécifiques de l’élève tout en lui donnant confiance en ses capacités.</p>
+</section>
 
-<div class="faq" onclick="toggle(this)">
-❓ Combien d’élèves par groupe ?
+<!-- Méthodes détaillées -->
+<section class="methodes">
+    <h2>Mes méthodes</h2>
+    <p>Pour aider chaque élève à progresser, j’utilise plusieurs méthodes complémentaires :</p>
+    <ul>
+        <li>Explications claires et détaillées des notions</li>
+        <li>Exercices pratiques et adaptés au niveau de l’élève</li>
+        <li>Révisions ciblées avant les examens ou contrôles</li>
+        <li>Conseils pour l’organisation et la planification des devoirs</li>
+        <li>Travail en petit groupe (maximum 4 élèves) pour favoriser l’entraide et l’échange tout en gardant un suivi personnalisé</li>
+    </ul>
+    <p>Chaque séance est préparée en fonction des besoins spécifiques de l’élève et des objectifs fixés. Mon approche flexible permet de revenir sur les notions difficiles autant de fois que nécessaire et d’adapter le rythme selon la progression de chacun.</p>
+</section>
 
-<div class="answer">
-Maximum 4 élèves afin de garantir un suivi efficace.
-</div>
+<!-- Offres et tarifs détaillés -->
+<section class="offres">
+    <h2>Offres et tarifs</h2>
+    <p>Je propose différentes options pour répondre aux besoins des familles :</p>
+    <ul>
+        <li><strong>Séance individuelle :</strong> 25€ / heure (1 élève)</li>
+        <li><strong>Pack Duo :</strong> 20€ / élève / heure (2 élèves)</li>
+        <li><strong>Petit groupe :</strong> 15€ / élève / heure (3-4 élèves)</li>
+        <li><strong>Pack 5 séances :</strong> devis personnalisé selon les besoins</li>
+    </ul>
+    <p>Le paiement se fait actuellement en espèces. Le paiement par carte bancaire sera bientôt disponible pour plus de flexibilité.</p>
+    <p>Chaque offre comprend le suivi personnalisé, les corrections détaillées, les supports pédagogiques et les conseils adaptés aux besoins de chaque élève.</p>
+</section>
 
-</div>
+<!-- Horaires -->
+<section class="horaires">
+    <h2>Horaires</h2>
+    <p>Je propose mes séances aux horaires suivants :</p>
+    <ul>
+        <li>Mercredi : 14h – 18h</li>
+        <li>Samedi : 10h – 18h</li>
+        <li>Dimanche : 14h – 18h</li>
+    </ul>
+    <p>Chaque créneau peut accueillir jusqu’à 4 élèves pour un suivi optimal. Je recommande de réserver à l’avance pour garantir votre place et un accompagnement personnalisé.</p>
+</section>
 
-<div class="faq" onclick="toggle(this)">
-❓ Quels niveaux sont acceptés ?
+<!-- Témoignages -->
+<section class="temoignages">
+    <h2>Témoignages</h2>
+    <blockquote>
+        <p>“Un suivi efficace et motivant. Mon fils adore maintenant faire ses devoirs et progresse rapidement.”</p>
+        <cite>— Parent A.</cite>
+    </blockquote>
+    <blockquote>
+        <p>“Ma fille a retrouvé confiance en elle et ses notes se sont améliorées. Merci pour votre patience et votre pédagogie.”</p>
+        <cite>— Parent B.</cite>
+    </blockquote>
+    <blockquote>
+        <p>“Méthodes claires, suivi rigoureux et ambiance agréable. Mon enfant se sent soutenu à chaque séance.”</p>
+        <cite>— Parent C.</cite>
+    </blockquote>
+    <blockquote>
+        <p>“Très professionnel et attentif. Je recommande Devoirs & Délices à tous les parents qui veulent un suivi sérieux et personnalisé.”</p>
+        <cite>— Parent D.</cite>
+    </blockquote>
+</section>
 
-<div class="answer">
-Principalement primaire et collège.
-</div>
+<!-- FAQ -->
+<section class="faq">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+        <h3>Comment réserver une séance ?</h3>
+        <p>Vous pouvez réserver via le formulaire de contact, par email ou par téléphone.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Combien d’élèves par séance ?</h3>
+        <p>Chaque séance peut accueillir jusqu’à 4 élèves. Pour un suivi maximum, il est préférable de privilégier 1 ou 2 élèves par séance.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Quelles matières sont couvertes ?</h3>
+        <p>Toutes les matières scolaires sont couvertes : français, mathématiques, langues, sciences, projets et préparation aux examens.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Modes de paiement ?</h3>
+        <p>Le paiement se fait actuellement en espèces. Le paiement par carte bancaire sera bientôt disponible.</p>
+    </div>
+</section>
 
-</div>
-
-<div class="faq" onclick="toggle(this)">
-❓ Comment réserver une séance ?
-
-<div class="answer">
-Il suffit d’envoyer un email via la page contact.
-</div>
-
-</div>
-
-<div class="faq" onclick="toggle(this)">
-❓ Où se déroulent les séances ?
-
-<div class="answer">
-Les séances ont lieu à Fréjus.
-</div>
-
-</div>
-
+<!-- Contact rapide -->
+<section class="contact-cta">
+    <h2>Contactez-moi</h2>
+    <p>Pour réserver une séance ou demander plus d’informations, utilisez le formulaire de contact ou envoyez un email. Je répondrai rapidement pour confirmer votre rendez-vous.</p>
+    <a href="contact.html" class="btn">Contactez-moi</a>
 </section>
 
 <footer>
-
-📍 Fréjus  
-<br><br>
-
-📧 raphaelmaury83600@gmail.com  
-
-<br><br>
-
-© 2026 Devoirs & Délices
-
+    <p>Horaires : Mercredi 14h-18h | Samedi 10h-18h | Dimanche 14h-18h</p>
+    <p>© 2026 Devoirs & Délices</p>
 </footer>
-
-<script>
-
-function toggle(element){
-
-let answer = element.querySelector(".answer")
-
-if(answer.style.display==="block"){
-
-answer.style.display="none"
-
-}else{
-
-answer.style.display="block"
-
-}
-
-}
-
-</script>
 
 </body>
 </html>
