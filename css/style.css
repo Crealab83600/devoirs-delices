@@ -202,6 +202,50 @@ section img:hover {
 }
 
 /* ==========================
+   Cards (packs & testimonials)
+========================== */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff3f0;
+    padding: 25px 20px;
+    border-radius: 15px;
+    flex: 1 1 280px;
+    max-width: 320px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ff3b3b;
+}
+
+.card .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card .stars {
+    color: #ff6b6b;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* ==========================
    Témoignages
 ========================== */
 blockquote {
@@ -263,6 +307,10 @@ blockquote cite {
     background-color: #fff;
 }
 
+.faq-item.active p {
+    display: block;
+}
+
 /* ==========================
    Formulaire
 ========================== */
@@ -289,17 +337,42 @@ form input:focus, form textarea:focus {
 }
 
 form button {
-    width: 180px;
+    width: 200px;
     margin-top: 10px;
     align-self: center;
+    background: linear-gradient(45deg, #ff6b6b, #ff3b3b);
+    color: #fff;
+    padding: 12px 0;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    transform: scale(1.05);
 }
 
 /* ==========================
-   Contact CTA
+   CTA
 ========================== */
-.contact-cta {
+.cta {
+    background-color: #ffebea;
     text-align: center;
+    padding: 60px 20px;
+    border-radius: 15px;
     margin-top: 40px;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
 }
 
 /* ==========================
@@ -324,6 +397,11 @@ footer {
 
     .hero p {
         font-size: 1.2rem;
+    }
+
+    .cards, .cards.testimonials {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .menu {
