@@ -34,14 +34,14 @@ header {
     z-index: 100;
     background-color: #fff3f0;
     border-bottom: 3px solid #ff6b6b;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 5%;
     flex-wrap: wrap;
 }
 
@@ -83,25 +83,6 @@ header {
     transition: all 0.3s;
 }
 
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        background-color: #fff3f0;
-        padding: 20px 0;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-}
-
 /* ==========================
    Hero
 ========================== */
@@ -109,18 +90,18 @@ header {
     background: url("../images/hero.jpg") center/cover no-repeat;
     color: #fff;
     text-align: center;
-    padding: 120px 20px;
+    padding: 80px 5%;
     position: relative;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 20px;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
@@ -128,13 +109,13 @@ header {
    Sections
 ========================== */
 section {
-    padding: 60px 20px;
-    max-width: 1000px;
+    padding: 60px 5%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 section h2 {
-    font-size: 2.2rem;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     margin-bottom: 20px;
     color: #ff6b6b;
     position: relative;
@@ -151,16 +132,60 @@ section h2::after {
 }
 
 section p {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     margin-bottom: 20px;
 }
 
 ul {
-    margin: 15px 0 25px 25px;
+    margin: 15px 0 25px 1.5em;
 }
 
 ul li {
     margin-bottom: 10px;
+}
+
+/* ==========================
+   Cards / Packs / Testimonials
+========================== */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff3f0;
+    padding: 25px 20px;
+    border-radius: 15px;
+    flex: 1 1 280px;
+    max-width: 320px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ff3b3b;
+}
+
+.card .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card .stars {
+    color: #ff6b6b;
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
 /* ==========================
@@ -202,78 +227,6 @@ section img:hover {
 }
 
 /* ==========================
-   Cards (packs & testimonials)
-========================== */
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    background-color: #fff3f0;
-    padding: 25px 20px;
-    border-radius: 15px;
-    flex: 1 1 280px;
-    max-width: 320px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-}
-
-.card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #ff3b3b;
-}
-
-.card .price {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.card .stars {
-    color: #ff6b6b;
-    margin: 10px 0;
-    font-size: 1.2rem;
-}
-
-/* ==========================
-   Témoignages
-========================== */
-blockquote {
-    background-color: #fff3f0;
-    padding: 25px 30px;
-    border-left: 6px solid #ff6b6b;
-    margin-bottom: 25px;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-blockquote:hover {
-    transform: translateY(-3px);
-}
-
-blockquote p {
-    font-style: italic;
-    font-size: 1.1rem;
-}
-
-blockquote cite {
-    display: block;
-    text-align: right;
-    margin-top: 12px;
-    font-weight: bold;
-}
-
-/* ==========================
    FAQ
 ========================== */
 .faq-item {
@@ -302,13 +255,16 @@ blockquote cite {
 }
 
 .faq-item p {
-    padding: 15px 20px;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
     background-color: #fff;
+    transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
 .faq-item.active p {
-    display: block;
+    max-height: 500px;
+    padding: 15px 20px;
 }
 
 /* ==========================
@@ -340,18 +296,6 @@ form button {
     width: 200px;
     margin-top: 10px;
     align-self: center;
-    background: linear-gradient(45deg, #ff6b6b, #ff3b3b);
-    color: #fff;
-    padding: 12px 0;
-    border-radius: 50px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-}
-
-form button:hover {
-    transform: scale(1.05);
 }
 
 /* ==========================
@@ -360,18 +304,18 @@ form button:hover {
 .cta {
     background-color: #ffebea;
     text-align: center;
-    padding: 60px 20px;
+    padding: 60px 5%;
     border-radius: 15px;
     margin-top: 40px;
 }
 
 .cta h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 20px;
 }
 
 .cta p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     margin-bottom: 25px;
 }
 
@@ -380,7 +324,7 @@ form button:hover {
 ========================== */
 footer {
     text-align: center;
-    padding: 30px 20px;
+    padding: 30px 5%;
     background-color: #fff3f0;
     border-top: 3px solid #ff6b6b;
     font-size: 0.95rem;
@@ -399,7 +343,7 @@ footer {
         font-size: 1.2rem;
     }
 
-    .cards, .cards.testimonials {
+    .cards {
         flex-direction: column;
         gap: 15px;
     }
