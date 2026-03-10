@@ -1,21 +1,17 @@
 // ==========================
-// FAQ Interactive
+// Script.js complet pour Devoirs & Délices
 // ==========================
+
 document.addEventListener("DOMContentLoaded", function() {
+
+    // ==========================
+    // FAQ Interactive
+    // ==========================
     const faqItems = document.querySelectorAll(".faq-item h3");
 
     faqItems.forEach(item => {
         item.addEventListener("click", () => {
-            const answer = item.nextElementSibling;
-
-            // Animation smooth pour ouvrir/fermer
-            if(answer.style.maxHeight) {
-                answer.style.maxHeight = null;
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            }
-
-            // Ajouter classe active pour style
+            // Toggle la classe active
             item.parentElement.classList.toggle("active");
         });
     });
@@ -25,24 +21,42 @@ document.addEventListener("DOMContentLoaded", function() {
     // ==========================
     const toggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
+
     if(toggle && menu) {
         toggle.addEventListener("click", () => {
             menu.classList.toggle("active");
             toggle.classList.toggle("active");
         });
+
+        // Fermer le menu lorsqu'on clique sur un lien
+        document.querySelectorAll(".menu li a").forEach(link => {
+            link.addEventListener("click", () => {
+                if(menu.classList.contains("active")) {
+                    menu.classList.remove("active");
+                    toggle.classList.remove("active");
+                }
+            });
+        });
     }
 
     // ==========================
-    // Formulaire avec confirmation
+    // Formulaire avec feedback moderne
     // ==========================
     const form = document.querySelector("form");
     if(form) {
+        const feedback = document.createElement("p");
+        feedback.style.color = "#ff3b3b";
+        feedback.style.fontWeight = "600";
+        feedback.style.marginTop = "10px";
+        form.appendChild(feedback);
+
         form.addEventListener("submit", function(e) {
             e.preventDefault();
-            alert("Merci ! Votre message a été envoyé. Je vous répondrai rapidement.");
+            feedback.textContent = "Merci ! Votre message a été envoyé. Je vous répondrai rapidement.";
             form.reset();
         });
     }
+
 });
 
 // ==========================
