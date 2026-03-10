@@ -1,32 +1,48 @@
-/* Reset global */
+/* ===================== Reset global ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* Body et fond */
+/* ===================== Body & Fond ===================== */
 body {
-    background: linear-gradient(135deg, #fff0f5, #ffe6e1);
+    background: linear-gradient(135deg, #ffe6e1, #fff0f5);
     color: #333;
     line-height: 1.6;
 }
 
-/* Navbar */
+/* ===================== Navbar ===================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
     background-color: #ff6f61;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #ff856f;
+    padding: 10px 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .navbar .logo {
     font-weight: bold;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -39,48 +55,91 @@ body {
     text-decoration: none;
     color: white;
     font-weight: 500;
+    position: relative;
     transition: 0.3s;
 }
 
 .nav-links li a.active,
-.nav-links li a:hover {
-    border-bottom: 2px solid #fff;
+.nav-links li a:hover::after {
+    color: #fff;
 }
 
-/* Hero */
+.nav-links li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* ===================== Hero ===================== */
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #fff0f5, #ffe6e1);
+    animation: fadeIn 1s ease-in-out;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 15px;
+    animation: slideDown 1s ease-out;
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    animation: slideUp 1s ease-out;
 }
 
 .btn {
     background-color: #ff6f61;
     color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
+    padding: 14px 32px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.5s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn:hover::after {
+    width: 200%;
+    height: 500%;
 }
 
 .btn:hover {
     background-color: #ff856f;
+    transform: translateY(-3px) scale(1.05);
 }
 
-/* Packs & Cards */
+/* ===================== Packs & Cards ===================== */
 .packs-container, .avis-container {
     display: flex;
     justify-content: center;
@@ -91,59 +150,122 @@ body {
 
 .pack, .avis-card {
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    width: 220px;
+    padding: 30px;
+    border-radius: 20px;
+    width: 250px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease forwards;
+    cursor: pointer;
 }
 
-.pack:hover, .avis-card:hover {
-    transform: translateY(-10px);
+.pack:hover {
+    transform: translateY(-15px) rotate(-1deg) scale(1.05);
+    box-shadow: 0 18px 30px rgba(0,0,0,0.15);
 }
 
-/* About & Contact sections */
+/* ===================== About & Contact sections ===================== */
 .about, .contact {
     padding: 80px 20px;
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .contact form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
+    gap: 18px;
+    max-width: 450px;
     margin: auto;
 }
 
 .contact input, .contact textarea {
-    padding: 12px;
-    border-radius: 10px;
+    padding: 14px;
+    border-radius: 15px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 12px rgba(255,111,97,0.3);
+    outline: none;
 }
 
 .contact button {
     border: none;
     cursor: pointer;
-    padding: 12px;
-    border-radius: 30px;
+    padding: 14px;
+    border-radius: 50px;
     background-color: #ff6f61;
     color: white;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .contact button:hover {
     background-color: #ff856f;
+    transform: translateY(-3px) scale(1.05);
 }
 
-/* Footer */
+/* ===================== Footer ===================== */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     background-color: #ff6f61;
     color: white;
     margin-top: 50px;
+}
+
+/* ===================== Animations ===================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== Responsive ===================== */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 30px;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .packs-container, .avis-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pack, .avis-card {
+        width: 90%;
+    }
 }
