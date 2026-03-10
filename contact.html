@@ -15,7 +15,6 @@
 
 <header>
 <nav class="navbar">
-
 <div class="logo">Devoirs & Délices</div>
 
 <ul class="menu">
@@ -27,26 +26,37 @@
 </ul>
 
 <a href="contact.html" class="btn">Réserver</a>
-
 </nav>
 </header>
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
 <h1>Contactez Devoirs & Délices</h1>
-<p>Pour toute question, réservation ou information, utilisez le formulaire ci-dessous ou contactez-moi directement.</p>
+<p>Réservez une séance ou posez vos questions directement via le formulaire ci-dessous.</p>
 </section>
 
+<!-- COORDONNEES & PLAN -->
 <section class="container coordonnees">
 <h2>Mes coordonnées</h2>
+<div class="contact-grid">
+<div>
 <p>Email : <a href="mailto:raphaelmaury83600@gmail.com">raphaelmaury83600@gmail.com</a></p>
 <p>Zone d’intervention : Fréjus</p>
+<p>Téléphone : <strong>06 50 02 15 65</strong></p>
+</div>
+<div>
+<!-- Si tu veux, tu peux mettre une image ou carte -->
+<img src="images/map-fréjus.jpg" alt="Carte Fréjus">
+</div>
+</div>
 </section>
 
+<!-- HORAIRES -->
 <section class="container horaires">
 <h2>Horaires des séances</h2>
-<p>Je propose des séances individuelles ou en petit groupe (maximum 4 participants) :</p>
+<p>Séances individuelles ou petit groupe (max 4 participants) :</p>
 <ul>
 <li>Mercredi : 14h – 18h</li>
 <li>Samedi : 10h – 18h</li>
@@ -54,47 +64,49 @@
 </ul>
 </section>
 
+<!-- FORMULAIRE -->
 <section class="container formulaire">
 <h2>Formulaire de contact</h2>
-<p>Remplissez ce formulaire pour réserver une séance, poser une question ou demander un devis personnalisé.</p>
+<p>Remplissez ce formulaire pour réserver ou poser vos questions.</p>
 <form action="#" method="post">
 <label for="nom">Nom :</label>
-<input type="text" id="nom" name="nom" required>
+<input type="text" id="nom" name="nom" placeholder="Votre nom" required>
 
 <label for="prenom">Prénom :</label>
-<input type="text" id="prenom" name="prenom" required>
+<input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
 <label for="email">Email :</label>
-<input type="email" id="email" name="email" required>
+<input type="email" id="email" name="email" placeholder="exemple@email.com" required>
 
 <label for="message">Message :</label>
-<textarea id="message" name="message" rows="6" required></textarea>
+<textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
 
 <button type="submit" class="btn">Envoyer</button>
 </form>
 </section>
 
+<!-- FAQ -->
 <section class="container faq">
 <h2>Questions fréquentes</h2>
 
 <div class="faq-item">
 <h3>Comment réserver une séance ?</h3>
-<p>Remplissez le formulaire ou contactez-moi directement par email pour fixer votre créneau.</p>
+<p>Remplissez le formulaire ou contactez-moi directement par email.</p>
 </div>
 
 <div class="faq-item">
 <h3>Combien de participants par séance ?</h3>
-<p>Chaque séance peut accueillir jusqu’à 4 participants selon la formule choisie : individuelle, duo ou petit groupe.</p>
+<p>Chaque séance peut accueillir jusqu’à 4 participants selon la formule choisie.</p>
 </div>
 
 <div class="faq-item">
 <h3>Modes de paiement ?</h3>
-<p>Le paiement se fait actuellement en espèces. Le paiement par carte bancaire sera bientôt disponible.</p>
+<p>Paiement en espèces actuellement, carte bancaire bientôt disponible.</p>
 </div>
 
 <div class="faq-item">
 <h3>Quels packs sont disponibles ?</h3>
-<p>Consultez toutes les formules sur la page <a href="packs.html">Packs</a>.</p>
+<p>Voir toutes les formules sur la page <a href="packs.html">Packs</a>.</p>
 </div>
 
 <div class="faq-item">
@@ -103,9 +115,10 @@
 </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
 <h2>Prêt à réserver votre séance ?</h2>
-<p>Envoyez-moi un message via le formulaire ou contactez-moi directement par email pour confirmer votre créneau.</p>
+<p>Contactez-moi dès maintenant pour garantir votre créneau et aider votre enfant à progresser.</p>
 <a href="contact.html" class="btn">Réserver une séance</a>
 </section>
 
