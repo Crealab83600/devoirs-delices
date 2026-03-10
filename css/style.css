@@ -1,6 +1,4 @@
-/* ==========================
-   Reset & Base
-========================== */
+/* Reset global */
 * {
     margin: 0;
     padding: 0;
@@ -8,347 +6,144 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Body et fond */
 body {
-    background-color: #fffaf8;
+    background: linear-gradient(135deg, #fff0f5, #ffe6e1);
     color: #333;
-    line-height: 1.7;
-    scroll-behavior: smooth;
+    line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: #ff6b6b;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #ff3b3b;
-}
-
-/* ==========================
-   Header / Navigation
-========================== */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: #fff3f0;
-    border-bottom: 3px solid #ff6b6b;
-    transition: box-shadow 0.3s ease;
-}
-
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    flex-wrap: wrap;
+    padding: 15px 50px;
+    background-color: #ff6f61;
 }
 
 .navbar .logo {
+    font-weight: bold;
+    color: #fff;
     font-size: 1.5rem;
-    font-weight: 700;
-    color: #ff3b3b;
+    text-decoration: none;
 }
 
-.menu {
+.nav-links {
+    list-style: none;
     display: flex;
     gap: 25px;
-    list-style: none;
 }
 
-.menu li a {
-    font-weight: 600;
-    transition: all 0.3s;
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.menu li a:hover {
-    transform: scale(1.05);
-    color: #ff3b3b;
+.nav-links li a.active,
+.nav-links li a:hover {
+    border-bottom: 2px solid #fff;
 }
 
-/* Hamburger menu mobile */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #ff6b6b;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-
-/* ==========================
-   Hero
-========================== */
+/* Hero */
 .hero {
-    background: url("../images/hero.jpg") center/cover no-repeat;
-    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 80px 5%;
-    position: relative;
+    padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    font-size: 3rem;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-}
-
-/* ==========================
-   Sections
-========================== */
-section {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section h2 {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    margin-bottom: 20px;
-    color: #ff6b6b;
-    position: relative;
-}
-
-section h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #ff6b6b;
-    margin-top: 8px;
-    border-radius: 2px;
-}
-
-section p {
-    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-    margin-bottom: 20px;
-}
-
-ul {
-    margin: 15px 0 25px 1.5em;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-/* ==========================
-   Cards / Packs / Testimonials
-========================== */
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background-color: #fff3f0;
-    padding: 25px 20px;
-    border-radius: 15px;
-    flex: 1 1 280px;
-    max-width: 320px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-}
-
-.card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #ff3b3b;
-}
-
-.card .price {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.card .stars {
-    color: #ff6b6b;
     font-size: 1.2rem;
-    margin: 10px 0;
+    margin-bottom: 20px;
 }
 
-/* ==========================
-   Images
-========================== */
-section img {
-    max-width: 100%;
-    display: block;
-    margin: 25px auto;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.4s, box-shadow 0.4s;
-}
-
-section img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* ==========================
-   Buttons
-========================== */
 .btn {
-    display: inline-block;
-    background: linear-gradient(45deg, #ff6b6b, #ff3b3b);
+    background-color: #ff6f61;
     color: #fff;
-    padding: 14px 28px;
-    border-radius: 50px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.4s ease;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
 }
 
 .btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    background-color: #ff856f;
 }
 
-/* ==========================
-   FAQ
-========================== */
-.faq-item {
-    margin-bottom: 20px;
-    border: 1px solid #ffd6d0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: box-shadow 0.3s;
+/* Packs & Cards */
+.packs-container, .avis-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
 }
 
-.faq-item:hover {
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+.pack, .avis-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-.faq-item h3 {
-    font-size: 1.2rem;
-    cursor: pointer;
-    background-color: #fff3f0;
-    padding: 15px 20px;
-    margin: 0;
-    transition: background 0.3s;
+.pack:hover, .avis-card:hover {
+    transform: translateY(-10px);
 }
 
-.faq-item h3:hover {
-    background-color: #ffebea;
+/* About & Contact sections */
+.about, .contact {
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.faq-item p {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 20px;
-    background-color: #fff;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-}
-
-.faq-item.active p {
-    max-height: 500px;
-    padding: 15px 20px;
-}
-
-/* ==========================
-   Formulaire
-========================== */
-form {
+.contact form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 650px;
-    margin: 0 auto;
+    max-width: 400px;
+    margin: auto;
 }
 
-form input, form textarea {
+.contact input, .contact textarea {
     padding: 12px;
-    border: 2px solid #ff6b6b;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
     font-size: 1rem;
-    transition: border 0.3s, box-shadow 0.3s;
 }
 
-form input:focus, form textarea:focus {
-    border-color: #ff3b3b;
-    box-shadow: 0 0 8px rgba(255,107,107,0.5);
-    outline: none;
+.contact button {
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 30px;
+    background-color: #ff6f61;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-form button {
-    width: 200px;
-    margin-top: 10px;
-    align-self: center;
+.contact button:hover {
+    background-color: #ff856f;
 }
 
-/* ==========================
-   CTA
-========================== */
-.cta {
-    background-color: #ffebea;
-    text-align: center;
-    padding: 60px 5%;
-    border-radius: 15px;
-    margin-top: 40px;
-}
-
-.cta h2 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    margin-bottom: 20px;
-}
-
-.cta p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    margin-bottom: 25px;
-}
-
-/* ==========================
-   Footer
-========================== */
+/* Footer */
 footer {
     text-align: center;
-    padding: 30px 5%;
-    background-color: #fff3f0;
-    border-top: 3px solid #ff6b6b;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* ==========================
-   Responsive
-========================== */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .cards {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .menu {
-        flex-direction: column;
-    }
+    padding: 20px;
+    background-color: #ff6f61;
+    color: white;
+    margin-top: 50px;
 }
