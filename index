@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services Informatique</title>
+    <title>Services Informatique Complet</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- HEADER -->
-    <header>
-        <div class="container">
-            <h1>💻 Services Informatique & Assistance</h1>
-            <p>PC, téléphones, cours d’informatique — Tout pour vous simplifier la vie !</p>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>💻 Services Informatique Complet</h1>
+            <p>Assistance PC, téléphones, cours d’informatique – Simple et rapide !</p>
             <a href="#contact" class="btn">Contactez-moi</a>
         </div>
     </header>
@@ -20,108 +19,131 @@
     <!-- NAVIGATION -->
     <nav>
         <ul>
-            <li><a href="#aide-informatique">Aide Informatique</a></li>
-            <li><a href="#telephone">Téléphones</a></li>
-            <li><a href="#nettoyage">Nettoyage PC</a></li>
-            <li><a href="#cours">Mini-Cours</a></li>
-            <li><a href="#comptes">Comptes en ligne</a></li>
-            <li><a href="#soutien-scolaire">Informatique Scolaire</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#cours">Cours</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main>
-        <section id="aide-informatique">
-            <div class="container">
-                <h2>1️⃣ Aide Informatique 💻</h2>
-                <ul>
-                    <li>Ordinateur lent → nettoyage et optimisation</li>
-                    <li>Installation d’imprimantes et logiciels</li>
-                    <li>Aide Internet / Email</li>
-                    <li>Suppression de virus simple</li>
-                </ul>
-                <p class="prix">💰 Prix : 15–25 €</p>
-            </div>
-        </section>
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="cards">
 
-        <section id="telephone">
-            <div class="container">
-                <h2>2️⃣ Configuration de Téléphones 📱</h2>
-                <ul>
-                    <li>Transfert de photos</li>
-                    <li>Installation d’applications</li>
-                    <li>Configuration email</li>
-                    <li>Sauvegarde de données</li>
-                    <li>Applications : WhatsApp, Facebook, Instagram</li>
-                </ul>
-                <p class="prix">💰 Prix : 10–20 €</p>
-            </div>
-        </section>
+                <!-- Aide Informatique -->
+                <div class="card">
+                    <img src="images/aide-informatique.jpg" alt="Aide Informatique">
+                    <div class="card-content">
+                        <h3>Aide Informatique</h3>
+                        <ul>
+                            <li>Ordinateur lent → nettoyage et optimisation</li>
+                            <li>Installation logiciels/imprimantes</li>
+                            <li>Aide Internet / Email</li>
+                            <li>Suppression virus simple</li>
+                        </ul>
+                        <p class="prix">15–25 €</p>
+                    </div>
+                </div>
 
-        <section id="nettoyage">
-            <div class="container">
-                <h2>3️⃣ Nettoyage et Optimisation PC 🧹</h2>
-                <ul>
-                    <li>Supprimer fichiers inutiles</li>
-                    <li>Désinstaller programmes lourds</li>
-                    <li>Accélérer le démarrage</li>
-                </ul>
-                <p class="prix">💰 Prix : 20–30 €</p>
-            </div>
-        </section>
+                <!-- Téléphone -->
+                <div class="card">
+                    <img src="images/telephone.jpg" alt="Configuration Téléphones">
+                    <div class="card-content">
+                        <h3>Configuration Téléphones</h3>
+                        <ul>
+                            <li>Transfert photos</li>
+                            <li>Installation applications</li>
+                            <li>Configurer email</li>
+                            <li>WhatsApp, Facebook, Instagram</li>
+                        </ul>
+                        <p class="prix">10–20 €</p>
+                    </div>
+                </div>
 
-        <section id="cours">
-            <div class="container">
-                <h2>4️⃣ Mini-Cours d’Informatique 👨‍🏫</h2>
-                <ul>
-                    <li>Utiliser Internet</li>
-                    <li>Créer et gérer des documents</li>
-                    <li>Envoyer des emails</li>
-                    <li>Utiliser son téléphone</li>
-                </ul>
-                <p class="prix">💰 Prix : 10–20 €/heure</p>
-            </div>
-        </section>
+                <!-- Nettoyage PC -->
+                <div class="card">
+                    <img src="images/nettoyage.jpg" alt="Nettoyage PC">
+                    <div class="card-content">
+                        <h3>Nettoyage et Optimisation PC</h3>
+                        <ul>
+                            <li>Supprimer fichiers inutiles</li>
+                            <li>Désinstaller programmes lourds</li>
+                            <li>Accélérer le démarrage</li>
+                        </ul>
+                        <p class="prix">20–30 €</p>
+                    </div>
+                </div>
 
-        <section id="comptes">
-            <div class="container">
-                <h2>5️⃣ Aide avec les Comptes en Ligne 🔐</h2>
-                <ul>
-                    <li>Créer un email</li>
-                    <li>Utiliser les réseaux sociaux</li>
-                    <li>Récupérer un mot de passe</li>
-                    <li>Sauvegarder photos</li>
-                </ul>
-                <p class="prix">💰 Prix : 10–15 €</p>
-            </div>
-        </section>
+                <!-- Mini Cours -->
+                <div class="card">
+                    <img src="images/cours.jpg" alt="Mini Cours Informatique">
+                    <div class="card-content">
+                        <h3>Mini-Cours Informatique</h3>
+                        <ul>
+                            <li>Utiliser Internet</li>
+                            <li>Créer documents</li>
+                            <li>Envoyer emails</li>
+                            <li>Utiliser téléphone</li>
+                        </ul>
+                        <p class="prix">10–20 €/heure</p>
+                    </div>
+                </div>
 
-        <section id="soutien-scolaire">
-            <div class="container">
-                <h2>6️⃣ Informatique Scolaire 📚</h2>
-                <ul>
-                    <li>PowerPoint, Word</li>
-                    <li>Préparer exposés</li>
-                    <li>Organisation fichiers et ordinateur</li>
-                </ul>
-                <p class="prix">💰 Prix : 10–15 €/heure</p>
-            </div>
-        </section>
+                <!-- Comptes en Ligne -->
+                <div class="card">
+                    <img src="images/comptes.jpg" alt="Comptes en ligne">
+                    <div class="card-content">
+                        <h3>Comptes en Ligne</h3>
+                        <ul>
+                            <li>Créer email</li>
+                            <li>Utiliser réseaux sociaux</li>
+                            <li>Récupérer mot de passe</li>
+                            <li>Sauvegarder photos</li>
+                        </ul>
+                        <p class="prix">10–15 €</p>
+                    </div>
+                </div>
 
-        <section id="contact">
-            <div class="container">
-                <h2>📩 Contact</h2>
-                <p>Envoyez-moi un email : <a href="mailto:raphaelmaury83600@gmail.com"></a></p>
-                <p>Ou appelez : <strong>06 50 02 15 65</strong></p>
+                <!-- Informatique Scolaire -->
+                <div class="card">
+                    <img src="images/scolaire.jpg" alt="Informatique Scolaire">
+                    <div class="card-content">
+                        <h3>Informatique Scolaire</h3>
+                        <ul>
+                            <li>PowerPoint, Word</li>
+                            <li>Préparer exposés</li>
+                            <li>Organisation fichiers</li>
+                        </ul>
+                        <p class="prix">10–15 €/heure</p>
+                    </div>
+                </div>
+
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- COURS -->
+    <section id="cours" class="section-light">
+        <div class="container">
+            <h2>📚 Mini-Cours Personnalisés</h2>
+            <p>Apprenez à utiliser Internet, Word, PowerPoint ou votre téléphone de manière simple et pratique.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <h2>📩 Contact</h2>
+            <p>Email : <a href="mailto:contact@example.com">contact@example.com</a></p>
+            <p>WhatsApp : <a href="https://wa.me/0612345678" target="_blank">06 12 34 56 78</a></p>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Services Informatique. Tous droits réservés.</p>
+            <p>&copy; 2026 Services Informatique Complet. Tous droits réservés.</p>
         </div>
     </footer>
 </body>
