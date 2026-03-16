@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Informatique</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>💻 Services Informatique & Assistance</h1>
+            <p>PC, téléphones, cours d’informatique — Tout pour vous simplifier la vie !</p>
+            <a href="#contact" class="btn">Contactez-moi</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#aide-informatique">Aide Informatique</a></li>
+            <li><a href="#telephone">Téléphones</a></li>
+            <li><a href="#nettoyage">Nettoyage PC</a></li>
+            <li><a href="#cours">Mini-Cours</a></li>
+            <li><a href="#comptes">Comptes en ligne</a></li>
+            <li><a href="#soutien-scolaire">Informatique Scolaire</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="aide-informatique">
+            <div class="container">
+                <h2>1️⃣ Aide Informatique 💻</h2>
+                <ul>
+                    <li>Ordinateur lent → nettoyage et optimisation</li>
+                    <li>Installation d’imprimantes et logiciels</li>
+                    <li>Aide Internet / Email</li>
+                    <li>Suppression de virus simple</li>
+                </ul>
+                <p class="prix">💰 Prix : 15–25 €</p>
+            </div>
+        </section>
+
+        <section id="telephone">
+            <div class="container">
+                <h2>2️⃣ Configuration de Téléphones 📱</h2>
+                <ul>
+                    <li>Transfert de photos</li>
+                    <li>Installation d’applications</li>
+                    <li>Configuration email</li>
+                    <li>Sauvegarde de données</li>
+                    <li>Applications : WhatsApp, Facebook, Instagram</li>
+                </ul>
+                <p class="prix">💰 Prix : 10–20 €</p>
+            </div>
+        </section>
+
+        <section id="nettoyage">
+            <div class="container">
+                <h2>3️⃣ Nettoyage et Optimisation PC 🧹</h2>
+                <ul>
+                    <li>Supprimer fichiers inutiles</li>
+                    <li>Désinstaller programmes lourds</li>
+                    <li>Accélérer le démarrage</li>
+                </ul>
+                <p class="prix">💰 Prix : 20–30 €</p>
+            </div>
+        </section>
+
+        <section id="cours">
+            <div class="container">
+                <h2>4️⃣ Mini-Cours d’Informatique 👨‍🏫</h2>
+                <ul>
+                    <li>Utiliser Internet</li>
+                    <li>Créer et gérer des documents</li>
+                    <li>Envoyer des emails</li>
+                    <li>Utiliser son téléphone</li>
+                </ul>
+                <p class="prix">💰 Prix : 10–20 €/heure</p>
+            </div>
+        </section>
+
+        <section id="comptes">
+            <div class="container">
+                <h2>5️⃣ Aide avec les Comptes en Ligne 🔐</h2>
+                <ul>
+                    <li>Créer un email</li>
+                    <li>Utiliser les réseaux sociaux</li>
+                    <li>Récupérer un mot de passe</li>
+                    <li>Sauvegarder photos</li>
+                </ul>
+                <p class="prix">💰 Prix : 10–15 €</p>
+            </div>
+        </section>
+
+        <section id="soutien-scolaire">
+            <div class="container">
+                <h2>6️⃣ Informatique Scolaire 📚</h2>
+                <ul>
+                    <li>PowerPoint, Word</li>
+                    <li>Préparer exposés</li>
+                    <li>Organisation fichiers et ordinateur</li>
+                </ul>
+                <p class="prix">💰 Prix : 10–15 €/heure</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>📩 Contact</h2>
+                <p>Envoyez-moi un email : <a href="mailto:contact@example.com">contact@example.com</a></p>
+                <p>Ou appelez : <strong>06 12 34 56 78</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Services Informatique. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
