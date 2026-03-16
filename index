@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <div class="container">
             <h1>💻 Services Informatique & Assistance</h1>
@@ -16,6 +17,7 @@
         </div>
     </header>
 
+    <!-- NAVIGATION -->
     <nav>
         <ul>
             <li><a href="#aide-informatique">Aide Informatique</a></li>
@@ -24,9 +26,11 @@
             <li><a href="#cours">Mini-Cours</a></li>
             <li><a href="#comptes">Comptes en ligne</a></li>
             <li><a href="#soutien-scolaire">Informatique Scolaire</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main>
         <section id="aide-informatique">
             <div class="container">
@@ -108,12 +112,13 @@
         <section id="contact">
             <div class="container">
                 <h2>📩 Contact</h2>
-                <p>Envoyez-moi un email : <a href="mailto:contact@example.com">contact@example.com</a></p>
-                <p>Ou appelez : <strong>06 12 34 56 78</strong></p>
+                <p>Envoyez-moi un email : <a href="mailto:raphaelmaury83600@gmail.com"></a></p>
+                <p>Ou appelez : <strong>06 50 02 15 65</strong></p>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Services Informatique. Tous droits réservés.</p>
